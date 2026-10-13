@@ -1,0 +1,9 @@
+{
+ "name":"pulso-transporte",
+ "private":true,
+ "version":"1.0.0",
+ "type":"module",
+ "scripts":{"build":"node build.mjs","check":"node build.mjs"},
+ "dependencies":{"react":"19.3.0","react-dom":"19.3.0"},
+ "devDependencies":{"esbuild":"0.28.2"}
+}

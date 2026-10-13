@@ -1,0 +1,19 @@
+{
+  "source": "NYC TLC",
+  "verified_on": "2026-10-12",
+  "checksum_policy": "SHA-256 pinned from the verified project download; not an upstream signature",
+  "files": [
+    {
+      "name": "yellow_tripdata_2024-01.parquet",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "bytes": 49961641
+    },
+    {
+      "name": "taxi_zone_lookup.csv",
+      "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "bytes": 12331
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+tpep_pickup_datetime,tpep_dropoff_datetime,PULocationID,DOLocationID,trip_distance,note
+2024-01-01 09:00:00,2024-01-01 09:10:00,161,162,1.2,valid
+2024-01-01 09:14:59,2024-01-01 09:25:00,161,162,2.1,"quoted comma, valid"
+2024-01-01 09:15:00,2024-01-01 09:30:00,162,161,3.0,"multiline
+CSV field"
+2024-01-01 10:00:00,2024-01-01 09:59:00,161,162,1.0,invalid duration
+2024-01-01 10:00:00,2024-01-01 10:10:00,264,162,1.0,unknown zone
+invalid,2024-01-01 10:10:00,161,162,1.0,invalid timestamp
+2024-01-01 10:00:00,2024-01-01 10:10:00,161,162,-1.0,negative distance
+2024-01-02 00:00:00,2024-01-02 00:10:00,161,162,1.0,exclusive boundary

@@ -1,0 +1,5 @@
+LocationID,Borough,Zone,service_zone
+161,Manhattan,Midtown Center,Yellow Zone
+162,Manhattan,Midtown East,Yellow Zone
+264,Unknown,N/A,N/A
+265,Unknown,Outside of NYC,N/A

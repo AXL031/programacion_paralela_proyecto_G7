@@ -1,0 +1,497 @@
+{
+  "scope": "14 activities in weeks 7 through 10; local Docker and browser verification",
+  "dataset": {
+    "reload_reused": true,
+    "snapshot": {
+      "version": "raw-counts-v1",
+      "path": "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/2fabf19bf4a02f1ada3f495b/features.ndjson",
+      "sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+      "windows": 378720,
+      "examples": 378457,
+      "splits": {
+        "test": 56808,
+        "train": 264841,
+        "validation": 56808
+      },
+      "feature_names": [
+        "zone_id:categorical",
+        "hour_sin",
+        "hour_cos",
+        "day_of_week:categorical",
+        "weekend",
+        "lag1_count"
+      ],
+      "train_end": "2024-01-11T17:00:00Z",
+      "validation_end": "2024-01-13T23:00:00Z",
+      "normalization": "raw; fit normalizer on train only in step 4"
+    },
+    "period_start": "2024-01-01T05:00:00Z",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "period_end_exclusive": "2024-01-16T05:00:00Z",
+    "stats": {
+      "read": 2964624,
+      "accepted": 1348665,
+      "rejected": 14905,
+      "outside_period": 1601054,
+      "persisted": 1348665,
+      "rejection_reasons": {
+        "duration_over_24h": 8,
+        "nonpositive_duration": 43,
+        "unknown_zone": 14854
+      },
+      "elapsed_seconds": 63.989935479,
+      "rows_per_second": 46329.53569663967
+    },
+    "load_id": "2fabf19bf4a02f1ada3f495b"
+  },
+  "auth_and_websocket": {
+    "impact": {
+      "boroughs": [
+        {
+          "borough": "Manhattan",
+          "observed_trips": 1198188,
+          "share": 0.8884252204958236
+        },
+        {
+          "borough": "Queens",
+          "observed_trips": 135308,
+          "share": 0.10032736076045572
+        },
+        {
+          "borough": "Brooklyn",
+          "observed_trips": 11757,
+          "share": 0.008717509537209019
+        },
+        {
+          "borough": "Bronx",
+          "observed_trips": 3224,
+          "share": 0.002390512099001605
+        },
+        {
+          "borough": "EWR",
+          "observed_trips": 154,
+          "share": 0.00011418699232203698
+        },
+        {
+          "borough": "Staten Island",
+          "observed_trips": 34,
+          "share": 2.521011518798219E-05
+        }
+      ],
+      "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+      "limitation": "Viajes completados aceptados en Yellow Taxi. No mide demanda no atendida, disponibilidad de vehículos ni desigualdad de acceso.",
+      "question": "¿Cómo anticipar la actividad de viajes registrada por zona e intervalo para apoyar la planificación del transporte?",
+      "ready": true,
+      "total_observed_trips": 1348665,
+      "use": "Comparar zonas y horarios y evaluar pronósticos frente a una referencia temporal."
+    },
+    "frontend": "React production build; browser verification separately",
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "anonymous_status": 401,
+    "verified_at": "2026-10-12T23:15:35.8132617-05:00",
+    "accepted_trips": 1348665,
+    "tampered_jwt_status": 401,
+    "websocket_close_status": 1008,
+    "logout_status": 401,
+    "telemetry": {
+      "active_run": "",
+      "master": {
+        "sampled_at": "2026-10-13T04:15:34.009732643Z",
+        "cpu_percent": 0.11519990645761354,
+        "rss_bytes": 301453312,
+        "heap_bytes": 278491176,
+        "available": true
+      },
+      "measurement_scope": "Go process; CPU 100 percent = one CPU core; RAM = resident set",
+      "workers": [
+        {
+          "worker_id": "1b2231f0bd3a",
+          "last_seen": "2026-10-13T04:15:32.974323937Z",
+          "accepted_tasks": 3960,
+          "busy": false,
+          "telemetry": {
+            "sampled_at": "2026-10-13T04:15:32.971485519Z",
+            "cpu_percent": 0.12130005834531893,
+            "rss_bytes": 259633152,
+            "heap_bytes": 222880944,
+            "available": true
+          }
+        },
+        {
+          "worker_id": "6fff4cb461ad",
+          "last_seen": "2026-10-13T04:15:33.346838413Z",
+          "accepted_tasks": 3960,
+          "busy": false,
+          "telemetry": {
+            "sampled_at": "2026-10-13T04:15:33.343003989Z",
+            "cpu_percent": 0.12189994026892637,
+            "rss_bytes": 261140480,
+            "heap_bytes": 208726448,
+            "available": true
+          }
+        }
+      ]
+    },
+    "streamed_prediction": {
+      "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+      "zone_id": 161,
+      "forecast_origin": "2024-01-16T04:45:00Z",
+      "horizon_minutes": 15,
+      "predicted_observed_trips": 5,
+      "previous_observed_trips": 5,
+      "actual_observed_trips": 10,
+      "model_version": "run-4afc7abd8940ec05ca28d73f",
+      "method": "persistence",
+      "evaluation_period": "test",
+      "cache_hit": true,
+      "latency_ms": 0.269
+    }
+  },
+  "activities": [
+    {
+      "rows": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "status": "complete",
+      "week": 7
+    },
+    {
+      "rows": [
+        6,
+        7,
+        8
+      ],
+      "status": "complete",
+      "week": 8
+    },
+    {
+      "rows": [
+        9,
+        10,
+        11
+      ],
+      "status": "complete",
+      "week": 9
+    },
+    {
+      "rows": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "status": "complete",
+      "week": 10
+    }
+  ],
+  "training": {
+    "loss_history_epochs": 120,
+    "comparison": {
+      "test": {
+        "model": {
+          "examples": 56808,
+          "mae": 1.0863962822137727,
+          "rmse": 3.5532592526743607,
+          "log_loss": 0.05530054095981887,
+          "objective_loss": 0.050816456328064384
+        },
+        "persistence_baseline": {
+          "examples": 56808,
+          "mae": 1.0863962822137727,
+          "rmse": 3.5532592526743607,
+          "log_loss": 0.05530054095981887,
+          "objective_loss": 0.05081645632806439
+        }
+      },
+      "max_weight_difference": 0.0,
+      "tolerance": 1E-09,
+      "sequential_training_seconds": 10.966421771,
+      "workers": [
+        "1b2231f0bd3a",
+        "6fff4cb461ad"
+      ],
+      "distributed_run": "run-4afc7abd8940ec05ca28d73f",
+      "distributed_training_seconds": 17.28637731,
+      "measurement_scope": "single functional verification; not a benchmark",
+      "tasks_by_worker": {
+        "1b2231f0bd3a": 3960,
+        "6fff4cb461ad": 3960
+      },
+      "sequential_run": "run-c84defbeb83a555a7a450c17"
+    },
+    "selection": {
+      "method": "persistence",
+      "candidate_blend": 0,
+      "candidate_validation": {
+        "examples": 56808,
+        "mae": 1.2646301089069953,
+        "rmse": 3.6140641978283417,
+        "log_loss": 0.0654057784250164,
+        "objective_loss": 0.05258962379094125
+      },
+      "selected_validation": {
+        "examples": 56808,
+        "mae": 1.1811716659625404,
+        "rmse": 3.733023819326224,
+        "log_loss": 0.057768276885204,
+        "objective_loss": 0.05608827806988563
+      },
+      "baseline_validation": {
+        "examples": 56808,
+        "mae": 1.1811716659625404,
+        "rmse": 3.733023819326224,
+        "log_loss": 0.057768276885204,
+        "objective_loss": 0.05608827806988563
+      }
+    }
+  },
+  "total_activities": 14,
+  "redis_failure_prediction": {
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "zone_id": 161,
+    "forecast_origin": "2024-01-16T01:45:00Z",
+    "horizon_minutes": 15,
+    "predicted_observed_trips": 33,
+    "previous_observed_trips": 33,
+    "actual_observed_trips": 23,
+    "model_version": "run-4afc7abd8940ec05ca28d73f",
+    "method": "persistence",
+    "evaluation_period": "test",
+    "cache_hit": false,
+    "latency_ms": 31.03
+  },
+  "services": [
+    {
+      "health": "healthy",
+      "service": "api",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "master",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "mongo",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "redis",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "web",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "worker",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "worker",
+      "state": "running"
+    }
+  ],
+  "subsequent_work": [
+    "Repeated load and training benchmarks",
+    "Resource and scalability comparison",
+    "Four real workers",
+    "Clean deployment and another machine",
+    "Checkpoints and task reassignment",
+    "Map"
+  ],
+  "completed_activities": 14,
+  "source": {
+    "name": "Cronograma_Proyecto9_Go_BigData_S7-S15_v2.xlsx",
+    "sheet": "Hoja 1",
+    "rows": "2:15"
+  },
+  "verified_at": "2026-10-13T04:19:22.3367825+00:00",
+  "checks": {
+    "ci_remote": "not run",
+    "go_format": "passed",
+    "http_and_websocket_smoke": "passed",
+    "browser_predict_training_and_live_telemetry": "passed",
+    "react_production_build": "passed",
+    "browser_login_logout": "passed",
+    "demo_script": "passed",
+    "go_test_race": "passed",
+    "go_vet": "passed",
+    "responsive_mobile": "passed"
+  },
+  "browser_final_run": {
+    "run_id": "run-cf4eba4db25d6bde15f2d872",
+    "mode": "distributed",
+    "status": "completed",
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "config": {
+      "epochs": 120,
+      "batch_size": 8192,
+      "learning_rate": 0.2,
+      "l2": 1E-05,
+      "seed": 42,
+      "workers": 2,
+      "task_timeout_seconds": 10
+    },
+    "progress": {
+      "epoch": 120,
+      "step": 3960,
+      "total_steps": 3960,
+      "objective_loss": 0.04859455688131608
+    },
+    "started_at": "2026-10-13T04:16:41.395547285Z",
+    "completed_at": "2026-10-13T04:16:59.161803321Z",
+    "preparation_seconds": 3.173372124,
+    "training_seconds": 14.509864464,
+    "evaluation_seconds": 0.065916835,
+    "workers": [
+      "1b2231f0bd3a",
+      "6fff4cb461ad"
+    ],
+    "tasks_by_worker": {
+      "1b2231f0bd3a": 3960,
+      "6fff4cb461ad": 3960
+    },
+    "artifact_version": "run-cf4eba4db25d6bde15f2d872"
+  },
+  "browser_final_model": {
+    "created_at": "2026-10-13T04:16:59.144Z",
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "evaluation": {
+      "test": {
+        "model": {
+          "examples": 56808,
+          "mae": 1.0863962822137727,
+          "rmse": 3.5532592526743607,
+          "log_loss": 0.05530054095981887,
+          "objective_loss": 0.050816456328064384
+        },
+        "persistence_baseline": {
+          "examples": 56808,
+          "mae": 1.0863962822137727,
+          "rmse": 3.5532592526743607,
+          "log_loss": 0.05530054095981887,
+          "objective_loss": 0.05081645632806439
+        }
+      },
+      "train": {
+        "model": {
+          "examples": 264841,
+          "mae": 1.0264838148171922,
+          "rmse": 3.28502768932371,
+          "log_loss": 0.06116756267709925,
+          "objective_loss": 0.04343388271173938
+        },
+        "persistence_baseline": {
+          "examples": 264841,
+          "mae": 1.0264838148171922,
+          "rmse": 3.28502768932371,
+          "log_loss": 0.06116756267709925,
+          "objective_loss": 0.04343388271173938
+        }
+      },
+      "validation": {
+        "model": {
+          "examples": 56808,
+          "mae": 1.1811716659625404,
+          "rmse": 3.733023819326224,
+          "log_loss": 0.057768276885204,
+          "objective_loss": 0.05608827806988563
+        },
+        "persistence_baseline": {
+          "examples": 56808,
+          "mae": 1.1811716659625404,
+          "rmse": 3.733023819326224,
+          "log_loss": 0.057768276885204,
+          "objective_loss": 0.05608827806988563
+        }
+      }
+    },
+    "first_origin": "2024-01-01T05:15:00Z",
+    "horizon_minutes": 15,
+    "last_origin": "2024-01-16T04:45:00Z",
+    "method": "persistence",
+    "ready": true,
+    "refresh_degraded": false,
+    "selection": {
+      "method": "persistence",
+      "candidate_blend": 0,
+      "candidate_validation": {
+        "examples": 56808,
+        "mae": 1.2646301089069953,
+        "rmse": 3.6140641978283417,
+        "log_loss": 0.0654057784250164,
+        "objective_loss": 0.05258962379094125
+      },
+      "selected_validation": {
+        "examples": 56808,
+        "mae": 1.1811716659625404,
+        "rmse": 3.733023819326224,
+        "log_loss": 0.057768276885204,
+        "objective_loss": 0.05608827806988563
+      },
+      "baseline_validation": {
+        "examples": 56808,
+        "mae": 1.1811716659625404,
+        "rmse": 3.733023819326224,
+        "log_loss": 0.057768276885204,
+        "objective_loss": 0.05608827806988563
+      }
+    },
+    "timezone": "America/New_York",
+    "train_end": "2024-01-11T17:00:00Z",
+    "validation_end": "2024-01-13T23:00:00Z",
+    "version": "run-cf4eba4db25d6bde15f2d872"
+  },
+  "proof_images": [
+    "data/semana-10-telemetria.jpg",
+    "data/semana-10-demo-completa.jpg"
+  ],
+  "final_cluster": {
+    "active_run": "",
+    "master": {
+      "sampled_at": "2026-10-13T04:19:21.994115446Z",
+      "cpu_percent": 0.3457036371477043,
+      "rss_bytes": 210817024,
+      "heap_bytes": 47255792,
+      "available": true
+    },
+    "measurement_scope": "Go process; CPU 100 percent = one CPU core; RAM = resident set",
+    "workers": [
+      {
+        "worker_id": "1b2231f0bd3a",
+        "last_seen": "2026-10-13T04:19:20.960028994Z",
+        "accepted_tasks": 7920,
+        "busy": false,
+        "telemetry": {
+          "sampled_at": "2026-10-13T04:19:20.954992643Z",
+          "cpu_percent": 0.10619992226140229,
+          "rss_bytes": 188506112,
+          "heap_bytes": 46619312,
+          "available": true
+        }
+      },
+      {
+        "worker_id": "6fff4cb461ad",
+        "last_seen": "2026-10-13T04:19:21.33175442Z",
+        "accepted_tasks": 7920,
+        "busy": false,
+        "telemetry": {
+          "sampled_at": "2026-10-13T04:19:21.327106162Z",
+          "cpu_percent": 0.3599196181387499,
+          "rss_bytes": 226877440,
+          "heap_bytes": 46633024,
+          "available": true
+        }
+      }
+    ]
+  }
+}

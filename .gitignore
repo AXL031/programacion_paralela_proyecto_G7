@@ -1,0 +1,14 @@
+.env
+.tools/
+.cache/
+bin/
+data/*
+!data/.gitkeep
+bench/raw/
+*.prof
+*.test
+*.exe
+*.log
+web/node_modules/
+web/dist/*
+!web/dist/.gitkeep

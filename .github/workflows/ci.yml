@@ -1,0 +1,36 @@
+name: Go checks
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    container: node:22.21.0-alpine
+    steps:
+      - uses: actions/checkout@v4
+      - name: React production build
+        working-directory: web
+        run: npm ci && npm run build
+  test:
+    runs-on: ubuntu-latest
+    container: golang:1.27.2-bookworm
+    services:
+      mongo:
+        image: mongo:8.0.16
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'quit(db.adminCommand(\"ping\").ok ? 0 : 1)'"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      MONGO_TEST_URI: mongodb://mongo:27017
+    steps:
+      - uses: actions/checkout@v4
+      - name: Formatting
+        run: test -z "$(gofmt -l cmd internal tests/integration web)"
+      - name: Static checks
+        run: go vet ./...
+      - name: Tests and race detector
+        run: go test -race -count=1 ./...

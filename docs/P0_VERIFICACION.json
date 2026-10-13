@@ -1,0 +1,105 @@
+{
+  "http": {
+    "requests": 200,
+    "model_version": "run-429dc0f03208b18340ac740d",
+    "invalid_origin_status": 400,
+    "cache_hits": 100,
+    "scope": "HTTP local por proxy web; secuencial; no benchmark de producción",
+    "passes": [
+      {
+        "max_ms": 32.7457,
+        "pass": 1,
+        "p95_ms": 19.6547
+      },
+      {
+        "max_ms": 36.6134,
+        "pass": 2,
+        "p95_ms": 15.9425
+      }
+    ]
+  },
+  "zones": 263,
+  "checks": {
+    "go_vet": "passed",
+    "go_test_race": "passed",
+    "go_format": "passed",
+    "javascript_syntax": "passed"
+  },
+  "feature_examples": 75481,
+  "redis_failure": {
+    "prediction": {
+      "dataset_id": "ds-c1eb3326f0344d814705ba2c39bd8d23",
+      "zone_id": 161,
+      "forecast_origin": "2024-01-04T01:45:00Z",
+      "horizon_minutes": 15,
+      "predicted_observed_trips": 66.97152884301504,
+      "previous_observed_trips": 68,
+      "actual_observed_trips": 60,
+      "model_version": "run-429dc0f03208b18340ac740d",
+      "method": "validated_sgd",
+      "evaluation_period": "test",
+      "cache_hit": false,
+      "latency_ms": 31.167
+    },
+    "readiness": {
+      "mongo": true,
+      "ready": true,
+      "redis": false
+    }
+  },
+  "rows_read": 2964624,
+  "remaining": [
+    "more than one million accepted trips",
+    "four real workers",
+    "task reassignment and checkpoints",
+    "JWT",
+    "WebSocket",
+    "map",
+    "repeated benchmarks"
+  ],
+  "scope": "demo P0 local; no benchmark repetido ni ejecución CI remota",
+  "dataset_id": "ds-c1eb3326f0344d814705ba2c39bd8d23",
+  "master_restart": {
+    "preserved_model": "run-ba6d23bfa5b414e76058d4fb",
+    "failed_run": "run-d80f822ea8e23d1ba8824269",
+    "reconnected_workers": 2,
+    "status": "failed"
+  },
+  "windows": 75744,
+  "training": {
+    "test": {
+      "model": {
+        "examples": 11572,
+        "mae": 1.229381659271517,
+        "rmse": 3.6236246105705496,
+        "log_loss": 0.05319025937927643,
+        "objective_loss": 0.07054756298318637
+      },
+      "persistence_baseline": {
+        "examples": 11572,
+        "mae": 1.238420324922226,
+        "rmse": 3.6951893690128434,
+        "log_loss": 0.055311945213342636,
+        "objective_loss": 0.07335323462505383
+      }
+    },
+    "measurement_scope": "single functional verification; not a benchmark",
+    "distributed_run": "run-429dc0f03208b18340ac740d",
+    "sequential_training_seconds": 2.942374831,
+    "max_weight_difference": 4.163336342344337E-17,
+    "tolerance": 1E-09,
+    "sequential_run": "run-f175d4034202390245b4604d",
+    "workers": [
+      "22cb73fd8e45",
+      "b0de40c2dc60"
+    ],
+    "tasks_by_worker": {
+      "22cb73fd8e45": 840,
+      "b0de40c2dc60": 840
+    },
+    "distributed_training_seconds": 3.817698036
+  },
+  "verified_at": "2026-10-13T03:23:59.6067778+00:00",
+  "reload_reused": true,
+  "accepted_trips": 235761
+}

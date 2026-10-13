@@ -1,0 +1,21 @@
+{
+  "name": "tlc-yellow-2024-01-s7-s10",
+  "source": "NYC TLC Yellow Taxi",
+  "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+  "input": "data/raw/yellow_tripdata_2024-01.parquet",
+  "format": "parquet",
+  "sha256_file": "data/raw/yellow_tripdata_2024-01.parquet.sha256",
+  "zone_catalog": "data/raw/taxi_zone_lookup.csv",
+  "zone_sha256_file": "data/raw/taxi_zone_lookup.csv.sha256",
+  "timezone": "America/New_York",
+  "period_start": "2024-01-01T00:00:00-05:00",
+  "period_end_exclusive": "2024-01-16T00:00:00-05:00",
+  "window_minutes": 15,
+  "workers": 4,
+  "block_rows": 4096,
+  "batch_rows": 1000,
+  "storage": "mongo",
+  "output": "data/processed",
+  "mongo_uri": "mongodb://mongo:27017",
+  "mongo_database": "transporte"
+}

@@ -1,0 +1,11 @@
+.git
+.env
+.tools
+.cache
+data
+bin
+bench/raw
+docs
+README.md
+web/node_modules
+web/dist

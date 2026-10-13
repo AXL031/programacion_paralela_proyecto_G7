@@ -1,0 +1,20 @@
+{
+  "name": "synthetic-loader-contract-fixture",
+  "source": "Synthetic test fixture (not real TLC data)",
+  "source_url": "",
+  "input": "tests/testdata/trips.csv",
+  "format": "csv",
+  "sha256_file": "",
+  "zone_catalog": "tests/testdata/zones.csv",
+  "timezone": "America/New_York",
+  "period_start": "2024-01-01T00:00:00-05:00",
+  "period_end_exclusive": "2024-01-02T00:00:00-05:00",
+  "window_minutes": 15,
+  "workers": 4,
+  "block_rows": 2,
+  "batch_rows": 2,
+  "storage": "files",
+  "output": "data/fixtures",
+  "mongo_uri": "mongodb://mongo:27017",
+  "mongo_database": "transporte_test"
+}
