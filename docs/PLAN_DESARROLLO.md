@@ -1,5 +1,7 @@
 # Plan de desarrollo del Proyecto 9
 
+Estado de la computadora actual al 13 de octubre de 2026: clúster con dos workers reproducido, 1,348,665 viajes persistidos y demo/navegador/pruebas Go verificados. Evidencia en [VERIFICACION_LOCAL_SEMANA_10.json](VERIFICACION_LOCAL_SEMANA_10.json) y [AUDITORIA_SEMANA_10.md](AUDITORIA_SEMANA_10.md). Prioridad siguiente: conservar la demo lista para presentar, resolver la diferencia de pregunta social con la guía e incorporar mapa y mediciones según semanas 11-15. Las declaraciones que siguen conservan la historia de la ejecución anterior.
+
 Fecha de revisión: 12 de octubre de 2026. Prioridad: llegar pronto a una demo usable y continuar desde ella hasta completar el proyecto. Este plan no distribuye tareas entre integrantes ni supone una fecha de entrega.
 
 Actualización: se implementaron y verificaron los pasos **1 a 7**. Hay demo local con datos reales, dos trabajadores TCP, predicciones versionadas, Redis, pantalla y entrenamiento desde el navegador. Evidencias en [PRIMEROS_PASOS.md](PRIMEROS_PASOS.md), [PASOS_4_5.md](PASOS_4_5.md) y [PASOS_6_7.md](PASOS_6_7.md). La revisión siguiente describe el punto de partida anterior a esa implementación.

@@ -1,5 +1,7 @@
 # Cierre de las semanas 7 a 10
 
+> Este documento conserva la evidencia histórica de la computadora anterior. El 13 de octubre se reprodujo la demo en esta computadora: siete contenedores saludables, 1,348,665 viajes, ambos entrenamientos, JWT/WS/Redis, telemetría, navegador y pruebas Go con detector de carreras. La [auditoría actual](AUDITORIA_SEMANA_10.md) y la [evidencia local nueva](VERIFICACION_LOCAL_SEMANA_10.json) registran esa ejecución y las brechas de contexto. Los resultados y capturas de `data/` no se transportan mediante Git.
+
 Referencia: `Cronograma_Proyecto9_Go_BigData_S7-S15_v2.xlsx`, hoja `Hoja 1`, filas 2 a 15. Se conservaron las actividades del archivo; este documento registra su implementación y evidencia local. No modifica el Excel ni equivale al cierre de semanas posteriores.
 
 ## Criterios cumplidos

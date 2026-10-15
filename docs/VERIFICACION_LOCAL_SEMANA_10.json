@@ -1,0 +1,1673 @@
+{
+  "verified_at": "2026-10-13T10:25:48.1458375-05:00",
+  "scope": "Fresh local Docker reproduction and browser verification of technical components for weeks 7-10; general-context gaps remain",
+  "source": {
+    "context": "Guia_Proyecto9_Contexto.pdf",
+    "rows": "2:15",
+    "sheet": "Hoja 1",
+    "schedule": "Cronograma_Proyecto9_Go_BigData (1).xlsx"
+  },
+  "technical_components_verified": 14,
+  "overall_project_complete": false,
+  "context_alignment_complete": false,
+  "environment": {
+    "logical_cpus": 16,
+    "docker_server": "29.8.2",
+    "os": "linux",
+    "compose": "5.6.0",
+    "memory_bytes": 7197331456
+  },
+  "dataset": {
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "name": "tlc-yellow-2024-01-s7-s10",
+    "load_id": "4acec95c3326fdee2faf2c3d",
+    "status": "complete",
+    "source": "NYC TLC Yellow Taxi",
+    "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "format": "parquet",
+    "timezone": "America/New_York",
+    "period_start": "2024-01-01T05:00:00Z",
+    "period_end_exclusive": "2024-01-16T05:00:00Z",
+    "window_minutes": 15,
+    "processing_version": "yellow-clean-v1",
+    "created_at": "2026-10-13T15:16:31.239820359Z",
+    "completed_at": "2026-10-13T15:17:37.063917342Z",
+    "stats": {
+      "read": 2964624,
+      "accepted": 1348665,
+      "rejected": 14905,
+      "outside_period": 1601054,
+      "persisted": 1348665,
+      "rejection_reasons": {
+        "duration_over_24h": 8,
+        "nonpositive_duration": 43,
+        "unknown_zone": 14854
+      },
+      "elapsed_seconds": 68.682134957,
+      "rows_per_second": 43164.41243208397
+    },
+    "snapshot": {
+      "version": "raw-counts-v1",
+      "path": "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/4acec95c3326fdee2faf2c3d/features.ndjson",
+      "sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+      "windows": 378720,
+      "examples": 378457,
+      "splits": {
+        "test": 56808,
+        "train": 264841,
+        "validation": 56808
+      },
+      "feature_names": [
+        "zone_id:categorical",
+        "hour_sin",
+        "hour_cos",
+        "day_of_week:categorical",
+        "weekend",
+        "lag1_count"
+      ],
+      "train_end": "2024-01-11T17:00:00Z",
+      "validation_end": "2024-01-13T23:00:00Z",
+      "normalization": "raw; fit normalizer on train only in step 4"
+    },
+    "zones": [
+      {
+        "id": 1,
+        "name": "Newark Airport",
+        "borough": "EWR"
+      },
+      {
+        "id": 2,
+        "name": "Jamaica Bay",
+        "borough": "Queens"
+      },
+      {
+        "id": 3,
+        "name": "Allerton/Pelham Gardens",
+        "borough": "Bronx"
+      },
+      {
+        "id": 4,
+        "name": "Alphabet City",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 5,
+        "name": "Arden Heights",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 6,
+        "name": "Arrochar/Fort Wadsworth",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 7,
+        "name": "Astoria",
+        "borough": "Queens"
+      },
+      {
+        "id": 8,
+        "name": "Astoria Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 9,
+        "name": "Auburndale",
+        "borough": "Queens"
+      },
+      {
+        "id": 10,
+        "name": "Baisley Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 11,
+        "name": "Bath Beach",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 12,
+        "name": "Battery Park",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 13,
+        "name": "Battery Park City",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 14,
+        "name": "Bay Ridge",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 15,
+        "name": "Bay Terrace/Fort Totten",
+        "borough": "Queens"
+      },
+      {
+        "id": 16,
+        "name": "Bayside",
+        "borough": "Queens"
+      },
+      {
+        "id": 17,
+        "name": "Bedford",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 18,
+        "name": "Bedford Park",
+        "borough": "Bronx"
+      },
+      {
+        "id": 19,
+        "name": "Bellerose",
+        "borough": "Queens"
+      },
+      {
+        "id": 20,
+        "name": "Belmont",
+        "borough": "Bronx"
+      },
+      {
+        "id": 21,
+        "name": "Bensonhurst East",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 22,
+        "name": "Bensonhurst West",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 23,
+        "name": "Bloomfield/Emerson Hill",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 24,
+        "name": "Bloomingdale",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 25,
+        "name": "Boerum Hill",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 26,
+        "name": "Borough Park",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 27,
+        "name": "Breezy Point/Fort Tilden/Riis Beach",
+        "borough": "Queens"
+      },
+      {
+        "id": 28,
+        "name": "Briarwood/Jamaica Hills",
+        "borough": "Queens"
+      },
+      {
+        "id": 29,
+        "name": "Brighton Beach",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 30,
+        "name": "Broad Channel",
+        "borough": "Queens"
+      },
+      {
+        "id": 31,
+        "name": "Bronx Park",
+        "borough": "Bronx"
+      },
+      {
+        "id": 32,
+        "name": "Bronxdale",
+        "borough": "Bronx"
+      },
+      {
+        "id": 33,
+        "name": "Brooklyn Heights",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 34,
+        "name": "Brooklyn Navy Yard",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 35,
+        "name": "Brownsville",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 36,
+        "name": "Bushwick North",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 37,
+        "name": "Bushwick South",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 38,
+        "name": "Cambria Heights",
+        "borough": "Queens"
+      },
+      {
+        "id": 39,
+        "name": "Canarsie",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 40,
+        "name": "Carroll Gardens",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 41,
+        "name": "Central Harlem",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 42,
+        "name": "Central Harlem North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 43,
+        "name": "Central Park",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 44,
+        "name": "Charleston/Tottenville",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 45,
+        "name": "Chinatown",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 46,
+        "name": "City Island",
+        "borough": "Bronx"
+      },
+      {
+        "id": 47,
+        "name": "Claremont/Bathgate",
+        "borough": "Bronx"
+      },
+      {
+        "id": 48,
+        "name": "Clinton East",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 49,
+        "name": "Clinton Hill",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 50,
+        "name": "Clinton West",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 51,
+        "name": "Co-Op City",
+        "borough": "Bronx"
+      },
+      {
+        "id": 52,
+        "name": "Cobble Hill",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 53,
+        "name": "College Point",
+        "borough": "Queens"
+      },
+      {
+        "id": 54,
+        "name": "Columbia Street",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 55,
+        "name": "Coney Island",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 56,
+        "name": "Corona",
+        "borough": "Queens"
+      },
+      {
+        "id": 57,
+        "name": "Corona",
+        "borough": "Queens"
+      },
+      {
+        "id": 58,
+        "name": "Country Club",
+        "borough": "Bronx"
+      },
+      {
+        "id": 59,
+        "name": "Crotona Park",
+        "borough": "Bronx"
+      },
+      {
+        "id": 60,
+        "name": "Crotona Park East",
+        "borough": "Bronx"
+      },
+      {
+        "id": 61,
+        "name": "Crown Heights North",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 62,
+        "name": "Crown Heights South",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 63,
+        "name": "Cypress Hills",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 64,
+        "name": "Douglaston",
+        "borough": "Queens"
+      },
+      {
+        "id": 65,
+        "name": "Downtown Brooklyn/MetroTech",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 66,
+        "name": "DUMBO/Vinegar Hill",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 67,
+        "name": "Dyker Heights",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 68,
+        "name": "East Chelsea",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 69,
+        "name": "East Concourse/Concourse Village",
+        "borough": "Bronx"
+      },
+      {
+        "id": 70,
+        "name": "East Elmhurst",
+        "borough": "Queens"
+      },
+      {
+        "id": 71,
+        "name": "East Flatbush/Farragut",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 72,
+        "name": "East Flatbush/Remsen Village",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 73,
+        "name": "East Flushing",
+        "borough": "Queens"
+      },
+      {
+        "id": 74,
+        "name": "East Harlem North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 75,
+        "name": "East Harlem South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 76,
+        "name": "East New York",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 77,
+        "name": "East New York/Pennsylvania Avenue",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 78,
+        "name": "East Tremont",
+        "borough": "Bronx"
+      },
+      {
+        "id": 79,
+        "name": "East Village",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 80,
+        "name": "East Williamsburg",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 81,
+        "name": "Eastchester",
+        "borough": "Bronx"
+      },
+      {
+        "id": 82,
+        "name": "Elmhurst",
+        "borough": "Queens"
+      },
+      {
+        "id": 83,
+        "name": "Elmhurst/Maspeth",
+        "borough": "Queens"
+      },
+      {
+        "id": 84,
+        "name": "Eltingville/Annadale/Prince's Bay",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 85,
+        "name": "Erasmus",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 86,
+        "name": "Far Rockaway",
+        "borough": "Queens"
+      },
+      {
+        "id": 87,
+        "name": "Financial District North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 88,
+        "name": "Financial District South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 89,
+        "name": "Flatbush/Ditmas Park",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 90,
+        "name": "Flatiron",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 91,
+        "name": "Flatlands",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 92,
+        "name": "Flushing",
+        "borough": "Queens"
+      },
+      {
+        "id": 93,
+        "name": "Flushing Meadows-Corona Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 94,
+        "name": "Fordham South",
+        "borough": "Bronx"
+      },
+      {
+        "id": 95,
+        "name": "Forest Hills",
+        "borough": "Queens"
+      },
+      {
+        "id": 96,
+        "name": "Forest Park/Highland Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 97,
+        "name": "Fort Greene",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 98,
+        "name": "Fresh Meadows",
+        "borough": "Queens"
+      },
+      {
+        "id": 99,
+        "name": "Freshkills Park",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 100,
+        "name": "Garment District",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 101,
+        "name": "Glen Oaks",
+        "borough": "Queens"
+      },
+      {
+        "id": 102,
+        "name": "Glendale",
+        "borough": "Queens"
+      },
+      {
+        "id": 103,
+        "name": "Governor's Island/Ellis Island/Liberty Island",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 104,
+        "name": "Governor's Island/Ellis Island/Liberty Island",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 105,
+        "name": "Governor's Island/Ellis Island/Liberty Island",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 106,
+        "name": "Gowanus",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 107,
+        "name": "Gramercy",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 108,
+        "name": "Gravesend",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 109,
+        "name": "Great Kills",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 110,
+        "name": "Great Kills Park",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 111,
+        "name": "Green-Wood Cemetery",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 112,
+        "name": "Greenpoint",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 113,
+        "name": "Greenwich Village North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 114,
+        "name": "Greenwich Village South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 115,
+        "name": "Grymes Hill/Clifton",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 116,
+        "name": "Hamilton Heights",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 117,
+        "name": "Hammels/Arverne",
+        "borough": "Queens"
+      },
+      {
+        "id": 118,
+        "name": "Heartland Village/Todt Hill",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 119,
+        "name": "Highbridge",
+        "borough": "Bronx"
+      },
+      {
+        "id": 120,
+        "name": "Highbridge Park",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 121,
+        "name": "Hillcrest/Pomonok",
+        "borough": "Queens"
+      },
+      {
+        "id": 122,
+        "name": "Hollis",
+        "borough": "Queens"
+      },
+      {
+        "id": 123,
+        "name": "Homecrest",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 124,
+        "name": "Howard Beach",
+        "borough": "Queens"
+      },
+      {
+        "id": 125,
+        "name": "Hudson Sq",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 126,
+        "name": "Hunts Point",
+        "borough": "Bronx"
+      },
+      {
+        "id": 127,
+        "name": "Inwood",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 128,
+        "name": "Inwood Hill Park",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 129,
+        "name": "Jackson Heights",
+        "borough": "Queens"
+      },
+      {
+        "id": 130,
+        "name": "Jamaica",
+        "borough": "Queens"
+      },
+      {
+        "id": 131,
+        "name": "Jamaica Estates",
+        "borough": "Queens"
+      },
+      {
+        "id": 132,
+        "name": "JFK Airport",
+        "borough": "Queens"
+      },
+      {
+        "id": 133,
+        "name": "Kensington",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 134,
+        "name": "Kew Gardens",
+        "borough": "Queens"
+      },
+      {
+        "id": 135,
+        "name": "Kew Gardens Hills",
+        "borough": "Queens"
+      },
+      {
+        "id": 136,
+        "name": "Kingsbridge Heights",
+        "borough": "Bronx"
+      },
+      {
+        "id": 137,
+        "name": "Kips Bay",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 138,
+        "name": "LaGuardia Airport",
+        "borough": "Queens"
+      },
+      {
+        "id": 139,
+        "name": "Laurelton",
+        "borough": "Queens"
+      },
+      {
+        "id": 140,
+        "name": "Lenox Hill East",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 141,
+        "name": "Lenox Hill West",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 142,
+        "name": "Lincoln Square East",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 143,
+        "name": "Lincoln Square West",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 144,
+        "name": "Little Italy/NoLiTa",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 145,
+        "name": "Long Island City/Hunters Point",
+        "borough": "Queens"
+      },
+      {
+        "id": 146,
+        "name": "Long Island City/Queens Plaza",
+        "borough": "Queens"
+      },
+      {
+        "id": 147,
+        "name": "Longwood",
+        "borough": "Bronx"
+      },
+      {
+        "id": 148,
+        "name": "Lower East Side",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 149,
+        "name": "Madison",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 150,
+        "name": "Manhattan Beach",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 151,
+        "name": "Manhattan Valley",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 152,
+        "name": "Manhattanville",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 153,
+        "name": "Marble Hill",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 154,
+        "name": "Marine Park/Floyd Bennett Field",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 155,
+        "name": "Marine Park/Mill Basin",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 156,
+        "name": "Mariners Harbor",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 157,
+        "name": "Maspeth",
+        "borough": "Queens"
+      },
+      {
+        "id": 158,
+        "name": "Meatpacking/West Village West",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 159,
+        "name": "Melrose South",
+        "borough": "Bronx"
+      },
+      {
+        "id": 160,
+        "name": "Middle Village",
+        "borough": "Queens"
+      },
+      {
+        "id": 161,
+        "name": "Midtown Center",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 162,
+        "name": "Midtown East",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 163,
+        "name": "Midtown North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 164,
+        "name": "Midtown South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 165,
+        "name": "Midwood",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 166,
+        "name": "Morningside Heights",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 167,
+        "name": "Morrisania/Melrose",
+        "borough": "Bronx"
+      },
+      {
+        "id": 168,
+        "name": "Mott Haven/Port Morris",
+        "borough": "Bronx"
+      },
+      {
+        "id": 169,
+        "name": "Mount Hope",
+        "borough": "Bronx"
+      },
+      {
+        "id": 170,
+        "name": "Murray Hill",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 171,
+        "name": "Murray Hill-Queens",
+        "borough": "Queens"
+      },
+      {
+        "id": 172,
+        "name": "New Dorp/Midland Beach",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 173,
+        "name": "North Corona",
+        "borough": "Queens"
+      },
+      {
+        "id": 174,
+        "name": "Norwood",
+        "borough": "Bronx"
+      },
+      {
+        "id": 175,
+        "name": "Oakland Gardens",
+        "borough": "Queens"
+      },
+      {
+        "id": 176,
+        "name": "Oakwood",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 177,
+        "name": "Ocean Hill",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 178,
+        "name": "Ocean Parkway South",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 179,
+        "name": "Old Astoria",
+        "borough": "Queens"
+      },
+      {
+        "id": 180,
+        "name": "Ozone Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 181,
+        "name": "Park Slope",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 182,
+        "name": "Parkchester",
+        "borough": "Bronx"
+      },
+      {
+        "id": 183,
+        "name": "Pelham Bay",
+        "borough": "Bronx"
+      },
+      {
+        "id": 184,
+        "name": "Pelham Bay Park",
+        "borough": "Bronx"
+      },
+      {
+        "id": 185,
+        "name": "Pelham Parkway",
+        "borough": "Bronx"
+      },
+      {
+        "id": 186,
+        "name": "Penn Station/Madison Sq West",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 187,
+        "name": "Port Richmond",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 188,
+        "name": "Prospect-Lefferts Gardens",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 189,
+        "name": "Prospect Heights",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 190,
+        "name": "Prospect Park",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 191,
+        "name": "Queens Village",
+        "borough": "Queens"
+      },
+      {
+        "id": 192,
+        "name": "Queensboro Hill",
+        "borough": "Queens"
+      },
+      {
+        "id": 193,
+        "name": "Queensbridge/Ravenswood",
+        "borough": "Queens"
+      },
+      {
+        "id": 194,
+        "name": "Randalls Island",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 195,
+        "name": "Red Hook",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 196,
+        "name": "Rego Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 197,
+        "name": "Richmond Hill",
+        "borough": "Queens"
+      },
+      {
+        "id": 198,
+        "name": "Ridgewood",
+        "borough": "Queens"
+      },
+      {
+        "id": 199,
+        "name": "Rikers Island",
+        "borough": "Bronx"
+      },
+      {
+        "id": 200,
+        "name": "Riverdale/North Riverdale/Fieldston",
+        "borough": "Bronx"
+      },
+      {
+        "id": 201,
+        "name": "Rockaway Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 202,
+        "name": "Roosevelt Island",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 203,
+        "name": "Rosedale",
+        "borough": "Queens"
+      },
+      {
+        "id": 204,
+        "name": "Rossville/Woodrow",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 205,
+        "name": "Saint Albans",
+        "borough": "Queens"
+      },
+      {
+        "id": 206,
+        "name": "Saint George/New Brighton",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 207,
+        "name": "Saint Michaels Cemetery/Woodside",
+        "borough": "Queens"
+      },
+      {
+        "id": 208,
+        "name": "Schuylerville/Edgewater Park",
+        "borough": "Bronx"
+      },
+      {
+        "id": 209,
+        "name": "Seaport",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 210,
+        "name": "Sheepshead Bay",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 211,
+        "name": "SoHo",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 212,
+        "name": "Soundview/Bruckner",
+        "borough": "Bronx"
+      },
+      {
+        "id": 213,
+        "name": "Soundview/Castle Hill",
+        "borough": "Bronx"
+      },
+      {
+        "id": 214,
+        "name": "South Beach/Dongan Hills",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 215,
+        "name": "South Jamaica",
+        "borough": "Queens"
+      },
+      {
+        "id": 216,
+        "name": "South Ozone Park",
+        "borough": "Queens"
+      },
+      {
+        "id": 217,
+        "name": "South Williamsburg",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 218,
+        "name": "Springfield Gardens North",
+        "borough": "Queens"
+      },
+      {
+        "id": 219,
+        "name": "Springfield Gardens South",
+        "borough": "Queens"
+      },
+      {
+        "id": 220,
+        "name": "Spuyten Duyvil/Kingsbridge",
+        "borough": "Bronx"
+      },
+      {
+        "id": 221,
+        "name": "Stapleton",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 222,
+        "name": "Starrett City",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 223,
+        "name": "Steinway",
+        "borough": "Queens"
+      },
+      {
+        "id": 224,
+        "name": "Stuy Town/Peter Cooper Village",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 225,
+        "name": "Stuyvesant Heights",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 226,
+        "name": "Sunnyside",
+        "borough": "Queens"
+      },
+      {
+        "id": 227,
+        "name": "Sunset Park East",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 228,
+        "name": "Sunset Park West",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 229,
+        "name": "Sutton Place/Turtle Bay North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 230,
+        "name": "Times Sq/Theatre District",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 231,
+        "name": "TriBeCa/Civic Center",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 232,
+        "name": "Two Bridges/Seward Park",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 233,
+        "name": "UN/Turtle Bay South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 234,
+        "name": "Union Sq",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 235,
+        "name": "University Heights/Morris Heights",
+        "borough": "Bronx"
+      },
+      {
+        "id": 236,
+        "name": "Upper East Side North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 237,
+        "name": "Upper East Side South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 238,
+        "name": "Upper West Side North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 239,
+        "name": "Upper West Side South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 240,
+        "name": "Van Cortlandt Park",
+        "borough": "Bronx"
+      },
+      {
+        "id": 241,
+        "name": "Van Cortlandt Village",
+        "borough": "Bronx"
+      },
+      {
+        "id": 242,
+        "name": "Van Nest/Morris Park",
+        "borough": "Bronx"
+      },
+      {
+        "id": 243,
+        "name": "Washington Heights North",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 244,
+        "name": "Washington Heights South",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 245,
+        "name": "West Brighton",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 246,
+        "name": "West Chelsea/Hudson Yards",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 247,
+        "name": "West Concourse",
+        "borough": "Bronx"
+      },
+      {
+        "id": 248,
+        "name": "West Farms/Bronx River",
+        "borough": "Bronx"
+      },
+      {
+        "id": 249,
+        "name": "West Village",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 250,
+        "name": "Westchester Village/Unionport",
+        "borough": "Bronx"
+      },
+      {
+        "id": 251,
+        "name": "Westerleigh",
+        "borough": "Staten Island"
+      },
+      {
+        "id": 252,
+        "name": "Whitestone",
+        "borough": "Queens"
+      },
+      {
+        "id": 253,
+        "name": "Willets Point",
+        "borough": "Queens"
+      },
+      {
+        "id": 254,
+        "name": "Williamsbridge/Olinville",
+        "borough": "Bronx"
+      },
+      {
+        "id": 255,
+        "name": "Williamsburg (North Side)",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 256,
+        "name": "Williamsburg (South Side)",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 257,
+        "name": "Windsor Terrace",
+        "borough": "Brooklyn"
+      },
+      {
+        "id": 258,
+        "name": "Woodhaven",
+        "borough": "Queens"
+      },
+      {
+        "id": 259,
+        "name": "Woodlawn/Wakefield",
+        "borough": "Bronx"
+      },
+      {
+        "id": 260,
+        "name": "Woodside",
+        "borough": "Queens"
+      },
+      {
+        "id": 261,
+        "name": "World Trade Center",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 262,
+        "name": "Yorkville East",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 263,
+        "name": "Yorkville West",
+        "borough": "Manhattan"
+      }
+    ]
+  },
+  "independent_mongo_counts": {
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "4acec95c3326fdee2faf2c3d",
+    "trips": 1348665,
+    "windows": 378720,
+    "observed_trips_sum": 1348665
+  },
+  "services": [
+    {
+      "Service": "api",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "master",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "mongo",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "redis",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "web",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "worker",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "worker",
+      "State": "running",
+      "Health": "healthy"
+    }
+  ],
+  "checks": {
+    "go_test_race_including_mongo_integration": "passed",
+    "browser_login_logout_and_login": "passed",
+    "docker_demo": "passed",
+    "browser_zone_prediction": "passed",
+    "jwt_websocket_cache_telemetry": "passed",
+    "go_format": "passed",
+    "browser_training_progress_loss_and_publication": "passed",
+    "go_vet": "passed"
+  },
+  "current_model_smoke": {
+    "accepted_trips": 1348665,
+    "distributed_training": {
+      "run_id": "run-ba98f92e89cdadd13a090ddf",
+      "mode": "distributed",
+      "status": "completed",
+      "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+      "config": {
+        "epochs": 120,
+        "batch_size": 8192,
+        "learning_rate": 0.2,
+        "l2": 1E-05,
+        "seed": 42,
+        "workers": 2,
+        "task_timeout_seconds": 10
+      },
+      "progress": {
+        "epoch": 120,
+        "step": 3960,
+        "total_steps": 3960,
+        "objective_loss": 0.04859455688131608
+      },
+      "started_at": "2026-10-13T15:21:58.778015986Z",
+      "completed_at": "2026-10-13T15:22:37.157537374Z",
+      "preparation_seconds": 10.395408297,
+      "training_seconds": 27.835619541,
+      "evaluation_seconds": 0.129045231,
+      "workers": [
+        "43fbbf186032",
+        "bbf5ab609530"
+      ],
+      "tasks_by_worker": {
+        "43fbbf186032": 3960,
+        "bbf5ab609530": 3960
+      },
+      "artifact_version": "run-ba98f92e89cdadd13a090ddf"
+    },
+    "impact": {
+      "boroughs": [
+        {
+          "borough": "Manhattan",
+          "observed_trips": 1198188,
+          "share": 0.8884252204958236
+        },
+        {
+          "borough": "Queens",
+          "observed_trips": 135308,
+          "share": 0.10032736076045572
+        },
+        {
+          "borough": "Brooklyn",
+          "observed_trips": 11757,
+          "share": 0.008717509537209019
+        },
+        {
+          "borough": "Bronx",
+          "observed_trips": 3224,
+          "share": 0.002390512099001605
+        },
+        {
+          "borough": "EWR",
+          "observed_trips": 154,
+          "share": 0.00011418699232203698
+        },
+        {
+          "borough": "Staten Island",
+          "observed_trips": 34,
+          "share": 2.521011518798219E-05
+        }
+      ],
+      "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+      "limitation": "Viajes completados aceptados en Yellow Taxi. No mide demanda no atendida, disponibilidad de vehículos ni desigualdad de acceso.",
+      "question": "¿Cómo anticipar la actividad de viajes registrada por zona e intervalo para apoyar la planificación del transporte?",
+      "ready": true,
+      "total_observed_trips": 1348665,
+      "use": "Comparar zonas y horarios y evaluar pronósticos frente a una referencia temporal."
+    },
+    "logout_status": 401,
+    "websocket_close_status": 1008,
+    "streamed_prediction": {
+      "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+      "zone_id": 161,
+      "forecast_origin": "2024-01-16T04:45:00Z",
+      "horizon_minutes": 15,
+      "predicted_observed_trips": 5,
+      "previous_observed_trips": 5,
+      "actual_observed_trips": 10,
+      "model_version": "run-ba98f92e89cdadd13a090ddf",
+      "method": "persistence",
+      "evaluation_period": "test",
+      "cache_hit": false,
+      "latency_ms": 1.71
+    },
+    "tampered_jwt_status": 401,
+    "verified_at": "2026-10-13T10:23:49.7473513-05:00",
+    "redis_cached_prediction": {
+      "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+      "zone_id": 161,
+      "forecast_origin": "2024-01-16T04:45:00Z",
+      "horizon_minutes": 15,
+      "predicted_observed_trips": 5,
+      "previous_observed_trips": 5,
+      "actual_observed_trips": 10,
+      "model_version": "run-ba98f92e89cdadd13a090ddf",
+      "method": "persistence",
+      "evaluation_period": "test",
+      "cache_hit": true,
+      "latency_ms": 0.311
+    },
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "anonymous_status": 401,
+    "telemetry": {
+      "active_run": "",
+      "master": {
+        "sampled_at": "2026-10-13T15:23:47.889506491Z",
+        "cpu_percent": 0.05249997527212284,
+        "rss_bytes": 341508096,
+        "heap_bytes": 282339040,
+        "available": true
+      },
+      "measurement_scope": "Go process; CPU 100 percent = one CPU core; RAM = resident set",
+      "workers": [
+        {
+          "worker_id": "43fbbf186032",
+          "last_seen": "2026-10-13T15:23:48.615919304Z",
+          "accepted_tasks": 11880,
+          "busy": false,
+          "telemetry": {
+            "sampled_at": "2026-10-13T15:23:48.611973737Z",
+            "cpu_percent": 0.04359998774774761,
+            "rss_bytes": 261537792,
+            "heap_bytes": 241082920,
+            "available": true
+          }
+        },
+        {
+          "worker_id": "bbf5ab609530",
+          "last_seen": "2026-10-13T15:23:46.861424911Z",
+          "accepted_tasks": 11880,
+          "busy": false,
+          "telemetry": {
+            "sampled_at": "2026-10-13T15:23:46.854321939Z",
+            "cpu_percent": 0.06129997909683782,
+            "rss_bytes": 268840960,
+            "heap_bytes": 149081240,
+            "available": true
+          }
+        }
+      ]
+    },
+    "frontend": "React production build; browser verification separately"
+  },
+  "initial_training_comparison": {
+    "test": {
+      "model": {
+        "examples": 56808,
+        "mae": 1.0863962822137727,
+        "rmse": 3.5532592526743607,
+        "log_loss": 0.05530054095981887,
+        "objective_loss": 0.050816456328064384
+      },
+      "persistence_baseline": {
+        "examples": 56808,
+        "mae": 1.0863962822137727,
+        "rmse": 3.5532592526743607,
+        "log_loss": 0.05530054095981887,
+        "objective_loss": 0.05081645632806439
+      }
+    },
+    "sequential_run": "run-1b4bbfc6c9f065d0ee2caf9d",
+    "tasks_by_worker": {
+      "43fbbf186032": 3960,
+      "bbf5ab609530": 3960
+    },
+    "measurement_scope": "single functional verification; not a benchmark",
+    "distributed_training_seconds": 19.525554143,
+    "workers": [
+      "43fbbf186032",
+      "bbf5ab609530"
+    ],
+    "max_weight_difference": 0.0,
+    "tolerance": 1E-09,
+    "distributed_run": "run-c540a5b37b55ec1bba3df0aa",
+    "sequential_training_seconds": 13.329085018
+  },
+  "api_smoke": {
+    "requests": 200,
+    "model_version": "run-c540a5b37b55ec1bba3df0aa",
+    "scope": "HTTP local por proxy web; secuencial; no benchmark de producción",
+    "invalid_origin_status": 400,
+    "cache_hits": 100,
+    "passes": [
+      {
+        "pass": 1,
+        "max_ms": 12.648,
+        "p95_ms": 10.439
+      },
+      {
+        "pass": 2,
+        "max_ms": 8.1755,
+        "p95_ms": 7.0149
+      }
+    ]
+  },
+  "proof_images": [
+    "data/demo-cluster-local.png",
+    "data/demo-completada-local.png",
+    "data/demo-telemetria-local.png"
+  ],
+  "remaining_general_context": [
+    "Map",
+    "Unserved demand and social-question alignment",
+    "Controlled repeated load/training speedup with 1/2/4 workers",
+    "Final clean deployment and final report"
+  ],
+  "launcher_verification": {
+    "verified_at": "2026-10-13T10:48:52.9380901-05:00",
+    "start_with_existing_engine": "passed",
+    "final_state": "stopped",
+    "browser_launch": "passed",
+    "start_from_stopped_docker": "passed",
+    "preserved_model": "run-ba98f92e89cdadd13a090ddf",
+    "preserved_trips": 1348665,
+    "stop_project_and_desktop": "passed",
+    "desktop_shortcut_targets": "passed",
+    "repeated_stop": "passed"
+  }
+}

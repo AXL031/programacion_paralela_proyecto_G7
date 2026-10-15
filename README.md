@@ -1,10 +1,20 @@
 # Programación paralela · Proyecto G7
 
-**Semanas 7 a 10 del cronograma implementadas y verificadas localmente.** Proyecto 9 en Go con datos reales, cargador concurrente, maestro y trabajadores TCP, MongoDB, Redis, API REST con JWT, WebSocket y SPA React con telemetría.
+**Demo técnica de las semanas 7 a 10 reproducida y verificada en esta computadora el 13 de octubre de 2026.** Proyecto 9 en Go con 1,348,665 viajes persistidos, cargador concurrente, maestro y dos trabajadores TCP, MongoDB, Redis, API REST con JWT, WebSocket y SPA React con telemetría. Pasaron formato, `go vet`, pruebas con detector de carreras e integración MongoDB, además del recorrido de navegador. La pregunta social actual tiene un alcance menor que la guía y el mapa y las comparativas de rendimiento siguen pendientes.
 
 El cumplimiento de las 14 actividades de esas semanas está documentado en [SEMANA_7_10.md](docs/SEMANA_7_10.md). Las mediciones de escalabilidad, comparación final y despliegue en otra computadora corresponden a semanas posteriores.
 
+La [auditoría del 13 de octubre](docs/AUDITORIA_SEMANA_10.md) contrasta el cronograma adjunto y la guía y registra el cierre operativo local. La [evidencia nueva](docs/VERIFICACION_LOCAL_SEMANA_10.json) conserva conteos independientes de MongoDB, runs, salud del clúster y resultados de los chequeos.
+
+Para preparar esta copia, ejecuta `./scripts/prepare-local.ps1`. Cuando Docker Desktop esté instalado e iniciado con motor Linux, ejecuta `./scripts/prepare-local.ps1 -StartDemo`: reproduce la demo y ejecuta formato, `go vet` y pruebas con detector de carreras dentro de Docker.
+
 ## Inicio en Windows
+
+Para uso diario, abre **Iniciar demo.cmd**: inicia Docker Desktop si hace falta, levanta el maestro y dos workers con los servicios, espera al modelo preparado y abre el navegador. Reutiliza imagenes, datos y modelo; no repite descarga, entrenamiento ni pruebas. Los accesos **Iniciar demo G7** y **Apagar demo G7** del escritorio apuntan a estos archivos.
+
+Al terminar, abre **Apagar demo.cmd**: detiene y retira los contenedores del proyecto sin borrar el volumen de MongoDB ni los archivos de datos/modelos. Si no quedan otros contenedores funcionando, tambien cierra Docker Desktop y su motor Linux para liberar recursos. Cerrar solo la pestaña del navegador no apaga el sistema. Al volver a iniciar, entra con las credenciales locales.
+
+Los comandos siguientes sirven para preparar o reconstruir la demo completa, no para el inicio diario.
 
 Abre Docker Desktop con motor Linux y ejecuta desde la raíz:
 
