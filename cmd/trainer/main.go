@@ -32,7 +32,25 @@ func main() {
 func run() error {
 	path := flag.String("config", "configs/training.json", "training configuration")
 	mode := flag.String("mode", "sequential", "sequential or distributed")
+	diagnosticsPath := flag.String("diagnostics", "", "optional candidate diagnostics JSON output")
+	sampleID := flag.String("sample-id", "", "benchmark sample identifier for diagnostics")
+	referencePath := flag.String("reference-diagnostics", "", "sequential reference diagnostics for a distributed candidate")
+	toleranceAbsolute := flag.Float64("tolerance-abs", 1e-9, "absolute per-parameter candidate tolerance")
+	toleranceRelative := flag.Float64("tolerance-rel", 1e-9, "relative per-parameter candidate tolerance")
 	flag.Parse()
+	if *diagnosticsPath != "" {
+		if err := training.ValidateSampleID(*sampleID); err != nil {
+			return fmt.Errorf("invalid -sample-id: %w", err)
+		}
+	} else if *sampleID != "" || *referencePath != "" {
+		return fmt.Errorf("-sample-id and -reference-diagnostics require -diagnostics")
+	}
+	if *referencePath != "" && *mode != "distributed" {
+		return fmt.Errorf("-reference-diagnostics is only valid with distributed mode")
+	}
+	if !ml.Finite(*toleranceAbsolute) || !ml.Finite(*toleranceRelative) || *toleranceAbsolute < 0 || *toleranceRelative < 0 {
+		return fmt.Errorf("tolerances must be finite and non-negative")
+	}
 	b, err := os.ReadFile(*path)
 	if err != nil {
 		return err
@@ -50,6 +68,7 @@ func run() error {
 	defer cancel()
 	var a training.Artifact
 	var r training.Run
+	var candidate training.Candidate
 	switch *mode {
 	case "sequential":
 		repo, err := mongostore.New(ctx, env("MONGO_URI", "mongodb://mongo:27017"), env("MONGO_DATABASE", "transporte"))
@@ -64,23 +83,71 @@ func run() error {
 		if m == nil {
 			return fmt.Errorf("no completed dataset")
 		}
-		a, r, err = training.Sequential(ctx, *m, c, repo)
+		a, r, candidate, err = training.SequentialWithDiagnostics(ctx, *m, c, repo)
 		if err != nil {
 			return err
 		}
 	case "distributed":
-		a, r, err = distributed(ctx, c)
+		a, r, candidate, err = distributed(ctx, c, *diagnosticsPath != "")
 		if err != nil {
 			return err
 		}
 	default:
 		return fmt.Errorf("mode must be sequential or distributed")
 	}
+	var summary *training.DiagnosticsSummary
+	var diagnosticsErr error
+	if *diagnosticsPath != "" {
+		s, err := buildAndWriteDiagnostics(*diagnosticsPath, *sampleID, candidate, a, *referencePath, *toleranceAbsolute, *toleranceRelative)
+		summary, diagnosticsErr = &s, err
+	}
 	e := json.NewEncoder(os.Stdout)
 	e.SetIndent("", "  ")
-	return e.Encode(map[string]any{"run": r, "artifact": a})
+	out := map[string]any{"run": r, "artifact": a}
+	if summary != nil {
+		out["diagnostics"] = *summary
+	}
+	if err := e.Encode(out); err != nil {
+		return err
+	}
+	return diagnosticsErr
 }
-func distributed(ctx context.Context, c ml.Config) (training.Artifact, training.Run, error) {
+
+// buildAndWriteDiagnostics keeps benchmark evidence separate from the
+// published model. A numeric divergence is written and then returned as an
+// error so the adapter cannot present the sample as successful.
+func buildAndWriteDiagnostics(path, sampleID string, candidate training.Candidate, artifact training.Artifact, referencePath string, absolute, relative float64) (training.DiagnosticsSummary, error) {
+	d, err := training.NewDiagnostics(candidate, sampleID)
+	if err != nil {
+		return training.DiagnosticsSummary{}, err
+	}
+	if referencePath != "" {
+		reference, err := training.ReadDiagnostics(referencePath)
+		if err != nil {
+			return training.DiagnosticsSummary{}, fmt.Errorf("read reference diagnostics: %w", err)
+		}
+		if err := d.SetReference(reference, absolute, relative); err != nil {
+			return training.DiagnosticsSummary{}, err
+		}
+	} else if err := d.SetSelfReference(absolute, relative); err != nil {
+		return training.DiagnosticsSummary{}, err
+	}
+	publishedHash, err := training.WeightsSHA256(artifact.Weights)
+	if err != nil {
+		return training.DiagnosticsSummary{}, err
+	}
+	d.PublishedWeightsSHA256 = publishedHash
+	summary, err := training.WriteDiagnostics(path, d)
+	if err != nil {
+		return training.DiagnosticsSummary{}, err
+	}
+	if !summary.Equivalent {
+		return summary, fmt.Errorf("candidate SGD differs from sequential reference (max %.12g, tolerance abs %.12g rel %.12g)", summary.CandidateMaxDifference, summary.AbsoluteTolerance, summary.RelativeTolerance)
+	}
+	return summary, nil
+}
+
+func distributed(ctx context.Context, c ml.Config, needCandidate bool) (training.Artifact, training.Run, training.Candidate, error) {
 	base := strings.TrimRight(env("MASTER_HTTP", "http://master:8081"), "/")
 	client := &http.Client{Timeout: 10 * time.Second}
 	var run training.Run
@@ -113,24 +180,33 @@ func distributed(ctx context.Context, c ml.Config) (training.Artifact, training.
 		return json.NewDecoder(res.Body).Decode(output)
 	}
 	if err := call("POST", "/runs", c, &run); err != nil {
-		return artifact, run, err
+		return artifact, run, training.Candidate{}, err
 	}
 	ticker := time.NewTicker(250 * time.Millisecond)
 	defer ticker.Stop()
 	for {
 		select {
 		case <-ctx.Done():
-			return artifact, run, ctx.Err()
+			return artifact, run, training.Candidate{}, ctx.Err()
 		case <-ticker.C:
 			if err := call("GET", "/runs/"+run.ID, nil, &run); err != nil {
-				return artifact, run, err
+				return artifact, run, training.Candidate{}, err
 			}
 			if run.Status == "failed" {
-				return artifact, run, fmt.Errorf("run %s failed: %s", run.ID, run.Error)
+				return artifact, run, training.Candidate{}, fmt.Errorf("run %s failed: %s", run.ID, run.Error)
 			}
 			if run.Status == "completed" {
-				err := call("GET", "/models/"+run.ArtifactVersion, nil, &artifact)
-				return artifact, run, err
+				if err := call("GET", "/models/"+run.ArtifactVersion, nil, &artifact); err != nil {
+					return artifact, run, training.Candidate{}, err
+				}
+				if !needCandidate {
+					return artifact, run, training.Candidate{}, nil
+				}
+				var candidate training.Candidate
+				if err := call("GET", "/runs/"+run.ID+"/candidate", nil, &candidate); err != nil {
+					return artifact, run, candidate, fmt.Errorf("candidate diagnostics unavailable: %w", err)
+				}
+				return artifact, run, candidate, nil
 			}
 		}
 	}
