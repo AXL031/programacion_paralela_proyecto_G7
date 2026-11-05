@@ -70,7 +70,7 @@ try {
         published_weights=$a.weights; selection=$a.selection; config=$r.config
         timing_scope='in-process run through publication; container/adapter startup excluded'
         trainer_invocation_seconds=$call.elapsed_seconds
-        invocation_overhead_seconds=[Math]::Max(0,$call.elapsed_seconds-$r.total_seconds)
+        invocation_overhead_seconds=[Math]::Max(0.0,$call.elapsed_seconds-$r.total_seconds)
         workers_startup_seconds=$workerStartup
     }
     $timings=@{preparation_seconds=$r.preparation_seconds;compute_seconds=$r.training_seconds;evaluation_seconds=$r.evaluation_seconds;publication_seconds=$r.publication_seconds;total_seconds=$r.total_seconds}

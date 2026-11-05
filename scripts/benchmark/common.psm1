@@ -596,6 +596,7 @@ function Invoke-BenchCampaign($Context) {
         if ((@($summary.sample_ids | Sort-Object) | ConvertTo-Json -Compress) -ne (@($manifest.samples.sample_id | Sort-Object) | ConvertTo-Json -Compress)) { throw 'Summary omitted or duplicated samples.' }
         $manifest.state = if ($Context.scope -eq 'real') { 'completed' } else { 'fixture_passed' }
         $manifest.objective_evaluated = $Context.scope -eq 'real'
+        $manifest.pending_issues = $(if($Context.scope -eq 'real'){@(8)}else{@()})
     } catch {
         $manifest.state = 'failed'; $manifest.errors += (Protect-BenchText $_.Exception.Message)
         throw
