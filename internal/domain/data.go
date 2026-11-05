@@ -46,8 +46,9 @@ type Stats struct {
 	OutsidePeriod  int64            `json:"outside_period" bson:"outside_period"`
 	Persisted      int64            `json:"persisted" bson:"persisted"`
 	Rejections     map[string]int64 `json:"rejection_reasons" bson:"rejection_reasons"`
-	ElapsedSeconds float64          `json:"elapsed_seconds" bson:"elapsed_seconds"`
-	RowsPerSecond  float64          `json:"rows_per_second" bson:"rows_per_second"`
+	ElapsedSeconds    float64          `json:"elapsed_seconds" bson:"elapsed_seconds"`
+	RowsPerSecond     float64          `json:"rows_per_second" bson:"rows_per_second"`
+	AcceptedPerSecond float64          `json:"accepted_per_second" bson:"accepted_per_second"`
 }
 
 type Snapshot struct {

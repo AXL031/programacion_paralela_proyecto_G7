@@ -5,10 +5,12 @@ import (
 	"crypto/rand"
 	"crypto/sha256"
 	"encoding/hex"
+	"errors"
 	"fmt"
 	"io"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"sync"
 	"time"
@@ -35,16 +37,64 @@ func FileSHA256(path string) (string, error) {
 	return hex.EncodeToString(h.Sum(nil)), nil
 }
 
-type Result struct {
-	Manifest domain.Manifest `json:"manifest"`
-	Reused   bool            `json:"reused"`
+var ErrReuseRejected = errors.New("completed dataset cannot be reused in fresh-load mode")
+
+type RunOptions struct {
+	// RejectReuse makes a completed dataset an error instead of returning its
+	// historical manifest and statistics. Benchmarks must use a fresh load.
+	RejectReuse bool
 }
 
-func Run(ctx context.Context, c config.Loader, store storage.Store) (result Result, err error) {
+type Timings struct {
+	PreparationSeconds *float64 `json:"preparation_seconds"`
+	ComputeSeconds     *float64 `json:"compute_seconds"`
+	EvaluationSeconds  *float64 `json:"evaluation_seconds"`
+	PublicationSeconds *float64 `json:"publication_seconds"`
+	TotalSeconds       float64  `json:"total_seconds"`
+}
+
+type Configuration struct {
+	Workers           int    `json:"workers"`
+	BlockRows         int    `json:"block_rows"`
+	BatchRows         int    `json:"batch_rows"`
+	GOMAXPROCS        int    `json:"gomaxprocs"`
+	Storage           string `json:"storage"`
+	Format            string `json:"format"`
+	WindowMinutes     int    `json:"window_minutes"`
+	ProcessingVersion string `json:"processing_version"`
+}
+
+type Result struct {
+	Manifest      domain.Manifest `json:"manifest"`
+	Reused        bool            `json:"reused"`
+	Timings       Timings         `json:"timings"`
+	Configuration Configuration   `json:"configuration"`
+}
+
+func seconds(d time.Duration) *float64 {
+	v := d.Seconds()
+	return &v
+}
+
+func Run(ctx context.Context, c config.Loader, store storage.Store) (Result, error) {
+	return RunWithOptions(ctx, c, store, RunOptions{})
+}
+
+func RunWithOptions(ctx context.Context, c config.Loader, store storage.Store, opts RunOptions) (result Result, err error) {
+	started := time.Now()
+	result.Configuration = Configuration{
+		Workers:           c.Workers,
+		BlockRows:         c.BlockRows,
+		BatchRows:         c.BatchRows,
+		GOMAXPROCS:        runtime.GOMAXPROCS(0),
+		Storage:           c.Storage,
+		Format:            c.Format,
+		WindowMinutes:     c.WindowMinutes,
+		ProcessingVersion: ProcessingVersion,
+	}
 	if err := c.Validate(); err != nil {
 		return result, err
 	}
-	started := time.Now()
 	sourceHash, err := FileSHA256(c.Input)
 	if err != nil {
 		return result, err
@@ -90,6 +140,9 @@ func Run(ctx context.Context, c config.Loader, store storage.Store) (result Resu
 		return result, err
 	}
 	if existing != nil {
+		if opts.RejectReuse {
+			return result, fmt.Errorf("%w: dataset %s load %s", ErrReuseRejected, existing.ID, existing.LoadID)
+		}
 		checksum, e := FileSHA256(filepath.FromSlash(existing.Snapshot.Path))
 		if e != nil {
 			return result, fmt.Errorf("published snapshot unavailable: %w", e)
@@ -100,7 +153,10 @@ func Run(ctx context.Context, c config.Loader, store storage.Store) (result Resu
 		if err := store.Complete(ctx, *existing); err != nil {
 			return result, err
 		}
-		return Result{Manifest: *existing, Reused: true}, nil
+		result.Manifest = *existing
+		result.Reused = true
+		result.Timings.TotalSeconds = time.Since(started).Seconds()
+		return result, nil
 	}
 	var token [12]byte
 	if _, err := rand.Read(token[:]); err != nil {
@@ -131,6 +187,8 @@ func Run(ctx context.Context, c config.Loader, store storage.Store) (result Resu
 	for _, z := range zones {
 		zoneSet[z.ID] = true
 	}
+	preparationEnd := time.Now()
+	computeStart := preparationEnd
 	counts := map[features.Key]int64{}
 	m.Stats, err = process(ctx, source, c, loc, start, end, zoneSet, m.ID, m.LoadID, store, counts)
 	if err != nil {
@@ -147,19 +205,33 @@ func Run(ctx context.Context, c config.Loader, store storage.Store) (result Resu
 	if after != sourceHash {
 		return result, fmt.Errorf("source changed during ingestion")
 	}
+	computeEnd := time.Now()
+	publicationStart := computeEnd
 	dir := filepath.Join(c.Output, m.ID, m.LoadID)
 	m.Snapshot, err = features.Export(ctx, m, counts, dir, c.BatchRows, store.WriteWindows)
 	if err != nil {
 		return result, err
 	}
 	m.Stats.ElapsedSeconds = time.Since(started).Seconds()
-	m.Stats.RowsPerSecond = float64(m.Stats.Read) / m.Stats.ElapsedSeconds
+	if m.Stats.ElapsedSeconds > 0 {
+		m.Stats.RowsPerSecond = float64(m.Stats.Read) / m.Stats.ElapsedSeconds
+		m.Stats.AcceptedPerSecond = float64(m.Stats.Accepted) / m.Stats.ElapsedSeconds
+	}
 	m.Status = "complete"
 	m.CompletedAt = time.Now().UTC()
 	if err := store.Complete(ctx, m); err != nil {
 		return result, err
 	}
-	return Result{Manifest: m}, nil
+	totalEnd := time.Now()
+	result.Manifest = m
+	result.Timings = Timings{
+		PreparationSeconds: seconds(preparationEnd.Sub(started)),
+		ComputeSeconds:     seconds(computeEnd.Sub(computeStart)),
+		EvaluationSeconds:  nil,
+		PublicationSeconds: seconds(totalEnd.Sub(publicationStart)),
+		TotalSeconds:       totalEnd.Sub(started).Seconds(),
+	}
+	return result, nil
 }
 
 type blockResult struct {
