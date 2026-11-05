@@ -1,0 +1,167 @@
+{
+  "artifact": {
+    "version": "run-11a380031b5c3646f382d109",
+    "dataset_id": "ds-b9b2c86160a6f0a25dbc2ffc82b192d2",
+    "snapshot_sha256": "54cc01353dd9cf1b901b4a65353919493eabed9692ae52009bdc38ae1413f942",
+    "encoder": {
+      "zones": [
+        161,
+        162
+      ],
+      "mean": [
+        0.3129752274889673,
+        -0.224274876357576,
+        0.02272727272727273
+      ],
+      "scale": [
+        0.6063396760097504,
+        0.6957725807398664,
+        0.1932931942753496
+      ],
+      "version": "linear-count-v2",
+      "target_mean": 0.02272727272727273,
+      "target_scale": 0.19329319427534963
+    },
+    "weights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.9999999999999999,
+      0,
+      0,
+      0
+    ],
+    "config": {
+      "epochs": 3,
+      "batch_size": 16,
+      "learning_rate": 0.04,
+      "l2": 0.0001,
+      "seed": 42,
+      "workers": 1,
+      "task_timeout_seconds": 10
+    },
+    "window_minutes": 15,
+    "timezone": "America/New_York",
+    "train_end": "2024-01-01T21:45:00Z",
+    "validation_end": "2024-01-02T01:15:00Z",
+    "created_at": "2026-11-05T16:52:05.247570625Z",
+    "evaluation": {
+      "test": {
+        "model": {
+          "examples": 30,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        },
+        "persistence_baseline": {
+          "examples": 30,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        }
+      },
+      "train": {
+        "model": {
+          "examples": 132,
+          "mae": 0.045454545454545456,
+          "rmse": 0.27524094128159016,
+          "log_loss": 0.012783348293415023,
+          "objective_loss": 1.0138248847926263
+        },
+        "persistence_baseline": {
+          "examples": 132,
+          "mae": 0.045454545454545456,
+          "rmse": 0.27524094128159016,
+          "log_loss": 0.012783348293415023,
+          "objective_loss": 1.0138248847926263
+        }
+      },
+      "validation": {
+        "model": {
+          "examples": 28,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        },
+        "persistence_baseline": {
+          "examples": 28,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        }
+      }
+    },
+    "loss_history": [
+      0.963163420745242,
+      0.609374839980854,
+      0.5304376957830972
+    ],
+    "selection": {
+      "method": "persistence",
+      "candidate_blend": 0,
+      "candidate_validation": {
+        "examples": 28,
+        "mae": 0.004099251813723211,
+        "rmse": 0.005695847255425951,
+        "log_loss": 1.6080036684519E-05,
+        "objective_loss": 0.0004671764849437139
+      },
+      "selected_validation": {
+        "examples": 28,
+        "mae": 0,
+        "rmse": 0,
+        "log_loss": 0,
+        "objective_loss": 0
+      },
+      "baseline_validation": {
+        "examples": 28,
+        "mae": 0,
+        "rmse": 0,
+        "log_loss": 0,
+        "objective_loss": 0
+      }
+    }
+  },
+  "run": {
+    "run_id": "run-11a380031b5c3646f382d109",
+    "mode": "sequential",
+    "status": "completed",
+    "dataset_id": "ds-b9b2c86160a6f0a25dbc2ffc82b192d2",
+    "config": {
+      "epochs": 3,
+      "batch_size": 16,
+      "learning_rate": 0.04,
+      "l2": 0.0001,
+      "seed": 42,
+      "workers": 1,
+      "task_timeout_seconds": 10
+    },
+    "progress": {
+      "epoch": 3,
+      "step": 27,
+      "total_steps": 27,
+      "objective_loss": 0.005100850067365024
+    },
+    "started_at": "2026-11-05T16:52:05.216670222Z",
+    "completed_at": "2026-11-05T16:52:05.295285857Z",
+    "preparation_seconds": 0.030741697,
+    "training_seconds": 0.000128445,
+    "evaluation_seconds": 2.8098E-05,
+    "workers": null,
+    "tasks_by_worker": {},
+    "artifact_version": "run-11a380031b5c3646f382d109"
+  }
+}

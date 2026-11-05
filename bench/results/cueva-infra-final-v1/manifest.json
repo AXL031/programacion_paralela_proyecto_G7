@@ -1,0 +1,25 @@
+{
+  "samples": [],
+  "state": "smoke_passed",
+  "missing_components": [
+    "api",
+    "load",
+    "resources",
+    "summary",
+    "training"
+  ],
+  "project": "transporte-g7-bench-cueva-infra-final-v1",
+  "created_at": "2026-11-05T16:51:13.5323079Z",
+  "errors": [],
+  "scope": "real",
+  "campaign_id": "cueva-infra-final-v1",
+  "objective_evaluated": false,
+  "schema_version": "benchmark-v1",
+  "pending_issues": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "prepared_at": "2026-11-05T16:52:01.6268704Z"
+}

@@ -5,6 +5,8 @@ bin/
 data/*
 !data/.gitkeep
 bench/raw/
+bench/results/test-*/
+bench/results/cueva-*-dev*/
 *.prof
 *.test
 *.exe

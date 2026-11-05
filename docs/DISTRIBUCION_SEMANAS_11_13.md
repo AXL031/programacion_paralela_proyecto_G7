@@ -4,6 +4,8 @@ Fecha: **5 de noviembre de 2026, Lima**.
 
 Este documento reparte el [plan técnico hasta la semana 13](PLAN_SEMANAS_11_13.md). Define responsables, límites, dependencias, entregables y el contenido de los issues. **La asignación no significa que el desarrollo ni las mediciones estén hechos.**
 
+Avance independiente del issue #1: [entorno y runner de Cueva](AVANCE_CUEVA_ISSUE_1.md). Interfaces para los componentes: [contrato benchmark-v1](CONTRATO_BENCHMARK.md). Su implementación no cierra los issues ni sustituye las campañas pendientes.
+
 ## 1. Responsables
 
 | ID | Integrante / GitHub | Rama obligatoria | Responsabilidad principal | Issue |
