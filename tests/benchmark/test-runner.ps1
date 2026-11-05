@@ -98,7 +98,7 @@ foreach ($behavior in @('exit', 'no-output', 'mismatch', 'real-scope', 'reused',
 $context = Initialize-BenchCampaign "$prefix-missing" 'configs/benchmark.json'
 Assert-Rejected { Invoke-BenchCampaign $context } 'real run blocks on missing adapters before Docker execution'
 $blocked = Read-BenchJson (Join-Path $context.results_dir 'manifest.json')
-Assert-Check ($blocked.state -eq 'blocked' -and @($blocked.missing_components).Count -eq 5) 'missing integrations named explicitly'
+Assert-Check ($blocked.state -eq 'blocked' -and (@($blocked.missing_components | Sort-Object) -join ',') -ceq (@(Get-BenchMissingComponents $context.config | Sort-Object) -join ',')) 'missing integrations named explicitly'
 $context.project = 'transporte-g7'
 Assert-Rejected { Assert-BenchOwnership $context } 'demo project cannot be adopted'
 $context.project = "transporte-g7-bench-$($context.campaign_id)"
