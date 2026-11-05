@@ -8,9 +8,10 @@ Assert-BenchOwnership $c
 $values=@{}
 foreach($line in Get-Content -LiteralPath (Resolve-BenchPath '.env')){if($line -match '^([A-Z_]+)=(.*)$'){$values[$Matches[1]]=$Matches[2]}}
 if(-not $values.DEMO_PASSWORD -or -not $values.DEMO_USER){throw 'Demo credentials are unavailable.'}
-$image=Invoke-BenchCompose $c @('--profile','jobs','images','-q','benchmark-api') 'logs/proxy-client-image' 30
-Assert-BenchSuccess $image 'Locate built HTTP client'
-$imageID=$image.stdout.Trim()
+$environment=Read-BenchJson (Join-Path $c.results_dir 'environment.json')
+# Compose images lists existing containers; --rm jobs no longer appear there.
+# Prepare records the immutable ID of every built job image independently.
+$imageID=[string]$environment.built_images['benchmark-api']
 if($imageID -notmatch '^(sha256:)?[a-f0-9]{12,64}$'){throw 'Unexpected HTTP client image identity.'}
 $directory=Join-Path $c.data_dir 'proxy'
 [void][IO.Directory]::CreateDirectory($directory)
