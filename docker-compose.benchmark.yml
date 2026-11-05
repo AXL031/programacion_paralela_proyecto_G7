@@ -1,0 +1,172 @@
+# Standalone: never combine this file with docker-compose.yml.
+name: ${BENCH_PROJECT:?Use scripts/benchmark.ps1}
+
+x-labels: &labels
+  g7.benchmark.managed: "benchmark-v1"
+  g7.benchmark.campaign: ${BENCH_CAMPAIGN:?Use scripts/benchmark.ps1}
+
+x-job: &job
+  restart: "no"
+  labels: *labels
+  cpus: 1.0
+  mem_limit: 1g
+  environment: &training-env
+    MONGO_URI: mongodb://mongo:27017
+    MONGO_DATABASE: g7_benchmark
+    MASTER_HTTP: http://master:8081
+    MASTER_API_TOKEN: ${BENCH_MASTER_TOKEN:?Use scripts/benchmark.ps1}
+    GOMAXPROCS: "1"
+    MODEL_OUTPUT: data/models
+  volumes: &data-mounts
+    - type: bind
+      source: ${BENCH_DATA_DIR:?Use scripts/benchmark.ps1}
+      target: /app/data
+    - type: bind
+      source: ./data/raw
+      target: /app/data/raw
+      read_only: true
+    - type: bind
+      source: ./tests/testdata
+      target: /app/tests/testdata
+      read_only: true
+
+services:
+  mongo:
+    image: mongo:8.0.16
+    restart: "no"
+    labels: *labels
+    cpus: 2.0
+    mem_limit: 1536m
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: [CMD, mongosh, --quiet, --eval, "quit(db.adminCommand('ping').ok ? 0 : 1)"]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+  redis:
+    image: redis:7.4.7-alpine
+    restart: "no"
+    labels: *labels
+    cpus: 1.0
+    mem_limit: 128m
+    command: [redis-server, --save, "", --appendonly, "no"]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  master:
+    <<: *job
+    build:
+      context: .
+      dockerfile: deploy/go.Dockerfile
+      args: {COMMAND: master}
+    depends_on:
+      mongo: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, /usr/local/bin/service, -check-ready]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+  worker:
+    <<: *job
+    build:
+      context: .
+      dockerfile: deploy/go.Dockerfile
+      args: {COMMAND: worker}
+    environment:
+      MASTER_ADDR: master:9000
+      DATA_ROOT: data
+      GOMAXPROCS: "1"
+    volumes:
+      - type: bind
+        source: ${BENCH_DATA_DIR:?Use scripts/benchmark.ps1}
+        target: /app/data
+        read_only: true
+    depends_on:
+      master: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, /usr/local/bin/service, -check-ready]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+  api:
+    <<: *job
+    build:
+      context: .
+      dockerfile: deploy/go.Dockerfile
+      args: {COMMAND: api}
+    # API reads MongoDB; no writable bind mount is necessary.
+    volumes: []
+    environment:
+      <<: *training-env
+      HTTP_ADDR: ":8080"
+      REDIS_ADDR: redis:6379
+      JWT_SECRET: ${BENCH_JWT_SECRET:?Use scripts/benchmark.ps1}
+      DEMO_USER: benchmark
+      DEMO_PASSWORD: ${BENCH_PASSWORD:?Use scripts/benchmark.ps1}
+      WEB_ORIGIN: http://127.0.0.1:${BENCH_API_PORT:?Use scripts/benchmark.ps1}
+    ports:
+      - "127.0.0.1:${BENCH_API_PORT:?Use scripts/benchmark.ps1}:8080"
+    depends_on:
+      mongo: {condition: service_healthy}
+      redis: {condition: service_healthy}
+      master: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, /usr/local/bin/service, -check-ready]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+  loader:
+    <<: *job
+    profiles: [jobs]
+    mem_limit: 1536m
+    cpus: 4.0
+    build:
+      context: .
+      dockerfile: deploy/go.Dockerfile
+      args: {COMMAND: loader}
+    environment:
+      <<: *training-env
+      GOMAXPROCS: "4"
+    depends_on:
+      mongo: {condition: service_healthy}
+    command: [-config, data/configs/loader.json]
+  trainer:
+    <<: *job
+    profiles: [jobs]
+    build:
+      context: .
+      dockerfile: deploy/go.Dockerfile
+      args: {COMMAND: trainer}
+    depends_on:
+      mongo: {condition: service_healthy}
+    command: [-mode, sequential, -config, data/configs/training.json]
+  dev:
+    profiles: [tools]
+    image: golang:1.27.2-bookworm
+    working_dir: /workspace
+    labels: *labels
+    cpus: 4.0
+    mem_limit: 2g
+    environment:
+      MONGO_TEST_URI: mongodb://mongo:27017
+    volumes:
+      - .:/workspace:ro
+      - go_modules:/go/pkg/mod
+      - go_build:/root/.cache/go-build
+    depends_on:
+      mongo: {condition: service_healthy}
+    command: [go, test, -race, -count=1, ./...]
+
+volumes:
+  mongo_data:
+    labels: *labels
+  go_modules:
+    labels: *labels
+  go_build:
+    labels: *labels
+networks:
+  default:
+    labels: *labels

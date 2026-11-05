@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "benchmark-v1: one NDJSON resource observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sample_id", "sampled_at", "service", "scope", "available", "cpu_percent", "memory_bytes"],
+  "properties": {
+    "schema_version": {"const": "benchmark-v1"},
+    "sample_id": {"type": "string", "minLength": 1},
+    "sampled_at": {"type": "string", "format": "date-time"},
+    "service": {"type": "string", "minLength": 1},
+    "scope": {"enum": ["process", "container"]},
+    "available": {"type": "boolean"},
+    "cpu_percent": {"type": ["number", "null"], "minimum": 0},
+    "memory_bytes": {"type": ["integer", "null"], "minimum": 0}
+  },
+  "allOf": [{"if": {"properties": {"available": {"const": true}}}, "then": {"properties": {"cpu_percent": {"type": "number"}, "memory_bytes": {"type": "integer"}}}}]
+}
