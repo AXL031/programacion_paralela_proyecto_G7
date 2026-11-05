@@ -23,7 +23,7 @@ Los tiempos se miden con reloj monótono dentro del proceso correspondiente y se
 | Publicación | `publication_seconds` | `repo.Publish`: escritura del artefacto JSON, inserción en MongoDB y actualización del puntero `current_model`. | Persistencia final del registro del run. |
 | Total | `total_seconds` | Reloj de pared desde justo antes de `training.Execute` hasta después del intento de publicación. | Arranque del proceso, conexión a MongoDB, espera de workers, persistencia final del run. |
 
-En secuencial el total se mide desde antes de `Execute`; en distribuido desde antes de `Execute` dentro de `master.execute`, por lo que incluye la consulta del dataset actual y el trabajo de coordinación del run. El `total_seconds` del maestro no incluye la espera del cliente HTTP ni el arranque del contenedor del trainer.
+En secuencial el total se mide desde antes de `Execute`; en distribuido desde antes de `Execute` dentro de `master.execute`, por lo que incluye el trabajo de coordinación del run (envío de `prepare`, espera de workers, agregación y parada). En ambos casos excluye la consulta previa del dataset actual en MongoDB. El `total_seconds` del maestro no incluye la espera del cliente HTTP ni el arranque del contenedor del trainer.
 
 **Importante:** el adaptador mide además el tiempo total observado del proceso o contenedor. Ese valor no sustituye a `training_seconds` y no debe presentarse como núcleo SGD.
 
