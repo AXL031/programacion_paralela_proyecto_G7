@@ -42,19 +42,20 @@ type WorkerInfo struct {
 	Telemetry telemetry.Sample `json:"telemetry"`
 }
 type Server struct {
-	Repo     Repository
-	mu       sync.Mutex
-	peers    map[string]*Peer
-	runs     map[string]training.Run
-	active   string
-	ctx      context.Context
-	listener net.Listener
-	Monitor  *telemetry.Monitor
-	Secret   string
+	Repo       Repository
+	mu         sync.Mutex
+	peers      map[string]*Peer
+	runs       map[string]training.Run
+	candidates map[string]training.Candidate
+	active     string
+	ctx        context.Context
+	listener   net.Listener
+	Monitor    *telemetry.Monitor
+	Secret     string
 }
 
 func New(ctx context.Context, repo Repository) *Server {
-	return &Server{Repo: repo, ctx: ctx, peers: map[string]*Peer{}, runs: map[string]training.Run{}, Monitor: telemetry.New(ctx)}
+	return &Server{Repo: repo, ctx: ctx, peers: map[string]*Peer{}, runs: map[string]training.Run{}, candidates: map[string]training.Candidate{}, Monitor: telemetry.New(ctx)}
 }
 func (s *Server) Serve(listener net.Listener) error {
 	s.listener = listener
@@ -160,6 +161,16 @@ func (s *Server) Run(id string) (training.Run, bool) {
 	r, ok := s.runs[id]
 	return r, ok
 }
+
+// Candidate returns the pre-selection SGD result for a completed or failed run.
+// It is intentionally kept out of Run and Artifact so the public prediction
+// contract and persisted model schema do not change.
+func (s *Server) Candidate(id string) (training.Candidate, bool) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	candidate, ok := s.candidates[id]
+	return candidate, ok
+}
 func (s *Server) Start(c ml.Config) (training.Run, error) {
 	if err := c.Validate(); err != nil {
 		return training.Run{}, err
@@ -208,13 +219,16 @@ func (s *Server) execute(c ml.Config, id string, peers []*Peer) {
 	defer cancel()
 	var a training.Artifact
 	var r training.Run
+	var candidate training.Candidate
 	tasks := map[string]int{}
+	var execStarted time.Time
 	m, err := s.Repo.Current(ctx)
 	if err == nil && m == nil {
 		err = fmt.Errorf("no completed dataset")
 	}
 	if err == nil {
-		a, r, err = training.Execute(ctx, *m, c, id, "distributed", func(ctx context.Context, m domain.Manifest, e ml.Encoder, d ml.Dataset) (ml.Computer, []string, error) {
+		execStarted = time.Now()
+		a, r, candidate, err = training.Execute(ctx, *m, c, id, "distributed", func(ctx context.Context, m domain.Manifest, e ml.Encoder, d ml.Dataset) (ml.Computer, []string, error) {
 			ids := make([]string, len(peers))
 			for i, p := range peers {
 				ids[i] = p.ID
@@ -287,12 +301,25 @@ func (s *Server) execute(c ml.Config, id string, peers []*Peer) {
 			s.runs[id] = progress
 			s.mu.Unlock()
 		})
+		if candidate.RunID != "" {
+			candidate.Workers = append([]string{}, r.Workers...)
+			candidate.TasksByWorker = copyTasks(tasks)
+			candidate.TotalSteps = r.Progress.TotalSteps
+			s.mu.Lock()
+			s.candidates[id] = candidate
+			s.mu.Unlock()
+		}
 	}
 	if r.ID == "" {
 		r = training.Run{ID: id, Mode: "distributed", Config: c, StartedAt: time.Now().UTC()}
 	}
 	if err == nil {
+		publishStarted := time.Now()
 		err = s.Repo.Publish(ctx, a)
+		r.PublicationSeconds = time.Since(publishStarted).Seconds()
+	}
+	if !execStarted.IsZero() {
+		r.TotalSeconds = time.Since(execStarted).Seconds()
 	}
 	r.Status = "completed"
 	r.CompletedAt = time.Now().UTC()

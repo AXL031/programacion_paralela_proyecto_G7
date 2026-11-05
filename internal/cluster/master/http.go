@@ -66,6 +66,14 @@ func (s *Server) Handler() http.Handler {
 		}
 		reply(w, 200, run)
 	})
+	mux.HandleFunc("GET /runs/{id}/candidate", func(w http.ResponseWriter, r *http.Request) {
+		candidate, ok := s.Candidate(r.PathValue("id"))
+		if !ok {
+			reply(w, 404, map[string]string{"error": "candidate not available"})
+			return
+		}
+		reply(w, 200, candidate)
+	})
 	mux.HandleFunc("GET /models/{id}", func(w http.ResponseWriter, r *http.Request) {
 		ctx, cancel := context.WithTimeout(r.Context(), 3*time.Second)
 		defer cancel()
