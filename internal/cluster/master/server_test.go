@@ -158,7 +158,7 @@ func TestTCPTrainingEquivalentOneTwoFourAndArtifact(t *testing.T) {
 	startWorkers(t, ctx, address, root, 4)
 	eventually(t, func() bool { return len(s.Workers()) == 4 })
 	c := ml.Config{Epochs: 3, BatchSize: 65, LearningRate: 0.04, L2: 0.0001, Seed: 42, Workers: 1, TaskTimeoutSeconds: 2}
-	reference, _, err := training.Sequential(ctx, repo.m, c, repo)
+	reference, _, referenceCandidate, err := training.SequentialWithDiagnostics(ctx, repo.m, c, repo)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -178,8 +178,22 @@ func TestTCPTrainingEquivalentOneTwoFourAndArtifact(t *testing.T) {
 		}
 		for i, w := range a.Weights {
 			if math.Abs(w-reference.Weights[i]) > 1e-11 {
-				t.Fatalf("%d workers differ at weight %d", n, i)
+				t.Fatalf("%d workers differ at published weight %d", n, i)
 			}
+		}
+		candidate, ok := s.Candidate(done.ID)
+		if !ok {
+			t.Fatalf("%d workers did not retain candidate diagnostics", n)
+		}
+		maxDifference, equivalent, err := training.CompareWeights(referenceCandidate.Weights, candidate.Weights, 1e-9, 1e-9)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !equivalent {
+			t.Fatalf("%d workers differ before selection: max %g", n, maxDifference)
+		}
+		if candidate.RunID != done.ID || candidate.Mode != "distributed" {
+			t.Fatalf("%d workers returned wrong candidate identity", n)
 		}
 		if len(done.Workers) != n || len(done.Tasks) != n {
 			t.Fatal("wrong contributors")
