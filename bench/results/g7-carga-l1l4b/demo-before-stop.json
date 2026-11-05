@@ -1,0 +1,15 @@
+{
+  "mongo_status": "unavailable",
+  "mongo": null,
+  "file_hashes": {
+    "data/raw/download-manifest.json": "d5f4c88aae9b3a90298487e81c925870afa135116a021bac0b14c41e545c0caa",
+    "data/raw/taxi_zone_lookup.csv": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "data/raw/taxi_zone_lookup.csv.sha256": "412e5f505d83bc1808302cfbe3830ea7af2953c49d10eb14960f1984be00727b",
+    "data/raw/yellow_tripdata_2024-01.parquet": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "data/raw/yellow_tripdata_2024-01.parquet.sha256": "c6c34793c93280625d8d51c62bd38d8f8f57493bea57b73303994e08bc2974b8",
+    "data/models/run-73cb14e1d1c3dee4ef1fdae7.json": "caa111d0e4423cd5efaad842432c95f4c701e955699f386dfa5393988f1c54aa",
+    "data/models/run-be6eab9c25014e58a4e2ecf0.json": "ec41ebb1dd97c22728eb1fb6191c888a33722e92581d3ea11dfccbbe90517367",
+    "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/38f38b83878f37f0c4bb30bd/features.ndjson": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/38f38b83878f37f0c4bb30bd/windows.ndjson": "fc07030b4d8ed365ceee8ea7303e59a351f757a241dd286da44917121b9f53ef"
+  }
+}

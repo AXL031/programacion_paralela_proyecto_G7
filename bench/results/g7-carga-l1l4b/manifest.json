@@ -1,0 +1,23 @@
+{
+  "pending_issues": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "campaign_id": "g7-carga-l1l4b",
+  "missing_components": [
+    "api",
+    "summary",
+    "training"
+  ],
+  "created_at": "2026-11-05T21:48:47.0713731Z",
+  "objective_evaluated": false,
+  "project": "transporte-g7-bench-g7-carga-l1l4b",
+  "errors": [],
+  "samples": [],
+  "state": "prepared",
+  "schema_version": "benchmark-v1",
+  "scope": "real",
+  "prepared_at": "2026-11-05T21:49:13.0410931Z"
+}
