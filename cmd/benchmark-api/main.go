@@ -141,6 +141,27 @@ func batch(ctx context.Context, client *http.Client, base, token string, queries
 	wg.Wait()
 	return out, time.Since(start)
 }
+
+func prewarm(ctx context.Context, client *http.Client, base, token string, queries []query, version string, concurrency int) error {
+	// A successful prediction can fall back when a Redis write times out. Verify
+	// the complete inventory is cached before starting the measured clock.
+	for round := 0; round < 5; round++ {
+		warm, _ := batch(ctx, client, base, token, queries, version, "any", concurrency, 15*time.Second)
+		ready := true
+		for _, a := range warm {
+			if !a.Success {
+				return fmt.Errorf("prewarm failed: %s", a.Error)
+			}
+			if !a.CacheHit {
+				ready = false
+			}
+		}
+		if ready {
+			return nil
+		}
+	}
+	return fmt.Errorf("prewarm could not verify every cached key")
+}
 func percentile(sorted []float64, p float64) float64 {
 	if len(sorted) == 0 {
 		return 0
@@ -283,11 +304,8 @@ func run() error {
 		return fmt.Errorf("prediction smoke: %s", smoke.Error)
 	}
 	if *scenario == "warm" {
-		warm, _ := batch(context.Background(), client, *base, login.Token, queries, model.Version, "any", *concurrency, 15*time.Second)
-		for _, a := range warm {
-			if !a.Success {
-				return fmt.Errorf("prewarm failed: %s", a.Error)
-			}
+		if err := prewarm(context.Background(), client, *base, login.Token, queries, model.Version, *concurrency); err != nil {
+			return err
 		}
 	}
 	samples, elapsed := batch(context.Background(), client, *base, login.Token, queries, model.Version, *scenario, *concurrency, 15*time.Second)

@@ -80,3 +80,22 @@ func TestErrorsTimeoutsAndPercentiles(t *testing.T) {
 		t.Fatalf("bad aggregates %+v", r)
 	}
 }
+
+func TestPrewarmVerifiesCacheAfterFallbackWrites(t *testing.T) {
+	var calls atomic.Int32
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		var q query
+		json.NewDecoder(r.Body).Decode(&q)
+		hit := calls.Add(1) >= 3
+		v := 1.0
+		i := int64(1)
+		json.NewEncoder(w).Encode(prediction{Dataset: q.Dataset, Zone: q.Zone, Origin: q.Origin, Horizon: q.Horizon, Version: "v1", Predicted: &v, Previous: &i, Actual: &i, Hit: &hit, Latency: &v})
+	}))
+	defer server.Close()
+	if err := prewarm(context.Background(), server.Client(), server.URL, "token", []query{{"ds", 1, time.Unix(0, 0), 15}}, "v1", 1); err != nil {
+		t.Fatal(err)
+	}
+	if calls.Load() != 3 {
+		t.Fatalf("prewarm stopped without verified hit: %d", calls.Load())
+	}
+}
