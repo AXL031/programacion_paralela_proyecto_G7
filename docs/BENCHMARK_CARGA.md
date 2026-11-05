@@ -1,6 +1,6 @@
 # Benchmark de carga local L1/L4
 
-Estado: implementación preparada para el issue #2. La campaña real, la ejecución de las pruebas en el host final y la revisión de Cueva siguen pendientes. Este documento no contiene resultados de rendimiento ni certifica el cierre del issue; las tablas de resultados se completan únicamente con evidencia de una campaña ejecutada.
+Estado: campaña de carga `g7-carga-l1l4b` ejecutada y validada (12/12 muestras correctas). Los adaptadores de entrenamiento, API y resumen siguen sin integrarse, por lo que la acción `Run` completa y la revisión de Cueva permanecen pendientes. Las cifras de este documento provienen únicamente de las muestras y de la evidencia exportada de esa campaña.
 
 El contrato de orquestación, aislamiento y evidencia es [CONTRATO_BENCHMARK.md](CONTRATO_BENCHMARK.md). El plan general de las semanas 11–13 está en [PLAN_SEMANAS_11_13.md](PLAN_SEMANAS_11_13.md).
 
@@ -107,16 +107,16 @@ Reglas de conservación:
 Ejecutar desde la raíz del repositorio, con PowerShell 7.2 o posterior, Git y Docker Desktop con motor Linux. No se requiere Go instalado en Windows.
 
 ```powershell
-./scripts/benchmark.ps1 -Action Plan -Campaign g7-carga-01
-./scripts/benchmark.ps1 -Action Prepare -Campaign g7-carga-01
-./scripts/benchmark.ps1 -Action Run -Campaign g7-carga-01
-./scripts/benchmark.ps1 -Action Stop -Campaign g7-carga-01
-./scripts/benchmark.ps1 -Action Export -Campaign g7-carga-01
+./scripts/benchmark.ps1 -Action Plan -Campaign g7-carga-l1l4b
+./scripts/benchmark.ps1 -Action Prepare -Campaign g7-carga-l1l4b
+./scripts/benchmark.ps1 -Action Run -Campaign g7-carga-l1l4b
+./scripts/benchmark.ps1 -Action Stop -Campaign g7-carga-l1l4b
+./scripts/benchmark.ps1 -Action Export -Campaign g7-carga-l1l4b
 ```
 
 - `Plan` no requiere Docker. Congela configuración, fuentes y plan, y muestra los adaptadores que faltan.
 - `Prepare` construye imágenes y levanta MongoDB, Redis, maestro, workers y API con límites explícitos.
-- `Run` exige que los cinco adaptadores estén integrados. El adaptador de carga de este issue ya existe, pero la campaña completa sigue bloqueada mientras falten #3/#4/#5.
+- `Run` exige que los cinco adaptadores estén integrados. El adaptador de carga y el colector de recursos ya existen, pero la campaña completa sigue bloqueada mientras falten los adaptadores de entrenamiento, API y resumen (#3/#4/#5). La campaña `g7-carga-l1l4b` se ejecutó invocando `scripts/benchmark-load.ps1` muestra por muestra sobre el contexto `Prepare`; no se usó `Run`.
 - `Stop` retira únicamente los servicios y la red del proyecto validado; conserva volúmenes, datos y evidencia.
 - `Export` genera un ZIP con la evidencia permitida y redacta los secretos conocidos.
 
@@ -272,42 +272,63 @@ bench/raw/<campaña>/
 
 Los datos escribibles de la campaña viven en `data/bench/<campaña>/`, incluido el snapshot en `data/bench/<campaña>/processed/<dataset_id>/<load_id>/features.ndjson`. No se publican automáticamente. `Export` produce un ZIP en `.cache/benchmark/exports/` con JSON/NDJSON/CSV/logs permitidos y secretos conocidos redactados.
 
-### 7.2 Resultados pendientes
+### 7.2 Resultados de la campaña `g7-carga-l1l4b`
 
-No hay resultados reales en este documento. Las siguientes tablas se completan solo después de ejecutar la campaña y exportar la evidencia. Usar `Pendiente` o `null`; no inventar ceros ni copiar cifras históricas.
+Campaña ejecutada el 2026-11-05 sobre el entorno aislado del benchmark. Se corrieron las 12 muestras del plan (2 calentamientos y 10 mediciones) con `scripts/benchmark-load.ps1`. Las 12 terminaron con `status=passed`, todos los checks en `true` y equivalencia lógica L1/L4 en todas las muestras.
 
-**Resumen por caso**
+Artefactos de la campaña:
 
-| Caso | n medidas | Mediana total (s) | Mediana preparación (s) | Mediana cómputo (s) | Mediana publicación (s) | Mediana filas/s | Mediana válidos/s | CPU media (%) | RAM máxima (MiB) | Speedup vs L1 |
+- Muestras JSON: `bench/results/g7-carga-l1l4b/samples/`
+- Análisis agregado: `bench/results/g7-carga-l1l4b/load-analysis.json`
+- ZIP de evidencia: `bench/evidence/g7-carga-l1l4b.zip`
+- SHA-256 del ZIP: `93f121f3715b93ea07bb7e8082dd0230127eaded5323b01f565a3027b62740c0`
+- Manifiesto de campaña: `bench/results/g7-carga-l1l4b/manifest.json`
+
+No se generó `summary.json`: el adaptador de resumen (#4) todavía no está integrado. Los agregados de esta sección provienen de `load-analysis.json`, calculados con `scripts/benchmark/statistics.psm1` a partir de las 10 muestras medidas; los calentamientos se excluyen.
+
+**Resumen por caso** (5 mediciones por caso)
+
+| Caso | n medidas | Mediana total (s) | Mediana preparación (s) | Mediana cómputo (s) | Mediana publicación (s) | Mediana filas/s | Mediana válidos/s | CPU máx. cont. (%) | RAM máx. proc. (MiB) | Speedup vs L1 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| L1 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | 1.00 |
-| L4 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| L1 | 5 | 28.937 | 0.543 | 20.608 | 7.696 | 102,544 | 46,649 | 152.95 | 87.42 | 1.00 |
+| L4 | 5 | 26.413 | 0.468 | 18.372 | 7.573 | 112,359 | 51,114 | 128.44 | 107.11 | 1.0956x |
 
-El speedup de ingesta se calcula sobre medianas comparables: `mediana(total L1) / mediana(total L4)`. Reportar también media, mínimo, máximo y desviación estándar muestral; cinco repeticiones son exploratorias.
+Dispersión del tiempo total: L1 media `28.885 s`, desviación estándar muestral `0.906 s`, mínimo `27.703 s`, máximo `29.935 s`; L4 media `26.615 s`, desviación `0.570 s`, mínimo `26.001 s`, máximo `27.469 s`. El speedup sobre medianas es `1.0956x` en total y `1.1217x` en cómputo.
+
+La columna `CPU máx. cont.` es la mediana de los máximos por muestra reportados por el colector de recursos (`container_max_cpu_percent`). Los valores por encima de 100% son normales porque el porcentaje se mide contra un núcleo. `RAM máx. proc.` es la mediana de `process_max_memory_bytes` convertida a MiB.
 
 **Detalle de muestras**
 
-| Muestra | Calentamiento | Repetición | Estado | Total (s) | Cómputo (s) | Leídas | Aceptadas | Rechazadas | Fuera de período | Persistidas | Recursos |
-|---|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---|
-| L1-w1 | Sí | 1 | Pendiente | | | | | | | | |
-| L4-w1 | Sí | 1 | Pendiente | | | | | | | | |
-| L1-r1 | No | 1 | Pendiente | | | | | | | | |
-| L4-r1 | No | 1 | Pendiente | | | | | | | | |
-| ... | | | | | | | | | | | |
+| Muestra | Calentamiento | Repetición | Estado | Total (s) | Cómputo (s) | Leídas | Aceptadas | Rechazadas | Fuera de período | Persistidas | Recursos válidos/faltantes |
+|---|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| L1-w1 | Sí | 1 | passed | 27.984 | 20.261 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 102/6 |
+| L4-w1 | Sí | 1 | passed | 26.267 | 18.105 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 102/6 |
+| L1-r1 | No | 1 | passed | 29.549 | 20.608 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 114/6 |
+| L4-r1 | No | 1 | passed | 26.001 | 18.059 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 101/7 |
+| L1-r2 | No | 2 | passed | 28.303 | 20.304 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 95/13 |
+| L4-r2 | No | 2 | passed | 26.413 | 18.372 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 102/6 |
+| L1-r3 | No | 3 | passed | 29.935 | 20.993 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 107/13 |
+| L4-r3 | No | 3 | passed | 27.469 | 19.443 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 95/13 |
+| L1-r4 | No | 4 | passed | 27.703 | 19.891 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 95/13 |
+| L4-r4 | No | 4 | passed | 26.868 | 18.717 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 102/6 |
+| L1-r5 | No | 5 | passed | 28.937 | 20.787 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 95/13 |
+| L4-r5 | No | 5 | passed | 26.322 | 18.207 | 2,964,624 | 1,348,665 | 14,905 | 1,601,054 | 1,348,665 | 102/6 |
 
 **Equivalencia L1/L4**
 
-| Verificación | L1 | L4 | Resultado |
-|---|---|---|---|
-| `reused` | Pendiente | Pendiente | Pendiente |
-| `dataset_id` | Pendiente | Pendiente | Pendiente |
-| SHA-256 snapshot | Pendiente | Pendiente | Pendiente |
-| Ventanas / ejemplos | Pendiente | Pendiente | Pendiente |
-| Splits train/validation/test | Pendiente | Pendiente | Pendiente |
-| Leídas / aceptadas / rechazadas / fuera / persistidas | Pendiente | Pendiente | Pendiente |
-| Rechazos por causa | Pendiente | Pendiente | Pendiente |
-| Viajes y ventanas en MongoDB | Pendiente | Pendiente | Pendiente |
-| Suma de `observed_trips` | Pendiente | Pendiente | Pendiente |
+| Verificación | Valor en las 12 muestras | Resultado |
+|---|---|---|
+| `reused` | `false` | Cumple |
+| `dataset_id` | `ds-f16643c248cc24d26b992f45598dd3e8` | Cumple |
+| SHA-256 snapshot | `d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b` | Cumple |
+| Ventanas / ejemplos | 378,720 / 378,457 | Cumple |
+| Splits train/validation/test | 264,841 / 56,808 / 56,808 | Cumple |
+| Leídas / aceptadas / rechazadas / fuera / persistidas | 2,964,624 / 1,348,665 / 14,905 / 1,601,054 / 1,348,665 | Cumple |
+| Rechazos por causa | `duration_over_24h=8`, `nonpositive_duration=43`, `unknown_zone=14,854` | Cumple |
+| Viajes y ventanas en MongoDB | 1,348,665 / 378,720 | Cumple |
+| Suma de `observed_trips` | 1,348,665 | Cumple |
+
+La campaña anterior `g7-carga-l1l4` se conserva en el entorno local como evidencia del fallo de compatibilidad con PowerShell 7.6 (el parseo automático de fechas desplazaba el período del manifiesto); no forma parte de la evidencia versionada. Su muestra `L1-w1` no se usa en ningún agregado.
 
 ## 8. Límites de interpretación
 
@@ -316,8 +337,8 @@ El speedup de ingesta se calcula sobre medianas comparables: `mediana(total L1) 
 - **La caché de disco no es fría.** El calentamiento reduce el efecto de la primera lectura, pero no se vacía la caché del sistema operativo ni se declara una medición de disco completamente fría. La evidencia registra rutas, tamaños y SHA-256 de las entradas.
 - **MongoDB comparte el host.** Los tiempos incluyen la latencia real del MongoDB aislado y la creación de índices de la base vacía en preparación. No representan un almacenamiento remoto ni un clúster.
 - **Cinco repeticiones son exploratorias.** Informar dispersión y no prometer una mejora universal. Un valor menor que 1 en el speedup significa que L4 fue más lento.
-- **La captura de recursos depende de #4.** El adaptador exige el colector y no simula observaciones. Si el colector no está integrado, la muestra real no se ejecuta.
-- **El resumen depende de #4.** Las tablas agregadas y el `summary.json` los produce el adaptador de resumen acordado; este documento no los inventa.
+- **La captura de recursos ya está integrada.** `scripts/benchmark-resources.ps1` produce la evidencia por muestra y el adaptador exige al menos una observación disponible; la cobertura (`valid_samples`/`missing_samples`) queda registrada en cada muestra.
+- **El resumen depende de #4.** El adaptador de resumen no está integrado, así que no existe `summary.json`. Los agregados de la sección 7.2 se calcularon con `scripts/benchmark/statistics.psm1` sobre las muestras medidas y quedan en `load-analysis.json`.
 - **La comparación no cambia la demo.** Antes/después de `Run` se registran hashes de archivos y, si está disponible, el estado de MongoDB de la demo. Un cambio hace fallar la operación.
 - **No se modifican datos ni hiperparámetros para obtener una mejora.** Si aparece un cuello de botella, se propone un cambio acotado y se repite la comparación afectada con datos y configuración idénticos.
 
@@ -325,12 +346,12 @@ El speedup de ingesta se calcula sobre medianas comparables: `mediana(total L1) 
 
 | Criterio | Estado |
 |---|---|
-| L1/L4 con datos equivalentes y `reused=false` en todas las mediciones | Preparado en código; pendiente de campaña real |
-| Dataset real con más de un millón de viajes válidos, conteos/splits/checksum verificados | Preparado en adaptador y pruebas; pendiente de campaña real |
-| Calentamientos identificados y cinco muestras medidas por caso, fallos preservados | Preparado en el runner; pendiente de ejecución |
-| Tiempos, throughput, configuración, recursos/cobertura y orden vinculados a campaña | Preparado; recursos dependen de #4 |
-| Pruebas existentes y afectadas, incluida integración MongoDB | Preparadas; pendiente de ejecutar en el host final |
-| Evidencia accesible, interpretación local y límites documentados | Este documento; falta adjuntar la evidencia de la campaña |
+| L1/L4 con datos equivalentes y `reused=false` en todas las mediciones | Cumplido en carga: 12/12 muestras con `reused=false` y equivalencia lógica |
+| Dataset real con más de un millón de viajes válidos, conteos/splits/checksum verificados | Cumplido: 1,348,665 aceptados; conteos, splits y SHA-256 verificados |
+| Calentamientos identificados y cinco muestras medidas por caso, fallos preservados | Cumplido en carga: `L1-w1`/`L4-w1` y 5 mediciones por caso; el fallo previo se conserva en `g7-carga-l1l4` |
+| Tiempos, throughput, configuración, recursos/cobertura y orden vinculados a campaña | Cumplido en carga: fases, throughput, recursos y orden registrados por muestra |
+| Pruebas existentes y afectadas, incluida integración MongoDB | Parcial: el adaptador verificó MongoDB en cada muestra; las pruebas Go siguen pendientes en el host final |
+| Evidencia accesible, interpretación local y límites documentados | Cumplido: `bench/results/g7-carga-l1l4b/` y `bench/evidence/g7-carga-l1l4b.zip` |
 | PR de `lopez` a `main`, revisión de Cueva y correcciones resueltas | Pendiente; sin auto-merge |
 
 ## 10. Referencias
@@ -343,3 +364,4 @@ El speedup de ingesta se calcula sobre medianas comparables: `mediana(total L1) 
 - [Configuración del benchmark](../configs/benchmark.json)
 - [Configuración de datos congelada](../configs/demo.json)
 - [Adaptador de carga](../scripts/benchmark-load.ps1)
+- [Evidencia de la campaña de carga](../bench/evidence/g7-carga-l1l4b.zip)

@@ -1,0 +1,127 @@
+{
+  "cpus": 16,
+  "limits": {
+    "mongo": {
+      "cpus": 2,
+      "memory_bytes": "1610612736",
+      "gomaxprocs": null
+    },
+    "redis": {
+      "cpus": 1,
+      "memory_bytes": "134217728",
+      "gomaxprocs": null
+    },
+    "master": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "worker": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "api": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "loader": {
+      "cpus": 4,
+      "memory_bytes": "1610612736",
+      "gomaxprocs": "4"
+    },
+    "trainer": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "dev": {
+      "cpus": 4,
+      "memory_bytes": "2147483648",
+      "gomaxprocs": null
+    }
+  },
+  "free_disk_bytes": 613957996544,
+  "go": "go version go1.27.2 linux/amd64",
+  "os": "linux",
+  "images": [
+    {
+      "ID": "sha256:25e4fa293e86d78b3494a19f7d7fc50aa4004bc8cbad19fd34ca9f7e83c82012",
+      "ContainerName": "transporte-g7-bench-g7-carga-l1l4b-worker-2",
+      "Repository": "transporte-g7-bench-g7-carga-l1l4b-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914868,
+      "Created": "2026-11-05T21:19:08.65205099Z",
+      "LastTagTime": "2026-11-05T21:48:58.309232722Z"
+    },
+    {
+      "ID": "sha256:29235949cd538a97f7869d58ed3c797052a85d927dccf375e2e7b415d46dbe5b",
+      "ContainerName": "transporte-g7-bench-g7-carga-l1l4b-master-1",
+      "Repository": "transporte-g7-bench-g7-carga-l1l4b-master",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 138406783,
+      "Created": "2026-11-05T21:19:12.506379448Z",
+      "LastTagTime": "2026-11-05T21:48:59.497166482Z"
+    },
+    {
+      "ID": "sha256:4b58ebcb1dc7a7b4e84cd8ce9098d48764ae4478876898ff9551acf2ac4a6a6d",
+      "ContainerName": "transporte-g7-bench-g7-carga-l1l4b-mongo-1",
+      "Repository": "mongo",
+      "Tag": "8.0.16",
+      "Platform": "linux/amd64",
+      "Size": 1222031882,
+      "Created": "2025-11-19T23:52:45.713575377Z",
+      "LastTagTime": "2026-11-05T21:09:16.95254701Z"
+    },
+    {
+      "ID": "sha256:25e4fa293e86d78b3494a19f7d7fc50aa4004bc8cbad19fd34ca9f7e83c82012",
+      "ContainerName": "transporte-g7-bench-g7-carga-l1l4b-worker-1",
+      "Repository": "transporte-g7-bench-g7-carga-l1l4b-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914868,
+      "Created": "2026-11-05T21:19:08.65205099Z",
+      "LastTagTime": "2026-11-05T21:48:58.309232722Z"
+    },
+    {
+      "ID": "sha256:581445dd1a8288d3098854fbdb577aff63493c5acec33d8d666a9e22c23aaa27",
+      "ContainerName": "transporte-g7-bench-g7-carga-l1l4b-api-1",
+      "Repository": "transporte-g7-bench-g7-carga-l1l4b-api",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 140535080,
+      "Created": "2026-11-05T21:19:12.566764947Z",
+      "LastTagTime": "2026-11-05T21:48:59.493761482Z"
+    },
+    {
+      "ID": "sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf",
+      "ContainerName": "transporte-g7-bench-g7-carga-l1l4b-redis-1",
+      "Repository": "redis",
+      "Tag": "7.4.7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 60665875,
+      "Created": "2026-01-28T02:35:11.872689865Z",
+      "LastTagTime": "2026-11-05T21:18:08.520607496Z"
+    }
+  ],
+  "memory_bytes": 8285749248,
+  "docker": "29.9.1",
+  "inputs": {
+    "input": {
+      "bytes": 49961641,
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "path": "data/raw/yellow_tripdata_2024-01.parquet"
+    },
+    "zone_catalog": {
+      "bytes": 12331,
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "path": "data/raw/taxi_zone_lookup.csv"
+    }
+  },
+  "compose": "5.6.0",
+  "architecture": "x86_64",
+  "other_running_container_count": 0
+}

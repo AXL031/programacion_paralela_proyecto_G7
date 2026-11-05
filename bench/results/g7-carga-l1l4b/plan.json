@@ -1,0 +1,899 @@
+[
+  {
+    "sample_id": "L1-w1",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": true
+  },
+  {
+    "sample_id": "L4-w1",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": true
+  },
+  {
+    "sample_id": "L4-r1",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L1-r1",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L1-r2",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L4-r2",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L4-r3",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L1-r3",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L1-r4",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 4,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L4-r4",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 4,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L4-r5",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 5,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "L1-r5",
+    "kind": "load",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 5,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D2-w1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D2",
+    "parameters": {
+      "id": "D2",
+      "workers": 2,
+      "mode": "distributed"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": true
+  },
+  {
+    "sample_id": "D4-w1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D4",
+    "parameters": {
+      "id": "D4",
+      "workers": 4,
+      "mode": "distributed"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": true
+  },
+  {
+    "sample_id": "S-w1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "S",
+    "parameters": {
+      "id": "S",
+      "workers": 1,
+      "mode": "sequential"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": true
+  },
+  {
+    "sample_id": "D1-w1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D1",
+    "parameters": {
+      "id": "D1",
+      "workers": 1,
+      "mode": "distributed"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": true
+  },
+  {
+    "sample_id": "D4-r1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D4",
+    "parameters": {
+      "id": "D4",
+      "workers": 4,
+      "mode": "distributed"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "S-r1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "S",
+    "parameters": {
+      "id": "S",
+      "workers": 1,
+      "mode": "sequential"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D1-r1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D1",
+    "parameters": {
+      "id": "D1",
+      "workers": 1,
+      "mode": "distributed"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D2-r1",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D2",
+    "parameters": {
+      "id": "D2",
+      "workers": 2,
+      "mode": "distributed"
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "S-r2",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "S",
+    "parameters": {
+      "id": "S",
+      "workers": 1,
+      "mode": "sequential"
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D1-r2",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D1",
+    "parameters": {
+      "id": "D1",
+      "workers": 1,
+      "mode": "distributed"
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D2-r2",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D2",
+    "parameters": {
+      "id": "D2",
+      "workers": 2,
+      "mode": "distributed"
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D4-r2",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D4",
+    "parameters": {
+      "id": "D4",
+      "workers": 4,
+      "mode": "distributed"
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D1-r3",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D1",
+    "parameters": {
+      "id": "D1",
+      "workers": 1,
+      "mode": "distributed"
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D2-r3",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D2",
+    "parameters": {
+      "id": "D2",
+      "workers": 2,
+      "mode": "distributed"
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D4-r3",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D4",
+    "parameters": {
+      "id": "D4",
+      "workers": 4,
+      "mode": "distributed"
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "S-r3",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "S",
+    "parameters": {
+      "id": "S",
+      "workers": 1,
+      "mode": "sequential"
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D2-r4",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D2",
+    "parameters": {
+      "id": "D2",
+      "workers": 2,
+      "mode": "distributed"
+    },
+    "repetition": 4,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D4-r4",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D4",
+    "parameters": {
+      "id": "D4",
+      "workers": 4,
+      "mode": "distributed"
+    },
+    "repetition": 4,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "S-r4",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "S",
+    "parameters": {
+      "id": "S",
+      "workers": 1,
+      "mode": "sequential"
+    },
+    "repetition": 4,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D1-r4",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D1",
+    "parameters": {
+      "id": "D1",
+      "workers": 1,
+      "mode": "distributed"
+    },
+    "repetition": 4,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D4-r5",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D4",
+    "parameters": {
+      "id": "D4",
+      "workers": 4,
+      "mode": "distributed"
+    },
+    "repetition": 5,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "S-r5",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "S",
+    "parameters": {
+      "id": "S",
+      "workers": 1,
+      "mode": "sequential"
+    },
+    "repetition": 5,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D1-r5",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D1",
+    "parameters": {
+      "id": "D1",
+      "workers": 1,
+      "mode": "distributed"
+    },
+    "repetition": 5,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "D2-r5",
+    "kind": "training",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "D2",
+    "parameters": {
+      "id": "D2",
+      "workers": 2,
+      "mode": "distributed"
+    },
+    "repetition": 5,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c1-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-unavailable-c1",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c10-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-unavailable-c10",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c25-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-unavailable-c25",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c1-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-cold-c1",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c10-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-cold-c10",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c25-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-cold-c25",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c1-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-warm-c1",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c10-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-warm-c10",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c25-r1",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-warm-c25",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 1,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c10-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-unavailable-c10",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c25-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-unavailable-c25",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c1-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-cold-c1",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c10-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-cold-c10",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c25-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-cold-c25",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c1-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-warm-c1",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c10-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-warm-c10",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c25-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-warm-c25",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c1-r2",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-unavailable-c1",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 2,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c25-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-unavailable-c25",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c1-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-cold-c1",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c10-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-cold-c10",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-cold-c25-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-cold-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-cold-c25",
+      "cache": "cold",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c1-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-warm-c1",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c10-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-warm-c10",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-warm-c25-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-warm-c25",
+    "parameters": {
+      "concurrency": 25,
+      "id": "API-warm-c25",
+      "cache": "warm",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c1-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c1",
+    "parameters": {
+      "concurrency": 1,
+      "id": "API-unavailable-c1",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  },
+  {
+    "sample_id": "API-unavailable-c10-r3",
+    "kind": "api",
+    "campaign_id": "g7-carga-l1l4b",
+    "case_id": "API-unavailable-c10",
+    "parameters": {
+      "concurrency": 10,
+      "id": "API-unavailable-c10",
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "repetition": 3,
+    "schema_version": "benchmark-v1",
+    "warmup": false
+  }
+]
