@@ -10,6 +10,7 @@ param(
     [int]$TimeoutSeconds = 15
 )
 $ErrorActionPreference = 'Stop'
+$null = Import-Module (Join-Path $PSScriptRoot 'benchmark-resources.psm1') -Force -PassThru
 $taskRepo = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $taskOutputDirectory = $null
 $taskDockerCommand = $null
@@ -398,15 +399,37 @@ public sealed class ApiBenchmarkSample
 
     $taskPhaseResults = @()
     foreach ($taskPhase in @('initial_pass', 'replay_pass')) {
+        $taskCapturePath = Join-Path $taskOutputDirectory ($taskPhase + '.resources.jsonl')
+        $taskCapture = Start-BenchmarkResourceCapture `
+            -ProjectName ([string]$taskCompose.name) `
+            -OutputPath $taskCapturePath
+        $taskPhaseError = $null
         $taskPhaseClock = [Diagnostics.Stopwatch]::StartNew()
-        $taskSamples = $taskHttpRunnerType.GetMethod('Run').Invoke(
-            $null,
-            @($taskBaseURL + '/api/v1/predictions', $taskToken, $taskBodies, $Concurrency, $TimeoutSeconds)
-        )
-        $taskPhaseClock.Stop()
+        try {
+            $taskSamples = $taskHttpRunnerType.GetMethod('Run').Invoke(
+                $null,
+                @($taskBaseURL + '/api/v1/predictions', $taskToken, $taskBodies, $Concurrency, $TimeoutSeconds)
+            )
+        } catch {
+            $taskPhaseError = $_
+        } finally {
+            $taskPhaseClock.Stop()
+        }
+        try {
+            $taskResourceSummary = Stop-BenchmarkResourceCapture -Capture $taskCapture
+        } catch {
+            if ($taskPhaseError) {
+                throw ('API request batch failed: ' + $taskPhaseError.Exception.Message + '; resource capture failed: ' + $_.Exception.Message)
+            }
+            throw
+        }
+        if ($taskPhaseError) {
+            throw $taskPhaseError
+        }
         $taskSummary = Get-PassSummary -Name $taskPhase -Samples $taskSamples `
             -ElapsedSeconds $taskPhaseClock.Elapsed.TotalSeconds `
             -ExpectedModelVersion $taskModelResponse.version
+        $taskSummary['resources'] = $taskResourceSummary
         $taskPhaseResults += [pscustomobject]$taskSummary
         Write-Host ($taskPhase + ': p95=' + $taskSummary.http_latency_ms.p95 + ' ms; errors=' + $taskSummary.errors + '; cache hits=' + $taskSummary.cache.hits)
     }

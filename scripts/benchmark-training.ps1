@@ -4,6 +4,7 @@ param(
     [int]$Repetitions = 5
 )
 $ErrorActionPreference = 'Stop'
+$null = Import-Module (Join-Path $PSScriptRoot 'benchmark-resources.psm1') -Force -PassThru
 $taskRepo = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $taskPreviousDatabase = $env:MONGO_DATABASE
 $taskPreviousModelOutput = $env:MODEL_OUTPUT
@@ -276,7 +277,29 @@ try {
                 }
             }
 
-            $taskRecord = Invoke-TrainingRun -Mode $taskCase.mode -WorkerCount $taskCase.workers -Label $taskLabel
+            $taskCapturePath = Join-Path $taskOutputRoot ($taskLabel + '.resources.jsonl')
+            $taskCapture = Start-BenchmarkResourceCapture `
+                -ProjectName ([string]$taskComposeConfig.name) `
+                -OutputPath (Join-Path $taskRepo $taskCapturePath)
+            $taskRunError = $null
+            $taskRecord = $null
+            try {
+                $taskRecord = Invoke-TrainingRun -Mode $taskCase.mode -WorkerCount $taskCase.workers -Label $taskLabel
+            } catch {
+                $taskRunError = $_
+            }
+            try {
+                $taskResourceSummary = Stop-BenchmarkResourceCapture -Capture $taskCapture
+            } catch {
+                if ($taskRunError) {
+                    throw ('Training failed: ' + $taskRunError.Exception.Message + '; resource capture failed: ' + $_.Exception.Message)
+                }
+                throw
+            }
+            if ($taskRunError) {
+                throw $taskRunError
+            }
+            $taskRecord | Add-Member -NotePropertyName resources -NotePropertyValue $taskResourceSummary
             if ($taskRecord.mode -eq 'distributed') {
                 $taskWorkerIDs = @($taskRecord.worker_ids | Sort-Object -Unique)
                 if ($taskWorkerIDs.Count -ne $taskCase.workers) {
