@@ -20,7 +20,8 @@ function Open-BenchWorkload([string]$ContextPath,[string]$SamplePath,[string]$Ou
 function Get-BenchSHA256([string]$Path){return (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant()}
 function Get-BenchRelativePath([string]$Path){return [IO.Path]::GetRelativePath((Get-BenchRoot),$Path).Replace('\','/')}
 function Get-BenchCurrentDataset($Context,[string]$SampleId){
-    $query='const d=db.getSiblingDB("g7_benchmark");const c=d.settings.findOne({_id:"current_dataset"});const m=c?d.datasets.findOne({_id:c.dataset_id,status:"complete"}):null;if(!m)throw Error("no complete benchmark dataset");m.dataset_id=m._id;print(JSON.stringify(m));'
+    # Explicitly convert BSON int64: JSON.stringify(Long) exposes low/high fields.
+    $query='const d=db.getSiblingDB("g7_benchmark");const c=d.settings.findOne({_id:"current_dataset"});const m=c?d.datasets.findOne({_id:c.dataset_id,status:"complete"}):null;if(!m)throw Error("no complete benchmark dataset");print(JSON.stringify({dataset_id:m._id,load_id:m.load_id,source_sha256:m.source_sha256,catalog_sha256:m.catalog_sha256,snapshot:{sha256:m.snapshot.sha256},stats:{accepted:Number(m.stats.accepted)}}));'
     $call=Invoke-BenchCompose $Context @('exec','-T','mongo','mongosh','--quiet','--eval',$query) "logs/$SampleId-dataset" 30
     Assert-BenchSuccess $call 'Current benchmark dataset'
     $m=ConvertFrom-BenchJsonData $call.stdout

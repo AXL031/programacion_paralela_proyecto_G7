@@ -24,9 +24,11 @@ try {
         Write-BenchJson $publishedReference $referenceOutput.artifact
     }
     $n=[int]$s.parameters.workers
+    $workerStartup=0.0
     if($s.parameters.mode -eq 'distributed'){
         $scale=Invoke-BenchCompose $c @('up','-d','--no-build','--no-deps','--scale',"worker=$n",'worker') "logs/$($s.sample_id)-scale" 120
         Assert-BenchSuccess $scale 'Scale isolated workers'
+        $workerStartup=$scale.elapsed_seconds
         $deadline=[datetime]::UtcNow.AddSeconds(40)
         do {
             $cluster=Invoke-RestMethod ($c.api_url+'/api/v1/cluster') -Headers $headers -TimeoutSec 10
@@ -56,6 +58,9 @@ try {
     if($r.status -ne 'completed' -or $a.dataset_id -ne $m.dataset_id -or $a.snapshot_sha256 -ne $m.snapshot.sha256){throw 'Training identity/status mismatch.'}
     $diagRaw=Join-Path $c.raw_dir "diagnostics/$($s.sample_id).json"
     Write-BenchJson $diagRaw (Read-BenchJson (Join-Path $c.data_dir "benchmark/$($s.sample_id).json"))
+    $d=Read-BenchJson $diagRaw
+    $expectedSteps=[int]$cfg.epochs*[int][Math]::Ceiling($d.train_examples/[double]$cfg.batch_size)
+    if($r.progress.step -ne $expectedSteps -or $r.progress.total_steps -ne $expectedSteps -or $d.total_steps -ne $expectedSteps -or $r.progress.epoch -ne $cfg.epochs){throw 'Training steps/epochs are incomplete.'}
     $metrics=@{
         workers=@($r.workers | Where-Object { $null -ne $_ }); tasks_by_worker=$r.tasks_by_worker; model_version=$a.version; run_id=$r.run_id
         candidate_max_difference=$trained.diagnostics.candidate_max_difference
@@ -64,6 +69,9 @@ try {
         reference_model_path=(Get-BenchRelativePath $publishedReference); reference_model_sha256=(Get-BenchSHA256 $publishedReference)
         published_weights=$a.weights; selection=$a.selection; config=$r.config
         timing_scope='in-process run through publication; container/adapter startup excluded'
+        trainer_invocation_seconds=$call.elapsed_seconds
+        invocation_overhead_seconds=[Math]::Max(0,$call.elapsed_seconds-$r.total_seconds)
+        workers_startup_seconds=$workerStartup
     }
     $timings=@{preparation_seconds=$r.preparation_seconds;compute_seconds=$r.training_seconds;evaluation_seconds=$r.evaluation_seconds;publication_seconds=$r.publication_seconds;total_seconds=$r.total_seconds}
     $result=New-BenchWorkloadResult $c $s $started (Get-BenchDatasetIdentity $m) $timings $resources.summary $metrics
