@@ -21,7 +21,7 @@ if(Test-Path -LiteralPath (Join-Path $c.results_dir 'proxy-report.json')){throw 
 $previous=$env:BENCH_PASSWORD
 try{
     $env:BENCH_PASSWORD=$values.DEMO_PASSWORD
-    $call=Invoke-BenchProcess 'docker' @('run','--rm','--network','transporte-g7_default','--cpus','2','--memory','256m','--env','BENCH_PASSWORD','--volume',"$($c.data_dir):/app/data",$imageID,'-base-url','http://web:3000','-user',[string]$values.DEMO_USER,'-cache','warm','-concurrency','10','-requests','1000','-output',"data/proxy/$attemptTag.json") 120 (Join-Path $c.raw_dir "logs/proxy-client-$attemptTag")
+    $call=Invoke-BenchProcess 'docker' @('run','--rm','--network','transporte-g7_default','--cpus','2','--memory','256m','--env','BENCH_PASSWORD','--volume',"$($c.data_dir):/app/data",$imageID,'-base-url','http://web:3000','-user',[string]$values.DEMO_USER,'-cache','observed','-concurrency','10','-requests','1000','-output',"data/proxy/$attemptTag.json") 120 (Join-Path $c.raw_dir "logs/proxy-client-$attemptTag")
     if(Test-Path -LiteralPath $localReport){Write-BenchJson (Join-Path $c.raw_dir "proxy/$attemptTag.json") (Read-BenchJson $localReport)}
     Assert-BenchSuccess $call 'Separate read-only prediction pass through demo proxy'
     $report=Read-BenchJson $localReport

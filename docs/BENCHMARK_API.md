@@ -28,7 +28,7 @@ Los percentiles p50/p95/p99 y máximo usan nearest rank e incluyen las latencias
 ./scripts/benchmark.ps1 -Action Export -Campaign g7-new-api-01
 ```
 
-La campaña completa prepara carga y modelo antes de medir API. `benchmark-api.ps1` no se invoca sin el contexto validado. La pasada proxy es autenticada y solo consulta el modelo de la demo; no modifica datos ni entrenamiento y guarda un reporte independiente.
+La campaña completa prepara carga y modelo antes de medir API. `benchmark-api.ps1` no se invoca sin el contexto validado. La pasada proxy es autenticada y solo consulta el modelo de la demo; no modifica datos ni entrenamiento y guarda un reporte independiente. Usa `cache=observed`: registra hits y misses reales sin vaciar ni detener Redis de la demo. Los tres escenarios controlados se exigen exclusivamente en la matriz aislada.
 
 ## Pruebas y resultados
 

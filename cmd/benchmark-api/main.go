@@ -243,13 +243,13 @@ func jsonCall(client *http.Client, method, url, token string, input, output any)
 }
 func run() error {
 	base := flag.String("base-url", "http://api:8080", "isolated API URL")
-	scenario := flag.String("cache", "cold", "cold/warm/unavailable")
+	scenario := flag.String("cache", "cold", "cold/warm/unavailable; observed for a separate proxy check")
 	n := flag.Int("requests", 1000, "measured requests")
 	concurrency := flag.Int("concurrency", 1, "in-flight bound")
 	output := flag.String("output", "", "raw report path")
 	user := flag.String("user", "benchmark", "login username (no password on command line)")
 	flag.Parse()
-	if *n < 1 || *n > 100000 || *concurrency < 1 || *concurrency > 64 || (*scenario != "cold" && *scenario != "warm" && *scenario != "unavailable") || *output == "" {
+	if *n < 1 || *n > 100000 || *concurrency < 1 || *concurrency > 64 || (*scenario != "cold" && *scenario != "warm" && *scenario != "unavailable" && *scenario != "observed") || *output == "" {
 		return fmt.Errorf("invalid workload flags")
 	}
 	transport := &http.Transport{MaxConnsPerHost: *concurrency, MaxIdleConnsPerHost: *concurrency, MaxIdleConns: *concurrency}
@@ -308,7 +308,11 @@ func run() error {
 			return err
 		}
 	}
-	samples, elapsed := batch(context.Background(), client, *base, login.Token, queries, model.Version, *scenario, *concurrency, 15*time.Second)
+	expected := *scenario
+	if expected == "observed" {
+		expected = "any"
+	}
+	samples, elapsed := batch(context.Background(), client, *base, login.Token, queries, model.Version, expected, *concurrency, 15*time.Second)
 	r := summarize(samples, elapsed, *scenario, *concurrency, model.Version, dataset.ID)
 	b, err := json.MarshalIndent(r, "", "  ")
 	if err != nil {
