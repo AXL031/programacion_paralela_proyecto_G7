@@ -87,7 +87,6 @@ services:
       MONGO_DATABASE: ${MONGO_DATABASE:-transporte}
       GOMAXPROCS: '1'
       MASTER_API_TOKEN: ${MASTER_API_TOKEN:?Ejecuta scripts/init-env.ps1}
-      MODEL_OUTPUT: ${MODEL_OUTPUT:-data/models}
     volumes:
       - ./data:/app/data
     depends_on:
@@ -134,7 +133,6 @@ services:
       MASTER_HTTP: http://master:8081
       GOMAXPROCS: '1'
       MASTER_API_TOKEN: ${MASTER_API_TOKEN:?Ejecuta scripts/init-env.ps1}
-      MODEL_OUTPUT: ${MODEL_OUTPUT:-data/models}
     volumes:
       - ./data:/app/data
     depends_on:
