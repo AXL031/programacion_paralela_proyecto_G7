@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "benchmark-v1: one sample, never an infrastructure smoke",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "campaign_id", "sample_id", "case_id", "scope", "kind", "repetition", "warmup", "started_at", "completed_at", "status", "errors", "dataset", "timings", "resources", "checks", "metrics"],
+  "properties": {
+    "schema_version": {"const": "benchmark-v1"},
+    "campaign_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,31}$"},
+    "sample_id": {"type": "string", "pattern": "^[a-zA-Z0-9-]+$"},
+    "case_id": {"type": "string", "minLength": 1},
+    "scope": {"enum": ["real", "orchestrator_fixture"]},
+    "kind": {"enum": ["load", "training", "api"]},
+    "repetition": {"type": "integer", "minimum": 1},
+    "warmup": {"type": "boolean"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "completed_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["passed", "failed"]},
+    "errors": {"type": "array", "items": {"type": "string"}},
+    "dataset": {
+      "type": "object",
+      "required": ["id", "load_id", "snapshot_sha256", "source_sha256", "catalog_sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "load_id": {"type": "string", "minLength": 1},
+        "snapshot_sha256": {"$ref": "#/definitions/hash"},
+        "source_sha256": {"$ref": "#/definitions/hash"},
+        "catalog_sha256": {"$ref": "#/definitions/hash"}
+      }
+    },
+    "timings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preparation_seconds", "compute_seconds", "evaluation_seconds", "publication_seconds", "total_seconds"],
+      "properties": {
+        "preparation_seconds": {"$ref": "#/definitions/phase"},
+        "compute_seconds": {"$ref": "#/definitions/phase"},
+        "evaluation_seconds": {"$ref": "#/definitions/phase"},
+        "publication_seconds": {"$ref": "#/definitions/phase"},
+        "total_seconds": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "path", "sha256", "valid_samples", "missing_samples"],
+      "properties": {
+        "status": {"enum": ["available", "unavailable", "synthetic"]},
+        "path": {"type": ["string", "null"]},
+        "sha256": {"anyOf": [{"$ref": "#/definitions/hash"}, {"type": "null"}]},
+        "valid_samples": {"type": "integer", "minimum": 0},
+        "missing_samples": {"type": "integer", "minimum": 0}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "required": ["dataset_verified", "result_valid", "resources_valid"],
+      "additionalProperties": {"type": "boolean"},
+      "properties": {
+        "dataset_verified": {"type": "boolean"},
+        "result_valid": {"type": "boolean"},
+        "resources_valid": {"type": "boolean"}
+      }
+    },
+    "metrics": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "load"}}},
+      "then": {"properties": {"metrics": {
+        "required": ["reused", "read", "accepted", "rejected", "outside_period", "persisted"],
+        "properties": {
+          "reused": {"type": "boolean"},
+          "read": {"type": "integer", "minimum": 0},
+          "accepted": {"type": "integer", "minimum": 0},
+          "rejected": {"type": "integer", "minimum": 0},
+          "outside_period": {"type": "integer", "minimum": 0},
+          "persisted": {"type": "integer", "minimum": 0}
+        }
+      }}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "training"}}},
+      "then": {"properties": {"metrics": {
+        "required": ["workers", "tasks_by_worker", "candidate_max_difference", "model_version"],
+        "properties": {
+          "workers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "tasks_by_worker": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}},
+          "candidate_max_difference": {"type": "number", "minimum": 0},
+          "model_version": {"type": "string", "minLength": 1},
+          "candidate_diagnostics_path": {"type": "string", "minLength": 1},
+          "candidate_diagnostics_sha256": {"$ref": "#/definitions/hash"}
+        }
+      }}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "api"}}},
+      "then": {"properties": {"metrics": {
+        "required": ["attempted", "completed", "errors", "cache_hits", "p50_ms", "p95_ms", "p99_ms", "max_ms", "objective_met"],
+        "properties": {
+          "attempted": {"type": "integer", "minimum": 1},
+          "completed": {"type": "integer", "minimum": 0},
+          "errors": {"type": "integer", "minimum": 0},
+          "cache_hits": {"type": "integer", "minimum": 0},
+          "p50_ms": {"type": "number", "minimum": 0},
+          "p95_ms": {"type": "number", "minimum": 0},
+          "p99_ms": {"type": "number", "minimum": 0},
+          "max_ms": {"type": "number", "minimum": 0},
+          "objective_met": {"type": "boolean"}
+        }
+      }}}
+    }
+  ],
+  "definitions": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "phase": {"type": ["number", "null"], "minimum": 0}
+  }
+}

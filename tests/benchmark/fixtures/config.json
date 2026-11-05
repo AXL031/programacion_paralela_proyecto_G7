@@ -1,0 +1,29 @@
+{
+  "schema_version": "benchmark-v1",
+  "scope": "orchestrator_fixture",
+  "seed": 42,
+  "api_port": 18080,
+  "initial_workers": 2,
+  "timeout_seconds": 20,
+  "inputs": {"loader": "configs/fixture.json", "training": "configs/training.json"},
+  "protocol": {
+    "warmups": 0,
+    "repetitions": 1,
+    "loader_workers": [1, 4],
+    "training_workers": [1],
+    "api_passes": 1,
+    "api_requests": 3,
+    "api_concurrency": [1],
+    "api_cache": ["cold", "warm", "unavailable"],
+    "absolute_tolerance": 1e-9,
+    "relative_tolerance": 1e-9,
+    "api_p95_objective_ms": 100
+  },
+  "components": {
+    "load": "tests/benchmark/fixtures/adapter.ps1",
+    "training": "tests/benchmark/fixtures/adapter.ps1",
+    "api": "tests/benchmark/fixtures/adapter.ps1",
+    "resources": "tests/benchmark/fixtures/adapter.ps1",
+    "summary": "tests/benchmark/fixtures/adapter.ps1"
+  }
+}

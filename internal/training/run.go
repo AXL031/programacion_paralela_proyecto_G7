@@ -65,6 +65,8 @@ type Run struct {
 	PreparationSeconds float64        `json:"preparation_seconds"`
 	TrainingSeconds    float64        `json:"training_seconds"`
 	EvaluationSeconds  float64        `json:"evaluation_seconds"`
+	PublicationSeconds float64        `json:"publication_seconds"`
+	TotalSeconds       float64        `json:"total_seconds"`
 	Workers            []string       `json:"workers"`
 	Tasks              map[string]int `json:"tasks_by_worker"`
 	ArtifactVersion    string         `json:"artifact_version,omitempty"`
@@ -84,14 +86,15 @@ func NewID() string {
 	return "run-" + hex.EncodeToString(b[:])
 }
 
-func Execute(ctx context.Context, m domain.Manifest, c ml.Config, runID, mode string, factory Factory, update func(Run)) (Artifact, Run, error) {
+func Execute(ctx context.Context, m domain.Manifest, c ml.Config, runID, mode string, factory Factory, update func(Run)) (Artifact, Run, Candidate, error) {
 	r := Run{ID: runID, Mode: mode, Status: "preparing", DatasetID: m.ID, Config: c, StartedAt: time.Now().UTC(), Tasks: map[string]int{}}
 	var a Artifact
+	var candidate Candidate
 	if err := c.Validate(); err != nil {
-		return a, r, err
+		return a, r, candidate, err
 	}
 	if m.Status != "complete" || m.Snapshot.Version != "raw-counts-v1" {
-		return a, r, fmt.Errorf("completed raw-counts-v1 dataset required")
+		return a, r, candidate, fmt.Errorf("completed raw-counts-v1 dataset required")
 	}
 	if update != nil {
 		update(r)
@@ -99,27 +102,27 @@ func Execute(ctx context.Context, m domain.Manifest, c ml.Config, runID, mode st
 	started := time.Now()
 	rows, err := ml.LoadSnapshot(ctx, m.Snapshot.Path, m.Snapshot.SHA256)
 	if err != nil {
-		return a, r, err
+		return a, r, candidate, err
 	}
 	if int64(len(rows)) != m.Snapshot.Examples {
-		return a, r, fmt.Errorf("snapshot row count mismatch")
+		return a, r, candidate, fmt.Errorf("snapshot row count mismatch")
 	}
 	for _, x := range rows {
 		if x.TargetStart.Before(m.Start) || !x.TargetStart.Before(m.End) || x.Split == "train" && !x.TargetStart.Before(m.Snapshot.TrainEnd) || x.Split == "validation" && (x.TargetStart.Before(m.Snapshot.TrainEnd) || !x.TargetStart.Before(m.Snapshot.ValidationEnd)) || x.Split == "test" && x.TargetStart.Before(m.Snapshot.ValidationEnd) {
-			return a, r, fmt.Errorf("feature split outside declared temporal bounds")
+			return a, r, candidate, fmt.Errorf("feature split outside declared temporal bounds")
 		}
 	}
 	encoder, err := ml.Fit(rows)
 	if err != nil {
-		return a, r, err
+		return a, r, candidate, err
 	}
 	data, err := ml.Prepare(rows, encoder)
 	if err != nil {
-		return a, r, err
+		return a, r, candidate, err
 	}
 	compute, workers, err := factory(ctx, m, encoder, data)
 	if err != nil {
-		return a, r, err
+		return a, r, candidate, err
 	}
 	r.Workers = workers
 	r.PreparationSeconds = time.Since(started).Seconds()
@@ -136,39 +139,73 @@ func Execute(ctx context.Context, m domain.Manifest, c ml.Config, runID, mode st
 	})
 	r.TrainingSeconds = time.Since(started).Seconds()
 	if err != nil {
-		return a, r, err
+		return a, r, candidate, err
+	}
+	candidate = Candidate{
+		RunID:              runID,
+		Mode:               mode,
+		DatasetID:          m.ID,
+		SnapshotSHA256:     m.Snapshot.SHA256,
+		Encoder:            encoder,
+		Config:             c,
+		Seed:               c.Seed,
+		TrainExamples:      len(data.Train),
+		ValidationExamples: len(data.Validation),
+		TestExamples:       len(data.Test),
+		Dimension:          encoder.Dimension(),
+		Weights:            append([]float64(nil), weights...),
+		LossHistory:        append([]float64(nil), history...),
+		CreatedAt:          time.Now().UTC(),
 	}
 	started = time.Now()
-	weights, selection, err := ml.Select(data.Validation, encoder, weights)
+	selected, selection, err := ml.Select(data.Validation, encoder, weights)
 	if err != nil {
-		return a, r, err
+		return a, r, candidate, err
 	}
+	candidate.Selection = selection
+	candidate.Validation = selection.CandidateValidation
 	eval := map[string]ml.Evaluation{}
 	for name, split := range map[string][]ml.Row{"train": data.Train, "validation": data.Validation, "test": data.Test} {
-		v, err := ml.Evaluate(split, weights)
+		v, err := ml.Evaluate(split, selected)
 		if err != nil {
-			return a, r, err
+			return a, r, candidate, err
 		}
 		eval[name] = v
 	}
 	r.EvaluationSeconds = time.Since(started).Seconds()
-	a = Artifact{Version: runID, DatasetID: m.ID, SnapshotSHA256: m.Snapshot.SHA256, Encoder: encoder, Weights: weights, Config: c, WindowMinutes: m.WindowMinutes, Timezone: m.Timezone, TrainEnd: m.Snapshot.TrainEnd, ValidationEnd: m.Snapshot.ValidationEnd, CreatedAt: time.Now().UTC(), Evaluation: eval, LossHistory: history, Selection: selection}
-	return a, r, a.Validate()
+	a = Artifact{Version: runID, DatasetID: m.ID, SnapshotSHA256: m.Snapshot.SHA256, Encoder: encoder, Weights: selected, Config: c, WindowMinutes: m.WindowMinutes, Timezone: m.Timezone, TrainEnd: m.Snapshot.TrainEnd, ValidationEnd: m.Snapshot.ValidationEnd, CreatedAt: time.Now().UTC(), Evaluation: eval, LossHistory: history, Selection: selection}
+	return a, r, candidate, a.Validate()
 }
 func Sequential(ctx context.Context, m domain.Manifest, c ml.Config, repo Repo) (Artifact, Run, error) {
+	a, r, _, err := SequentialWithDiagnostics(ctx, m, c, repo)
+	return a, r, err
+}
+
+// SequentialWithDiagnostics is the local counterpart used by the trainer when
+// benchmark evidence is requested. The candidate is captured before ml.Select.
+func SequentialWithDiagnostics(ctx context.Context, m domain.Manifest, c ml.Config, repo Repo) (Artifact, Run, Candidate, error) {
 	c.Workers = 1
 	id := NewID()
 	if err := repo.SaveRun(ctx, Run{ID: id, Mode: "sequential", Status: "preparing", Config: c, StartedAt: time.Now().UTC()}); err != nil {
-		return Artifact{}, Run{}, err
+		return Artifact{}, Run{}, Candidate{}, err
 	}
-	a, r, err := Execute(ctx, m, c, id, "sequential", func(_ context.Context, _ domain.Manifest, _ ml.Encoder, d ml.Dataset) (ml.Computer, []string, error) {
+	execStarted := time.Now()
+	a, r, candidate, err := Execute(ctx, m, c, id, "sequential", func(_ context.Context, _ domain.Manifest, _ ml.Encoder, d ml.Dataset) (ml.Computer, []string, error) {
 		return func(ctx context.Context, _ int, w []float64, indices []int) (ml.Gradient, error) {
 			return ml.Compute(ctx, d.Train, w, indices)
 		}, nil, nil
 	}, nil)
-	if err == nil {
-		err = repo.Publish(ctx, a)
+	if candidate.RunID != "" {
+		candidate.Workers = append([]string{}, r.Workers...)
+		candidate.TasksByWorker = copyTrainingTasks(r.Tasks)
+		candidate.TotalSteps = r.Progress.TotalSteps
 	}
+	if err == nil {
+		publishStarted := time.Now()
+		err = repo.Publish(ctx, a)
+		r.PublicationSeconds = time.Since(publishStarted).Seconds()
+	}
+	r.TotalSeconds = time.Since(execStarted).Seconds()
 	r.CompletedAt = time.Now().UTC()
 	r.Status = "completed"
 	r.ArtifactVersion = a.Version
@@ -186,5 +223,13 @@ func Sequential(ctx context.Context, m domain.Manifest, c ml.Config, repo Repo) 
 			err = e
 		}
 	}
-	return a, r, err
+	return a, r, candidate, err
+}
+
+func copyTrainingTasks(tasks map[string]int) map[string]int {
+	out := map[string]int{}
+	for k, v := range tasks {
+		out[k] = v
+	}
+	return out
 }

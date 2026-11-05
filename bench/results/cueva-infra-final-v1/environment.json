@@ -1,0 +1,127 @@
+{
+  "go": "go version go1.27.2 linux/amd64",
+  "images": [
+    {
+      "ID": "sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf",
+      "ContainerName": "transporte-g7-bench-cueva-infra-final-v1-redis-1",
+      "Repository": "redis",
+      "Tag": "7.4.7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 60665875,
+      "Created": "2026-01-28T02:35:11.872689865Z",
+      "LastTagTime": "2026-10-13T15:05:21.199849102Z"
+    },
+    {
+      "ID": "sha256:2bfa35d06fa54ea1f5fba975fa2e75cb58c2a0b2833a3ea01c382e4c634d8ad3",
+      "ContainerName": "transporte-g7-bench-cueva-infra-final-v1-api-1",
+      "Repository": "transporte-g7-bench-cueva-infra-final-v1-api",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 140531046,
+      "Created": "2026-11-05T16:44:02.941378389Z",
+      "LastTagTime": "2026-11-05T16:51:45.416032783Z"
+    },
+    {
+      "ID": "sha256:b983cfc3fbea27a25df2a5618f57933e03d4973f110f07a223e9e2c1a78a39a5",
+      "ContainerName": "transporte-g7-bench-cueva-infra-final-v1-worker-1",
+      "Repository": "transporte-g7-bench-cueva-infra-final-v1-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914697,
+      "Created": "2026-11-05T16:43:49.810307064Z",
+      "LastTagTime": "2026-11-05T16:51:45.331560716Z"
+    },
+    {
+      "ID": "sha256:b983cfc3fbea27a25df2a5618f57933e03d4973f110f07a223e9e2c1a78a39a5",
+      "ContainerName": "transporte-g7-bench-cueva-infra-final-v1-worker-2",
+      "Repository": "transporte-g7-bench-cueva-infra-final-v1-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914697,
+      "Created": "2026-11-05T16:43:49.810307064Z",
+      "LastTagTime": "2026-11-05T16:51:45.331560716Z"
+    },
+    {
+      "ID": "sha256:85c3513f9f531a577f028bd10d9317c76aa9019fbb83d963151a1b02b786d37a",
+      "ContainerName": "transporte-g7-bench-cueva-infra-final-v1-master-1",
+      "Repository": "transporte-g7-bench-cueva-infra-final-v1-master",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 138406424,
+      "Created": "2026-11-05T16:43:59.365433757Z",
+      "LastTagTime": "2026-11-05T16:51:45.384041279Z"
+    },
+    {
+      "ID": "sha256:4b58ebcb1dc7a7b4e84cd8ce9098d48764ae4478876898ff9551acf2ac4a6a6d",
+      "ContainerName": "transporte-g7-bench-cueva-infra-final-v1-mongo-1",
+      "Repository": "mongo",
+      "Tag": "8.0.16",
+      "Platform": "linux/amd64",
+      "Size": 1222044170,
+      "Created": "2025-11-19T23:52:45.713575377Z",
+      "LastTagTime": "2026-10-13T15:13:12.968344073Z"
+    }
+  ],
+  "memory_bytes": 7197335552,
+  "compose": "5.6.1",
+  "limits": {
+    "mongo": {
+      "cpus": 2,
+      "gomaxprocs": null,
+      "memory_bytes": "1610612736"
+    },
+    "redis": {
+      "cpus": 1,
+      "gomaxprocs": null,
+      "memory_bytes": "134217728"
+    },
+    "master": {
+      "cpus": 1,
+      "gomaxprocs": "1",
+      "memory_bytes": "1073741824"
+    },
+    "worker": {
+      "cpus": 1,
+      "gomaxprocs": "1",
+      "memory_bytes": "1073741824"
+    },
+    "api": {
+      "cpus": 1,
+      "gomaxprocs": "1",
+      "memory_bytes": "1073741824"
+    },
+    "loader": {
+      "cpus": 4,
+      "gomaxprocs": "4",
+      "memory_bytes": "1610612736"
+    },
+    "trainer": {
+      "cpus": 1,
+      "gomaxprocs": "1",
+      "memory_bytes": "1073741824"
+    },
+    "dev": {
+      "cpus": 4,
+      "gomaxprocs": null,
+      "memory_bytes": "2147483648"
+    }
+  },
+  "os": "linux",
+  "docker": "29.9.2",
+  "cpus": 16,
+  "architecture": "x86_64",
+  "inputs": {
+    "input": {
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "bytes": 49961641,
+      "path": "data/raw/yellow_tripdata_2024-01.parquet"
+    },
+    "zone_catalog": {
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "bytes": 12331,
+      "path": "data/raw/taxi_zone_lookup.csv"
+    }
+  },
+  "other_running_container_count": 0,
+  "free_disk_bytes": 290993987584
+}
