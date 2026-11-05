@@ -367,10 +367,10 @@ function Invoke-BenchMongo($Context, [string]$Script, [string]$LogName, [int]$Ti
     return Get-BenchJsonLine $call.stdout "MongoDB $LogName"
 }
 
-function Reset-BenchDatabase($Context) {
+function Reset-BenchDatabase($Context, [string]$SampleId) {
     $nameJson = ConvertTo-Json -InputObject ([string]$Context.database) -Compress
     $script = "const name=$nameJson; const d=db.getSiblingDB(name); if (d.getName() !== name) { throw new Error('database namespace mismatch'); } d.dropDatabase(); const collections=d.getCollectionNames(); print(JSON.stringify({database:name,collections:collections}));"
-    $state = Invoke-BenchMongo $Context $script 'load-reset'
+    $state = Invoke-BenchMongo $Context $script "logs/$SampleId-load-reset"
     if (-not $state.Contains('database') -or -not $state.Contains('collections')) { throw 'MongoDB reset returned an incomplete state.' }
     if ([string]$state.database -ne [string]$Context.database) { throw 'MongoDB reset targeted an unexpected database.' }
     if (@($state.collections).Count -ne 0) { throw 'MongoDB benchmark database is not empty after reset.' }
@@ -562,7 +562,7 @@ try {
         if ($expected -cne $catalogHash) { throw 'Zone checksum file does not match the frozen catalog.' }
     }
 
-    $inventory = Invoke-BenchCompose $context @('--profile', '*', 'ps', '--format', 'json') 'load-preflight'
+    $inventory = Invoke-BenchCompose $context @('--profile', '*', 'ps', '--format', 'json') "logs/$($sample.sample_id)-load-preflight"
     Assert-BenchSuccess $inventory 'Benchmark service inventory'
     $services = @(ConvertFrom-BenchComposePs $inventory.stdout 'Benchmark service inventory')
     $mongo = @($services | Where-Object {
@@ -584,7 +584,7 @@ try {
     # Only the fixed benchmark database is dropped, after ownership and labels
     # were validated. The demo database is never addressed.
     $stage = 'reset'
-    [void](Reset-BenchDatabase $context)
+    [void](Reset-BenchDatabase $context $sample.sample_id)
 
     $stage = 'resources'
     $collector = Start-BenchResourceCollector $context $sample $sampleFull
@@ -805,7 +805,7 @@ const agg=d.windows.aggregate([{$match:{load_id:load}},{$group:{_id:null,total:{
 print(JSON.stringify({manifest:m?{id:m._id,load_id:m.load_id,status:m.status,source_sha256:m.source_sha256,catalog_sha256:m.catalog_sha256,snapshot_sha256:m.snapshot?m.snapshot.sha256:null,snapshot_windows:m.snapshot?Number(m.snapshot.windows):null,accepted:m.stats?Number(m.stats.accepted):null,persisted:m.stats?Number(m.stats.persisted):null}:null,current:cur?cur.dataset_id:null,trips:trips,windows:windows,all_trips:allTrips,all_windows:allWindows,trip_dataset:tripDataset,window_dataset:windowDataset,window_sum:agg.length?Number(agg[0].total):0}));
 '@
         $mongoScript = $mongoScript.Replace('__NAME__', (ConvertTo-Json -InputObject ([string]$context.database) -Compress)).Replace('__ID__', (ConvertTo-Json -InputObject $dataset.id -Compress)).Replace('__LOAD__', (ConvertTo-Json -InputObject $dataset.load_id -Compress))
-        $mongoState = Invoke-BenchMongo $context $mongoScript 'load-verify'
+        $mongoState = Invoke-BenchMongo $context $mongoScript "logs/$($sample.sample_id)-load-verify"
         $mongoManifest = Get-BenchValue $mongoState 'manifest' $null
         $mongoManifestOk = ($null -ne $mongoManifest -and $mongoManifest -is [System.Collections.IDictionary]) -and
             ([string]$mongoManifest.id -ceq $dataset.id) -and

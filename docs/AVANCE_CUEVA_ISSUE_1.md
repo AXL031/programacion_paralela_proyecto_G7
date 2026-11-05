@@ -1,5 +1,7 @@
 # Avance de Cueva: entorno y orquestación de benchmarks
 
+**Actualización de auditoría del 5 de noviembre de 2026:** la primera entrega #7 ya se fusionó; #9 (colector/resumen) y #10 (instrumentación SGD) también están en `main`. #11 de carga sigue en revisión y #12 de Dragon se abrió en borrador. Vera ya tiene acceso e issue #8. El runner necesita reforzar la validación de la referencia secuencial antes de certificar entrenamiento. Consulta [estado actual, hallazgos y pendientes por integrante](AUDITORIA_ISSUES_PR_2026_11_05.md). Las secciones siguientes conservan el estado histórico de la primera entrega y sus evidencias.
+
 Fecha: **5 de noviembre de 2026, Lima**. Rama: `cueva`. Issue: [#1](https://github.com/AXL031/programacion_paralela_proyecto_G7/issues/1).
 
 **Entrega parcial para revisión; el issue permanece abierto.** Se implementa la base independiente sobre el merge aprobado del PR #6 (`77d8360`). La integración de componentes reales aún depende de #2–#5.

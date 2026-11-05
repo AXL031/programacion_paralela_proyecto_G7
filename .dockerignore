@@ -5,6 +5,7 @@
 data
 bin
 bench/raw
+output
 docs
 README.md
 web/node_modules

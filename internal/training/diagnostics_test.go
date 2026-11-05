@@ -291,3 +291,41 @@ func TestDiagnosticsRejectsInvalidSampleAndWeights(t *testing.T) {
 		t.Fatal("non-finite candidate weight was accepted")
 	}
 }
+
+func TestDistributedDiagnosticsRequireSequentialReference(t *testing.T) {
+	encoder, err := ml.Fit(syntheticRows())
+	if err != nil {
+		t.Fatal(err)
+	}
+	c := candidateFixture(t, ml.Initial(encoder), ml.Metrics{Examples: 20})
+	reference, err := NewDiagnostics(c, "reference-S")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := reference.SetSelfReference(1e-9, 1e-9); err != nil {
+		t.Fatal(err)
+	}
+	c.Mode = "distributed"
+	c.RunID = "distributed-run"
+	d, err := NewDiagnostics(c, "D1-r1")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := d.SetSelfReference(1e-9, 1e-9); err == nil {
+		t.Fatal("accepted distributed self-reference")
+	}
+	if err := d.SetReference(reference, 1e-9, 1e-9); err != nil {
+		t.Fatal(err)
+	}
+	if err := d.Validate(); err != nil {
+		t.Fatal(err)
+	}
+	reference.Mode = "distributed"
+	if err := d.SetReference(reference, 1e-9, 1e-9); err == nil {
+		t.Fatal("accepted distributed reference")
+	}
+	d.ReferenceMode = "distributed"
+	if err := d.Validate(); err == nil {
+		t.Fatal("accepted invalid reference mode on disk")
+	}
+}

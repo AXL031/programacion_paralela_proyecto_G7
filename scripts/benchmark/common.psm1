@@ -2,6 +2,13 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $script:BenchSecrets = @()
+. (Join-Path $PSScriptRoot 'candidate.ps1')
+
+function ConvertFrom-BenchComposeList([string]$Text) {
+    try { return @(ConvertFrom-BenchJsonData $Text) } catch {
+        return @($Text -split '\r?\n' | Where-Object { $_.Trim() } | ForEach-Object { ConvertFrom-BenchJsonData $_ })
+    }
+}
 
 function Get-BenchRoot { (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '../..')).Path }
 
@@ -309,7 +316,7 @@ function Assert-BenchCompose($Context) {
     # Never save this raw object: its environment contains private credentials.
     $compose = $resolved.stdout | ConvertFrom-Json -AsHashtable
     if ($compose.name -ne $Context.project) { throw 'Compose project mismatch (including BENCH_* environment overrides).' }
-    $allowed = @('mongo', 'redis', 'master', 'worker', 'api', 'loader', 'trainer', 'dev')
+    $allowed = @('mongo', 'redis', 'master', 'worker', 'api', 'loader', 'trainer', 'dev', 'benchmark-api')
     if (@($compose.services.Keys).Count -ne $allowed.Count) { throw 'Unexpected Compose services.' }
     $limits = [ordered]@{}
     foreach ($name in $allowed) {
@@ -431,7 +438,7 @@ function Prepare-BenchEnvironment($Context) {
     $loader.storage = 'mongo'; $loader.output = 'data/processed'; $loader.mongo_database = $Context.database
     Write-BenchJson (Join-Path $Context.data_dir 'configs/loader.json') $loader
     Write-BenchJson (Join-Path $Context.data_dir 'configs/training.json') (Read-BenchJson $Context.config.inputs.training)
-    $build = Invoke-BenchCompose $Context @('--profile', 'jobs', 'build', 'loader', 'trainer', 'master', 'worker', 'api') 'prepare-build'
+    $build = Invoke-BenchCompose $Context @('--profile', 'jobs', 'build', 'loader', 'trainer', 'master', 'worker', 'api', 'benchmark-api') 'prepare-build'
     Assert-BenchSuccess $build 'Benchmark build'
     $up = Invoke-BenchCompose $Context @('up', '-d', '--no-build', '--pull', 'never', '--scale', "worker=$($Context.config.initial_workers)", '--wait', '--wait-timeout', '120', 'mongo', 'redis', 'master', 'worker', 'api') 'prepare-up' 180
     Assert-BenchSuccess $up 'Benchmark startup'
@@ -490,6 +497,7 @@ function Assert-BenchSample($Context, $Plan, [string]$Path) {
                 $diagnosticsPath = Resolve-BenchPath (Resolve-BenchPath $metrics.candidate_diagnostics_path) $Context.raw_dir
                 if ((Get-FileHash -LiteralPath $diagnosticsPath).Hash.ToLowerInvariant() -ne $metrics.candidate_diagnostics_sha256) { throw 'Candidate diagnostics checksum mismatch.' }
                 $diagnostics = Read-BenchJson $diagnosticsPath
+                Assert-BenchCandidateReference $Context $Plan $result $diagnostics
                 if ($diagnostics.sample_id -ne $Plan.sample_id -or @($diagnostics.candidate_weights).Count -eq 0 -or @($diagnostics.candidate_weights).Count -ne @($diagnostics.reference_weights).Count) { throw 'Invalid candidate diagnostic identity/dimensions.' }
                 $difference = 0.0
                 for ($i = 0; $i -lt $diagnostics.candidate_weights.Count; $i++) {
@@ -539,7 +547,7 @@ function Invoke-BenchCampaign($Context) {
         Assert-BenchExistingResources $Context $resolved
         $health = Invoke-BenchCompose $Context @('ps', '--format', 'json')
         Assert-BenchSuccess $health 'Pre-run health'
-        $services = @($health.stdout | ConvertFrom-Json -AsHashtable)
+        $services = @(ConvertFrom-BenchComposeList $health.stdout)
         foreach ($name in @('mongo', 'redis', 'master', 'api')) {
             $matches = @($services | Where-Object { $_.Service -eq $name -and $_.State -eq 'running' -and $_.Health -eq 'healthy' })
             if ($matches.Count -ne 1) { throw "Service is not healthy: $name" }

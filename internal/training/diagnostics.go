@@ -172,6 +172,9 @@ func NewDiagnostics(c Candidate, sampleID string) (Diagnostics, error) {
 
 // SetSelfReference marks the sequential run as its own effective reference.
 func (d *Diagnostics) SetSelfReference(absolute, relative float64) error {
+	if d.Mode != "sequential" {
+		return fmt.Errorf("only a sequential run can be its own reference")
+	}
 	if err := validateTolerances(absolute, relative); err != nil {
 		return err
 	}
@@ -190,6 +193,12 @@ func (d *Diagnostics) SetSelfReference(absolute, relative float64) error {
 // per-parameter tolerance. A numeric divergence is recorded as
 // equivalent=false; incompatible inputs are rejected as errors.
 func (d *Diagnostics) SetReference(reference Diagnostics, absolute, relative float64) error {
+	if reference.Mode != "sequential" || reference.ReferenceMode != "sequential" || reference.ReferenceRunID != reference.RunID {
+		return fmt.Errorf("reference must be a self-validated sequential run")
+	}
+	if d.Mode == "distributed" && (d.RunID == reference.RunID || d.SampleID == reference.SampleID) {
+		return fmt.Errorf("distributed candidate cannot reference itself")
+	}
 	if reference.SchemaVersion != DiagnosticsSchema {
 		return fmt.Errorf("unsupported reference diagnostics schema %q", reference.SchemaVersion)
 	}
@@ -233,6 +242,9 @@ func (d *Diagnostics) SetReference(reference Diagnostics, absolute, relative flo
 }
 
 func compareConfig(reference, candidate ml.Config) error {
+	if reference.TaskTimeoutSeconds != candidate.TaskTimeoutSeconds {
+		return fmt.Errorf("reference task timeout differs")
+	}
 	if reference.Epochs != candidate.Epochs {
 		return fmt.Errorf("reference epochs differ")
 	}
@@ -287,6 +299,15 @@ func CompareWeights(reference, candidate []float64, absolute, relative float64) 
 // Validate checks identity, dimensions and that the recorded comparison is
 // internally consistent with its weights and tolerances.
 func (d Diagnostics) Validate() error {
+	if d.Mode != "sequential" && d.Mode != "distributed" {
+		return fmt.Errorf("invalid diagnostic mode")
+	}
+	if d.ReferenceMode != "sequential" || d.ReferenceRunID == "" {
+		return fmt.Errorf("missing sequential reference identity")
+	}
+	if d.Mode == "distributed" && d.ReferenceRunID == d.RunID {
+		return fmt.Errorf("distributed self-reference is invalid")
+	}
 	if d.SchemaVersion != DiagnosticsSchema {
 		return fmt.Errorf("invalid diagnostics schema")
 	}
