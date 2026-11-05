@@ -1,13 +1,22 @@
 # Dot-sourced by common.psm1; keeps the authoritative reference tied to the campaign.
 function Assert-BenchCandidateReference($Context,$Plan,$Result,$Diagnostics){
     $m=$Result.metrics; $d=$Diagnostics
-    foreach($key in @('reference_diagnostics_path','reference_diagnostics_sha256','run_id')){
+    foreach($key in @('reference_diagnostics_path','reference_diagnostics_sha256','run_id','reference_model_path','reference_model_sha256','published_weights')){
         if(-not $m.Contains($key)){throw "Missing reference identity: $key"}
     }
     $referencePath=Resolve-BenchPath (Resolve-BenchPath $m.reference_diagnostics_path) $Context.raw_dir
     if($referencePath -ne (Join-Path $Context.raw_dir 'reference/sequential-diagnostics.json')){throw 'Reference is not the frozen campaign sequential diagnostic.'}
     if((Get-FileHash -LiteralPath $referencePath).Hash.ToLowerInvariant() -cne $m.reference_diagnostics_sha256){throw 'Reference diagnostics checksum mismatch.'}
     $r=Read-BenchJson $referencePath
+    $modelPath=Resolve-BenchPath (Resolve-BenchPath $m.reference_model_path) $Context.raw_dir
+    if($modelPath -ne (Join-Path $Context.raw_dir 'reference/published-model.json') -or (Get-FileHash -LiteralPath $modelPath).Hash.ToLowerInvariant() -cne $m.reference_model_sha256){throw 'Published reference model identity/checksum mismatch.'}
+    $model=Read-BenchJson $modelPath
+    if($model.dataset_id -cne $Result.dataset.id -or $model.snapshot_sha256 -cne $Result.dataset.snapshot_sha256 -or $model.weights.Count -ne $m.published_weights.Count){throw 'Published reference model dataset/dimensions mismatch.'}
+    for($j=0;$j -lt $model.weights.Count;$j++){
+        $a=[double]$model.weights[$j];$b=[double]$m.published_weights[$j]
+        $limit=$Context.config.protocol.absolute_tolerance+$Context.config.protocol.relative_tolerance*[Math]::Max([Math]::Abs($a),[Math]::Abs($b))
+        if(-not [double]::IsFinite($b) -or [Math]::Abs($a-$b) -gt $limit){throw 'Published model differs from sequential reference.'}
+    }
     foreach($x in @($r,$d)){
         foreach($key in @('schema_version','mode','run_id','reference_run_id','reference_mode','dataset_id','snapshot_sha256','encoder_sha256','encoder_version','seed','config','train_examples','validation_examples','test_examples','dimension','total_steps','candidate_weights','reference_weights','absolute_tolerance','relative_tolerance','equivalent')){
             if(-not $x.Contains($key)){throw "Incomplete candidate diagnostic: $key"}

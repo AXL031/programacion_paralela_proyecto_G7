@@ -61,7 +61,8 @@ foreach ($case in @($results.case_id | Sort-Object -Unique)) {
         })
     }
     if ($measured[0].kind -eq 'api') {
-        foreach ($metric in @('p50_ms', 'p95_ms', 'p99_ms', 'max_ms', 'errors', 'cache_hits')) {
+        foreach ($metric in @('p50_ms', 'p95_ms', 'p99_ms', 'max_ms', 'errors', 'cache_hits','throughput_total','throughput_success','proportion_under_100_ms')) {
+            if(-not $measured[0].metrics.Contains($metric)){continue}
             $api.Add([ordered]@{ case_id = $case; metric = $metric; statistics = (Get-BenchStatistics @($measured | ForEach-Object { $_.metrics[$metric] })) })
         }
     }

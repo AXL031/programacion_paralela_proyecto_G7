@@ -81,6 +81,11 @@ $referencePath=Join-Path $fixtureContext.raw_dir 'reference/sequential-diagnosti
 $reference=ConvertFrom-BenchJsonData ($diagnostics | ConvertTo-Json -Depth 20)
 $reference.mode='sequential';$reference.run_id='reference-test';$reference.reference_run_id='reference-test';$reference.sample_id='reference-S'
 Write-BenchJson $referencePath $reference
+$modelPath=Join-Path $fixtureContext.raw_dir 'reference/published-model.json'
+Write-BenchJson $modelPath @{dataset_id=$trainingResult.dataset.id;snapshot_sha256=$trainingResult.dataset.snapshot_sha256;weights=@(0.0,0.0)}
+$trainingResult.metrics.reference_model_path=[IO.Path]::GetRelativePath($root,$modelPath).Replace('\','/')
+$trainingResult.metrics.reference_model_sha256=(Get-FileHash $modelPath).Hash.ToLowerInvariant()
+$trainingResult.metrics.published_weights=@(0.0,0.0)
 $trainingResult.metrics.run_id='distributed-test'
 $trainingResult.metrics.reference_diagnostics_path=[IO.Path]::GetRelativePath($root,$referencePath).Replace('\','/')
 $trainingResult.metrics.reference_diagnostics_sha256=(Get-FileHash -LiteralPath $referencePath).Hash.ToLowerInvariant()

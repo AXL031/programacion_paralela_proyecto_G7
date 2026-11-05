@@ -15,10 +15,13 @@ try {
     $m=Get-BenchCurrentDataset $c $s.sample_id
     $referenceHost=Join-Path $c.data_dir 'benchmark/reference-S.json'
     $referenceRaw=Join-Path $c.raw_dir 'reference/sequential-diagnostics.json'
+    $publishedReference=Join-Path $c.raw_dir 'reference/published-model.json'
     if(-not(Test-Path -LiteralPath $referenceHost)){
         $referenceCall=Invoke-BenchCompose $c @('--profile','jobs','run','-T','--rm','--no-deps','trainer','-mode','sequential','-config','data/configs/training.json','-diagnostics','data/benchmark/reference-S.json','-sample-id','reference-S') 'logs/reference-S-trainer'
         Assert-BenchSuccess $referenceCall 'Auxiliary sequential reference (excluded from measurements)'
         Write-BenchJson $referenceRaw (Read-BenchJson $referenceHost)
+        $referenceOutput=ConvertFrom-BenchJsonData $referenceCall.stdout
+        Write-BenchJson $publishedReference $referenceOutput.artifact
     }
     $n=[int]$s.parameters.workers
     if($s.parameters.mode -eq 'distributed'){
@@ -54,10 +57,11 @@ try {
     $diagRaw=Join-Path $c.raw_dir "diagnostics/$($s.sample_id).json"
     Write-BenchJson $diagRaw (Read-BenchJson (Join-Path $c.data_dir "benchmark/$($s.sample_id).json"))
     $metrics=@{
-        workers=@($r.workers); tasks_by_worker=$r.tasks_by_worker; model_version=$a.version; run_id=$r.run_id
+        workers=@($r.workers | Where-Object { $null -ne $_ }); tasks_by_worker=$r.tasks_by_worker; model_version=$a.version; run_id=$r.run_id
         candidate_max_difference=$trained.diagnostics.candidate_max_difference
         candidate_diagnostics_path=(Get-BenchRelativePath $diagRaw); candidate_diagnostics_sha256=(Get-BenchSHA256 $diagRaw)
         reference_diagnostics_path=(Get-BenchRelativePath $referenceRaw); reference_diagnostics_sha256=(Get-BenchSHA256 $referenceRaw)
+        reference_model_path=(Get-BenchRelativePath $publishedReference); reference_model_sha256=(Get-BenchSHA256 $publishedReference)
         published_weights=$a.weights; selection=$a.selection; config=$r.config
         timing_scope='in-process run through publication; container/adapter startup excluded'
     }

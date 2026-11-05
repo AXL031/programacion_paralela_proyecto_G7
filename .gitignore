@@ -1,6 +1,7 @@
 .env
 .tools/
 .cache/
+output/
 bin/
 data/*
 !data/.gitkeep
