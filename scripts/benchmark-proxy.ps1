@@ -15,12 +15,16 @@ $imageID=[string]$environment.built_images['benchmark-api']
 if($imageID -notmatch '^(sha256:)?[a-f0-9]{12,64}$'){throw 'Unexpected HTTP client image identity.'}
 $directory=Join-Path $c.data_dir 'proxy'
 [void][IO.Directory]::CreateDirectory($directory)
+$attemptTag=[datetime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ')
+$localReport=Join-Path $directory "$attemptTag.json"
+if(Test-Path -LiteralPath (Join-Path $c.results_dir 'proxy-report.json')){throw 'A proxy report already exists; use another campaign.'}
 $previous=$env:BENCH_PASSWORD
 try{
     $env:BENCH_PASSWORD=$values.DEMO_PASSWORD
-    $call=Invoke-BenchProcess 'docker' @('run','--rm','--network','transporte-g7_default','--cpus','2','--memory','256m','--env','BENCH_PASSWORD','--volume',"$($c.data_dir):/app/data",$imageID,'-base-url','http://web:3000','-user',[string]$values.DEMO_USER,'-cache','warm','-concurrency','10','-requests','1000','-output','data/proxy/report.json') 120 (Join-Path $c.raw_dir 'logs/proxy-client')
+    $call=Invoke-BenchProcess 'docker' @('run','--rm','--network','transporte-g7_default','--cpus','2','--memory','256m','--env','BENCH_PASSWORD','--volume',"$($c.data_dir):/app/data",$imageID,'-base-url','http://web:3000','-user',[string]$values.DEMO_USER,'-cache','warm','-concurrency','10','-requests','1000','-output',"data/proxy/$attemptTag.json") 120 (Join-Path $c.raw_dir "logs/proxy-client-$attemptTag")
+    if(Test-Path -LiteralPath $localReport){Write-BenchJson (Join-Path $c.raw_dir "proxy/$attemptTag.json") (Read-BenchJson $localReport)}
     Assert-BenchSuccess $call 'Separate read-only prediction pass through demo proxy'
-    $report=Read-BenchJson (Join-Path $directory 'report.json')
+    $report=Read-BenchJson $localReport
     $report.route='demo web proxy, separate from isolated direct REST campaign'
     Write-BenchJson (Join-Path $c.results_dir 'proxy-report.json') $report
 }finally{

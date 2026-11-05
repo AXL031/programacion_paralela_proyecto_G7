@@ -11,7 +11,7 @@ El cliente Go usa un pool acotado y conexiones persistentes. Cada intento conser
 | Estado Redis | Preparación | Comprobación |
 |---|---|---|
 | Frío | Vaciar exclusivamente Redis de la campaña; claves válidas únicas | Todas las respuestas medidas son miss |
-| Caliente | Precalentar las 1.000 claves fuera de medición | Todas las respuestas medidas son hit |
+| Caliente | Precalentar y verificar hits en las 1.000 claves fuera de medición, con hasta cinco pasadas de preparación | Todas las respuestas medidas son hit |
 | No disponible | Detener Redis aislado y comprobar readiness | Predicción fallback sin hits y restauración posterior |
 
 Matriz: estados anteriores × concurrencia 1/10/25 × tres pasadas × 1.000 solicitudes = **27.000 intentos medidos**. Login, smoke y precalentamiento se excluyen. No se agregan las peticiones por proxy a esta matriz.
