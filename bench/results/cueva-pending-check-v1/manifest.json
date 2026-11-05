@@ -1,0 +1,26 @@
+{
+  "schema_version": "benchmark-v1",
+  "campaign_id": "cueva-pending-check-v1",
+  "missing_components": [
+    "api",
+    "load",
+    "resources",
+    "summary",
+    "training"
+  ],
+  "scope": "real",
+  "created_at": "2026-11-05T16:53:34.1486714Z",
+  "samples": [],
+  "errors": [
+    "Missing component adapters: api, load, resources, summary, training"
+  ],
+  "project": "transporte-g7-bench-cueva-pending-check-v1",
+  "pending_issues": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "objective_evaluated": false,
+  "state": "blocked"
+}

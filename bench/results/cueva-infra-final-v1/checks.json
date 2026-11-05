@@ -1,0 +1,11 @@
+{
+  "issue_1_closed": false,
+  "mongo_integration": "passed",
+  "go_test_race": "passed",
+  "go_checks_project": "transporte-g7-bench-cueva-infra-smoke-v1",
+  "implementation_commit": "3fe56f6d789f961b0918d7f34e0f259598251866",
+  "real_campaigns_executed": false,
+  "note": "Go source unchanged in this PR; vet/race run against the existing suite with isolated MongoDB. Runner tests use synthetic components. Final infrastructure smoke uses the implementation commit and tiny synthetic data.",
+  "go_vet": "passed",
+  "runner_checks": 40
+}

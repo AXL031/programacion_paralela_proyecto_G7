@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "pending": [
+    "Real component adapters #2/#4/#5",
+    "Pre-selection SGD diagnostics #3",
+    "Formal resource measurements #4",
+    "Real repeated campaigns",
+    "Final audit by Vera"
+  ],
+  "tasks_by_worker": {
+    "072781671fcc": 27,
+    "7a2aba159ab7": 27
+  },
+  "campaign_id": "cueva-infra-final-v1",
+  "candidate_equivalence_verified": false,
+  "model_version": "run-fbb67075a32fc7ae29c9713e",
+  "cache_miss_then_hit": true,
+  "created_at": "2026-11-05T16:52:10.5066100Z",
+  "scope": "infrastructure_smoke_synthetic_data",
+  "workers": [
+    "072781671fcc",
+    "7a2aba159ab7"
+  ],
+  "counts": {
+    "trips": 3,
+    "windows": 192
+  },
+  "dataset_id": "ds-b9b2c86160a6f0a25dbc2ffc82b192d2",
+  "schema_version": "benchmark-v1"
+}

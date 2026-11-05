@@ -63,7 +63,21 @@ Con el primer PR aprobado, los integrantes pueden actualizar sus ramas desde `ma
 
 La campaña de desarrollo `cueva-infra-smoke-v1` pasó con 3 viajes, 192 ventanas, entrenamiento secuencial/distribuido, dos workers con 27 tareas cada uno y miss/hit de Redis. Se verificaron 12 archivos de datos/modelos/snapshots y, de forma independiente en MongoDB, el dataset/modelo activos y 1,348,665 viajes / 378,720 ventanas de la demo. Antes/después fueron idénticos; al terminar se retiraron únicamente los servicios del smoke.
 
-Esta primera ejecución sirvió para verificar la base durante el desarrollo. La evidencia final del PR se registrará sobre la referencia de implementación congelada, con comandos, resultados y ZIP compartible. Ni el smoke ni los tests sintéticos se contabilizan como ensayos reales de las semanas 12–13.
+Esta primera ejecución sirvió para verificar la base durante el desarrollo. Se repitió el smoke en la campaña **`cueva-infra-final-v1`** sobre el commit de implementación **`3fe56f6d789f961b0918d7f34e0f259598251866`**. Volvió a pasar y la demo permaneció intacta también al detener ambos entornos de pruebas. El checkout registra cambios locales previos del README; el inventario SHA-256 identifica las fuentes efectivas usadas.
+
+| Verificación | Resultado y evidencia |
+|---|---|
+| Runner y fallos | **40 comprobaciones aprobadas**, todas con componentes controlados; [detalle](../bench/results/cueva-infra-final-v1/runner-tests.json). Incluye datos tipados, métricas inválidas, identificación/scope, contribución de workers, candidato SGD previo a selección, checksums de recursos, timeout, solapamiento y resumen incompleto. |
+| Formato/sintaxis | Sintaxis PowerShell válida y `git diff --check` correcto. |
+| Suite Go existente | `go vet ./...` y `go test -race -count=1 ./...` aprobados dentro de Docker, con integración MongoDB aislada. Salidas completas en el ZIP; [resumen](../bench/results/cueva-infra-final-v1/checks.json). |
+| Smoke final | 3 viajes / 192 ventanas, ambos modos de entrenamiento, dos workers y 27 tareas por worker, predicción y miss/hit Redis; [resultado](../bench/results/cueva-infra-final-v1/smoke.json). |
+| Preservación | [Antes/después del smoke](../bench/results/cueva-infra-final-v1/preservation-smoke.json) y [del apagado](../bench/results/cueva-infra-final-v1/preservation-stop.json): archivos y MongoDB observados sin cambios. |
+| Precondiciones de campaña real | `Run -Campaign cueva-pending-check-v1` devuelve error esperado, estado **blocked** y cinco adaptadores ausentes; [manifiesto](../bench/results/cueva-pending-check-v1/manifest.json). Ninguna muestra se ejecutó. |
+| Entorno | Docker Linux, 16 CPU lógicas / 7,197,335,552 bytes asignados, Compose 5.6.1, Go 1.27.2; [entorno, límites e imágenes](../bench/results/cueva-infra-final-v1/environment.json). Otras cargas estaban presentes: no son condiciones de benchmark de rendimiento. |
+
+El [ZIP de evidencia compartible](../bench/evidence/cueva-infra-final-v1.zip) contiene 35 entradas de resultados/logs con su [SHA-256](../bench/evidence/cueva-infra-final-v1.zip.sha256): `dbe16b2975e58df6f767e83ba0786499cf484c3fb600c2b1cbbd5baf11b71832`. Se comprobó que no contiene el contexto privado, el archivo de credenciales ni los tres secretos de benchmark. Los datos/modelos grandes y credenciales permanecen locales. Ambos proyectos de benchmark quedaron detenidos, conservando volúmenes y evidencia; la demo sigue funcionando.
+
+Ni el smoke ni los tests sintéticos se contabilizan como ensayos reales de las semanas 12–13. Los resultados no evalúan speedup, calidad predictiva nueva ni la meta de API bajo carga.
 
 ## Límites explícitos
 

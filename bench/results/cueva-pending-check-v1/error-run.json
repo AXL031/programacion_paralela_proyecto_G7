@@ -1,0 +1,5 @@
+{
+  "at": "2026-11-05T16:53:36.9844091Z",
+  "error": "Missing component adapters: api, load, resources, summary, training",
+  "action": "Run"
+}

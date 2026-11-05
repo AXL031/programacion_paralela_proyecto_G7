@@ -1,0 +1,899 @@
+[
+  {
+    "case_id": "L1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 1,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L1-w1",
+    "warmup": true
+  },
+  {
+    "case_id": "L4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 1,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L4-w1",
+    "warmup": true
+  },
+  {
+    "case_id": "L4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 1,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L4-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "L1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 1,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L1-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "L1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 2,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L1-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "L4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 2,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L4-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "L4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 3,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L4-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "L1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 3,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L1-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "L1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 4,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L1-r4",
+    "warmup": false
+  },
+  {
+    "case_id": "L4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 4,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L4-r4",
+    "warmup": false
+  },
+  {
+    "case_id": "L4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "repetition": 5,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L4-r5",
+    "warmup": false
+  },
+  {
+    "case_id": "L1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "repetition": 5,
+    "kind": "load",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "L1-r5",
+    "warmup": false
+  },
+  {
+    "case_id": "D2",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D2-w1",
+    "warmup": true
+  },
+  {
+    "case_id": "D4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D4-w1",
+    "warmup": true
+  },
+  {
+    "case_id": "S",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "S-w1",
+    "warmup": true
+  },
+  {
+    "case_id": "D1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D1-w1",
+    "warmup": true
+  },
+  {
+    "case_id": "D4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D4-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "S",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "S-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "D1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D1-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "D2",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "repetition": 1,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D2-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "S",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "repetition": 2,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "S-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "D1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "repetition": 2,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D1-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "D2",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "repetition": 2,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D2-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "D4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "repetition": 2,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D4-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "D1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "repetition": 3,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D1-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "D2",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "repetition": 3,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D2-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "D4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "repetition": 3,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D4-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "S",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "repetition": 3,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "S-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "D2",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "repetition": 4,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D2-r4",
+    "warmup": false
+  },
+  {
+    "case_id": "D4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "repetition": 4,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D4-r4",
+    "warmup": false
+  },
+  {
+    "case_id": "S",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "repetition": 4,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "S-r4",
+    "warmup": false
+  },
+  {
+    "case_id": "D1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "repetition": 4,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D1-r4",
+    "warmup": false
+  },
+  {
+    "case_id": "D4",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "repetition": 5,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D4-r5",
+    "warmup": false
+  },
+  {
+    "case_id": "S",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "repetition": 5,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "S-r5",
+    "warmup": false
+  },
+  {
+    "case_id": "D1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "repetition": 5,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D1-r5",
+    "warmup": false
+  },
+  {
+    "case_id": "D2",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "repetition": 5,
+    "kind": "training",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "D2-r5",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-unavailable-c1"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c1-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-unavailable-c10"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c10-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-unavailable-c25"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c25-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-cold-c1"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c1-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-cold-c10"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c10-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-cold-c25"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c25-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-warm-c1"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c1-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-warm-c10"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c10-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-warm-c25"
+    },
+    "repetition": 1,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c25-r1",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-unavailable-c10"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c10-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-unavailable-c25"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c25-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-cold-c1"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c1-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-cold-c10"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c10-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-cold-c25"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c25-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-warm-c1"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c1-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-warm-c10"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c10-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-warm-c25"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c25-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-unavailable-c1"
+    },
+    "repetition": 2,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c1-r2",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-unavailable-c25"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c25-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-cold-c1"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c1-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-cold-c10"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c10-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-cold-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "cold",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-cold-c25"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-cold-c25-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-warm-c1"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c1-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-warm-c10"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c10-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-warm-c25",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "warm",
+      "requests": 1000,
+      "concurrency": 25,
+      "id": "API-warm-c25"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-warm-c25-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c1",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 1,
+      "id": "API-unavailable-c1"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c1-r3",
+    "warmup": false
+  },
+  {
+    "case_id": "API-unavailable-c10",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "cache": "unavailable",
+      "requests": 1000,
+      "concurrency": 10,
+      "id": "API-unavailable-c10"
+    },
+    "repetition": 3,
+    "kind": "api",
+    "campaign_id": "cueva-pending-check-v1",
+    "sample_id": "API-unavailable-c10-r3",
+    "warmup": false
+  }
+]
