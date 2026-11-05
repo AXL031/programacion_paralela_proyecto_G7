@@ -45,7 +45,7 @@ function ConvertFrom-BenchJsonText([string]$Text, [string]$What) {
     if ([string]::IsNullOrWhiteSpace($Text)) { throw "$What produced no JSON output." }
     $trimmed = $Text.Trim()
     try {
-        $parsed = $trimmed | ConvertFrom-Json -AsHashtable
+        $parsed = ConvertFrom-BenchJsonData $trimmed
         if ($parsed -is [System.Collections.IDictionary]) { return $parsed }
     } catch { }
     $lines = @($trimmed -split '\r?\n')
@@ -53,7 +53,7 @@ function ConvertFrom-BenchJsonText([string]$Text, [string]$What) {
         if ($lines[$i].Trim() -eq '{') {
             $candidate = ($lines[$i..($lines.Count - 1)] -join "`n")
             try {
-                $parsed = $candidate | ConvertFrom-Json -AsHashtable
+                $parsed = ConvertFrom-BenchJsonData $candidate
                 if ($parsed -is [System.Collections.IDictionary]) { return $parsed }
             } catch { }
         }
@@ -63,7 +63,7 @@ function ConvertFrom-BenchJsonText([string]$Text, [string]$What) {
     if ($first -ge 0 -and $last -gt $first) {
         $candidate = $trimmed.Substring($first, $last - $first + 1)
         try {
-            $parsed = $candidate | ConvertFrom-Json -AsHashtable
+            $parsed = ConvertFrom-BenchJsonData $candidate
             if ($parsed -is [System.Collections.IDictionary]) { return $parsed }
         } catch { }
     }
@@ -75,7 +75,7 @@ function Get-BenchJsonLine([string]$Text, [string]$What) {
     $lines = @($Text -split '\r?\n' | Where-Object { $_.Trim() })
     for ($i = $lines.Count - 1; $i -ge 0; $i--) {
         try {
-            $parsed = $lines[$i] | ConvertFrom-Json -AsHashtable
+            $parsed = ConvertFrom-BenchJsonData $lines[$i]
             if ($parsed -is [System.Collections.IDictionary]) { return $parsed }
         } catch { }
     }
@@ -347,14 +347,14 @@ function ConvertFrom-BenchComposePs([string]$Text, [string]$What) {
     if ([string]::IsNullOrWhiteSpace($Text)) { return @() }
     $trimmed = $Text.Trim()
     try {
-        $whole = $trimmed | ConvertFrom-Json -AsHashtable
+        $whole = ConvertFrom-BenchJsonData $trimmed
         if ($null -eq $whole) { return @() }
         if ($whole -is [System.Collections.IDictionary]) { return @($whole) }
         return @($whole)
     } catch { }
     $items = @()
     foreach ($line in @($trimmed -split '\r?\n' | Where-Object { $_.Trim() })) {
-        try { $parsed = $line | ConvertFrom-Json -AsHashtable } catch { throw "$What returned invalid JSON." }
+        try { $parsed = ConvertFrom-BenchJsonData $line } catch { throw "$What returned invalid JSON." }
         if ($parsed -isnot [System.Collections.IDictionary]) { throw "$What returned invalid JSON." }
         $items += $parsed
     }
@@ -476,7 +476,7 @@ function Get-BenchResourcesEvidence($Context, $Sample, [string]$Path, $Collector
         $isValid = $false
         try { $isValid = Test-Json -Json $line -SchemaFile (Resolve-BenchPath 'schemas/benchmark-resource.schema.json') -ErrorAction Stop } catch { $isValid = $false }
         if (-not $isValid) { $errors.Add("resource line $lineNumber is invalid"); continue }
-        $observation = $line | ConvertFrom-Json -AsHashtable
+        $observation = ConvertFrom-BenchJsonData $line
         if ([string]$observation.sample_id -ne [string]$Sample.sample_id) { $errors.Add("resource line $lineNumber belongs to another sample"); continue }
         if ($observation.available) { $valid++ } else { $missing++ }
     }

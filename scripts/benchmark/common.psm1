@@ -34,8 +34,16 @@ function Write-BenchJson([string]$Path, $Value) {
     Move-Item -LiteralPath $temporary -Destination $full -Force
 }
 
+function ConvertFrom-BenchJsonData([string]$Text) {
+    # PowerShell 7.5+ parses ISO dates into DateTime by default. The benchmark
+    # contract keeps timestamps as strings, so opt out when the parameter exists.
+    $parameters = @{ AsHashtable = $true }
+    if ((Get-Command ConvertFrom-Json).Parameters.ContainsKey('DateKind')) { $parameters['DateKind'] = 'String' }
+    return ($Text | ConvertFrom-Json @parameters)
+}
+
 function Read-BenchJson([string]$Path) {
-    Get-Content -LiteralPath (Resolve-BenchPath $Path) -Raw -Encoding utf8 | ConvertFrom-Json -AsHashtable
+    ConvertFrom-BenchJsonData (Get-Content -LiteralPath (Resolve-BenchPath $Path) -Raw -Encoding utf8)
 }
 
 function Protect-BenchText([string]$Value) {
@@ -440,7 +448,7 @@ function Assert-BenchSample($Context, $Plan, [string]$Path) {
     $full = Resolve-BenchPath $Path $Context.results_dir
     $raw = Get-Content -LiteralPath $full -Raw -Encoding utf8
     if (-not (Test-Json -Json $raw -SchemaFile $Context.result_schema -ErrorAction Stop)) { throw 'Invalid result schema.' }
-    $result = $raw | ConvertFrom-Json -AsHashtable
+    $result = ConvertFrom-BenchJsonData $raw
     foreach ($key in @('campaign_id', 'sample_id', 'case_id', 'kind', 'repetition', 'warmup')) {
         if ($result[$key] -cne $Plan[$key]) { throw "Result identity mismatch: $key" }
     }
@@ -592,7 +600,7 @@ function Invoke-BenchSmoke($Context) {
     Write-BenchJson (Join-Path $Context.data_dir 'configs/smoke-training.json') $training
     $load = Invoke-BenchCompose $Context @('--profile', 'jobs', 'run', '--rm', '--no-deps', 'loader', '-config', 'data/configs/smoke-loader.json') 'smoke-loader' 120
     Assert-BenchSuccess $load 'Fixture load'
-    $loaded = $load.stdout | ConvertFrom-Json -AsHashtable
+    $loaded = ConvertFrom-BenchJsonData $load.stdout
     if ($loaded.reused -ne $false -or $loaded.manifest.stats.accepted -ne 3 -or $loaded.manifest.snapshot.windows -ne 192) { throw 'Unexpected fixture dataset/reused load.' }
     Write-BenchJson (Join-Path $Context.results_dir 'smoke/loader.json') $loaded
     $secrets = Get-BenchSecrets $Context
