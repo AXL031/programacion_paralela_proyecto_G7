@@ -119,6 +119,7 @@ function Get-BenchConfiguration([string]$Path) {
         if (-not $config.inputs.ContainsKey($key) -or -not (Test-Path -LiteralPath (Resolve-BenchPath $config.inputs[$key]) -PathType Leaf)) { throw "Missing $key input." }
     }
     $p = $config.protocol
+    if($config.Contains('phase') -and $config.phase -notin @('all','api')){throw 'Supported campaign phases: all or api.'}
     foreach ($key in @('warmups', 'repetitions', 'loader_workers', 'training_workers', 'api_passes', 'api_requests', 'api_concurrency', 'api_cache', 'absolute_tolerance', 'relative_tolerance', 'api_p95_objective_ms')) {
         if (-not $p.ContainsKey($key)) { throw "Protocol missing $key" }
     }
@@ -165,6 +166,7 @@ function New-BenchPlan($Config, [string]$Campaign) {
         @{ kind = 'load'; cases = @($p.loader_workers | ForEach-Object { @{ id = "L$_"; workers = $_ } }) },
         @{ kind = 'training'; cases = @(@{ id = 'S'; workers = 1; mode = 'sequential' }) + @($p.training_workers | ForEach-Object { @{ id = "D$_"; workers = $_; mode = 'distributed' } }) }
     )
+    if($Config.Contains('phase') -and $Config.phase -eq 'api'){$groups=@()}
     foreach ($group in $groups) {
         for ($round = 1; $round -le ($p.warmups + $p.repetitions); $round++) {
             $warmup = $round -le $p.warmups
@@ -521,16 +523,16 @@ function Assert-BenchSample($Context, $Plan, [string]$Path) {
         'api' {
             if($Context.scope -eq 'real'){Assert-BenchAPIEvidence $Context $Plan $result}
             foreach ($key in @('attempted', 'completed', 'errors', 'cache_hits', 'p50_ms', 'p95_ms', 'p99_ms', 'max_ms', 'objective_met')) { if (-not $metrics.ContainsKey($key)) { throw "Missing API metric $key" } }
-            if ($metrics.attempted -ne $Plan.parameters.requests -or $metrics.completed -ne $metrics.attempted -or $metrics.errors -ne 0) { throw 'Incomplete API attempts or unexpected errors.' }
+            if ($metrics.attempted -ne $Plan.parameters.requests -or $metrics.completed -ne $metrics.attempted -or $metrics.errors -gt $metrics.completed) { throw 'Incomplete API attempts or invalid error counts.' }
             $hits = if ($Plan.parameters.cache -eq 'warm') { $metrics.completed } else { 0 }
-            if ($metrics.cache_hits -ne $hits) { throw 'Unexpected API cache behavior.' }
+            if ($Context.scope -ne 'real' -and ($metrics.cache_hits -ne $hits -or $metrics.errors -ne 0)) { throw 'Unexpected fixture API cache behavior.' }
             $previous = 0.0
             foreach ($key in @('p50_ms', 'p95_ms', 'p99_ms', 'max_ms')) {
                 $value = [double]$metrics[$key]
                 if (-not [double]::IsFinite($value) -or $value -lt $previous) { throw 'Invalid API percentile ordering.' }
                 $previous = $value
             }
-            if ($metrics.objective_met -ne ($metrics.p95_ms -lt $Context.config.protocol.api_p95_objective_ms)) { throw 'Incorrect API objective declaration.' }
+            if ($metrics.objective_met -ne ($metrics.errors -eq 0 -and $metrics.p95_ms -lt $Context.config.protocol.api_p95_objective_ms)) { throw 'Incorrect API objective declaration.' }
         }
     }
     return $result

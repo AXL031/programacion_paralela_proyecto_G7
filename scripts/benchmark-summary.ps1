@@ -71,6 +71,7 @@ $speedups = [Collections.Generic.List[object]]::new()
 foreach ($phase in @('compute_seconds', 'total_seconds')) {
     $s = @($timings | Where-Object { $_.case_id -ceq 'S' -and $_.phase -eq $phase })
     $d1 = @($timings | Where-Object { $_.case_id -ceq 'D1' -and $_.phase -eq $phase })
+    if($context.config.Contains('phase') -and $context.config.phase -eq 'api'){continue}
     if ($s.Count -ne 1 -or $d1.Count -ne 1) { throw 'Sequential/D1 baselines required.' }
     foreach ($n in $context.config.protocol.training_workers) {
         $dn = $timings | Where-Object { $_.case_id -ceq "D$n" -and $_.phase -eq $phase }
@@ -92,6 +93,7 @@ Write-BenchJson $output ([ordered]@{
     sample_ids = @($plan.sample_id); excluded_warmup_ids = @($plan | Where-Object warmup | ForEach-Object sample_id)
     dataset = $dataset; timings = @($timings.ToArray()); speedups = @($speedups.ToArray())
     api = @($api.ToArray()); resources = @($resourceTables.ToArray()); limitations = $limitations
+    api_target_not_met_sample_ids = @($results | Where-Object {$_.kind -eq 'api' -and -not $_.metrics.objective_met} | ForEach-Object sample_id)
 })
 $csv = @($timings | ForEach-Object {
     $stats = if ($null -ne $_.statistics) { $_.statistics } else { @{ mean = $null; median = $null; min = $null; max = $null; sample_stddev = $null } }
