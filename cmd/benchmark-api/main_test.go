@@ -99,3 +99,10 @@ func TestPrewarmVerifiesCacheAfterFallbackWrites(t *testing.T) {
 		t.Fatalf("prewarm stopped without verified hit: %d", calls.Load())
 	}
 }
+
+func TestCacheDeviationIsRetainedAsUnmetTarget(t *testing.T) {
+	r := summarize([]attempt{{Milliseconds: 5, Success: true, CacheHit: true}, {Milliseconds: 55, Status: 200, CacheHit: false, Error: "unexpected_cache_state"}}, time.Second, "warm", 10, "v1", "ds")
+	if r.Errors != 1 || r.Succeeded != 1 || r.CacheHits != 1 || r.Objective || len(r.Samples) != 2 || len(r.ErrorLatencies) != 1 || r.ErrorCounts["unexpected_cache_state"] != 1 {
+		t.Fatalf("unfavorable measurement hidden: %+v", r)
+	}
+}

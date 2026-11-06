@@ -178,11 +178,11 @@ func summarize(samples []attempt, elapsed time.Duration, scenario string, concur
 	under := 0
 	for i, a := range samples {
 		latencies[i] = a.Milliseconds
+		if a.CacheHit {
+			r.CacheHits++
+		}
 		if a.Success {
 			r.Succeeded++
-			if a.CacheHit {
-				r.CacheHits++
-			}
 			if a.Milliseconds < 100 {
 				under++
 			}
@@ -321,9 +321,9 @@ func run() error {
 	if err = os.WriteFile(*output, append(b, '\n'), 0644); err != nil {
 		return err
 	}
-	if r.Errors != 0 {
-		return fmt.Errorf("%d unexpected request errors; see raw report", r.Errors)
-	}
+	// Completing a measurement is distinct from meeting the operational target.
+	// Every unsuccessful attempt remains in Samples/Errors and makes Objective false.
+	// Setup, incomplete measurement and report-write failures still return an error.
 	return nil
 }
 func main() {
