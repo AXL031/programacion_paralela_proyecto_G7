@@ -65,6 +65,7 @@ Assert-Rejected { Assert-BenchSample $fixtureContext $trainingPlan $validationPa
 $trainingResult = Read-BenchJson "bench/results/$($success.campaign)/samples/$($trainingPlan.sample_id).json"
 $realContext = $fixtureContext | ConvertTo-Json -Depth 30 | ConvertFrom-Json -AsHashtable
 $realContext.scope = 'real'
+$realContext.config.inputs.training='configs/training.json'
 $trainingResult.scope = 'real'
 $resourcePath = Join-Path $fixtureContext.raw_dir 'validation-resources.ndjson'
 $resource = @{schema_version='benchmark-v1';sample_id=$trainingPlan.sample_id;sampled_at=[datetime]::UtcNow.ToString('o');service='worker';scope='process';available=$true;cpu_percent=50;memory_bytes=1024}
@@ -73,13 +74,42 @@ Write-BenchJson $resourcePath $resource
 [IO.File]::WriteAllText($resourcePath, ($resource | ConvertTo-Json -Compress) + "`n")
 $trainingResult.resources = @{status='available';path=[IO.Path]::GetRelativePath($root,$resourcePath).Replace('\','/');sha256=(Get-FileHash -LiteralPath $resourcePath).Hash.ToLowerInvariant();valid_samples=1;missing_samples=0}
 $diagnosticsPath = Join-Path $fixtureContext.raw_dir 'validation-candidate.json'
-$diagnostics = @{sample_id=$trainingPlan.sample_id;reference_weights=@(1.0,2.0);candidate_weights=@(1.0,2.0)}
+$trainingConfig=Read-BenchJson 'configs/training.json'
+$trainingConfig.workers=1
+$diagnostics = @{schema_version='candidate-diagnostics-v1';sample_id=$trainingPlan.sample_id;mode='distributed';run_id='distributed-test';reference_run_id='reference-test';reference_mode='sequential';dataset_id=$trainingResult.dataset.id;snapshot_sha256=$trainingResult.dataset.snapshot_sha256;encoder_sha256=('e'*64);encoder_version='test';seed=42;config=$trainingConfig;train_examples=1;validation_examples=1;test_examples=1;dimension=2;total_steps=1;absolute_tolerance=1e-9;relative_tolerance=1e-9;equivalent=$true;reference_weights=@(1.0,2.0);candidate_weights=@(1.0,2.0)}
+$referencePath=Join-Path $fixtureContext.raw_dir 'reference/sequential-diagnostics.json'
+$reference=ConvertFrom-BenchJsonData ($diagnostics | ConvertTo-Json -Depth 20)
+$reference.mode='sequential';$reference.run_id='reference-test';$reference.reference_run_id='reference-test';$reference.sample_id='reference-S'
+Write-BenchJson $referencePath $reference
+$modelPath=Join-Path $fixtureContext.raw_dir 'reference/published-model.json'
+Write-BenchJson $modelPath @{dataset_id=$trainingResult.dataset.id;snapshot_sha256=$trainingResult.dataset.snapshot_sha256;weights=@(0.0,0.0)}
+$trainingResult.metrics.reference_model_path=[IO.Path]::GetRelativePath($root,$modelPath).Replace('\','/')
+$trainingResult.metrics.reference_model_sha256=(Get-FileHash $modelPath).Hash.ToLowerInvariant()
+$trainingResult.metrics.published_weights=@(0.0,0.0)
+$trainingResult.metrics.run_id='distributed-test'
+$trainingResult.metrics.reference_diagnostics_path=[IO.Path]::GetRelativePath($root,$referencePath).Replace('\','/')
+$trainingResult.metrics.reference_diagnostics_sha256=(Get-FileHash -LiteralPath $referencePath).Hash.ToLowerInvariant()
 Write-BenchJson $diagnosticsPath $diagnostics
 $trainingResult.metrics.candidate_diagnostics_path = [IO.Path]::GetRelativePath($root,$diagnosticsPath).Replace('\','/')
 $trainingResult.metrics.candidate_diagnostics_sha256 = (Get-FileHash -LiteralPath $diagnosticsPath).Hash.ToLowerInvariant()
 Write-BenchJson $validationPath $trainingResult
 [void](Assert-BenchSample $realContext $trainingPlan $validationPath)
 Assert-Check $true 'real resource lines and pre-selection candidate evidence accepted'
+foreach($bad in @('self-reference','wrong-dataset','wrong-encoder','wrong-config')){
+    $original=ConvertFrom-BenchJsonData ($diagnostics | ConvertTo-Json -Depth 20)
+    switch($bad){
+        'self-reference' {$diagnostics.reference_run_id=$diagnostics.run_id;$diagnostics.reference_mode='distributed'}
+        'wrong-dataset' {$diagnostics.dataset_id='unrelated'}
+        'wrong-encoder' {$diagnostics.encoder_sha256='f'*64}
+        'wrong-config' {$diagnostics.config.epochs=1}
+    }
+    Write-BenchJson $diagnosticsPath $diagnostics
+    $trainingResult.metrics.candidate_diagnostics_sha256=(Get-FileHash $diagnosticsPath).Hash.ToLowerInvariant()
+    Write-BenchJson $validationPath $trainingResult
+    Assert-Rejected { Assert-BenchSample $realContext $trainingPlan $validationPath } $bad
+    $diagnostics=$original
+}
+Write-BenchJson $diagnosticsPath $diagnostics
 $diagnostics.candidate_weights[1] = 3.0
 Write-BenchJson $diagnosticsPath $diagnostics
 $trainingResult.metrics.candidate_diagnostics_sha256 = (Get-FileHash -LiteralPath $diagnosticsPath).Hash.ToLowerInvariant()
@@ -96,9 +126,10 @@ foreach ($behavior in @('exit', 'no-output', 'mismatch', 'real-scope', 'reused',
     Assert-Check (@($failure.manifest.errors).Count -gt 0) "cause recorded: $behavior"
 }
 $context = Initialize-BenchCampaign "$prefix-missing" 'configs/benchmark.json'
-Assert-Rejected { Invoke-BenchCampaign $context } 'real run blocks on missing adapters before Docker execution'
+Assert-Rejected { Invoke-BenchCampaign $context } 'unprepared campaign rejected before Docker execution'
 $blocked = Read-BenchJson (Join-Path $context.results_dir 'manifest.json')
-Assert-Check ($blocked.state -eq 'blocked' -and (@($blocked.missing_components | Sort-Object) -join ',') -ceq (@(Get-BenchMissingComponents $context.config | Sort-Object) -join ',')) 'missing integrations named explicitly'
+$missing=@(Get-BenchMissingComponents $context.config)
+Assert-Check (($missing.Count -eq 0 -and $blocked.state -eq 'planned') -or ($missing.Count -gt 0 -and $blocked.state -eq 'blocked')) 'integration/preparation state explicit'
 $context.project = 'transporte-g7'
 Assert-Rejected { Assert-BenchOwnership $context } 'demo project cannot be adopted'
 $context.project = "transporte-g7-bench-$($context.campaign_id)"

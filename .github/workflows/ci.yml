@@ -7,6 +7,15 @@ permissions:
   contents: read
 
 jobs:
+  benchmark-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PowerShell orchestration and resource statistics
+        shell: pwsh
+        run: |
+          ./tests/benchmark/test-runner.ps1
+          ./tests/benchmark/test-gerardo.ps1
   frontend:
     runs-on: ubuntu-latest
     container: node:22.21.0-alpine

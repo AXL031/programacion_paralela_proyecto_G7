@@ -2,11 +2,77 @@
 
 **Demo técnica de las semanas 7 a 10 reproducida y verificada en esta computadora el 13 de octubre de 2026.** Proyecto 9 en Go con 1,348,665 viajes persistidos, cargador concurrente, maestro y dos trabajadores TCP, MongoDB, Redis, API REST con JWT, WebSocket y SPA React con telemetría. Pasaron formato, `go vet`, pruebas con detector de carreras e integración MongoDB, además del recorrido de navegador. La pregunta social actual tiene un alcance menor que la guía y el mapa y las comparativas de rendimiento siguen pendientes.
 
-El cumplimiento de las 14 actividades de esas semanas está documentado en [SEMANA_7_10.md](docs/SEMANA_7_10.md). Las mediciones de escalabilidad, comparación final y despliegue en otra computadora corresponden a semanas posteriores.
+Los componentes técnicos de las 14 actividades de esas semanas están documentados en [SEMANA_7_10.md](docs/SEMANA_7_10.md). El [cronograma y avance](#cronograma-y-avance-semanas-7-a-15) permite consultar rápidamente lo hecho y lo pendiente, incluida la brecha de impacto social. Las mediciones de escalabilidad, comparación final y despliegue final corresponden a semanas posteriores.
 
 La [auditoría del 13 de octubre](docs/AUDITORIA_SEMANA_10.md) contrasta el cronograma adjunto y la guía y registra el cierre operativo local. La [evidencia nueva](docs/VERIFICACION_LOCAL_SEMANA_10.json) conserva conteos independientes de MongoDB, runs, salud del clúster y resultados de los chequeos.
 
 Para preparar esta copia, ejecuta `./scripts/prepare-local.ps1`. Cuando Docker Desktop esté instalado e iniciado con motor Linux, ejecuta `./scripts/prepare-local.ps1 -StartDemo`: reproduce la demo y ejecuta formato, `go vet` y pruebas con detector de carreras dentro de Docker.
+
+## Colaboradores y ramas
+
+Cada colaborador tiene asignada una rama personal:
+
+| Rama | Usuario de GitHub | Estado de acceso |
+|---|---|---|
+| `cueva` | [AXL031](https://github.com/AXL031) | Administrador |
+| `lopez` | [VicuzS](https://github.com/VicuzS) | Colaborador con escritura |
+| `taco` | [MiguelTacoZavala](https://github.com/MiguelTacoZavala) | Colaborador con escritura |
+| `gerardo` | [Geleon515](https://github.com/Geleon515) | Colaborador con escritura |
+| `dragon` | [FernanRojasR](https://github.com/FernanRojasR) | Colaborador con escritura |
+| `vera` | [LeonardoVera](https://github.com/LeonardoVera) | Invitación enviada, pendiente de aceptación |
+
+Asociación confirmada por el equipo el **5 de noviembre de 2026**. Las seis ramas existen localmente y en `origin`; LeonardoVera debe aceptar la invitación para obtener acceso al repositorio.
+
+## Cronograma y avance (semanas 7 a 15)
+
+**Auditoría de issues y PR del 5 de noviembre:** las PR #7 (entorno), #9 (recursos/resumen) y #10 (diagnósticos SGD) ya están en `main`. La #11 aporta 12 muestras reales de ingesta L1/L4, con speedup total recalculado de **1,0956×**, y requiere corregir la retención de verificaciones por muestra antes del merge. La #12 de Dragon está en borrador y necesita adaptar aislamiento, contrato y protocolo. Se detectó además un hueco en la validación de referencias SGD que debe corregirse antes de certificar entrenamiento. Los seis issues siguen abiertos. Consulta [la auditoría, lo desarrollado y lo que falta por responsable](docs/AUDITORIA_ISSUES_PR_2026_11_05.md); estos avances parciales no cierran las semanas 12–13.
+
+Actualización documental: **5 de noviembre de 2026**. Última verificación funcional registrada: **13 de octubre de 2026**. Este resumen contrasta el código y la evidencia guardada; no implica que se haya vuelto a ejecutar la demo hoy.
+
+Fuente: [cronograma original en Excel](docs/Cronograma_Proyecto9_Go_BigData.xlsx), hoja **Hoja 1**, filas **2 a 26**. Se conservan las 25 actividades y sus semanas, indicadas por el color de las celdas del Excel. El archivo no asigna fechas calendario ni ponderaciones.
+
+**Estados:** ✅ Hecho, con implementación y evidencia registrada. 🟡 Parcial, con avance y un cierre pendiente. ⬜ Pendiente, sin evidencia suficiente de cierre. Una semana queda completa cuando se cierran todas sus actividades.
+
+| Semana / fila del Excel | Actividad del cronograma | Estado y evidencia / qué falta |
+|---|---|---|
+| **7 / 2** | Elegir dataset de más de 1M de registros y definir la pregunta de impacto social. | 🟡 **Parcial.** Hay 1,348,665 viajes persistidos y una pregunta sobre actividad registrada. Falta alinear con la guía el alcance de demanda no atendida o incorporar datos adicionales. |
+| 7 / 3 | Configurar MongoDB y Redis en contenedores. | ✅ **Hecho.** Servicios separados, salud comprobada y volumen persistente de MongoDB. |
+| 7 / 4 | Instalar y configurar Go, Docker y Docker Compose. | ✅ **Hecho.** Compilación Go dentro de Docker y preparación local reproducida; no se necesita Go en el host. |
+| 7 / 5 | Diseñar las arquitecturas distribuida y de una sola máquina. | ✅ **Hecho.** Loader local concurrente, trainer secuencial y maestro/workers TCP documentados e implementados. |
+| **8 / 6** | Dividir el archivo en bloques con goroutines y channels. | ✅ **Hecho.** Lectura CSV/Parquet, canales acotados y pool configurable, con pruebas de equivalencia. |
+| 8 / 7 | Limpiar/parsear el dataset e insertarlo en MongoDB. | ✅ **Hecho.** Validación, rechazos por causa, escritura por lotes y carga idempotente comprobadas. |
+| 8 / 8 | Implementar el maestro TCP con lógica parameter server. | ✅ **Hecho.** Maestro independiente que registra workers y conserva la autoridad sobre los parámetros. |
+| **9 / 9** | Implementar workers con SGD sobre su partición de datos. | ✅ **Hecho.** Dos workers reales, con 3,960 tareas cada uno en la ejecución verificada. Se divide el cálculo por índices; cada worker carga una copia del snapshot. |
+| 9 / 10 | Sincronizar gradientes parciales sin condiciones de carrera. | ✅ **Hecho.** Agregación ponderada y control de tarea/paso/versión; pruebas TCP y detector de carreras aprobados. |
+| 9 / 11 | Implementar API REST en Go y autenticación JWT. | ✅ **Hecho.** Login, sesión, logout, protección de rutas y revocación comprobados. |
+| **10 / 12** | Servir predicciones y telemetría en tiempo real por WebSocket. | ✅ **Hecho.** Predicciones correlacionadas, snapshots y reconexión verificados con cliente y navegador. |
+| 10 / 13 | Integrar Redis como caché de predicciones. | ✅ **Hecho.** Claves versionadas, aciertos reales de caché y respaldo de cálculo cuando Redis falla. |
+| 10 / 14 | Implementar SPA Angular/React que consuma REST y WebSocket. | ✅ **Hecho.** SPA React compilada, consultas, entrenamiento y recorrido autenticado comprobados. |
+| 10 / 15 | Mostrar CPU, RAM y pérdida de entrenamiento del clúster. | ✅ **Hecho.** Mediciones reales de los procesos Go y curva de pérdida observadas durante entrenamiento. |
+| **11 / 16** | Adaptar el cargador a un solo proceso con goroutines locales. | ✅ **Hecho, adelantado.** El loader ya ejecuta el pipeline en un proceso; `-workers` controla el paralelismo local. No es ingesta distribuida entre nodos. |
+| 11 / 17 | Adaptar SGD a ejecución local sin parameter server entre nodos. | ✅ **Hecho, adelantado.** `trainer -mode sequential` ejecuta el núcleo SGD local, separado del modo distribuido. |
+| 11 / 18 | Instrumentar tiempos de carga y entrenamiento en ambas versiones. | ✅ **Hecho, adelantado.** Loader registra segundos/filas por segundo y los runs guardan tiempos de entrenamiento. Falta usar esa instrumentación en los ensayos repetidos de la semana 12. |
+| **12 / 19** | Probar carga y entrenamiento: distribuido frente a una sola máquina. | 🟡 **Parcial.** Hay comparación funcional de entrenamiento. Faltan ensayos controlados y repetidos de carga y entrenamiento, con los mismos datos y configuración. |
+| 12 / 20 | Medir latencia de la API con objetivo menor de 100 ms. | 🟡 **Parcial.** Dos pasadas locales de 100 consultas secuenciales dieron p95 de 10.439 y 7.0149 ms. Falta prueba de carga con concurrencia, errores, throughput y casos con/sin caché. |
+| **13 / 21** | Evaluar rendimiento y escalabilidad distribuida. | ⬜ **Pendiente.** Ejecutar benchmarks reales con 1, 2 y 4 workers, repeticiones y condiciones comparables. Las pruebas TCP sobre fixtures no sustituyen estos ensayos. |
+| 13 / 22 | Elaborar el cuadro comparativo de tiempos, speedup y recursos. | ⬜ **Pendiente.** Consolidar resultados repetidos y CPU/RAM. La comparación funcional actual no demuestra aceleración. |
+| 13 / 23 | Realizar ajustes finales de código. | ⬜ **Pendiente.** Priorizar ajustes a partir de los resultados medidos y repetir los chequeos afectados. |
+| **14 / 24** | Preparar Compose final con infraestructura separada de workers. | 🟡 **Parcial.** Compose ya diferencia servicios y permite escalar workers. Falta cerrar la configuración y el procedimiento de entrega final. |
+| **15 / 25** | Probar despliegue en un entorno limpio. | ⬜ **Pendiente.** Registrar una instalación desde cero con requisitos, pasos y resultados; la reproducción local existente adelanta trabajo, pero no certifica una instalación limpia final. |
+| 15 / 26 | Validar en otro entorno y realizar la demo final. | 🟡 **Parcial.** Hay evidencia histórica de otra computadora y reproducción en esta. Falta la validación de la versión final, el ensayo y la demo de entrega. |
+
+### Prioridades para continuar
+
+- [x] Preparar el clúster local con maestro y dos workers, datos reales y demo con inicio/apagado de un clic.
+- [ ] Resolver la pregunta de impacto social de la semana 7 con el alcance de la guía.
+- [ ] Ejecutar los ensayos de las semanas 12 y 13 y publicar el cuadro comparativo, sin asumir speedup.
+- [ ] Cerrar Compose y las validaciones de entrega de las semanas 14 y 15.
+- [ ] Incorporar el mapa de zonas solicitado por el contexto general, sin fila específica en el Excel.
+- [ ] Completar el informe final. Checkpoints y reasignación de tareas continúan como ampliaciones del [plan de desarrollo](docs/PLAN_DESARROLLO.md), sin semana propia en el Excel.
+
+**Límite del avance:** los componentes técnicos hasta semana 10 están verificados, pero la pregunta social mantiene una brecha. La validación seleccionó persistencia y todavía no se ha demostrado mejora predictiva ni aceleración. Por eso no se declara 100% del proyecto completo ni del contexto general.
+
+Detalle de respaldo: [auditoría y brechas](docs/AUDITORIA_SEMANA_10.md), [matriz técnica de semanas 7–10](docs/SEMANA_7_10.md) y [evidencia local](docs/VERIFICACION_LOCAL_SEMANA_10.json). Al cerrar una actividad, actualizar su estado y enlazar su evidencia con fecha; no marcarla como terminada solo por tener código.
 
 ## Inicio en Windows
 

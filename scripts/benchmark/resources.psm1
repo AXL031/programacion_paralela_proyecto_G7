@@ -79,8 +79,8 @@ function Get-BenchResourceSnapshot {
         $role = [string]$info.labels['com.docker.compose.service']
         if ($role -notin @('mongo', 'redis', 'master', 'worker', 'api', 'loader', 'trainer')) { continue }
         $service = "$role/$id"
-        $Known[$id] = @{ service = $service; process = $role -in @('master', 'worker', 'api', 'loader', 'trainer') }
         if (-not $info.running) { continue }
+        $Known[$id] = @{ service = $service; process = $role -in @('master', 'worker', 'api', 'loader', 'trainer') }
         $running.Add($id)
     }
     $statsById = @{}

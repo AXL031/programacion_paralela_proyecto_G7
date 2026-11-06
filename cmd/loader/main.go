@@ -25,6 +25,7 @@ func run() error {
 	path := flag.String("config", "configs/demo.json", "loader config path")
 	backend := flag.String("storage", "", "override mongo/files storage")
 	workers := flag.Int("workers", 0, "override worker count (1 is sequential reference)")
+	requireFresh := flag.Bool("require-fresh", false, "fail instead of reusing a completed dataset")
 	flag.Parse()
 	c, err := config.Read(*path)
 	if err != nil {
@@ -50,7 +51,7 @@ func run() error {
 			return err
 		}
 	}
-	result, loadErr := loader.Run(ctx, c, store)
+	result, loadErr := loader.RunWithOptions(ctx, c, store, loader.RunOptions{RejectReuse: *requireFresh})
 	closeErr := store.Close(context.Background())
 	if loadErr != nil {
 		return loadErr

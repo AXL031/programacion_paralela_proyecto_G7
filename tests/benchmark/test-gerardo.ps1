@@ -72,6 +72,13 @@ $fake = { param([string[]]$Arguments)
     return @{ exit_code = 0; stdout = $stdout; stderr = '' }
 }.GetNewClosure()
 $previous = @{}; $known = @{}
+$stopped = { param([string[]]$Arguments)
+    if($Arguments[0] -eq 'ps'){return @{exit_code=0;stdout=$id;stderr=''}}
+    return @{exit_code=0;stdout=(@{labels=@{'com.docker.compose.project'=$context.project;'g7.benchmark.managed'='benchmark-v1';'g7.benchmark.campaign'=$context.campaign_id;'com.docker.compose.service'='worker'};running=$false}|ConvertTo-Json -Compress);stderr=''}
+}.GetNewClosure()
+$inactiveKnown=@{}
+$inactive=Get-BenchResourceSnapshot $context 'S-r1' @{} $inactiveKnown $stopped
+Assert-Check ($inactiveKnown.Count -eq 0 -and $inactive.observations.Count -eq 0) 'workers stopped before collection do not invalidate active-resource totals'
 $snapshot = Get-BenchResourceSnapshot $context 'S-r1' $previous $known $fake
 Assert-Check ($snapshot.observations.Count -eq 2 -and $snapshot.observations[0].memory_bytes -eq 2097152 -and -not $snapshot.observations[1].available) 'collector discovery and first baseline with fake Docker'
 $absent = { param([string[]]$Arguments) return @{ exit_code = 0; stdout = ''; stderr = '' } }

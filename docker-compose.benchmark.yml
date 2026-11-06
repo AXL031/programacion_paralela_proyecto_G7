@@ -159,6 +159,18 @@ services:
     depends_on:
       mongo: {condition: service_healthy}
     command: [go, test, -race, -count=1, ./...]
+  benchmark-api:
+    <<: *job
+    profiles: [jobs]
+    cpus: 2.0
+    mem_limit: 256m
+    build:
+      context: .
+      dockerfile: deploy/go.Dockerfile
+      args: {COMMAND: benchmark-api}
+    environment:
+      GOMAXPROCS: "2"
+      BENCH_PASSWORD: ${BENCH_PASSWORD:?Use scripts/benchmark.ps1}
 
 volumes:
   mongo_data:

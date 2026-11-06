@@ -2,6 +2,14 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $script:BenchSecrets = @()
+. (Join-Path $PSScriptRoot 'candidate.ps1')
+. (Join-Path $PSScriptRoot 'api-evidence.ps1')
+
+function ConvertFrom-BenchComposeList([string]$Text) {
+    try { return @(ConvertFrom-BenchJsonData $Text) } catch {
+        return @($Text -split '\r?\n' | Where-Object { $_.Trim() } | ForEach-Object { ConvertFrom-BenchJsonData $_ })
+    }
+}
 
 function Get-BenchRoot { (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '../..')).Path }
 
@@ -34,8 +42,16 @@ function Write-BenchJson([string]$Path, $Value) {
     Move-Item -LiteralPath $temporary -Destination $full -Force
 }
 
+function ConvertFrom-BenchJsonData([string]$Text) {
+    # PowerShell 7.5+ parses ISO dates into DateTime by default. The benchmark
+    # contract keeps timestamps as strings, so opt out when the parameter exists.
+    $parameters = @{ AsHashtable = $true }
+    if ((Get-Command ConvertFrom-Json).Parameters.ContainsKey('DateKind')) { $parameters['DateKind'] = 'String' }
+    return ($Text | ConvertFrom-Json @parameters)
+}
+
 function Read-BenchJson([string]$Path) {
-    Get-Content -LiteralPath (Resolve-BenchPath $Path) -Raw -Encoding utf8 | ConvertFrom-Json -AsHashtable
+    ConvertFrom-BenchJsonData (Get-Content -LiteralPath (Resolve-BenchPath $Path) -Raw -Encoding utf8)
 }
 
 function Protect-BenchText([string]$Value) {
@@ -301,7 +317,7 @@ function Assert-BenchCompose($Context) {
     # Never save this raw object: its environment contains private credentials.
     $compose = $resolved.stdout | ConvertFrom-Json -AsHashtable
     if ($compose.name -ne $Context.project) { throw 'Compose project mismatch (including BENCH_* environment overrides).' }
-    $allowed = @('mongo', 'redis', 'master', 'worker', 'api', 'loader', 'trainer', 'dev')
+    $allowed = @('mongo', 'redis', 'master', 'worker', 'api', 'loader', 'trainer', 'dev', 'benchmark-api')
     if (@($compose.services.Keys).Count -ne $allowed.Count) { throw 'Unexpected Compose services.' }
     $limits = [ordered]@{}
     foreach ($name in $allowed) {
@@ -423,8 +439,14 @@ function Prepare-BenchEnvironment($Context) {
     $loader.storage = 'mongo'; $loader.output = 'data/processed'; $loader.mongo_database = $Context.database
     Write-BenchJson (Join-Path $Context.data_dir 'configs/loader.json') $loader
     Write-BenchJson (Join-Path $Context.data_dir 'configs/training.json') (Read-BenchJson $Context.config.inputs.training)
-    $build = Invoke-BenchCompose $Context @('--profile', 'jobs', 'build', 'loader', 'trainer', 'master', 'worker', 'api') 'prepare-build'
+    $build = Invoke-BenchCompose $Context @('--profile', 'jobs', 'build', 'loader', 'trainer', 'master', 'worker', 'api', 'benchmark-api') 'prepare-build'
     Assert-BenchSuccess $build 'Benchmark build'
+    $runtime.built_images=@{}
+    foreach($name in @('loader','trainer','master','worker','api','benchmark-api')){
+        $identity=Invoke-BenchProcess 'docker' @('image','inspect','--format','{{.Id}}',"$($Context.project)-$name") 20
+        Assert-BenchSuccess $identity "Built image identity: $name"
+        $runtime.built_images[$name]=$identity.stdout.Trim()
+    }
     $up = Invoke-BenchCompose $Context @('up', '-d', '--no-build', '--pull', 'never', '--scale', "worker=$($Context.config.initial_workers)", '--wait', '--wait-timeout', '120', 'mongo', 'redis', 'master', 'worker', 'api') 'prepare-up' 180
     Assert-BenchSuccess $up 'Benchmark startup'
     $images = Invoke-BenchCompose $Context @('--profile', '*', 'images', '--format', 'json')
@@ -440,7 +462,7 @@ function Assert-BenchSample($Context, $Plan, [string]$Path) {
     $full = Resolve-BenchPath $Path $Context.results_dir
     $raw = Get-Content -LiteralPath $full -Raw -Encoding utf8
     if (-not (Test-Json -Json $raw -SchemaFile $Context.result_schema -ErrorAction Stop)) { throw 'Invalid result schema.' }
-    $result = $raw | ConvertFrom-Json -AsHashtable
+    $result = ConvertFrom-BenchJsonData $raw
     foreach ($key in @('campaign_id', 'sample_id', 'case_id', 'kind', 'repetition', 'warmup')) {
         if ($result[$key] -cne $Plan[$key]) { throw "Result identity mismatch: $key" }
     }
@@ -482,6 +504,7 @@ function Assert-BenchSample($Context, $Plan, [string]$Path) {
                 $diagnosticsPath = Resolve-BenchPath (Resolve-BenchPath $metrics.candidate_diagnostics_path) $Context.raw_dir
                 if ((Get-FileHash -LiteralPath $diagnosticsPath).Hash.ToLowerInvariant() -ne $metrics.candidate_diagnostics_sha256) { throw 'Candidate diagnostics checksum mismatch.' }
                 $diagnostics = Read-BenchJson $diagnosticsPath
+                Assert-BenchCandidateReference $Context $Plan $result $diagnostics
                 if ($diagnostics.sample_id -ne $Plan.sample_id -or @($diagnostics.candidate_weights).Count -eq 0 -or @($diagnostics.candidate_weights).Count -ne @($diagnostics.reference_weights).Count) { throw 'Invalid candidate diagnostic identity/dimensions.' }
                 $difference = 0.0
                 for ($i = 0; $i -lt $diagnostics.candidate_weights.Count; $i++) {
@@ -496,6 +519,7 @@ function Assert-BenchSample($Context, $Plan, [string]$Path) {
             }
         }
         'api' {
+            if($Context.scope -eq 'real'){Assert-BenchAPIEvidence $Context $Plan $result}
             foreach ($key in @('attempted', 'completed', 'errors', 'cache_hits', 'p50_ms', 'p95_ms', 'p99_ms', 'max_ms', 'objective_met')) { if (-not $metrics.ContainsKey($key)) { throw "Missing API metric $key" } }
             if ($metrics.attempted -ne $Plan.parameters.requests -or $metrics.completed -ne $metrics.attempted -or $metrics.errors -ne 0) { throw 'Incomplete API attempts or unexpected errors.' }
             $hits = if ($Plan.parameters.cache -eq 'warm') { $metrics.completed } else { 0 }
@@ -531,7 +555,7 @@ function Invoke-BenchCampaign($Context) {
         Assert-BenchExistingResources $Context $resolved
         $health = Invoke-BenchCompose $Context @('ps', '--format', 'json')
         Assert-BenchSuccess $health 'Pre-run health'
-        $services = @($health.stdout | ConvertFrom-Json -AsHashtable)
+        $services = @(ConvertFrom-BenchComposeList $health.stdout)
         foreach ($name in @('mongo', 'redis', 'master', 'api')) {
             $matches = @($services | Where-Object { $_.Service -eq $name -and $_.State -eq 'running' -and $_.Health -eq 'healthy' })
             if ($matches.Count -ne 1) { throw "Service is not healthy: $name" }
@@ -572,6 +596,7 @@ function Invoke-BenchCampaign($Context) {
         if ((@($summary.sample_ids | Sort-Object) | ConvertTo-Json -Compress) -ne (@($manifest.samples.sample_id | Sort-Object) | ConvertTo-Json -Compress)) { throw 'Summary omitted or duplicated samples.' }
         $manifest.state = if ($Context.scope -eq 'real') { 'completed' } else { 'fixture_passed' }
         $manifest.objective_evaluated = $Context.scope -eq 'real'
+        if($Context.scope -eq 'real'){$manifest.pending_issues=@(8)}else{$manifest.pending_issues=@()}
     } catch {
         $manifest.state = 'failed'; $manifest.errors += (Protect-BenchText $_.Exception.Message)
         throw
@@ -592,7 +617,7 @@ function Invoke-BenchSmoke($Context) {
     Write-BenchJson (Join-Path $Context.data_dir 'configs/smoke-training.json') $training
     $load = Invoke-BenchCompose $Context @('--profile', 'jobs', 'run', '--rm', '--no-deps', 'loader', '-config', 'data/configs/smoke-loader.json') 'smoke-loader' 120
     Assert-BenchSuccess $load 'Fixture load'
-    $loaded = $load.stdout | ConvertFrom-Json -AsHashtable
+    $loaded = ConvertFrom-BenchJsonData $load.stdout
     if ($loaded.reused -ne $false -or $loaded.manifest.stats.accepted -ne 3 -or $loaded.manifest.snapshot.windows -ne 192) { throw 'Unexpected fixture dataset/reused load.' }
     Write-BenchJson (Join-Path $Context.results_dir 'smoke/loader.json') $loaded
     $secrets = Get-BenchSecrets $Context
@@ -610,7 +635,9 @@ function Invoke-BenchSmoke($Context) {
         if (@($cluster.workers).Count -ne $Context.config.initial_workers) { throw 'Incorrect number of connected smoke workers.' }
         $runs = @{}
         foreach ($mode in @('sequential', 'distributed')) {
-            $train = Invoke-BenchCompose $Context @('--profile', 'jobs', 'run', '--rm', '--no-deps', 'trainer', '-mode', $mode, '-config', 'data/configs/smoke-training.json') "smoke-$mode" 120
+            $smokeArgs=@('--profile','jobs','run','--rm','--no-deps','trainer','-mode',$mode,'-config','data/configs/smoke-training.json','-diagnostics',"data/smoke-$mode-diagnostics.json",'-sample-id',"smoke-$mode")
+            if($mode -eq 'distributed'){$smokeArgs+=@('-reference-diagnostics','data/smoke-sequential-diagnostics.json')}
+            $train = Invoke-BenchCompose $Context $smokeArgs "smoke-$mode" 120
             Assert-BenchSuccess $train "Fixture training $mode"
             $runs[$mode] = $train.stdout | ConvertFrom-Json -AsHashtable
             if ($runs[$mode].run.status -ne 'completed' -or $runs[$mode].artifact.dataset_id -ne $loaded.manifest.dataset_id) { throw 'Smoke run did not complete on the fixture dataset.' }
@@ -638,8 +665,8 @@ function Invoke-BenchSmoke($Context) {
             scope = 'infrastructure_smoke_synthetic_data'; status = 'passed'; created_at = [datetime]::UtcNow.ToString('o')
             counts = $counts; workers = $runs.distributed.run.workers; tasks_by_worker = $runs.distributed.run.tasks_by_worker
             dataset_id = $loaded.manifest.dataset_id; model_version = $model.version
-            cache_miss_then_hit = $true; candidate_equivalence_verified = $false
-            pending = @('Real component adapters #2/#4/#5', 'Pre-selection SGD diagnostics #3', 'Formal resource measurements #4', 'Real repeated campaigns', 'Final audit by Vera')
+            cache_miss_then_hit = $true; candidate_equivalence_verified = $runs.distributed.diagnostics.equivalent
+            pending = @('Real repeated campaigns are separate from this fixture smoke', 'Independent final audit by Vera')
         }
         $manifestPath = Join-Path $Context.results_dir 'manifest.json'
         $manifest = Read-BenchJson $manifestPath; $manifest.state = 'smoke_passed'; $manifest.objective_evaluated = $false

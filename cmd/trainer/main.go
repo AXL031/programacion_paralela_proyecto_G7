@@ -48,6 +48,9 @@ func run() error {
 	if *referencePath != "" && *mode != "distributed" {
 		return fmt.Errorf("-reference-diagnostics is only valid with distributed mode")
 	}
+	if *mode == "distributed" && *diagnosticsPath != "" && *referencePath == "" {
+		return fmt.Errorf("distributed diagnostics require a sequential -reference-diagnostics")
+	}
 	if !ml.Finite(*toleranceAbsolute) || !ml.Finite(*toleranceRelative) || *toleranceAbsolute < 0 || *toleranceRelative < 0 {
 		return fmt.Errorf("tolerances must be finite and non-negative")
 	}

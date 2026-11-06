@@ -61,7 +61,8 @@ foreach ($case in @($results.case_id | Sort-Object -Unique)) {
         })
     }
     if ($measured[0].kind -eq 'api') {
-        foreach ($metric in @('p50_ms', 'p95_ms', 'p99_ms', 'max_ms', 'errors', 'cache_hits')) {
+        foreach ($metric in @('p50_ms', 'p95_ms', 'p99_ms', 'max_ms', 'errors', 'cache_hits','throughput_total','throughput_success','proportion_under_100_ms')) {
+            if(-not $measured[0].metrics.Contains($metric)){continue}
             $api.Add([ordered]@{ case_id = $case; metric = $metric; statistics = (Get-BenchStatistics @($measured | ForEach-Object { $_.metrics[$metric] })) })
         }
     }
@@ -103,3 +104,20 @@ $speedups | ForEach-Object {
     [pscustomobject]@{ case_id = $_.case_id; workers = $_.workers; phase = $_.phase
         speedup_vs_sequential = $_.ratios.speedup_vs_sequential; speedup_vs_d1 = $_.ratios.speedup_vs_d1; efficiency_vs_d1 = $_.ratios.efficiency_vs_d1 }
 } | Export-Csv -LiteralPath (Join-Path $context.results_dir 'summary-speedups.csv') -NoTypeInformation -Encoding utf8
+$resourceCSV=foreach($sampleResource in $resourceTables){
+    foreach($service in $sampleResource.summary.services){
+        [pscustomobject]@{sample_id=$sampleResource.sample_id;warmup=$sampleResource.warmup;service=$service.service;scope=$service.scope;valid_samples=$service.valid_samples;missing_samples=$service.missing_samples;cpu_mean=$(if($service.cpu_percent){$service.cpu_percent.mean}else{$null});cpu_max=$(if($service.cpu_percent){$service.cpu_percent.max}else{$null});max_memory_bytes=$service.max_memory_bytes}
+    }
+}
+@($resourceCSV)|Export-Csv -LiteralPath (Join-Path $context.results_dir 'summary-resources.csv') -NoTypeInformation -Encoding utf8
+$resourceTotals=foreach($sampleResource in $resourceTables){
+    foreach($total in $sampleResource.summary.totals){
+        [pscustomobject]@{sample_id=$sampleResource.sample_id;warmup=$sampleResource.warmup;scope=$total.scope;aligned_samples=$total.aligned_samples;max_skew_seconds=$total.max_skew_seconds;cpu_mean=$(if($total.cpu_percent){$total.cpu_percent.mean}else{$null});cpu_max=$(if($total.cpu_percent){$total.cpu_percent.max}else{$null});max_memory_bytes=$total.max_memory_bytes}
+    }
+}
+@($resourceTotals)|Export-Csv -LiteralPath (Join-Path $context.results_dir 'summary-resource-totals.csv') -NoTypeInformation -Encoding utf8
+$apiCSV=foreach($result in $results|Where-Object kind -EQ 'api'){
+    $metrics=$result.metrics
+    [pscustomobject]@{sample_id=$result.sample_id;case_id=$result.case_id;requests=$metrics.attempted;errors=$metrics.errors;cache_hits=$metrics.cache_hits;p50_ms=$metrics.p50_ms;p95_ms=$metrics.p95_ms;p99_ms=$metrics.p99_ms;max_ms=$metrics.max_ms;objective_met=$metrics.objective_met;throughput_success=$(if($metrics.Contains('throughput_success')){$metrics.throughput_success}else{$null});proportion_under_100_ms=$(if($metrics.Contains('proportion_under_100_ms')){$metrics.proportion_under_100_ms}else{$null})}
+}
+@($apiCSV)|Export-Csv -LiteralPath (Join-Path $context.results_dir 'summary-api.csv') -NoTypeInformation -Encoding utf8
