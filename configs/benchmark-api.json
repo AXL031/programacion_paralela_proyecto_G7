@@ -1,0 +1,48 @@
+{
+  "schema_version": "benchmark-v1",
+  "scope": "real",
+  "seed": 42,
+  "api_port": 18080,
+  "initial_workers": 2,
+  "timeout_seconds": 1800,
+  "inputs": {
+    "loader": "configs/demo.json",
+    "training": "configs/training.json"
+  },
+  "protocol": {
+    "warmups": 1,
+    "repetitions": 5,
+    "loader_workers": [
+      1,
+      4
+    ],
+    "training_workers": [
+      1,
+      2,
+      4
+    ],
+    "api_passes": 3,
+    "api_requests": 1000,
+    "api_concurrency": [
+      1,
+      10,
+      25
+    ],
+    "api_cache": [
+      "cold",
+      "warm",
+      "unavailable"
+    ],
+    "absolute_tolerance": 1E-09,
+    "relative_tolerance": 1E-09,
+    "api_p95_objective_ms": 100
+  },
+  "components": {
+    "load": "scripts/benchmark-load.ps1",
+    "training": "scripts/benchmark-training.ps1",
+    "api": "scripts/benchmark-api.ps1",
+    "resources": "scripts/benchmark-resources.ps1",
+    "summary": "scripts/benchmark-summary.ps1"
+  },
+  "phase": "api"
+}

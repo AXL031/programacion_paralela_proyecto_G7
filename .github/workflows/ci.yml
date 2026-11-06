@@ -16,6 +16,7 @@ jobs:
         run: |
           ./tests/benchmark/test-runner.ps1
           ./tests/benchmark/test-gerardo.ps1
+          ./tests/benchmark/test-api-evidence.ps1
   frontend:
     runs-on: ubuntu-latest
     container: node:22.21.0-alpine
