@@ -18,6 +18,8 @@ Matriz: estados anteriores × concurrencia 1/10/25 × tres pasadas × 1.000 soli
 
 Los percentiles p50/p95/p99 y máximo usan nearest rank e incluyen las latencias de intentos fallidos; se publican errores/timeouts, throughput total y de éxitos y proporción bajo 100 ms. La meta operativa es p95 <100 ms y cero errores inesperados en cada pasada. Una meta incumplida permanece visible y no se convierte en éxito por haber ejecutado el script.
 
+El código de salida certifica que el procedimiento de medición terminó y el reporte fue escrito, no que se alcanzó la meta. HTTP no-200, timeouts, respuestas inválidas o caché inesperada se conservan como intentos fallidos, con `objective_met=false`; el runner recalcula esos conteos. Una preparación inválida, reporte incompleto o evidencia manipulada sí detiene la campaña. Esto permite medir la matriz entera y reportar condiciones desfavorables sin borrarlas ni repetir selectivamente una pasada hasta que salga favorable.
+
 ## Comandos
 
 ```powershell

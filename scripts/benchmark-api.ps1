@@ -43,7 +43,7 @@ try {
     Assert-BenchSuccess $call 'HTTP measured pass'
     if($resources.errors.Count){throw ($resources.errors -join '; ')}
     $report=Read-BenchJson $dataOutput
-    if($report.dataset_id -cne $m.dataset_id -or $report.attempted -ne $s.parameters.requests -or $report.errors -ne 0){throw 'HTTP workload identity/count mismatch.'}
+    if($report.dataset_id -cne $m.dataset_id -or $report.attempted -ne $s.parameters.requests -or $report.completed -ne $report.attempted){throw 'HTTP workload identity/count mismatch.'}
 }catch{
     Write-BenchJson (Join-Path $c.raw_dir "failures/$($s.sample_id).json") @{sample_id=$s.sample_id;error=(Protect-BenchText $_.Exception.Message);at=[datetime]::UtcNow.ToString('o')}
     throw
@@ -62,10 +62,12 @@ foreach($key in @('attempted','completed','succeeded','errors','timeouts','cache
 $metrics.requests_path=Get-BenchRelativePath $rawPath
 $metrics.requests_sha256=Get-BenchSHA256 $rawPath
 $metrics.cache_scenario=$s.parameters.cache
+$metrics.measurement_complete=$true
+$metrics.operational_outcome=$(if($report.objective_met){'target_met'}else{'target_not_met'})
 $metrics.route='direct isolated REST; in-container client'
 $timings=@{preparation_seconds=$null;compute_seconds=$report.elapsed_seconds;evaluation_seconds=$null;publication_seconds=$null;total_seconds=$report.elapsed_seconds}
 $result=New-BenchWorkloadResult $c $s $started (Get-BenchDatasetIdentity $m) $timings $resources.summary $metrics
 $result.checks.redis_restored=$true
-$result.checks.cache_scenario_verified=$true
+$result.checks.cache_preparation_verified=$true
 Write-BenchJson $OutputPath $result
 [void](Assert-BenchSample $c $s $OutputPath)
