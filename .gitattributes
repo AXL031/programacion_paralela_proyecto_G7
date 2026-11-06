@@ -11,3 +11,11 @@
 *.html text eol=lf
 *.css text eol=lf
 Makefile text eol=lf
+# Evidence hashes identify original bytes, including line endings. Keep these
+# immutable campaign artifacts identical in Git and in the exported ZIPs.
+bench/results/g7-integrated-smoke-01/** -text whitespace=cr-at-eol
+bench/results/g7-complete-v1/** -text whitespace=cr-at-eol
+bench/results/g7-complete-v2/** -text whitespace=cr-at-eol
+bench/results/g7-real-pilot-01/** -text whitespace=cr-at-eol
+bench/results/g7-api-final-01/** -text whitespace=cr-at-eol
+bench/results/g7-release-20261105/** -text whitespace=cr-at-eol

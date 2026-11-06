@@ -8,6 +8,8 @@ Correcciones de Dragon desarrolladas/publicadas en su rama (hasta 964f3dd), incl
 
 El [índice de entrega](../bench/results/g7-release-20261105/manifest.json) referencia **63 muestras** originales: 12 cargas, 24 entrenamientos y 27 pasadas API (27.000 intentos). Identifica campaña, commit, ruta y SHA-256 de cada resultado. No renombra ni hace pasar datos de una campaña por otra.
 
+Los artefactos de estas campañas conservan sus bytes originales mediante reglas de .gitattributes; sus SHA-256 se pueden verificar tanto en Git como dentro de los ZIP sin normalizar los saltos de línea. Los scripts y el código siguen usando sus reglas de formato habituales.
+
 | Fuente | Código medido | Alcance utilizado |
 |---|---|---|
 | g7-complete-v2 | fa7b9c91d9cf773c87abe0f7567b79006588587d | load, training |
