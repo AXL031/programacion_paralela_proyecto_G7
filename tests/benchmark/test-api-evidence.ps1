@@ -19,7 +19,9 @@ Write-BenchJson $file $raw
 $metrics=@{requests_path=[IO.Path]::GetRelativePath((Get-BenchRoot),$file).Replace('\','/');requests_sha256=(Get-FileHash $file).Hash.ToLowerInvariant();model_version='v1';throughput_total=4;throughput_success=3;proportion_under_100_ms=.75;cache_hits=3;errors=1;succeeded=3;timeouts=0;p50_ms=2;p95_ms=55;p99_ms=55;max_ms=55;error_counts=@{unexpected_cache_state=1};error_latencies_ms=@(55.0)}
 $result=@{dataset=@{id='ds'};metrics=$metrics}
 Assert-BenchAPIEvidence $context $p $result
-$checks=2
+$others=@(Get-BenchOtherContainerNames "transporte-g7-bench-test-api-1`ntransporte-g7-mongo-1`nother-app-1" 'transporte-g7-bench-test')
+if($others.Count -ne 2 -or $others -notcontains 'transporte-g7-mongo-1'){throw 'Host workload inventory hides the demo/other apps.'}
+$checks=3
 foreach($bad in @('hide-error','hide-reason','hide-error-latency','wrong-percentile','wrong-throughput')){
     $original=ConvertFrom-BenchJsonData ($metrics|ConvertTo-Json -Depth 20)
     switch($bad){

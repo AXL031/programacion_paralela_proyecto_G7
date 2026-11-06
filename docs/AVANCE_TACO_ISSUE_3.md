@@ -1,5 +1,8 @@
 # Avance de Taco: instrumentación SGD y candidatos previos a selección
 
+**Actualización posterior al cierre técnico:** código de issues1–5 integrado en main mediante PR #14/#15, con autorización expresa del usuario y CI verde; 63 muestras originales y bruto verificable en el [cierre de desarrollo](CIERRE_DESARROLLO_11_13.md). Las campañas se identifican por fase y conservan los fallos anteriores. La auditoría independiente y los documentos/checker de Vera siguen en #8. El estado previo de este documento se conserva como historia; no representa pendientes de código actuales.
+
+
 Fecha: **5 de noviembre de 2026, Lima**. Rama: `taco`. Issue: [#3](https://github.com/AXL031/programacion_paralela_proyecto_G7/issues/3).
 
 **Entrega parcial para revisión; el issue permanece abierto.** La implementación se apoya en el merge aprobado de `main` (`530fb5d`). La campaña repetida de Gerardo (#4) y la auditoría de Vera siguen pendientes, y el smoke real con el entorno aislado no se ejecutó en esta sesión. No se presentan fixtures como mediciones nuevas.

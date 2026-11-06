@@ -1,0 +1,140 @@
+{
+  "compose": "5.6.1",
+  "limits": {
+    "mongo": {
+      "cpus": 2,
+      "memory_bytes": "1610612736",
+      "gomaxprocs": null
+    },
+    "redis": {
+      "cpus": 1,
+      "memory_bytes": "134217728",
+      "gomaxprocs": null
+    },
+    "master": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "worker": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "api": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "loader": {
+      "cpus": 4,
+      "memory_bytes": "1610612736",
+      "gomaxprocs": "4"
+    },
+    "trainer": {
+      "cpus": 1,
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1"
+    },
+    "dev": {
+      "cpus": 4,
+      "memory_bytes": "2147483648",
+      "gomaxprocs": null
+    },
+    "benchmark-api": {
+      "cpus": 2,
+      "memory_bytes": "268435456",
+      "gomaxprocs": "2"
+    }
+  },
+  "os": "linux",
+  "inputs": {
+    "input": {
+      "bytes": 49961641,
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "path": "data/raw/yellow_tripdata_2024-01.parquet"
+    },
+    "zone_catalog": {
+      "bytes": 12331,
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "path": "data/raw/taxi_zone_lookup.csv"
+    }
+  },
+  "memory_bytes": 7197331456,
+  "images": [
+    {
+      "ID": "sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf",
+      "ContainerName": "transporte-g7-bench-g7-complete-v1-redis-1",
+      "Repository": "redis",
+      "Tag": "7.4.7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 60665875,
+      "Created": "2026-01-28T02:35:11.872689865Z",
+      "LastTagTime": "2026-10-13T15:05:21.199849102Z"
+    },
+    {
+      "ID": "sha256:be080de0bca0721fa02c6abe89758d1fddc3415a3fcc296c87122fa075c4b9c8",
+      "ContainerName": "transporte-g7-bench-g7-complete-v1-worker-1",
+      "Repository": "transporte-g7-bench-g7-complete-v1-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914890,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:25:02.918017137Z"
+    },
+    {
+      "ID": "sha256:eb5d7daebe96d03ef12689fe7a4fe4f02554d244a80b905cc9fb0cad3eac9fdf",
+      "ContainerName": "transporte-g7-bench-g7-complete-v1-api-1",
+      "Repository": "transporte-g7-bench-g7-complete-v1-api",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 140541025,
+      "Created": "2026-11-05T23:18:17.561496881Z",
+      "LastTagTime": "2026-11-05T23:25:03.760610353Z"
+    },
+    {
+      "ID": "sha256:be080de0bca0721fa02c6abe89758d1fddc3415a3fcc296c87122fa075c4b9c8",
+      "ContainerName": "transporte-g7-bench-g7-complete-v1-worker-2",
+      "Repository": "transporte-g7-bench-g7-complete-v1-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914890,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:25:02.918017137Z"
+    },
+    {
+      "ID": "sha256:e8a70f797eec27e7cc59f11b7ee90591c5490ab734aac743d29a1f09c7d54a95",
+      "ContainerName": "transporte-g7-bench-g7-complete-v1-master-1",
+      "Repository": "transporte-g7-bench-g7-complete-v1-master",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 138429141,
+      "Created": "2026-11-05T23:18:16.710544483Z",
+      "LastTagTime": "2026-11-05T23:25:03.600409194Z"
+    },
+    {
+      "ID": "sha256:4b58ebcb1dc7a7b4e84cd8ce9098d48764ae4478876898ff9551acf2ac4a6a6d",
+      "ContainerName": "transporte-g7-bench-g7-complete-v1-mongo-1",
+      "Repository": "mongo",
+      "Tag": "8.0.16",
+      "Platform": "linux/amd64",
+      "Size": 1222044170,
+      "Created": "2025-11-19T23:52:45.713575377Z",
+      "LastTagTime": "2026-10-13T15:13:12.968344073Z"
+    }
+  ],
+  "architecture": "x86_64",
+  "built_images": {
+    "trainer": "sha256:ec7b0043a2009251420d4c4ac1c6d751359831256c6f87b2f7bc017d46c3e413",
+    "benchmark-api": "sha256:dc0acd58e8e8d911f3b5c825b602cf76670b121372a056d9f152c85413f8754a",
+    "master": "sha256:e8a70f797eec27e7cc59f11b7ee90591c5490ab734aac743d29a1f09c7d54a95",
+    "worker": "sha256:be080de0bca0721fa02c6abe89758d1fddc3415a3fcc296c87122fa075c4b9c8",
+    "api": "sha256:eb5d7daebe96d03ef12689fe7a4fe4f02554d244a80b905cc9fb0cad3eac9fdf",
+    "loader": "sha256:e014bfbf339521149d05f213ff7452948fee707ffe4d12166792d30034a326ad"
+  },
+  "free_disk_bytes": 289768976384,
+  "cpus": 16,
+  "other_running_container_count": 0,
+  "docker": "29.9.2",
+  "go": "go version go1.27.2 linux/amd64"
+}

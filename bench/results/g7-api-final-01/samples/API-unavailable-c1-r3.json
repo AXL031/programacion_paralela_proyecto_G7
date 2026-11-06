@@ -1,0 +1,70 @@
+{
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-unavailable-c1-r3.ndjson",
+    "sha256": "729b2685c16cadb7c8b84e94b1162e074ef9725044e809d13f5002aa8f37cba4",
+    "valid_samples": 13,
+    "missing_samples": 2
+  },
+  "metrics": {
+    "concurrency": 1,
+    "objective_met": true,
+    "succeeded": 1000,
+    "throughput_success": 1151.0679910400684,
+    "errors": 0,
+    "max_ms": 32.152107,
+    "error_counts": {},
+    "requests_path": "bench/raw/g7-api-final-01/api/API-unavailable-c1-r3.json",
+    "error_latencies_ms": [],
+    "p50_ms": 0.605373,
+    "measurement_complete": true,
+    "cache_scenario": "unavailable",
+    "requests_sha256": "1a87f00955a5ca46a7c164f45e1cc2fd2b25b2f8e144ef3c7fdd6e76be6a8900",
+    "cache_hits": 0,
+    "operational_outcome": "target_met",
+    "elapsed_seconds": 0.868758412,
+    "throughput_total": 1151.0679910400684,
+    "proportion_under_100_ms": 1,
+    "attempted": 1000,
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "p99_ms": 1.382679,
+    "route": "direct isolated REST; in-container client",
+    "completed": 1000,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "p95_ms": 0.998881,
+    "timeouts": 0
+  },
+  "timings": {
+    "evaluation_seconds": null,
+    "total_seconds": 0.868758412,
+    "publication_seconds": null,
+    "preparation_seconds": null,
+    "compute_seconds": 0.868758412
+  },
+  "errors": [],
+  "checks": {
+    "cache_preparation_verified": true,
+    "result_valid": true,
+    "dataset_verified": true,
+    "redis_restored": true,
+    "resources_valid": true
+  },
+  "case_id": "API-unavailable-c1",
+  "repetition": 3,
+  "campaign_id": "g7-api-final-01",
+  "warmup": false,
+  "scope": "real",
+  "sample_id": "API-unavailable-c1-r3",
+  "schema_version": "benchmark-v1",
+  "completed_at": "2026-11-06T00:58:11.6533424Z",
+  "started_at": "2026-11-06T00:57:49.5219789Z",
+  "status": "passed",
+  "dataset": {
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510"
+  },
+  "kind": "api"
+}

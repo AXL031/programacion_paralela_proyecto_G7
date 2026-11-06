@@ -1,0 +1,140 @@
+{
+  "memory_bytes": 7197331456,
+  "free_disk_bytes": 287250432000,
+  "inputs": {
+    "input": {
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "path": "data/raw/yellow_tripdata_2024-01.parquet",
+      "bytes": 49961641
+    },
+    "zone_catalog": {
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "path": "data/raw/taxi_zone_lookup.csv",
+      "bytes": 12331
+    }
+  },
+  "compose": "5.6.1",
+  "architecture": "x86_64",
+  "go": "go version go1.27.2 linux/amd64",
+  "other_running_container_count": 0,
+  "built_images": {
+    "master": "sha256:0acfa6f331c00691bf34160213dc2be0432d3fbd08d7c107412e5fb36f9cc079",
+    "worker": "sha256:331acb15a5a7834d75efaa97fa6e2d601f0f78be743398fba6ae8875358a898c",
+    "api": "sha256:c1acfbc6d17b81a31ffd3abba9c9ea5d4daafc93cd4fb34cfd8b97a5f7a7bc05",
+    "loader": "sha256:f098ff2771d95a93c349d9d90a6f3d55c92db1629f80d48645b7a749efd4f433",
+    "trainer": "sha256:60f4d0d817398533be4f5d1bc972061e1633a1e32382b743c37ad6032c7ce82e",
+    "benchmark-api": "sha256:2238ea58936afc7195d931014b366f526905a962d4f209cca01ccf37d79beb2b"
+  },
+  "os": "linux",
+  "docker": "29.9.2",
+  "cpus": 16,
+  "limits": {
+    "mongo": {
+      "memory_bytes": "1610612736",
+      "cpus": 2,
+      "gomaxprocs": null
+    },
+    "redis": {
+      "memory_bytes": "134217728",
+      "cpus": 1,
+      "gomaxprocs": null
+    },
+    "master": {
+      "memory_bytes": "1073741824",
+      "cpus": 1,
+      "gomaxprocs": "1"
+    },
+    "worker": {
+      "memory_bytes": "1073741824",
+      "cpus": 1,
+      "gomaxprocs": "1"
+    },
+    "api": {
+      "memory_bytes": "1073741824",
+      "cpus": 1,
+      "gomaxprocs": "1"
+    },
+    "loader": {
+      "memory_bytes": "1610612736",
+      "cpus": 4,
+      "gomaxprocs": "4"
+    },
+    "trainer": {
+      "memory_bytes": "1073741824",
+      "cpus": 1,
+      "gomaxprocs": "1"
+    },
+    "dev": {
+      "memory_bytes": "2147483648",
+      "cpus": 4,
+      "gomaxprocs": null
+    },
+    "benchmark-api": {
+      "memory_bytes": "268435456",
+      "cpus": 2,
+      "gomaxprocs": "2"
+    }
+  },
+  "images": [
+    {
+      "ID": "sha256:4b58ebcb1dc7a7b4e84cd8ce9098d48764ae4478876898ff9551acf2ac4a6a6d",
+      "ContainerName": "transporte-g7-bench-g7-complete-v2-mongo-1",
+      "Repository": "mongo",
+      "Tag": "8.0.16",
+      "Platform": "linux/amd64",
+      "Size": 1222044170,
+      "Created": "2025-11-19T23:52:45.713575377Z",
+      "LastTagTime": "2026-10-13T15:13:12.968344073Z"
+    },
+    {
+      "ID": "sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf",
+      "ContainerName": "transporte-g7-bench-g7-complete-v2-redis-1",
+      "Repository": "redis",
+      "Tag": "7.4.7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 60665875,
+      "Created": "2026-01-28T02:35:11.872689865Z",
+      "LastTagTime": "2026-10-13T15:05:21.199849102Z"
+    },
+    {
+      "ID": "sha256:331acb15a5a7834d75efaa97fa6e2d601f0f78be743398fba6ae8875358a898c",
+      "ContainerName": "transporte-g7-bench-g7-complete-v2-worker-1",
+      "Repository": "transporte-g7-bench-g7-complete-v2-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914890,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:59:48.32933024Z"
+    },
+    {
+      "ID": "sha256:331acb15a5a7834d75efaa97fa6e2d601f0f78be743398fba6ae8875358a898c",
+      "ContainerName": "transporte-g7-bench-g7-complete-v2-worker-2",
+      "Repository": "transporte-g7-bench-g7-complete-v2-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914890,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:59:48.32933024Z"
+    },
+    {
+      "ID": "sha256:0acfa6f331c00691bf34160213dc2be0432d3fbd08d7c107412e5fb36f9cc079",
+      "ContainerName": "transporte-g7-bench-g7-complete-v2-master-1",
+      "Repository": "transporte-g7-bench-g7-complete-v2-master",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 138429141,
+      "Created": "2026-11-05T23:18:16.710544483Z",
+      "LastTagTime": "2026-11-05T23:59:49.048215751Z"
+    },
+    {
+      "ID": "sha256:c1acfbc6d17b81a31ffd3abba9c9ea5d4daafc93cd4fb34cfd8b97a5f7a7bc05",
+      "ContainerName": "transporte-g7-bench-g7-complete-v2-api-1",
+      "Repository": "transporte-g7-bench-g7-complete-v2-api",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 140541025,
+      "Created": "2026-11-05T23:18:17.561496881Z",
+      "LastTagTime": "2026-11-05T23:59:49.343946671Z"
+    }
+  ]
+}

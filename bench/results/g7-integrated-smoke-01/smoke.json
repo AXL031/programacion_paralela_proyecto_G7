@@ -1,0 +1,27 @@
+{
+  "cache_miss_then_hit": true,
+  "dataset_id": "ds-b9b2c86160a6f0a25dbc2ffc82b192d2",
+  "tasks_by_worker": {
+    "8cdaa5743a9c": 27,
+    "d4c75fbc0926": 27
+  },
+  "campaign_id": "g7-integrated-smoke-01",
+  "created_at": "2026-11-05T23:18:46.3492976Z",
+  "scope": "infrastructure_smoke_synthetic_data",
+  "candidate_equivalence_verified": true,
+  "status": "passed",
+  "pending": [
+    "Real repeated campaigns are separate from this fixture smoke",
+    "Independent final audit by Vera"
+  ],
+  "counts": {
+    "trips": 3,
+    "windows": 192
+  },
+  "schema_version": "benchmark-v1",
+  "workers": [
+    "8cdaa5743a9c",
+    "d4c75fbc0926"
+  ],
+  "model_version": "run-711ddabf831ea2465be6d365"
+}

@@ -11,6 +11,10 @@ function ConvertFrom-BenchComposeList([string]$Text) {
     }
 }
 
+function Get-BenchOtherContainerNames([string]$Text,[string]$Project) {
+    @($Text -split '\r?\n' | Where-Object { $_.Trim() -and -not $_.StartsWith($Project+'-',[StringComparison]::Ordinal) })
+}
+
 function Get-BenchRoot { (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '../..')).Path }
 
 function Resolve-BenchPath([string]$Path, [string]$Root = (Get-BenchRoot), [switch]$AllowRoot) {
@@ -422,9 +426,10 @@ function Prepare-BenchEnvironment($Context) {
         free_disk_bytes = ([IO.DriveInfo]::new([IO.Path]::GetPathRoot((Get-BenchRoot)))).AvailableFreeSpace
         other_running_container_count = 0; images = @(); go = $null; inputs = [ordered]@{}
     }
-    $others = Invoke-BenchProcess 'docker' @('ps', '--format', '{{.Names}}', '--filter', "label=com.docker.compose.project!=$($Context.project)") 20
+    $others = Invoke-BenchProcess 'docker' @('ps', '--format', '{{.Names}}') 20
     Assert-BenchSuccess $others 'Other workload inventory'
-    $runtime.other_running_container_count = @($others.stdout -split '\r?\n' | Where-Object { $_ }).Count
+    $runtime.other_running_container_names = @(Get-BenchOtherContainerNames $others.stdout $Context.project)
+    $runtime.other_running_container_count = $runtime.other_running_container_names.Count
     $loaderInput = Read-BenchJson $Context.config.inputs.loader
     foreach ($pair in @(@('input', 'sha256_file'), @('zone_catalog', 'zone_sha256_file'))) {
         $path = Resolve-BenchPath $loaderInput[$pair[0]]

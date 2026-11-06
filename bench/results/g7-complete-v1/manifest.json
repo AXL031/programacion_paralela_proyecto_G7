@@ -1,0 +1,114 @@
+{
+  "schema_version": "benchmark-v1",
+  "created_at": "2026-11-05T23:24:46.6452630Z",
+  "campaign_id": "g7-complete-v1",
+  "samples": [
+    {
+      "sample_id": "L1-w1",
+      "adapter_elapsed_seconds": 75.0473418,
+      "warmup": true,
+      "result": "bench/results/g7-complete-v1/samples/L1-w1.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L4-w1",
+      "adapter_elapsed_seconds": 71.7427129,
+      "warmup": true,
+      "result": "bench/results/g7-complete-v1/samples/L4-w1.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L4-r1",
+      "adapter_elapsed_seconds": 72.2294418,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L4-r1.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L1-r1",
+      "adapter_elapsed_seconds": 70.3814104,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L1-r1.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L1-r2",
+      "adapter_elapsed_seconds": 70.1701095,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L1-r2.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L4-r2",
+      "adapter_elapsed_seconds": 71.2725406,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L4-r2.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L4-r3",
+      "adapter_elapsed_seconds": 70.8431725,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L4-r3.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L1-r3",
+      "adapter_elapsed_seconds": 70.7324706,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L1-r3.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L1-r4",
+      "adapter_elapsed_seconds": 76.9522853,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L1-r4.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L4-r4",
+      "adapter_elapsed_seconds": 71.5857875,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L4-r4.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L4-r5",
+      "adapter_elapsed_seconds": 71.12008,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L4-r5.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "L1-r5",
+      "adapter_elapsed_seconds": 76.6047476,
+      "warmup": false,
+      "result": "bench/results/g7-complete-v1/samples/L1-r5.json",
+      "state": "passed"
+    },
+    {
+      "sample_id": "D2-w1",
+      "warmup": true,
+      "error": "Adapter training/D2-w1 failed (1): InvalidOperation: Cannot compare \"System.Management.Automation.OrderedHashtable\" because it is not IComparable.\r\n",
+      "state": "failed"
+    }
+  ],
+  "scope": "real",
+  "state": "failed",
+  "objective_evaluated": false,
+  "pending_issues": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "project": "transporte-g7-bench-g7-complete-v1",
+  "errors": [
+    "Adapter training/D2-w1 failed (1): InvalidOperation: Cannot compare \"System.Management.Automation.OrderedHashtable\" because it is not IComparable.\r\n"
+  ],
+  "missing_components": [],
+  "prepared_at": "2026-11-05T23:25:23.2201282Z",
+  "run_started_at": "2026-11-05T23:25:36.6586578Z",
+  "completed_at": "2026-11-05T23:40:25.4466978Z"
+}

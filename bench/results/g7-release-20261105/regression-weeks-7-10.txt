@@ -1,0 +1,1 @@
+Semanas 7 a 10: 1348665 registros; JWT, WebSocket, telemetría e impacto verificados.

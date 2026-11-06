@@ -1,0 +1,70 @@
+{
+  "warmup": false,
+  "scope": "real",
+  "campaign_id": "g7-api-final-01",
+  "completed_at": "2026-11-06T00:53:38.2108538Z",
+  "checks": {
+    "redis_restored": true,
+    "dataset_verified": true,
+    "cache_preparation_verified": true,
+    "resources_valid": true,
+    "result_valid": true
+  },
+  "case_id": "API-cold-c25",
+  "kind": "api",
+  "status": "passed",
+  "schema_version": "benchmark-v1",
+  "metrics": {
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "throughput_success": 3220.7600297341855,
+    "errors": 0,
+    "succeeded": 1000,
+    "max_ms": 17.486445,
+    "cache_hits": 0,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "error_latencies_ms": [],
+    "elapsed_seconds": 0.310485721,
+    "operational_outcome": "target_met",
+    "p95_ms": 10.829158,
+    "completed": 1000,
+    "requests_sha256": "9841e7b068913990273e1e96f33c45c4f1e9b0c201db75244eff399c78b4f3e7",
+    "cache_scenario": "cold",
+    "throughput_total": 3220.7600297341855,
+    "p99_ms": 14.171681,
+    "attempted": 1000,
+    "requests_path": "bench/raw/g7-api-final-01/api/API-cold-c25-r2.json",
+    "measurement_complete": true,
+    "proportion_under_100_ms": 1,
+    "timeouts": 0,
+    "concurrency": 25,
+    "p50_ms": 7.447702,
+    "error_counts": {},
+    "objective_met": true,
+    "route": "direct isolated REST; in-container client"
+  },
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-cold-c25-r2.ndjson",
+    "sha256": "93f8a206623ca64247f1c6ce58498c076b2892ee7c61ca974b09ef9a8374ed7d",
+    "valid_samples": 16,
+    "missing_samples": 2
+  },
+  "sample_id": "API-cold-c25-r2",
+  "repetition": 2,
+  "started_at": "2026-11-06T00:53:20.9482573Z",
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8"
+  },
+  "timings": {
+    "evaluation_seconds": null,
+    "publication_seconds": null,
+    "compute_seconds": 0.310485721,
+    "total_seconds": 0.310485721,
+    "preparation_seconds": null
+  },
+  "errors": []
+}

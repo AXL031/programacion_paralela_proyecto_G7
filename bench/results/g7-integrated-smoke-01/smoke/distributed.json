@@ -1,0 +1,185 @@
+{
+  "artifact": {
+    "version": "run-711ddabf831ea2465be6d365",
+    "dataset_id": "ds-b9b2c86160a6f0a25dbc2ffc82b192d2",
+    "snapshot_sha256": "54cc01353dd9cf1b901b4a65353919493eabed9692ae52009bdc38ae1413f942",
+    "encoder": {
+      "zones": [
+        161,
+        162
+      ],
+      "mean": [
+        0.3129752274889673,
+        -0.224274876357576,
+        0.02272727272727273
+      ],
+      "scale": [
+        0.6063396760097504,
+        0.6957725807398664,
+        0.1932931942753496
+      ],
+      "version": "linear-count-v2",
+      "target_mean": 0.02272727272727273,
+      "target_scale": 0.19329319427534963
+    },
+    "weights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.9999999999999999,
+      0,
+      0,
+      0
+    ],
+    "config": {
+      "epochs": 3,
+      "batch_size": 16,
+      "learning_rate": 0.04,
+      "l2": 0.0001,
+      "seed": 42,
+      "workers": 2,
+      "task_timeout_seconds": 10
+    },
+    "window_minutes": 15,
+    "timezone": "America/New_York",
+    "train_end": "2024-01-01T21:45:00Z",
+    "validation_end": "2024-01-02T01:15:00Z",
+    "created_at": "2026-11-05T23:18:43.042Z",
+    "evaluation": {
+      "test": {
+        "model": {
+          "examples": 30,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        },
+        "persistence_baseline": {
+          "examples": 30,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        }
+      },
+      "train": {
+        "model": {
+          "examples": 132,
+          "mae": 0.045454545454545456,
+          "rmse": 0.27524094128159016,
+          "log_loss": 0.012783348293415023,
+          "objective_loss": 1.0138248847926263
+        },
+        "persistence_baseline": {
+          "examples": 132,
+          "mae": 0.045454545454545456,
+          "rmse": 0.27524094128159016,
+          "log_loss": 0.012783348293415023,
+          "objective_loss": 1.0138248847926263
+        }
+      },
+      "validation": {
+        "model": {
+          "examples": 28,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        },
+        "persistence_baseline": {
+          "examples": 28,
+          "mae": 0,
+          "rmse": 0,
+          "log_loss": 0,
+          "objective_loss": 0
+        }
+      }
+    },
+    "loss_history": [
+      0.9631634207452421,
+      0.609374839980854,
+      0.5304376957830972
+    ],
+    "selection": {
+      "method": "persistence",
+      "candidate_blend": 0,
+      "candidate_validation": {
+        "examples": 28,
+        "mae": 0.00409925181372321,
+        "rmse": 0.005695847255425951,
+        "log_loss": 1.6080036684519E-05,
+        "objective_loss": 0.00046717648494371374
+      },
+      "selected_validation": {
+        "examples": 28,
+        "mae": 0,
+        "rmse": 0,
+        "log_loss": 0,
+        "objective_loss": 0
+      },
+      "baseline_validation": {
+        "examples": 28,
+        "mae": 0,
+        "rmse": 0,
+        "log_loss": 0,
+        "objective_loss": 0
+      }
+    }
+  },
+  "diagnostics": {
+    "path": "data/smoke-distributed-diagnostics.json",
+    "sha256": "538c892dbf7dc70d27482ceca3dfb0d81259d0a5510c1ef4d003c215b145fe3e",
+    "sample_id": "smoke-distributed",
+    "candidate_max_difference": 5.551115123125783E-17,
+    "absolute_tolerance": 1E-09,
+    "relative_tolerance": 1E-09,
+    "equivalent": true,
+    "reference_run_id": "run-a688f5da1f794d25ab11238b"
+  },
+  "run": {
+    "run_id": "run-711ddabf831ea2465be6d365",
+    "mode": "distributed",
+    "status": "completed",
+    "dataset_id": "ds-b9b2c86160a6f0a25dbc2ffc82b192d2",
+    "config": {
+      "epochs": 3,
+      "batch_size": 16,
+      "learning_rate": 0.04,
+      "l2": 0.0001,
+      "seed": 42,
+      "workers": 2,
+      "task_timeout_seconds": 10
+    },
+    "progress": {
+      "epoch": 3,
+      "step": 27,
+      "total_steps": 27,
+      "objective_loss": 0.005100850067365024
+    },
+    "started_at": "2026-11-05T23:18:42.958978769Z",
+    "completed_at": "2026-11-05T23:18:43.064328181Z",
+    "preparation_seconds": 0.060227346,
+    "training_seconds": 0.022957745,
+    "evaluation_seconds": 5.5863E-05,
+    "publication_seconds": 0.022087676,
+    "total_seconds": 0.105350875,
+    "workers": [
+      "8cdaa5743a9c",
+      "d4c75fbc0926"
+    ],
+    "tasks_by_worker": {
+      "8cdaa5743a9c": 27,
+      "d4c75fbc0926": 27
+    },
+    "artifact_version": "run-711ddabf831ea2465be6d365"
+  }
+}

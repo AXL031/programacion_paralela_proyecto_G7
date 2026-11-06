@@ -1,0 +1,68 @@
+{
+  "metrics": {
+    "error_counts": {},
+    "route": "direct isolated REST; in-container client",
+    "throughput_success": 5201.828365683478,
+    "cache_scenario": "unavailable",
+    "timeouts": 0,
+    "attempted": 1000,
+    "completed": 1000,
+    "p99_ms": 51.545245,
+    "model_version": "run-95a71da50250797d0c574e54",
+    "p95_ms": 35.50369,
+    "cache_hits": 0,
+    "objective_met": true,
+    "p50_ms": 1.897679,
+    "concurrency": 25,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "succeeded": 1000,
+    "max_ms": 62.08151,
+    "elapsed_seconds": 0.192240099,
+    "proportion_under_100_ms": 1,
+    "requests_sha256": "ddecc29e3ed82ae6360ccc2b17457b70121d396a630dfc1854fff897df6ad45b",
+    "errors": 0,
+    "error_latencies_ms": [],
+    "requests_path": "bench/raw/g7-complete-v2/api/API-unavailable-c25-r1.json",
+    "throughput_total": 5201.828365683478
+  },
+  "campaign_id": "g7-complete-v2",
+  "completed_at": "2026-11-06T00:38:20.2293814Z",
+  "scope": "real",
+  "case_id": "API-unavailable-c25",
+  "status": "passed",
+  "sample_id": "API-unavailable-c25-r1",
+  "timings": {
+    "preparation_seconds": null,
+    "compute_seconds": 0.192240099,
+    "total_seconds": 0.192240099,
+    "evaluation_seconds": null,
+    "publication_seconds": null
+  },
+  "dataset": {
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "load_id": "fd79cf2d1c07f5cd3c82705c",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510"
+  },
+  "warmup": false,
+  "checks": {
+    "redis_restored": true,
+    "resources_valid": true,
+    "dataset_verified": true,
+    "cache_scenario_verified": true,
+    "result_valid": true
+  },
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-complete-v2/resources/API-unavailable-c25-r1.ndjson",
+    "sha256": "1cf39c3d1d2999eea8e648278b336038cfda8b4ba13832c801fe02fedbbfbea1",
+    "valid_samples": 14,
+    "missing_samples": 4
+  },
+  "kind": "api",
+  "repetition": 1,
+  "schema_version": "benchmark-v1",
+  "started_at": "2026-11-06T00:38:00.8602367Z",
+  "errors": []
+}

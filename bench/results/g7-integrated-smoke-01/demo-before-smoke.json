@@ -1,0 +1,24 @@
+{
+  "mongo_status": "observed",
+  "mongo": {
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "4acec95c3326fdee2faf2c3d",
+    "model_version": "run-cb5462c7863ee313c7b5e327",
+    "trips": 1348665,
+    "windows": 378720
+  },
+  "file_hashes": {
+    "data/raw/download-manifest.json": "336a865cb6d24b1c1a4abb31ccf8159c068d7972ac2882b4e53f3ab889d858d6",
+    "data/raw/taxi_zone_lookup.csv": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "data/raw/taxi_zone_lookup.csv.sha256": "412e5f505d83bc1808302cfbe3830ea7af2953c49d10eb14960f1984be00727b",
+    "data/raw/yellow_tripdata_2024-01.parquet": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "data/raw/yellow_tripdata_2024-01.parquet.sha256": "c6c34793c93280625d8d51c62bd38d8f8f57493bea57b73303994e08bc2974b8",
+    "data/models/run-1b4bbfc6c9f065d0ee2caf9d.json": "bf32d17d0b82db25f3cfcc5ca89f68eaaaf1e0231213125fefadc45a0311dd96",
+    "data/models/run-ba98f92e89cdadd13a090ddf.json": "baf2142df1ff18a1a95d8fc48e55cd33e708f661175c96830658cbbcf3a9c421",
+    "data/models/run-bf786241ec19d847114e69eb.json": "4b7ff0487cdf563f2042818ec4e7d0e757c6298435dde82d659483535202e32b",
+    "data/models/run-c540a5b37b55ec1bba3df0aa.json": "3f92920d6b1f43139b3cc1fab89913b51e784da6e0c43e475c13ba82165ad5cc",
+    "data/models/run-cb5462c7863ee313c7b5e327.json": "3ab3c8a17223819369be3ff828245aabf6b16853809d0927cb4ed2c8e8c0732c",
+    "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/4acec95c3326fdee2faf2c3d/features.ndjson": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/4acec95c3326fdee2faf2c3d/windows.ndjson": "2294dfd2f88dace497facebc666521c65940797e83b5e58eb719d1c153575c52"
+  }
+}

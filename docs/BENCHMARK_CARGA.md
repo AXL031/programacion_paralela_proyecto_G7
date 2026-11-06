@@ -1,5 +1,8 @@
 # Benchmark de carga local L1/L4
 
+**Actualización posterior al cierre técnico:** código de issues1–5 integrado en main mediante PR #14/#15, con autorización expresa del usuario y CI verde; 63 muestras originales y bruto verificable en el [cierre de desarrollo](CIERRE_DESARROLLO_11_13.md). Las campañas se identifican por fase y conservan los fallos anteriores. La auditoría independiente y los documentos/checker de Vera siguen en #8. El estado previo de este documento se conserva como historia; no representa pendientes de código actuales.
+
+
 Estado: campaña de carga `g7-carga-l1l4b` ejecutada y validada (12/12 muestras correctas). Los adaptadores de entrenamiento, API y resumen siguen sin integrarse, por lo que la acción `Run` completa y la revisión de Cueva permanecen pendientes. Las cifras de este documento provienen únicamente de las muestras y de la evidencia exportada de esa campaña.
 
 El contrato de orquestación, aislamiento y evidencia es [CONTRATO_BENCHMARK.md](CONTRATO_BENCHMARK.md). El plan general de las semanas 11–13 está en [PLAN_SEMANAS_11_13.md](PLAN_SEMANAS_11_13.md).

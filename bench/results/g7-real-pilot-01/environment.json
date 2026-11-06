@@ -1,0 +1,140 @@
+{
+  "built_images": {
+    "loader": "sha256:d6a60c491313b5434805404a13aab331a5cd35fb5f95f31fc26da51a6235c90b",
+    "benchmark-api": "sha256:0470dab5d5b18c02bf9a80c7ab2cba108d77ff2633210554aefd632cf193e2c9",
+    "worker": "sha256:4254380979893f8db49496d8b7c37cab926785fda4e47d116e645d38b4c068cd",
+    "master": "sha256:2686b83c86fc16d20bb876732e6c0a89e78e559329e019ca8c0567cb52cde448",
+    "trainer": "sha256:9819bccec9bff469ccf85226a30a47466b06d0f8c7e0a0d19f06e62fbed34650",
+    "api": "sha256:9e55d5b9bc84b9dbcf01140c582d2642c929c561a8fa801929a92ff6efefebd9"
+  },
+  "os": "linux",
+  "memory_bytes": 7197331456,
+  "go": "go version go1.27.2 linux/amd64",
+  "other_running_container_count": 0,
+  "compose": "5.6.1",
+  "cpus": 16,
+  "limits": {
+    "mongo": {
+      "memory_bytes": "1610612736",
+      "gomaxprocs": null,
+      "cpus": 2
+    },
+    "redis": {
+      "memory_bytes": "134217728",
+      "gomaxprocs": null,
+      "cpus": 1
+    },
+    "master": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "worker": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "api": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "loader": {
+      "memory_bytes": "1610612736",
+      "gomaxprocs": "4",
+      "cpus": 4
+    },
+    "trainer": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "dev": {
+      "memory_bytes": "2147483648",
+      "gomaxprocs": null,
+      "cpus": 4
+    },
+    "benchmark-api": {
+      "memory_bytes": "268435456",
+      "gomaxprocs": "2",
+      "cpus": 2
+    }
+  },
+  "architecture": "x86_64",
+  "images": [
+    {
+      "ID": "sha256:9e55d5b9bc84b9dbcf01140c582d2642c929c561a8fa801929a92ff6efefebd9",
+      "ContainerName": "transporte-g7-bench-g7-real-pilot-01-api-1",
+      "Repository": "transporte-g7-bench-g7-real-pilot-01-api",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 140541027,
+      "Created": "2026-11-05T23:18:17.561496881Z",
+      "LastTagTime": "2026-11-05T23:44:53.123501975Z"
+    },
+    {
+      "ID": "sha256:4254380979893f8db49496d8b7c37cab926785fda4e47d116e645d38b4c068cd",
+      "ContainerName": "transporte-g7-bench-g7-real-pilot-01-worker-2",
+      "Repository": "transporte-g7-bench-g7-real-pilot-01-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914892,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:44:52.212160783Z"
+    },
+    {
+      "ID": "sha256:2686b83c86fc16d20bb876732e6c0a89e78e559329e019ca8c0567cb52cde448",
+      "ContainerName": "transporte-g7-bench-g7-real-pilot-01-master-1",
+      "Repository": "transporte-g7-bench-g7-real-pilot-01-master",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 138429143,
+      "Created": "2026-11-05T23:18:16.710544483Z",
+      "LastTagTime": "2026-11-05T23:44:52.961425169Z"
+    },
+    {
+      "ID": "sha256:4254380979893f8db49496d8b7c37cab926785fda4e47d116e645d38b4c068cd",
+      "ContainerName": "transporte-g7-bench-g7-real-pilot-01-worker-1",
+      "Repository": "transporte-g7-bench-g7-real-pilot-01-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914892,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:44:52.212160783Z"
+    },
+    {
+      "ID": "sha256:4b58ebcb1dc7a7b4e84cd8ce9098d48764ae4478876898ff9551acf2ac4a6a6d",
+      "ContainerName": "transporte-g7-bench-g7-real-pilot-01-mongo-1",
+      "Repository": "mongo",
+      "Tag": "8.0.16",
+      "Platform": "linux/amd64",
+      "Size": 1222044170,
+      "Created": "2025-11-19T23:52:45.713575377Z",
+      "LastTagTime": "2026-10-13T15:13:12.968344073Z"
+    },
+    {
+      "ID": "sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf",
+      "ContainerName": "transporte-g7-bench-g7-real-pilot-01-redis-1",
+      "Repository": "redis",
+      "Tag": "7.4.7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 60665875,
+      "Created": "2026-01-28T02:35:11.872689865Z",
+      "LastTagTime": "2026-10-13T15:05:21.199849102Z"
+    }
+  ],
+  "free_disk_bytes": 287564173312,
+  "inputs": {
+    "input": {
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "path": "data/raw/yellow_tripdata_2024-01.parquet",
+      "bytes": 49961641
+    },
+    "zone_catalog": {
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "path": "data/raw/taxi_zone_lookup.csv",
+      "bytes": 12331
+    }
+  },
+  "docker": "29.9.2"
+}

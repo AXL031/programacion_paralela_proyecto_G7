@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "checks": {
+    "redis_restored": true,
+    "resources_valid": true,
+    "result_valid": true,
+    "cache_preparation_verified": true,
+    "dataset_verified": true
+  },
+  "started_at": "2026-11-06T00:53:42.7910316Z",
+  "campaign_id": "g7-api-final-01",
+  "schema_version": "benchmark-v1",
+  "sample_id": "API-warm-c1-r2",
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-warm-c1-r2.ndjson",
+    "sha256": "15ce1cd0c9f2228322d2b9e783064de9ca5dafa204a815a6737ae87facf86626",
+    "valid_samples": 16,
+    "missing_samples": 2
+  },
+  "repetition": 2,
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8"
+  },
+  "timings": {
+    "preparation_seconds": null,
+    "evaluation_seconds": null,
+    "compute_seconds": 1.082850733,
+    "publication_seconds": null,
+    "total_seconds": 1.082850733
+  },
+  "warmup": false,
+  "scope": "real",
+  "errors": [],
+  "metrics": {
+    "proportion_under_100_ms": 1,
+    "cache_hits": 1000,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "p50_ms": 0.993971,
+    "objective_met": true,
+    "p99_ms": 1.899481,
+    "throughput_success": 923.4883160946248,
+    "requests_sha256": "867034b7f3be25ace6e6033d18b49e8b60210c423805fc57ec718fc15927c6bc",
+    "requests_path": "bench/raw/g7-api-final-01/api/API-warm-c1-r2.json",
+    "timeouts": 0,
+    "operational_outcome": "target_met",
+    "concurrency": 1,
+    "cache_scenario": "warm",
+    "max_ms": 13.269611,
+    "completed": 1000,
+    "route": "direct isolated REST; in-container client",
+    "measurement_complete": true,
+    "errors": 0,
+    "throughput_total": 923.4883160946248,
+    "succeeded": 1000,
+    "error_latencies_ms": [],
+    "attempted": 1000,
+    "p95_ms": 1.466616,
+    "error_counts": {},
+    "elapsed_seconds": 1.082850733
+  },
+  "completed_at": "2026-11-06T00:54:00.1738764Z",
+  "case_id": "API-warm-c1",
+  "kind": "api"
+}

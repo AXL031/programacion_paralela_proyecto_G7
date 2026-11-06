@@ -1,0 +1,68 @@
+{
+  "completed_at": "2026-11-05T23:51:25.2111641Z",
+  "timings": {
+    "evaluation_seconds": null,
+    "preparation_seconds": null,
+    "publication_seconds": null,
+    "compute_seconds": 0.379063183,
+    "total_seconds": 0.379063183
+  },
+  "warmup": false,
+  "schema_version": "benchmark-v1",
+  "errors": [],
+  "campaign_id": "g7-real-pilot-01",
+  "started_at": "2026-11-05T23:51:10.5041778Z",
+  "metrics": {
+    "succeeded": 1000,
+    "objective_met": true,
+    "p95_ms": 14.736849,
+    "concurrency": 25,
+    "completed": 1000,
+    "max_ms": 19.205073,
+    "route": "direct isolated REST; in-container client",
+    "requests_sha256": "e282236b6e73b0cc5446e1f495eb795752b95d2471df759dee91343e1fd2a253",
+    "model_version": "run-393c822ceeb2b0bd4deb6184",
+    "p99_ms": 16.906844,
+    "attempted": 1000,
+    "elapsed_seconds": 0.379063183,
+    "throughput_total": 2638.0826333112914,
+    "error_counts": {},
+    "p50_ms": 8.919444,
+    "errors": 0,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "proportion_under_100_ms": 1,
+    "requests_path": "bench/raw/g7-real-pilot-01/api/API-cold-c25-r1.json",
+    "cache_hits": 0,
+    "throughput_success": 2638.0826333112914,
+    "error_latencies_ms": [],
+    "timeouts": 0,
+    "cache_scenario": "cold"
+  },
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-real-pilot-01/resources/API-cold-c25-r1.ndjson",
+    "sha256": "7bf96fc2a486d5dd83d017ee6fd45b53c20e5311b5e3246f54c9110d35fac02d",
+    "valid_samples": 13,
+    "missing_samples": 3
+  },
+  "scope": "real",
+  "kind": "api",
+  "sample_id": "API-cold-c25-r1",
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "dccbe4d060768401dbaa2887",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b"
+  },
+  "case_id": "API-cold-c25",
+  "checks": {
+    "resources_valid": true,
+    "dataset_verified": true,
+    "cache_scenario_verified": true,
+    "result_valid": true,
+    "redis_restored": true
+  },
+  "repetition": 1,
+  "status": "passed"
+}

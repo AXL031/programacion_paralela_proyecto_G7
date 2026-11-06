@@ -1,0 +1,68 @@
+{
+  "repetition": 1,
+  "timings": {
+    "compute_seconds": 1.004352055,
+    "publication_seconds": null,
+    "preparation_seconds": null,
+    "total_seconds": 1.004352055,
+    "evaluation_seconds": null
+  },
+  "case_id": "API-warm-c1",
+  "warmup": false,
+  "sample_id": "API-warm-c1-r1",
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "fd79cf2d1c07f5cd3c82705c"
+  },
+  "started_at": "2026-11-06T00:39:23.4704296Z",
+  "errors": [],
+  "kind": "api",
+  "completed_at": "2026-11-06T00:39:43.8707062Z",
+  "schema_version": "benchmark-v1",
+  "scope": "real",
+  "checks": {
+    "dataset_verified": true,
+    "result_valid": true,
+    "resources_valid": true,
+    "redis_restored": true,
+    "cache_scenario_verified": true
+  },
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-complete-v2/resources/API-warm-c1-r1.ndjson",
+    "sha256": "c324d5505bc901d9b0f0ffe628c98ed8f13a27a31af6485b6b4cf4eb210d028e",
+    "valid_samples": 26,
+    "missing_samples": 4
+  },
+  "status": "passed",
+  "metrics": {
+    "route": "direct isolated REST; in-container client",
+    "error_counts": {},
+    "concurrency": 1,
+    "proportion_under_100_ms": 1,
+    "throughput_success": 995.6668033103193,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "succeeded": 1000,
+    "requests_sha256": "b3ab25020a1aaa18b4111e3be44646f4dba007a6be03917f178e03993625e743",
+    "requests_path": "bench/raw/g7-complete-v2/api/API-warm-c1-r1.json",
+    "p99_ms": 1.871548,
+    "throughput_total": 995.6668033103193,
+    "objective_met": true,
+    "timeouts": 0,
+    "error_latencies_ms": [],
+    "completed": 1000,
+    "errors": 0,
+    "attempted": 1000,
+    "p95_ms": 1.567403,
+    "max_ms": 2.496911,
+    "elapsed_seconds": 1.004352055,
+    "p50_ms": 0.889587,
+    "cache_hits": 1000,
+    "cache_scenario": "warm",
+    "model_version": "run-95a71da50250797d0c574e54"
+  },
+  "campaign_id": "g7-complete-v2"
+}

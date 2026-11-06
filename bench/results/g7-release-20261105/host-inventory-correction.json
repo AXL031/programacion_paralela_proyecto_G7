@@ -1,0 +1,19 @@
+{
+  "historical_count_filter_fixed": true,
+  "scope": "post-campaign host inventory; historical zero count is not reliable",
+  "names": [
+    "savefood_automatizacion-comercio-1",
+    "maria-juanita-tienda-frontend-1",
+    "maria-juanita-tienda-conciliador-1",
+    "maria-juanita-tienda-api-1",
+    "transporte-g7-web-1",
+    "transporte-g7-worker-2",
+    "transporte-g7-worker-1",
+    "transporte-g7-api-1",
+    "transporte-g7-master-1",
+    "transporte-g7-redis-1",
+    "transporte-g7-mongo-1"
+  ],
+  "other_container_count": 11,
+  "captured_at": "2026-11-06T01:02:44.1359842Z"
+}

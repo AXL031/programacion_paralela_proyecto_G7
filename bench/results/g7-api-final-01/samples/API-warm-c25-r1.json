@@ -1,0 +1,70 @@
+{
+  "scope": "real",
+  "kind": "api",
+  "dataset": {
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8"
+  },
+  "timings": {
+    "total_seconds": 0.149388142,
+    "publication_seconds": null,
+    "evaluation_seconds": null,
+    "compute_seconds": 0.149388142,
+    "preparation_seconds": null
+  },
+  "completed_at": "2026-11-06T00:51:39.5867069Z",
+  "schema_version": "benchmark-v1",
+  "metrics": {
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "p50_ms": 3.631108,
+    "measurement_complete": true,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "elapsed_seconds": 0.149388142,
+    "max_ms": 6.45374,
+    "timeouts": 0,
+    "succeeded": 1000,
+    "error_counts": {},
+    "errors": 0,
+    "objective_met": true,
+    "cache_hits": 1000,
+    "p99_ms": 5.845297,
+    "operational_outcome": "target_met",
+    "proportion_under_100_ms": 1,
+    "p95_ms": 5.228251,
+    "cache_scenario": "warm",
+    "requests_path": "bench/raw/g7-api-final-01/api/API-warm-c25-r1.json",
+    "requests_sha256": "61bfb0ac93604edf8229e44b88422bf392def05222ac8d4297ebe71f09efe650",
+    "error_latencies_ms": [],
+    "attempted": 1000,
+    "route": "direct isolated REST; in-container client",
+    "completed": 1000,
+    "concurrency": 25,
+    "throughput_total": 6693.971734383041,
+    "throughput_success": 6693.971734383041
+  },
+  "started_at": "2026-11-06T00:51:22.7595423Z",
+  "warmup": false,
+  "repetition": 1,
+  "status": "passed",
+  "campaign_id": "g7-api-final-01",
+  "checks": {
+    "resources_valid": true,
+    "cache_preparation_verified": true,
+    "result_valid": true,
+    "redis_restored": true,
+    "dataset_verified": true
+  },
+  "sample_id": "API-warm-c25-r1",
+  "case_id": "API-warm-c25",
+  "errors": [],
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-warm-c25-r1.ndjson",
+    "sha256": "aac51a73b1e2e52a414aed203d78111de2864bd0e098a76df110013c920e4cf5",
+    "valid_samples": 16,
+    "missing_samples": 2
+  }
+}

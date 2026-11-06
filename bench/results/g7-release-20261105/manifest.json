@@ -1,0 +1,564 @@
+{
+  "dataset": {
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "c9a6658446a248896443ca02",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+  },
+  "independent_audit": "pending Vera issue #8",
+  "preservation": [
+    {
+      "preservation": {
+        "unchanged": true,
+        "mongo_observed": true,
+        "file_count": 12
+      },
+      "campaign": "g7-complete-v2"
+    },
+    {
+      "preservation": {
+        "unchanged": true,
+        "file_count": 12,
+        "mongo_observed": true
+      },
+      "campaign": "g7-api-final-01"
+    }
+  ],
+  "samples": [
+    {
+      "warmup": true,
+      "sha256": "49d38847b1545b7faf31a966bfebc5a08fafee70d0851bfcbc03638b08436d3c",
+      "result": "bench/results/g7-complete-v2/samples/L1-w1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L1-w1"
+    },
+    {
+      "warmup": true,
+      "sha256": "a26c45f262446e0eecbaf5889bbfa86de560e946597accfebb39617c3a7aeda8",
+      "result": "bench/results/g7-complete-v2/samples/L4-w1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L4-w1"
+    },
+    {
+      "warmup": false,
+      "sha256": "8abfc2f879334c0e9e936e0b3aca27211b627bd36721e5c93b8c4d97df1dbe30",
+      "result": "bench/results/g7-complete-v2/samples/L4-r1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L4-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "b92a0c02a4623286ef66b83b922fc799f3e97281014034afa212a1ac28b6cff3",
+      "result": "bench/results/g7-complete-v2/samples/L1-r1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L1-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "ffb3a1b2e40bc9eb7de82fe1e22a8f5694aea730972b0c2f87074362958bbdea",
+      "result": "bench/results/g7-complete-v2/samples/L1-r2.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L1-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "dcc71a9d85b1aafa611892a02e25f4639806197b32a28cdcadd98ab8035c6349",
+      "result": "bench/results/g7-complete-v2/samples/L4-r2.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L4-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "2360ffdcac2ae82750e6a06652138ca04fdfc0deb67a0f5aded1615f77c0a648",
+      "result": "bench/results/g7-complete-v2/samples/L4-r3.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L4-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "f6768afced02582ae8b783084232190740201cc703b679e1f021c1f0cbcca1c1",
+      "result": "bench/results/g7-complete-v2/samples/L1-r3.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L1-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "b2fc0787f4e1fdff4a9ecb72223d4491b35c562a5b8eae70b18a5ee8826072d7",
+      "result": "bench/results/g7-complete-v2/samples/L1-r4.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L1-r4"
+    },
+    {
+      "warmup": false,
+      "sha256": "1d15fa8583fc51dd5296299ecb6bc3858c2ccf2ee0e61ec7b7d707ff80d60f9a",
+      "result": "bench/results/g7-complete-v2/samples/L4-r4.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L4-r4"
+    },
+    {
+      "warmup": false,
+      "sha256": "f748f6bc3e45516e2ee218d1a9ca33620f84ba009ab293ce9ee4024ea78937fa",
+      "result": "bench/results/g7-complete-v2/samples/L4-r5.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L4-r5"
+    },
+    {
+      "warmup": false,
+      "sha256": "3ae8cfed7b3ef7f77b2236899a3994b47ec43042b40b2ade08585b21269ab3d1",
+      "result": "bench/results/g7-complete-v2/samples/L1-r5.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "load",
+      "sample_id": "L1-r5"
+    },
+    {
+      "warmup": true,
+      "sha256": "1ab1851bf1ee5692a9f9f7bbe11b0e7a9504e389dac7f5a77e72f7b796956dad",
+      "result": "bench/results/g7-complete-v2/samples/D2-w1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D2-w1"
+    },
+    {
+      "warmup": true,
+      "sha256": "4bb75cf3d25efe6deb5d8047bbe76ea8b9b62dfad7e9ecbc17c8457e38e0abc5",
+      "result": "bench/results/g7-complete-v2/samples/D4-w1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D4-w1"
+    },
+    {
+      "warmup": true,
+      "sha256": "b26b2d9fad829c959317b169233faa0a3173ab62f4e1ba4b0667571e12e82c45",
+      "result": "bench/results/g7-complete-v2/samples/S-w1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "S-w1"
+    },
+    {
+      "warmup": true,
+      "sha256": "a3a637f983a028c8d4b6bf119ad419e78794bc2aa5f5b2d4b05767b80a3c4b1f",
+      "result": "bench/results/g7-complete-v2/samples/D1-w1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D1-w1"
+    },
+    {
+      "warmup": false,
+      "sha256": "10d1753a5c539f761a36ae82e6e058908c649525fbce065f57ff57ef3cdfeb2d",
+      "result": "bench/results/g7-complete-v2/samples/D4-r1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D4-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "0fcc8a446633cd33be3c21c1a1ba6d250e28e404cbbed5cf7d7631e564d82b54",
+      "result": "bench/results/g7-complete-v2/samples/S-r1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "S-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "bc292e1a99fa21739fb4e20d1a5ced5fbb5901ed062ad6ad2ca42ea2666f5e69",
+      "result": "bench/results/g7-complete-v2/samples/D1-r1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D1-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "f18646b477064d7790f7f2c18e578564cb5b56992fb0193ac0a7a30858a0ccfc",
+      "result": "bench/results/g7-complete-v2/samples/D2-r1.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D2-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "be6f8f8bac29a58449a229eda4c474056cb27232f86dc8876736387aaaca5124",
+      "result": "bench/results/g7-complete-v2/samples/S-r2.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "S-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "649127bb75a7854583b5f16218c28fa700e807aadd6269eaa53421bb81666e4c",
+      "result": "bench/results/g7-complete-v2/samples/D1-r2.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D1-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "2b24f3c6e12abcf3c24ac4c457049db7a00c5338b97bf65b82ef4e5d23d75b86",
+      "result": "bench/results/g7-complete-v2/samples/D2-r2.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D2-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "c7f6b9587f7e7d61c0a3b099619fcc334ab432a74b90a83f83cadfa18a987dc3",
+      "result": "bench/results/g7-complete-v2/samples/D4-r2.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D4-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "d57fe82848b6d92d4cd96c14df914110bfdd886c0784a4c8accb432c39ed4e29",
+      "result": "bench/results/g7-complete-v2/samples/D1-r3.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D1-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "353f34901fd127a8ca101911a21388589aa7d8ef2bf7ca4a8713849b9dd4bd41",
+      "result": "bench/results/g7-complete-v2/samples/D2-r3.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D2-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "8d751cfa04a21b006dc3da149fde116205353f266d0c4a682621109a7eb35cec",
+      "result": "bench/results/g7-complete-v2/samples/D4-r3.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D4-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "a55ffdbe0681acc63d5fc120f2243213ed2c2d2e8de7e63c9eb60abd163a3395",
+      "result": "bench/results/g7-complete-v2/samples/S-r3.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "S-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "f72a59af9deef29477aa71a15e5c10c8a76f206bee94cb825127aaee6635bebe",
+      "result": "bench/results/g7-complete-v2/samples/D2-r4.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D2-r4"
+    },
+    {
+      "warmup": false,
+      "sha256": "c390c04f1f1c8ea0df09329a98417531f34aae33da39c8ef8f6dcb1fffa0c4ac",
+      "result": "bench/results/g7-complete-v2/samples/D4-r4.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D4-r4"
+    },
+    {
+      "warmup": false,
+      "sha256": "b8032849636af3c6720568b3fe7844c7e06bcea1f764fa3eece4a8d44467118b",
+      "result": "bench/results/g7-complete-v2/samples/S-r4.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "S-r4"
+    },
+    {
+      "warmup": false,
+      "sha256": "465ff47154608fd0b6477535e1e7c6f420351ed3c56fd417753c754b082fdaa0",
+      "result": "bench/results/g7-complete-v2/samples/D1-r4.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D1-r4"
+    },
+    {
+      "warmup": false,
+      "sha256": "364f6b5daede9ec0b0c8eb4c59408e7fc695b592207980f885d7cdbfa8f598fe",
+      "result": "bench/results/g7-complete-v2/samples/D4-r5.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D4-r5"
+    },
+    {
+      "warmup": false,
+      "sha256": "d82ffa3471affdb52a62daa386c83de8e87588ae57b02cfffe575b7a8c2d76f5",
+      "result": "bench/results/g7-complete-v2/samples/S-r5.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "S-r5"
+    },
+    {
+      "warmup": false,
+      "sha256": "bcacafc673586c5c70ff436f08eba39602997ec1ebb4438d12b67f99d52e197f",
+      "result": "bench/results/g7-complete-v2/samples/D1-r5.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D1-r5"
+    },
+    {
+      "warmup": false,
+      "sha256": "f5382aadb06d868a68119802564d5ba9f485447f00c28a23a4f79332c08de77a",
+      "result": "bench/results/g7-complete-v2/samples/D2-r5.json",
+      "source_campaign": "g7-complete-v2",
+      "kind": "training",
+      "sample_id": "D2-r5"
+    },
+    {
+      "warmup": false,
+      "sha256": "01f1c5c1842612ebc3dab69028090e24cec5e0536100b2181a4535f7ad64f838",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c1-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c1-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "9ea3d7ab03fd60638c51579637885995e78956b2b9f00c9931c04b3d545d30e0",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c10-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c10-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "088fc4401cb097ae3d1d794147b486f922f9daed6d9a6967695d7b1a8604fc02",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c25-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c25-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "acc50ca5dd905911487575361641609694b46eeade77fb535c6f3f43736f6a02",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c1-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c1-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "b38edccaef8e50b88aadca80c5fbe1443a07860f5f0c986804c70f189f620056",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c10-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c10-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "9571f5910a58a2e290396d0e9527b167375b7659b33315cd18053f26528ef5e6",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c25-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c25-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "bea4cb3400aa178e1e4cdec5ede520651d7dfb892b5cf9fd08a6d367a1f6fba5",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c1-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c1-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "05d2d1e082bef9acd9c6d57280d098fa0a1868e323b3b3a70963f36eff3d5894",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c10-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c10-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "7e6d75557bc7451388c8aa73130b5b76aa4a60eb0bfcb70e6dd7f88d0e28160c",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c25-r1.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c25-r1"
+    },
+    {
+      "warmup": false,
+      "sha256": "89250a8cd5384e19f8f32bd4a6bc8b108f473ab5397a8f742950ae5821174998",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c10-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c10-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "009312993fbe8096fba70028f78f36a45a4249efd366e99707c7aeb781e1daf7",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c25-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c25-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "3b6eebca41f22c6eb92eae41ae6a4a1cadc08135bf0bd878d856c5ac37f447a0",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c1-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c1-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "bedc08b5c547486fc44667e2888a6b4c02d587fc5e153e0d74c84d1ba20cd298",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c10-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c10-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "f36551997fce880a03ac75f3991cb1ee3f072d5da0111b4adac84d842465f69a",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c25-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c25-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "0eab7c47a0bc27fdf381f076b65dc166bcf0028f2715ebffe53f8302dbcb31eb",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c1-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c1-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "d05d3bf87c612c4c19fa1ee95e9bc2aa569b0c8698f81fa0d799f2a84e8d2028",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c10-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c10-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "d68a77bcadcb6debaf299aab0d0c22bf50f6b71f38be3223ea3c0bbff8f747a2",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c25-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c25-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "c794b69d48955ff8625853574068ba26cc857d542081384d27d09bfbf7af56f7",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c1-r2.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c1-r2"
+    },
+    {
+      "warmup": false,
+      "sha256": "a71efea12063ab4a38b6598f3329cfa8a25f6dea4a249cf8662f886dd48873d5",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c25-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c25-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "359ab389ab09633b4d627099048b9f77421f1000b79294abb4e880cc9241c62f",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c1-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c1-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "9f97f1a8d8c3712fa5cb4ea22bde3e46b7b189cf3977844e5f14777097380bdc",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c10-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c10-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "2097935905d341d37e6ee0e2d7d2c5d2c878e98c1f5b5617e3074529e42d4ed0",
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c25-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-cold-c25-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "84d32f9a18a8bf5355993945e6f3cdbadf840e76a1e8e2b76847a709dfeec5bc",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c1-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c1-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "47ecbe247f558588c53284514ed9b8f1e80cc0c8627412856c47588ef16b8501",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c10-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c10-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "7572f4800009abe897d17a1f1a9814b512ab64498f3d8ba89262819b75133270",
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c25-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-warm-c25-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "b719a3c2e3fd91b8edb4c970c9cff4947942a5bc87020d5674cdfed14ba978e1",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c1-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c1-r3"
+    },
+    {
+      "warmup": false,
+      "sha256": "bb282145e665418926e79339b5689e117118edde0e3cae2eacec80d6dd646133",
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c10-r3.json",
+      "source_campaign": "g7-api-final-01",
+      "kind": "api",
+      "sample_id": "API-unavailable-c10-r3"
+    }
+  ],
+  "release_id": "g7-release-20261105",
+  "schema_version": "development-release-v1",
+  "verification_checks": 100,
+  "status": "development_verified",
+  "campaigns": [
+    {
+      "campaign_id": "g7-complete-v2",
+      "commit": "fa7b9c91d9cf773c87abe0f7567b79006588587d",
+      "measured_kinds": [
+        "load",
+        "training"
+      ],
+      "state": "failed"
+    },
+    {
+      "campaign_id": "g7-api-final-01",
+      "commit": "fa23607ff6036062db1edc86737148a0879899fb",
+      "measured_kinds": [
+        "api"
+      ],
+      "state": "completed"
+    }
+  ],
+  "limitations": [
+    "Compute and API are separately identified campaigns; the original API failure is preserved, never converted to success.",
+    "API outcome does not redefine data integrity; every error/cache deviation remains in raw evidence and makes its operational target unmet.",
+    "Product and compute sources/snapshot/config remain identical across phases; API measurement driver/validation changed.",
+    "Host is shared; no performance guarantee for physical multi-host deployment."
+  ],
+  "api_target_not_met_sample_ids": []
+}

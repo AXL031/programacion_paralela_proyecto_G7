@@ -1,0 +1,407 @@
+[
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c1",
+      "concurrency": 1,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c1-r1",
+    "case_id": "API-unavailable-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c10",
+      "concurrency": 10,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c10-r1",
+    "case_id": "API-unavailable-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c25",
+      "concurrency": 25,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c25-r1",
+    "case_id": "API-unavailable-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c1",
+      "concurrency": 1,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c1-r1",
+    "case_id": "API-cold-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c10",
+      "concurrency": 10,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c10-r1",
+    "case_id": "API-cold-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c25",
+      "concurrency": 25,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c25-r1",
+    "case_id": "API-cold-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c1",
+      "concurrency": 1,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c1-r1",
+    "case_id": "API-warm-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c10",
+      "concurrency": 10,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c10-r1",
+    "case_id": "API-warm-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 1,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c25",
+      "concurrency": 25,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c25-r1",
+    "case_id": "API-warm-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c10",
+      "concurrency": 10,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c10-r2",
+    "case_id": "API-unavailable-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c25",
+      "concurrency": 25,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c25-r2",
+    "case_id": "API-unavailable-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c1",
+      "concurrency": 1,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c1-r2",
+    "case_id": "API-cold-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c10",
+      "concurrency": 10,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c10-r2",
+    "case_id": "API-cold-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c25",
+      "concurrency": 25,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c25-r2",
+    "case_id": "API-cold-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c1",
+      "concurrency": 1,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c1-r2",
+    "case_id": "API-warm-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c10",
+      "concurrency": 10,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c10-r2",
+    "case_id": "API-warm-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c25",
+      "concurrency": 25,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c25-r2",
+    "case_id": "API-warm-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 2,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c1",
+      "concurrency": 1,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c1-r2",
+    "case_id": "API-unavailable-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c25",
+      "concurrency": 25,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c25-r3",
+    "case_id": "API-unavailable-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c1",
+      "concurrency": 1,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c1-r3",
+    "case_id": "API-cold-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c10",
+      "concurrency": 10,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c10-r3",
+    "case_id": "API-cold-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-cold-c25",
+      "concurrency": 25,
+      "cache": "cold",
+      "requests": 1000
+    },
+    "sample_id": "API-cold-c25-r3",
+    "case_id": "API-cold-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c1",
+      "concurrency": 1,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c1-r3",
+    "case_id": "API-warm-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c10",
+      "concurrency": 10,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c10-r3",
+    "case_id": "API-warm-c10",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-warm-c25",
+      "concurrency": 25,
+      "cache": "warm",
+      "requests": 1000
+    },
+    "sample_id": "API-warm-c25-r3",
+    "case_id": "API-warm-c25",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c1",
+      "concurrency": 1,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c1-r3",
+    "case_id": "API-unavailable-c1",
+    "kind": "api"
+  },
+  {
+    "repetition": 3,
+    "warmup": false,
+    "campaign_id": "g7-api-final-01",
+    "schema_version": "benchmark-v1",
+    "parameters": {
+      "id": "API-unavailable-c10",
+      "concurrency": 10,
+      "cache": "unavailable",
+      "requests": 1000
+    },
+    "sample_id": "API-unavailable-c10-r3",
+    "case_id": "API-unavailable-c10",
+    "kind": "api"
+  }
+]

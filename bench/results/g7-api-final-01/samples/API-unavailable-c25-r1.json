@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "result_valid": true,
+    "redis_restored": true,
+    "cache_preparation_verified": true,
+    "dataset_verified": true,
+    "resources_valid": true
+  },
+  "case_id": "API-unavailable-c25",
+  "sample_id": "API-unavailable-c25-r1",
+  "completed_at": "2026-11-06T00:49:29.6837966Z",
+  "warmup": false,
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-unavailable-c25-r1.ndjson",
+    "sha256": "b14d6643a8ef2bbc52c6577121231ee668b94e0bbf4d3d4161aa47125a23a7a3",
+    "valid_samples": 13,
+    "missing_samples": 2
+  },
+  "schema_version": "benchmark-v1",
+  "started_at": "2026-11-06T00:49:07.6578199Z",
+  "metrics": {
+    "operational_outcome": "target_met",
+    "measurement_complete": true,
+    "p95_ms": 34.647898,
+    "proportion_under_100_ms": 1,
+    "p50_ms": 2.016578,
+    "throughput_total": 5032.909743853179,
+    "objective_met": true,
+    "completed": 1000,
+    "throughput_success": 5032.909743853179,
+    "requests_sha256": "6f23ea280447fe970b329c898615bee5edacbc4585cc6a04b110906b5d124d4d",
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "route": "direct isolated REST; in-container client",
+    "errors": 0,
+    "concurrency": 25,
+    "error_counts": {},
+    "cache_hits": 0,
+    "timeouts": 0,
+    "elapsed_seconds": 0.198692218,
+    "attempted": 1000,
+    "p99_ms": 61.73845,
+    "max_ms": 62.5573,
+    "requests_path": "bench/raw/g7-api-final-01/api/API-unavailable-c25-r1.json",
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "error_latencies_ms": [],
+    "cache_scenario": "unavailable",
+    "succeeded": 1000
+  },
+  "repetition": 1,
+  "status": "passed",
+  "scope": "real",
+  "timings": {
+    "preparation_seconds": null,
+    "evaluation_seconds": null,
+    "publication_seconds": null,
+    "compute_seconds": 0.198692218,
+    "total_seconds": 0.198692218
+  },
+  "kind": "api",
+  "campaign_id": "g7-api-final-01",
+  "errors": [],
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+  }
+}

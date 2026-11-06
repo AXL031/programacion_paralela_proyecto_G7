@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "bundles": 5,
+  "original_sample_and_resource_hashes_checked": 126,
+  "scope": "implementer packaging verification",
+  "entries_scanned": 1669,
+  "known_credentials_and_jwt_present": false
+}

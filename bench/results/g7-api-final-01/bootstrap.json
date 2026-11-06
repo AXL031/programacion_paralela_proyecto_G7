@@ -1,0 +1,16 @@
+{
+  "model_version": "run-6e58c7475ecc8f85a17c3c04",
+  "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+  "created_at": "2026-11-06T00:47:59.9188416Z",
+  "training_config": {
+    "epochs": 120,
+    "batch_size": 8192,
+    "learning_rate": 0.2,
+    "l2": 1E-05,
+    "seed": 42,
+    "workers": 1,
+    "task_timeout_seconds": 10
+  },
+  "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+  "purpose": "dataset/model preparation only; excluded from all measured repetitions"
+}

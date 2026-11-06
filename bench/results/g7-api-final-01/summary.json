@@ -1,0 +1,5391 @@
+{
+  "schema_version": "benchmark-v1",
+  "campaign_id": "g7-api-final-01",
+  "scope": "real",
+  "status": "passed",
+  "sample_ids": [
+    "API-unavailable-c1-r1",
+    "API-unavailable-c10-r1",
+    "API-unavailable-c25-r1",
+    "API-cold-c1-r1",
+    "API-cold-c10-r1",
+    "API-cold-c25-r1",
+    "API-warm-c1-r1",
+    "API-warm-c10-r1",
+    "API-warm-c25-r1",
+    "API-unavailable-c10-r2",
+    "API-unavailable-c25-r2",
+    "API-cold-c1-r2",
+    "API-cold-c10-r2",
+    "API-cold-c25-r2",
+    "API-warm-c1-r2",
+    "API-warm-c10-r2",
+    "API-warm-c25-r2",
+    "API-unavailable-c1-r2",
+    "API-unavailable-c25-r3",
+    "API-cold-c1-r3",
+    "API-cold-c10-r3",
+    "API-cold-c25-r3",
+    "API-warm-c1-r3",
+    "API-warm-c10-r3",
+    "API-warm-c25-r3",
+    "API-unavailable-c1-r3",
+    "API-unavailable-c10-r3"
+  ],
+  "excluded_warmup_ids": [],
+  "dataset": {
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "load_id": "a92a6f26e86c742b87227aa1"
+  },
+  "timings": [
+    {
+      "case_id": "API-cold-c1",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c1",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 1.4338698913333332,
+        "median": 1.432866625,
+        "min": 1.37773436,
+        "max": 1.491008689,
+        "sample_stddev": 0.05664382852616667
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c1",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c1",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 1.4338698913333332,
+        "median": 1.432866625,
+        "min": 1.37773436,
+        "max": 1.491008689,
+        "sample_stddev": 0.05664382852616667
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c10",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.38500198199999996,
+        "median": 0.400150768,
+        "min": 0.306363766,
+        "max": 0.448491412,
+        "sample_stddev": 0.07226466098537151
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c10",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c10",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.38500198199999996,
+        "median": 0.400150768,
+        "min": 0.306363766,
+        "max": 0.448491412,
+        "sample_stddev": 0.07226466098537151
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c25",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.32099324566666665,
+        "median": 0.313539012,
+        "min": 0.310485721,
+        "max": 0.338955004,
+        "sample_stddev": 0.01563007416173938
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c25",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-cold-c25",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.32099324566666665,
+        "median": 0.313539012,
+        "min": 0.310485721,
+        "max": 0.338955004,
+        "sample_stddev": 0.01563007416173938
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.95629741,
+        "median": 0.920369573,
+        "min": 0.868758412,
+        "max": 1.079764245,
+        "sample_stddev": 0.10999532941734345
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.95629741,
+        "median": 0.920369573,
+        "min": 0.868758412,
+        "max": 1.079764245,
+        "sample_stddev": 0.10999532941734345
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.21804227966666664,
+        "median": 0.172913009,
+        "min": 0.160314178,
+        "max": 0.320899652,
+        "sample_stddev": 0.08929956281040861
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.21804227966666664,
+        "median": 0.172913009,
+        "min": 0.160314178,
+        "max": 0.320899652,
+        "sample_stddev": 0.08929956281040861
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.181096964,
+        "median": 0.179047744,
+        "min": 0.16555093,
+        "max": 0.198692218,
+        "sample_stddev": 0.01666540487150061
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.181096964,
+        "median": 0.179047744,
+        "min": 0.16555093,
+        "max": 0.198692218,
+        "sample_stddev": 0.01666540487150061
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c1",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 1.100776917,
+        "median": 1.082850733,
+        "min": 0.98680333,
+        "max": 1.232676688,
+        "sample_stddev": 0.12391302634570121
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c1",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c1",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 1.100776917,
+        "median": 1.082850733,
+        "min": 0.98680333,
+        "max": 1.232676688,
+        "sample_stddev": 0.12391302634570121
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c10",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.19960746766666668,
+        "median": 0.199694235,
+        "min": 0.185517184,
+        "max": 0.213610984,
+        "sample_stddev": 0.014047100983391564
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c10",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c10",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.19960746766666668,
+        "median": 0.199694235,
+        "min": 0.185517184,
+        "max": 0.213610984,
+        "sample_stddev": 0.014047100983391564
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "kind": "api",
+      "phase": "preparation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c25",
+      "kind": "api",
+      "phase": "compute_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.15548049,
+        "median": 0.155164338,
+        "min": 0.149388142,
+        "max": 0.16188899,
+        "sample_stddev": 0.006256417844510076
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "kind": "api",
+      "phase": "evaluation_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c25",
+      "kind": "api",
+      "phase": "publication_seconds",
+      "unit": "seconds",
+      "missing": 3,
+      "statistics": null
+    },
+    {
+      "case_id": "API-warm-c25",
+      "kind": "api",
+      "phase": "total_seconds",
+      "unit": "seconds",
+      "missing": 0,
+      "statistics": {
+        "count": 3,
+        "mean": 0.15548049,
+        "median": 0.155164338,
+        "min": 0.149388142,
+        "max": 0.16188899,
+        "sample_stddev": 0.006256417844510076
+      }
+    }
+  ],
+  "speedups": [],
+  "api": [
+    {
+      "case_id": "API-cold-c1",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.3401673333333333,
+        "median": 1.344536,
+        "min": 1.279596,
+        "max": 1.39637,
+        "sample_stddev": 0.0585094497097121
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.9451586666666667,
+        "median": 1.917342,
+        "min": 1.864031,
+        "max": 2.054103,
+        "sample_stddev": 0.09804165698484152
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 2.322634,
+        "median": 2.246411,
+        "min": 2.246103,
+        "max": 2.475388,
+        "sample_stddev": 0.13228893416684576
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 3.069932666666667,
+        "median": 2.984892,
+        "min": 2.892417,
+        "max": 3.332489,
+        "sample_stddev": 0.2320340008195635
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 698.1392967703091,
+        "median": 697.901662689645,
+        "min": 670.6869030191144,
+        "max": 725.8293246021678,
+        "sample_stddev": 27.571978836819433
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 698.1392967703091,
+        "median": 697.901662689645,
+        "min": 670.6869030191144,
+        "max": 725.8293246021678,
+        "sample_stddev": 27.571978836819433
+      }
+    },
+    {
+      "case_id": "API-cold-c1",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 3.3979503333333336,
+        "median": 3.518053,
+        "min": 2.674863,
+        "max": 4.000935,
+        "sample_stddev": 0.6711447125630456
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 6.726922333333333,
+        "median": 7.006892,
+        "min": 5.585782,
+        "max": 7.588093,
+        "sample_stddev": 1.0300968866423847
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 9.847724333333334,
+        "median": 10.591015,
+        "min": 7.940815,
+        "max": 11.011343,
+        "sample_stddev": 1.6647511258627625
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 16.053247333333335,
+        "median": 15.37789,
+        "min": 10.386085,
+        "max": 22.395767,
+        "sample_stddev": 6.033257501635938
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 2664.2829092517773,
+        "median": 2499.058055037895,
+        "min": 2229.697098414005,
+        "max": 3264.0935743034315,
+        "sample_stddev": 536.6269250332257
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 2664.2829092517773,
+        "median": 2499.058055037895,
+        "min": 2229.697098414005,
+        "max": 3264.0935743034315,
+        "sample_stddev": 536.6269250332257
+      }
+    },
+    {
+      "case_id": "API-cold-c10",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 7.560385333333333,
+        "median": 7.447702,
+        "min": 7.320946,
+        "max": 7.912508,
+        "sample_stddev": 0.31146356154345495
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 12.157982,
+        "median": 12.367735,
+        "min": 10.829158,
+        "max": 13.277053,
+        "sample_stddev": 1.2373539200701633
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 14.585623333333332,
+        "median": 14.451032,
+        "min": 14.171681,
+        "max": 15.134157,
+        "sample_stddev": 0.4951526359622194
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 17.876103999999998,
+        "median": 17.486445,
+        "min": 16.050446,
+        "max": 20.091421,
+        "sample_stddev": 2.0484739050978917
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 3120.133300692232,
+        "median": 3189.39577445629,
+        "min": 2950.2440978862196,
+        "max": 3220.7600297341855,
+        "sample_stddev": 147.96176887909567
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 3120.133300692232,
+        "median": 3189.39577445629,
+        "min": 2950.2440978862196,
+        "max": 3220.7600297341855,
+        "sample_stddev": 147.96176887909567
+      }
+    },
+    {
+      "case_id": "API-cold-c25",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 0.6894186666666667,
+        "median": 0.655265,
+        "min": 0.605373,
+        "max": 0.807618,
+        "sample_stddev": 0.10535945480275281
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.1022383333333334,
+        "median": 1.064008,
+        "min": 0.998881,
+        "max": 1.243826,
+        "sample_stddev": 0.12686875914240406
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.4443136666666667,
+        "median": 1.382679,
+        "min": 1.328645,
+        "max": 1.621617,
+        "sample_stddev": 0.1559078968408378
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 32.239848333333335,
+        "median": 32.152107,
+        "min": 31.971383,
+        "max": 32.596055,
+        "sample_stddev": 0.3214462366824856
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 1054.5720463381235,
+        "median": 1086.5200560036333,
+        "min": 926.1280919706691,
+        "max": 1151.0679910400684,
+        "sample_stddev": 115.82312394132921
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 1054.5720463381235,
+        "median": 1086.5200560036333,
+        "min": 926.1280919706691,
+        "max": 1151.0679910400684,
+        "sample_stddev": 115.82312394132921
+      }
+    },
+    {
+      "case_id": "API-unavailable-c1",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.4893036666666668,
+        "median": 1.058632,
+        "min": 1.014049,
+        "max": 2.39523,
+        "sample_stddev": 0.784871837972502
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 3.4632153333333333,
+        "median": 2.858489,
+        "min": 2.237141,
+        "max": 5.294016,
+        "sample_stddev": 1.61567064870175
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 31.886805000000003,
+        "median": 30.641024,
+        "min": 30.529127,
+        "max": 34.490264,
+        "sample_stddev": 2.2553556943779407
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 39.457190000000004,
+        "median": 34.809496,
+        "min": 33.296679,
+        "max": 50.265395,
+        "sample_stddev": 9.390693547890429
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 5045.748434012556,
+        "median": 5783.254861986699,
+        "min": 3116.2389668157075,
+        "max": 6237.751473235262,
+        "sample_stddev": 1686.3857448433346
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 5045.748434012556,
+        "median": 5783.254861986699,
+        "min": 3116.2389668157075,
+        "max": 6237.751473235262,
+        "sample_stddev": 1686.3857448433346
+      }
+    },
+    {
+      "case_id": "API-unavailable-c10",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 2.328942666666667,
+        "median": 2.20986,
+        "min": 2.016578,
+        "max": 2.76039,
+        "sample_stddev": 0.38593987091428295
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 16.500900333333334,
+        "median": 7.582703,
+        "min": 7.2721,
+        "max": 34.647898,
+        "sample_stddev": 15.71652829957705
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 45.19057966666667,
+        "median": 38.320274,
+        "min": 35.513015,
+        "max": 61.73845,
+        "sample_stddev": 14.399450864525363
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 70.86543933333334,
+        "median": 68.899403,
+        "min": 62.5573,
+        "max": 81.139615,
+        "sample_stddev": 9.445876446248722
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 5552.816484300946,
+        "median": 5585.10248529018,
+        "min": 5032.909743853179,
+        "max": 6040.43722375948,
+        "sample_stddev": 504.539091732735
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 5552.816484300946,
+        "median": 5585.10248529018,
+        "min": 5032.909743853179,
+        "max": 6040.43722375948,
+        "sample_stddev": 504.539091732735
+      }
+    },
+    {
+      "case_id": "API-unavailable-c25",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0057033333333334,
+        "median": 0.993971,
+        "min": 0.918521,
+        "max": 1.104618,
+        "sample_stddev": 0.09360159766976918
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.4974163333333332,
+        "median": 1.466616,
+        "min": 1.358216,
+        "max": 1.667417,
+        "sample_stddev": 0.15688470288824635
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.8213076666666665,
+        "median": 1.899481,
+        "min": 1.556145,
+        "max": 2.008297,
+        "sample_stddev": 0.23599504297618934
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 9.955094,
+        "median": 13.269611,
+        "min": 1.914639,
+        "max": 14.681032,
+        "sample_stddev": 6.998908112347167
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 1000.0,
+        "median": 1000.0,
+        "min": 1000.0,
+        "max": 1000.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 916.0347319579637,
+        "median": 923.4883160946248,
+        "min": 811.2427287178485,
+        "max": 1013.3731510614177,
+        "sample_stddev": 101.27114024518104
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 916.0347319579637,
+        "median": 923.4883160946248,
+        "min": 811.2427287178485,
+        "max": 1013.3731510614177,
+        "sample_stddev": 101.27114024518104
+      }
+    },
+    {
+      "case_id": "API-warm-c1",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.70055,
+        "median": 1.669326,
+        "min": 1.615155,
+        "max": 1.817169,
+        "sample_stddev": 0.10456394063442717
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 3.5307363333333335,
+        "median": 3.716499,
+        "min": 3.08511,
+        "max": 3.7906,
+        "sample_stddev": 0.38769815742447555
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 5.183743,
+        "median": 5.031279,
+        "min": 4.572782,
+        "max": 5.947168,
+        "sample_stddev": 0.6997629403740953
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 6.917108,
+        "median": 7.371487,
+        "min": 5.868601,
+        "max": 7.511236,
+        "sample_stddev": 0.9107182014964895
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 1000.0,
+        "median": 1000.0,
+        "min": 1000.0,
+        "max": 1000.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 5026.466425382896,
+        "median": 5007.655829423418,
+        "min": 4681.4072070376305,
+        "max": 5390.33623968764,
+        "sample_stddev": 354.8386566085816
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 5026.466425382896,
+        "median": 5007.655829423418,
+        "min": 4681.4072070376305,
+        "max": 5390.33623968764,
+        "sample_stddev": 354.8386566085816
+      }
+    },
+    {
+      "case_id": "API-warm-c10",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "p50_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 3.716661333333333,
+        "median": 3.673897,
+        "min": 3.631108,
+        "max": 3.844979,
+        "sample_stddev": 0.11316709908066641
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "p95_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 5.662295666666667,
+        "median": 5.572875,
+        "min": 5.228251,
+        "max": 6.185761,
+        "sample_stddev": 0.4849777229371812
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "p99_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 6.9600946666666665,
+        "median": 7.15725,
+        "min": 5.845297,
+        "max": 7.877737,
+        "sample_stddev": 1.030463855502139
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "max_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 8.802337999999999,
+        "median": 9.889352,
+        "min": 6.45374,
+        "max": 10.063922,
+        "sample_stddev": 2.0358175496414224
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "errors",
+      "statistics": {
+        "count": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "cache_hits",
+      "statistics": {
+        "count": 3,
+        "mean": 1000.0,
+        "median": 1000.0,
+        "min": 1000.0,
+        "max": 1000.0,
+        "sample_stddev": 0.0
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "throughput_total",
+      "statistics": {
+        "count": 3,
+        "mean": 6438.607972289826,
+        "median": 6444.779856567299,
+        "min": 6177.072325919137,
+        "max": 6693.971734383041,
+        "sample_stddev": 258.5049684904223
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "throughput_success",
+      "statistics": {
+        "count": 3,
+        "mean": 6438.607972289826,
+        "median": 6444.779856567299,
+        "min": 6177.072325919137,
+        "max": 6693.971734383041,
+        "sample_stddev": 258.5049684904223
+      }
+    },
+    {
+      "case_id": "API-warm-c25",
+      "metric": "proportion_under_100_ms",
+      "statistics": {
+        "count": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sample_stddev": 0.0
+      }
+    }
+  ],
+  "resources": [
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 7.641193426636771,
+              "median": 7.641193426636771,
+              "min": 0.4785461538144966,
+              "max": 14.803840699459045,
+              "sample_stddev": 10.129512915719921
+            },
+            "max_memory_bytes": 348188672.0,
+            "first_observed_at": "2026-11-05T19:48:21.9043219-05:00",
+            "last_observed_at": "2026-11-05T19:48:30.5419496-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": 0.0
+            },
+            "max_memory_bytes": 14024704.0,
+            "first_observed_at": "2026-11-05T19:48:22.2127238-05:00",
+            "last_observed_at": "2026-11-05T19:48:30.801321-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.23333333333333334,
+              "median": 0.16,
+              "min": 0.0,
+              "max": 0.54,
+              "sample_stddev": 0.277368587502863
+            },
+            "max_memory_bytes": 340262912.0,
+            "first_observed_at": "2026-11-05T19:48:21.5758321-05:00",
+            "last_observed_at": "2026-11-05T19:48:30.2883951-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2233333333333336,
+              "median": 0.17,
+              "min": 0.05,
+              "max": 3.45,
+              "sample_stddev": 1.929283113836156
+            },
+            "max_memory_bytes": 6463422.0,
+            "first_observed_at": "2026-11-05T19:48:21.5758321-05:00",
+            "last_observed_at": "2026-11-05T19:48:30.2883951-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2733333333333334,
+              "median": 1.27,
+              "min": 1.09,
+              "max": 1.46,
+              "sample_stddev": 0.18502252115170542
+            },
+            "max_memory_bytes": 377592218.0,
+            "first_observed_at": "2026-11-05T19:48:21.5758321-05:00",
+            "last_observed_at": "2026-11-05T19:48:30.2883951-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 7.641193426636771,
+              "median": 7.641193426636771,
+              "min": 0.4785461538144966,
+              "max": 14.803840699459045,
+              "sample_stddev": 10.129512915719921
+            },
+            "max_memory_bytes": 362213376.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.7300000000000004,
+              "median": 1.6,
+              "min": 1.51,
+              "max": 5.08,
+              "sample_stddev": 2.035657142055115
+            },
+            "max_memory_bytes": 724318552.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c1-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.6778233357296686,
+              "median": 2.6778233357296686,
+              "min": 0.23722869814393657,
+              "max": 5.118417973315401,
+              "sample_stddev": 3.451522036728791
+            },
+            "max_memory_bytes": 348213248.0,
+            "first_observed_at": "2026-11-05T19:48:49.3843726-05:00",
+            "last_observed_at": "2026-11-05T19:48:57.8979173-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.3578234799998505,
+              "median": 0.3578234799998505,
+              "min": 0.0,
+              "max": 0.715646959999701,
+              "sample_stddev": 0.5060388183513265
+            },
+            "max_memory_bytes": 14929920.0,
+            "first_observed_at": "2026-11-05T19:48:49.6686969-05:00",
+            "last_observed_at": "2026-11-05T19:48:58.1531305-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.5533333333333333,
+              "median": 0.38,
+              "min": 0.05,
+              "max": 1.23,
+              "sample_stddev": 0.6087966272355106
+            },
+            "max_memory_bytes": 340577485.0,
+            "first_observed_at": "2026-11-05T19:48:49.0747568-05:00",
+            "last_observed_at": "2026-11-05T19:48:57.6179905-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.8199999999999998,
+              "median": 0.06,
+              "min": 0.05,
+              "max": 5.35,
+              "sample_stddev": 3.0570737642392602
+            },
+            "max_memory_bytes": 8113881.0,
+            "first_observed_at": "2026-11-05T19:48:49.0747568-05:00",
+            "last_observed_at": "2026-11-05T19:48:57.6179905-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 23.546666666666667,
+              "median": 19.02,
+              "min": 1.03,
+              "max": 50.59,
+              "sample_stddev": 25.088173176485636
+            },
+            "max_memory_bytes": 522819994.0,
+            "first_observed_at": "2026-11-05T19:48:49.0747568-05:00",
+            "last_observed_at": "2026-11-05T19:48:57.6179905-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 5.118417973315401,
+              "median": 5.118417973315401,
+              "min": 5.118417973315401,
+              "max": 5.118417973315401,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 362471424.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 25.92,
+              "median": 19.12,
+              "min": 7.61,
+              "max": 51.03,
+              "sample_stddev": 22.494534891835393
+            },
+            "max_memory_bytes": 867749069.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c10-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.9603279857020763,
+              "median": 2.960327985702076,
+              "min": 0.24288226243466798,
+              "max": 5.677773708969484,
+              "sample_stddev": 3.8430485968575328
+            },
+            "max_memory_bytes": 348254208.0,
+            "first_observed_at": "2026-11-05T19:49:16.2096565-05:00",
+            "last_observed_at": "2026-11-05T19:49:24.5538866-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.12170158581304112,
+              "median": 0.12170158581304112,
+              "min": 0.0,
+              "max": 0.24340317162608224,
+              "sample_stddev": 0.1721120332191158
+            },
+            "max_memory_bytes": 15269888.0,
+            "first_observed_at": "2026-11-05T19:49:16.4716951-05:00",
+            "last_observed_at": "2026-11-05T19:49:24.8057983-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.6833333333333336,
+              "median": 3.49,
+              "min": 0.11,
+              "max": 4.45,
+              "sample_stddev": 2.2796783398833558
+            },
+            "max_memory_bytes": 340682342.0,
+            "first_observed_at": "2026-11-05T19:49:15.9248088-05:00",
+            "last_observed_at": "2026-11-05T19:49:24.3107447-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.1633333333333333,
+              "median": 0.08,
+              "min": 0.04,
+              "max": 3.37,
+              "sample_stddev": 1.9111340437900566
+            },
+            "max_memory_bytes": 7896826.0,
+            "first_observed_at": "2026-11-05T19:49:15.9248088-05:00",
+            "last_observed_at": "2026-11-05T19:49:24.3107447-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 33.81,
+              "median": 26.86,
+              "min": 1.08,
+              "max": 73.49,
+              "sample_stddev": 36.701892321786346
+            },
+            "max_memory_bytes": 378326221.0,
+            "first_observed_at": "2026-11-05T19:49:15.9248088-05:00",
+            "last_observed_at": "2026-11-05T19:49:24.3107447-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 3.082029571515117,
+              "median": 3.0820295715151174,
+              "min": 0.4862854340607502,
+              "max": 5.677773708969484,
+              "sample_stddev": 3.6709365636384175
+            },
+            "max_memory_bytes": 363524096.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 37.656666666666666,
+              "median": 30.39,
+              "min": 1.27,
+              "max": 81.31,
+              "sample_stddev": 40.51177277450758
+            },
+            "max_memory_bytes": 726381101.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c25-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 11.663963944804353,
+              "median": 11.663963944804351,
+              "min": 0.24016439733327877,
+              "max": 23.087763492275425,
+              "sample_stddev": 16.15569225386522
+            },
+            "max_memory_bytes": 348282880.0,
+            "first_observed_at": "2026-11-05T19:49:42.0673036-05:00",
+            "last_observed_at": "2026-11-05T19:49:50.5624168-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11944899326118957,
+              "median": 0.11944899326118957,
+              "min": 0.0,
+              "max": 0.23889798652237915,
+              "sample_stddev": 0.16892638628178674
+            },
+            "max_memory_bytes": 15515648.0,
+            "first_observed_at": "2026-11-05T19:49:42.3606749-05:00",
+            "last_observed_at": "2026-11-05T19:49:50.8447459-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.3066666666666666,
+              "median": 0.38,
+              "min": 0.0,
+              "max": 3.54,
+              "sample_stddev": 1.9434333879331531
+            },
+            "max_memory_bytes": 340262912.0,
+            "first_observed_at": "2026-11-05T19:49:41.7886571-05:00",
+            "last_observed_at": "2026-11-05T19:49:50.3033317-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.296666666666667,
+              "median": 3.33,
+              "min": 0.19,
+              "max": 3.37,
+              "sample_stddev": 1.8245364708148022
+            },
+            "max_memory_bytes": 7847543.0,
+            "first_observed_at": "2026-11-05T19:49:41.7886571-05:00",
+            "last_observed_at": "2026-11-05T19:49:50.3033317-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.1033333333333335,
+              "median": 1.12,
+              "min": 0.89,
+              "max": 1.3,
+              "sample_stddev": 0.20550750189064465
+            },
+            "max_memory_bytes": 378116506.0,
+            "first_observed_at": "2026-11-05T19:49:41.7886571-05:00",
+            "last_observed_at": "2026-11-05T19:49:50.3033317-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.6533333333333333,
+              "median": 0.65,
+              "min": 0.61,
+              "max": 0.7,
+              "sample_stddev": 0.04509249752822893
+            },
+            "max_memory_bytes": 5193597.0,
+            "first_observed_at": "2026-11-05T19:49:41.7886571-05:00",
+            "last_observed_at": "2026-11-05T19:49:50.3033317-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 11.78341293806554,
+              "median": 11.783412938065542,
+              "min": 0.4790623838556579,
+              "max": 23.087763492275425,
+              "sample_stddev": 15.986765867583431
+            },
+            "max_memory_bytes": 363798528.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 5.36,
+              "median": 5.48,
+              "min": 2.19,
+              "max": 8.41,
+              "sample_stddev": 3.111735849971845
+            },
+            "max_memory_bytes": 730363593.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c1-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 6.0489933592341645,
+              "median": 6.0489933592341645,
+              "min": 0.482288671955434,
+              "max": 11.615698046512895,
+              "sample_stddev": 7.8725092664754595
+            },
+            "max_memory_bytes": 101236736.0,
+            "first_observed_at": "2026-11-05T19:50:03.8255029-05:00",
+            "last_observed_at": "2026-11-05T19:50:12.3630069-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11416110776276592,
+              "median": 0.11416110776276592,
+              "min": 0.0,
+              "max": 0.22832221552553184,
+              "sample_stddev": 0.16144818689364
+            },
+            "max_memory_bytes": 15560704.0,
+            "first_observed_at": "2026-11-05T19:50:04.0927678-05:00",
+            "last_observed_at": "2026-11-05T19:50:12.6109776-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.3333333333333335,
+              "median": 0.56,
+              "min": 0.0,
+              "max": 3.44,
+              "sample_stddev": 1.8457879979383691
+            },
+            "max_memory_bytes": 339214336.0,
+            "first_observed_at": "2026-11-05T19:50:03.542503-05:00",
+            "last_observed_at": "2026-11-05T19:50:12.1196084-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.3533333333333333,
+              "median": 0.06,
+              "min": 0.05,
+              "max": 3.95,
+              "sample_stddev": 2.248784857057992
+            },
+            "max_memory_bytes": 7901020.0,
+            "first_observed_at": "2026-11-05T19:50:03.542503-05:00",
+            "last_observed_at": "2026-11-05T19:50:12.1196084-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 24.36666666666667,
+              "median": 5.06,
+              "min": 1.0,
+              "max": 67.04,
+              "sample_stddev": 37.01190259002276
+            },
+            "max_memory_bytes": 378221363.0,
+            "first_observed_at": "2026-11-05T19:50:03.542503-05:00",
+            "last_observed_at": "2026-11-05T19:50:12.1196084-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.783333333333333,
+              "median": 3.79,
+              "min": 0.68,
+              "max": 3.88,
+              "sample_stddev": 1.8220958628275663
+            },
+            "max_memory_bytes": 5758779.0,
+            "first_observed_at": "2026-11-05T19:50:03.542503-05:00",
+            "last_observed_at": "2026-11-05T19:50:12.1196084-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 6.1631544669969305,
+              "median": 6.1631544669969305,
+              "min": 0.482288671955434,
+              "max": 11.844020262038427,
+              "sample_stddev": 8.0339574533691
+            },
+            "max_memory_bytes": 116797440.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 29.836666666666673,
+              "median": 10.25,
+              "min": 8.379999999999999,
+              "max": 70.88000000000001,
+              "sample_stddev": 35.55686478492351
+            },
+            "max_memory_bytes": 729663144.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c10-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.616462284225023,
+              "median": 4.616462284225024,
+              "min": 0.24342043687395548,
+              "max": 8.989504131576092,
+              "sample_stddev": 6.184415089348975
+            },
+            "max_memory_bytes": 60071936.0,
+            "first_observed_at": "2026-11-05T19:50:25.7565273-05:00",
+            "last_observed_at": "2026-11-05T19:50:34.2030386-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": 0.0
+            },
+            "max_memory_bytes": 15589376.0,
+            "first_observed_at": "2026-11-05T19:50:26.044268-05:00",
+            "last_observed_at": "2026-11-05T19:50:34.4588385-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.3866666666666667,
+              "median": 3.44,
+              "min": 0.03,
+              "max": 3.69,
+              "sample_stddev": 2.044757524337136
+            },
+            "max_memory_bytes": 52271514.0,
+            "first_observed_at": "2026-11-05T19:50:25.4767732-05:00",
+            "last_observed_at": "2026-11-05T19:50:33.955765-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.5166666666666666,
+              "median": 3.63,
+              "min": 0.17,
+              "max": 3.75,
+              "sample_stddev": 2.0331584624257237
+            },
+            "max_memory_bytes": 7623148.0,
+            "first_observed_at": "2026-11-05T19:50:25.4767732-05:00",
+            "last_observed_at": "2026-11-05T19:50:33.955765-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 13.129999999999999,
+              "median": 0.91,
+              "min": 0.9,
+              "max": 37.58,
+              "sample_stddev": 21.174321712867215
+            },
+            "max_memory_bytes": 377906790.0,
+            "first_observed_at": "2026-11-05T19:50:25.4767732-05:00",
+            "last_observed_at": "2026-11-05T19:50:33.955765-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.6566666666666667,
+              "median": 0.71,
+              "min": 0.49,
+              "max": 3.77,
+              "sample_stddev": 1.833503022450013
+            },
+            "max_memory_bytes": 6070206.0,
+            "first_observed_at": "2026-11-05T19:50:25.4767732-05:00",
+            "last_observed_at": "2026-11-05T19:50:33.955765-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.616462284225023,
+              "median": 4.616462284225024,
+              "min": 0.24342043687395548,
+              "max": 8.989504131576092,
+              "sample_stddev": 6.184415089348975
+            },
+            "max_memory_bytes": 75661312.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 19.689999999999998,
+              "median": 11.87,
+              "min": 5.05,
+              "max": 42.15,
+              "sample_stddev": 19.747577066566926
+            },
+            "max_memory_bytes": 442245316.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c25-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 30.193257630690894,
+              "median": 30.193257630690894,
+              "min": 11.567096120436782,
+              "max": 48.81941914094501,
+              "sample_stddev": 26.3413702227531
+            },
+            "max_memory_bytes": 59867136.0,
+            "first_observed_at": "2026-11-05T19:50:47.1951445-05:00",
+            "last_observed_at": "2026-11-05T19:50:55.885286-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11445935239356263,
+              "median": 0.11445935239356263,
+              "min": 0.0,
+              "max": 0.22891870478712525,
+              "sample_stddev": 0.16186996849541765
+            },
+            "max_memory_bytes": 15601664.0,
+            "first_observed_at": "2026-11-05T19:50:47.4651956-05:00",
+            "last_observed_at": "2026-11-05T19:50:56.1401753-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 21.91,
+              "median": 0.28,
+              "min": 0.01,
+              "max": 65.44,
+              "sample_stddev": 37.69832754911019
+            },
+            "max_memory_bytes": 51925484.0,
+            "first_observed_at": "2026-11-05T19:50:46.909726-05:00",
+            "last_observed_at": "2026-11-05T19:50:55.6381335-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.5900000000000003,
+              "median": 0.18,
+              "min": 0.1,
+              "max": 4.49,
+              "sample_stddev": 2.511792188856395
+            },
+            "max_memory_bytes": 7380926.0,
+            "first_observed_at": "2026-11-05T19:50:46.909726-05:00",
+            "last_observed_at": "2026-11-05T19:50:55.6381335-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 16.95,
+              "median": 1.1,
+              "min": 0.89,
+              "max": 48.86,
+              "sample_stddev": 27.635070110278356
+            },
+            "max_memory_bytes": 519569408.0,
+            "first_observed_at": "2026-11-05T19:50:46.909726-05:00",
+            "last_observed_at": "2026-11-05T19:50:55.6381335-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 5.113333333333333,
+              "median": 0.71,
+              "min": 0.63,
+              "max": 14.0,
+              "sample_stddev": 7.696183036631427
+            },
+            "max_memory_bytes": 5607784.0,
+            "first_observed_at": "2026-11-05T19:50:46.909726-05:00",
+            "last_observed_at": "2026-11-05T19:50:55.6381335-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 48.81941914094501,
+              "median": 48.81941914094501,
+              "min": 48.81941914094501,
+              "max": 48.81941914094501,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 75468800.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 45.56333333333334,
+              "median": 2.0,
+              "min": 1.9,
+              "max": 132.79,
+              "sample_stddev": 75.54052576818177
+            },
+            "max_memory_bytes": 581762547.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c1-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.766071013310123,
+              "median": 8.766071013310123,
+              "min": 0.0,
+              "max": 17.532142026620246,
+              "sample_stddev": 12.397096515748837
+            },
+            "max_memory_bytes": 60596224.0,
+            "first_observed_at": "2026-11-05T19:51:09.0090716-05:00",
+            "last_observed_at": "2026-11-05T19:51:17.412889-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.12129404835818988,
+              "median": 0.12129404835818988,
+              "min": 0.0,
+              "max": 0.24258809671637976,
+              "sample_stddev": 0.17153568822329018
+            },
+            "max_memory_bytes": 14696448.0,
+            "first_observed_at": "2026-11-05T19:51:09.2832685-05:00",
+            "last_observed_at": "2026-11-05T19:51:17.6662206-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.11333333333333334,
+              "median": 0.08,
+              "min": 0.0,
+              "max": 0.26,
+              "sample_stddev": 0.13316656236958785
+            },
+            "max_memory_bytes": 52743373.0,
+            "first_observed_at": "2026-11-05T19:51:08.7214802-05:00",
+            "last_observed_at": "2026-11-05T19:51:17.1655994-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.84,
+              "median": 0.09,
+              "min": 0.08,
+              "max": 2.35,
+              "sample_stddev": 1.3077079184588585
+            },
+            "max_memory_bytes": 10705961.0,
+            "first_observed_at": "2026-11-05T19:51:08.7214802-05:00",
+            "last_observed_at": "2026-11-05T19:51:17.1655994-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 27.033333333333335,
+              "median": 14.63,
+              "min": 1.0,
+              "max": 65.47,
+              "sample_stddev": 33.97759899306208
+            },
+            "max_memory_bytes": 483078963.0,
+            "first_observed_at": "2026-11-05T19:51:08.7214802-05:00",
+            "last_observed_at": "2026-11-05T19:51:17.1655994-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.68,
+              "median": 3.73,
+              "min": 0.56,
+              "max": 3.75,
+              "sample_stddev": 1.8360010893242955
+            },
+            "max_memory_bytes": 5885657.0,
+            "first_observed_at": "2026-11-05T19:51:08.7214802-05:00",
+            "last_observed_at": "2026-11-05T19:51:17.1655994-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.887365061668314,
+              "median": 8.887365061668312,
+              "min": 0.24258809671637976,
+              "max": 17.532142026620246,
+              "sample_stddev": 12.225560827525545
+            },
+            "max_memory_bytes": 75292672.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 30.666666666666668,
+              "median": 18.46,
+              "min": 3.99,
+              "max": 69.55,
+              "sample_stddev": 34.442422001556935
+            },
+            "max_memory_bytes": 546017641.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c10-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 7.673400009654772,
+              "median": 7.673400009654772,
+              "min": 0.2433099614650497,
+              "max": 15.103490057844494,
+              "sample_stddev": 10.507734115803268
+            },
+            "max_memory_bytes": 61153280.0,
+            "first_observed_at": "2026-11-05T19:51:30.5678981-05:00",
+            "last_observed_at": "2026-11-05T19:51:38.9153131-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": 0.0
+            },
+            "max_memory_bytes": 14696448.0,
+            "first_observed_at": "2026-11-05T19:51:30.8454558-05:00",
+            "last_observed_at": "2026-11-05T19:51:39.1635183-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.1566666666666667,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 3.47,
+              "sample_stddev": 2.0034054340880014
+            },
+            "max_memory_bytes": 52785316.0,
+            "first_observed_at": "2026-11-05T19:51:30.2632242-05:00",
+            "last_observed_at": "2026-11-05T19:51:38.6723838-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2366666666666666,
+              "median": 0.06,
+              "min": 0.06,
+              "max": 3.59,
+              "sample_stddev": 2.038046450239379
+            },
+            "max_memory_bytes": 6889144.0,
+            "first_observed_at": "2026-11-05T19:51:30.2632242-05:00",
+            "last_observed_at": "2026-11-05T19:51:38.6723838-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 37.669999999999995,
+              "median": 34.86,
+              "min": 12.44,
+              "max": 65.71,
+              "sample_stddev": 26.745939878792818
+            },
+            "max_memory_bytes": 520513126.0,
+            "first_observed_at": "2026-11-05T19:51:30.2632242-05:00",
+            "last_observed_at": "2026-11-05T19:51:38.6723838-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.743333333333333,
+              "median": 3.71,
+              "min": 0.6,
+              "max": 3.92,
+              "sample_stddev": 1.859148550636375
+            },
+            "max_memory_bytes": 5951717.0,
+            "first_observed_at": "2026-11-05T19:51:30.2632242-05:00",
+            "last_observed_at": "2026-11-05T19:51:38.6723838-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 0,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": null,
+            "max_memory_bytes": null
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 42.80666666666666,
+              "median": 38.84,
+              "min": 13.1,
+              "max": 76.47999999999999,
+              "sample_stddev": 31.875647967270144
+            },
+            "max_memory_bytes": 584310587.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c25-r1"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.5563576975013507,
+              "median": 2.556357697501351,
+              "min": 0.24162181199348307,
+              "max": 4.871093583009219,
+              "sample_stddev": 3.2735308825969227
+            },
+            "max_memory_bytes": 61448192.0,
+            "first_observed_at": "2026-11-05T19:51:52.8320083-05:00",
+            "last_observed_at": "2026-11-05T19:52:01.2818544-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": 0.0
+            },
+            "max_memory_bytes": 14696448.0,
+            "first_observed_at": "2026-11-05T19:51:53.1201202-05:00",
+            "last_observed_at": "2026-11-05T19:52:01.5592806-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.9533333333333331,
+              "median": 0.38,
+              "min": 0.22,
+              "max": 2.26,
+              "sample_stddev": 1.134430841141642
+            },
+            "max_memory_bytes": 52911145.0,
+            "first_observed_at": "2026-11-05T19:51:52.5279515-05:00",
+            "last_observed_at": "2026-11-05T19:52:01.0225813-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2133333333333334,
+              "median": 0.11,
+              "min": 0.07,
+              "max": 3.46,
+              "sample_stddev": 1.9457731967866483
+            },
+            "max_memory_bytes": 7266632.0,
+            "first_observed_at": "2026-11-05T19:51:52.5279515-05:00",
+            "last_observed_at": "2026-11-05T19:52:01.0225813-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 52.49666666666666,
+              "median": 51.54,
+              "min": 22.99,
+              "max": 82.96,
+              "sample_stddev": 29.996443678098462
+            },
+            "max_memory_bytes": 525546291.0,
+            "first_observed_at": "2026-11-05T19:51:52.5279515-05:00",
+            "last_observed_at": "2026-11-05T19:52:01.0225813-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.5563576975013507,
+              "median": 2.556357697501351,
+              "min": 0.24162181199348307,
+              "max": 4.871093583009219,
+              "sample_stddev": 3.2735308825969227
+            },
+            "max_memory_bytes": 76144640.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 54.663333333333334,
+              "median": 55.22,
+              "min": 25.36,
+              "max": 83.41,
+              "sample_stddev": 29.029003312778983
+            },
+            "max_memory_bytes": 585724068.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c10-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.6469044825421553,
+              "median": 2.6469044825421557,
+              "min": 0.24222610440690642,
+              "max": 5.051582860677405,
+              "sample_stddev": 3.400728775504207
+            },
+            "max_memory_bytes": 61480960.0,
+            "first_observed_at": "2026-11-05T19:52:19.641375-05:00",
+            "last_observed_at": "2026-11-05T19:52:28.1248198-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.12103432838559534,
+              "median": 0.12103432838559534,
+              "min": 0.0,
+              "max": 0.2420686567711907,
+              "sample_stddev": 0.1711683887156278
+            },
+            "max_memory_bytes": 14696448.0,
+            "first_observed_at": "2026-11-05T19:52:19.9060919-05:00",
+            "last_observed_at": "2026-11-05T19:52:28.3811847-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.53,
+              "median": 0.43,
+              "min": 0.32,
+              "max": 3.84,
+              "sample_stddev": 2.0012745938526275
+            },
+            "max_memory_bytes": 53204746.0,
+            "first_observed_at": "2026-11-05T19:52:19.3537374-05:00",
+            "last_observed_at": "2026-11-05T19:52:27.8729536-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.22,
+              "median": 0.09,
+              "min": 0.07,
+              "max": 3.5,
+              "sample_stddev": 1.974563242846377
+            },
+            "max_memory_bytes": 6869221.0,
+            "first_observed_at": "2026-11-05T19:52:19.3537374-05:00",
+            "last_observed_at": "2026-11-05T19:52:27.8729536-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 30.373333333333335,
+              "median": 21.61,
+              "min": 1.16,
+              "max": 68.35,
+              "sample_stddev": 34.44155968206628
+            },
+            "max_memory_bytes": 379165082.0,
+            "first_observed_at": "2026-11-05T19:52:19.3537374-05:00",
+            "last_observed_at": "2026-11-05T19:52:27.8729536-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 0.4842947611780971,
+              "median": 0.4842947611780971,
+              "min": 0.4842947611780971,
+              "max": 0.4842947611780971,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 76177408.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 33.123333333333335,
+              "median": 22.0,
+              "min": 5.09,
+              "max": 72.28,
+              "sample_stddev": 34.94882592210121
+            },
+            "max_memory_bytes": 438733635.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c25-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 12.083448392982499,
+              "median": 12.0834483929825,
+              "min": 0.24177915220095705,
+              "max": 23.925117633764042,
+              "sample_stddev": 16.74664924144957
+            },
+            "max_memory_bytes": 61501440.0,
+            "first_observed_at": "2026-11-05T19:52:45.4014038-05:00",
+            "last_observed_at": "2026-11-05T19:52:53.8425087-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.116257102582361,
+              "median": 0.116257102582361,
+              "min": 0.0,
+              "max": 0.232514205164722,
+              "sample_stddev": 0.1644123711941751
+            },
+            "max_memory_bytes": 14696448.0,
+            "first_observed_at": "2026-11-05T19:52:45.6669685-05:00",
+            "last_observed_at": "2026-11-05T19:52:54.1076319-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.25333333333333335,
+              "median": 0.3,
+              "min": 0.01,
+              "max": 0.45,
+              "sample_stddev": 0.22368132093076823
+            },
+            "max_memory_bytes": 52187628.0,
+            "first_observed_at": "2026-11-05T19:52:45.1190726-05:00",
+            "last_observed_at": "2026-11-05T19:52:53.593873-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.533333333333333,
+              "median": 3.6,
+              "min": 0.16,
+              "max": 3.84,
+              "sample_stddev": 2.058867002342146
+            },
+            "max_memory_bytes": 11188306.0,
+            "first_observed_at": "2026-11-05T19:52:45.1190726-05:00",
+            "last_observed_at": "2026-11-05T19:52:53.593873-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 6.02,
+              "median": 1.39,
+              "min": 1.39,
+              "max": 15.28,
+              "sample_stddev": 8.019395239043902
+            },
+            "max_memory_bytes": 377801933.0,
+            "first_observed_at": "2026-11-05T19:52:45.1190726-05:00",
+            "last_observed_at": "2026-11-05T19:52:53.593873-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.6966666666666668,
+              "median": 0.76,
+              "min": 0.64,
+              "max": 3.69,
+              "sample_stddev": 1.7273196963310913
+            },
+            "max_memory_bytes": 5054136.0,
+            "first_observed_at": "2026-11-05T19:52:45.1190726-05:00",
+            "last_observed_at": "2026-11-05T19:52:53.593873-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 24.157631838928765,
+              "median": 24.157631838928765,
+              "min": 24.157631838928765,
+              "max": 24.157631838928765,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 76197888.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 10.503333333333334,
+              "median": 6.05,
+              "min": 5.25,
+              "max": 20.21,
+              "sample_stddev": 8.415731301160543
+            },
+            "max_memory_bytes": 444734636.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c1-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 1,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 11.457311074015783,
+              "median": 11.457311074015783,
+              "min": 11.457311074015783,
+              "max": 11.457311074015783,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 61505536.0,
+            "first_observed_at": "2026-11-05T19:53:10.3212969-05:00",
+            "last_observed_at": "2026-11-05T19:53:15.2962862-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 1,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 14749696.0,
+            "first_observed_at": "2026-11-05T19:53:10.712602-05:00",
+            "last_observed_at": "2026-11-05T19:53:15.606041-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 2,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.585,
+              "median": 2.585,
+              "min": 0.5,
+              "max": 4.67,
+              "sample_stddev": 2.948635277547903
+            },
+            "max_memory_bytes": 52911145.0,
+            "first_observed_at": "2026-11-05T19:53:09.9421681-05:00",
+            "last_observed_at": "2026-11-05T19:53:15.0321383-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 2,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.1,
+              "median": 0.1,
+              "min": 0.05,
+              "max": 0.15,
+              "sample_stddev": 0.07071067811865474
+            },
+            "max_memory_bytes": 7573864.0,
+            "first_observed_at": "2026-11-05T19:53:09.9421681-05:00",
+            "last_observed_at": "2026-11-05T19:53:15.0321383-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 2,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 1.06,
+              "median": 1.06,
+              "min": 0.99,
+              "max": 1.13,
+              "sample_stddev": 0.0989949493661165
+            },
+            "max_memory_bytes": 377801933.0,
+            "first_observed_at": "2026-11-05T19:53:09.9421681-05:00",
+            "last_observed_at": "2026-11-05T19:53:15.0321383-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 2,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.275,
+              "median": 2.275,
+              "min": 0.61,
+              "max": 3.94,
+              "sample_stddev": 2.3546655813512034
+            },
+            "max_memory_bytes": 5730468.0,
+            "first_observed_at": "2026-11-05T19:53:09.9421681-05:00",
+            "last_observed_at": "2026-11-05T19:53:15.0321383-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 11.457311074015783,
+              "median": 11.457311074015783,
+              "min": 11.457311074015783,
+              "max": 11.457311074015783,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 76255232.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 6.02,
+              "median": 6.02,
+              "min": 2.3899999999999997,
+              "max": 9.65,
+              "sample_stddev": 5.133595231414335
+            },
+            "max_memory_bytes": 443051672.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c10-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.615577972597225,
+              "median": 4.615577972597225,
+              "min": 0.0,
+              "max": 9.23115594519445,
+              "sample_stddev": 6.52741296703751
+            },
+            "max_memory_bytes": 61505536.0,
+            "first_observed_at": "2026-11-05T19:53:29.0206645-05:00",
+            "last_observed_at": "2026-11-05T19:53:37.5300662-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.1158219045489911,
+              "median": 0.1158219045489911,
+              "min": 0.0,
+              "max": 0.2316438090979822,
+              "sample_stddev": 0.16379690823306528
+            },
+            "max_memory_bytes": 14770176.0,
+            "first_observed_at": "2026-11-05T19:53:29.3004579-05:00",
+            "last_observed_at": "2026-11-05T19:53:37.7837082-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.783333333333333,
+              "median": 3.98,
+              "min": 0.29,
+              "max": 4.08,
+              "sample_stddev": 2.159868823177309
+            },
+            "max_memory_bytes": 53634662.0,
+            "first_observed_at": "2026-11-05T19:53:28.7238931-05:00",
+            "last_observed_at": "2026-11-05T19:53:37.2619256-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.056666666666666664,
+              "median": 0.05,
+              "min": 0.04,
+              "max": 0.08,
+              "sample_stddev": 0.02081665999466133
+            },
+            "max_memory_bytes": 6611272.0,
+            "first_observed_at": "2026-11-05T19:53:28.7238931-05:00",
+            "last_observed_at": "2026-11-05T19:53:37.2619256-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.1633333333333333,
+              "median": 1.06,
+              "min": 0.86,
+              "max": 1.57,
+              "sample_stddev": 0.36610563138708124
+            },
+            "max_memory_bytes": 378326221.0,
+            "first_observed_at": "2026-11-05T19:53:28.7238931-05:00",
+            "last_observed_at": "2026-11-05T19:53:37.2619256-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.6533333333333333,
+              "median": 0.69,
+              "min": 0.58,
+              "max": 0.69,
+              "sample_stddev": 0.06350852961085879
+            },
+            "max_memory_bytes": 5607784.0,
+            "first_observed_at": "2026-11-05T19:53:28.7238931-05:00",
+            "last_observed_at": "2026-11-05T19:53:37.2619256-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.731399877146216,
+              "median": 4.731399877146216,
+              "min": 0.0,
+              "max": 9.462799754292432,
+              "sample_stddev": 6.691209875270574
+            },
+            "max_memory_bytes": 76275712.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 4.656666666666666,
+              "median": 5.57,
+              "min": 2.63,
+              "max": 5.77,
+              "sample_stddev": 1.757991277945751
+            },
+            "max_memory_bytes": 444179939.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c25-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 26.41646793026828,
+              "median": 26.41646793026828,
+              "min": 8.246072429132049,
+              "max": 44.58686343140451,
+              "sample_stddev": 25.696819751389928
+            },
+            "max_memory_bytes": 61513728.0,
+            "first_observed_at": "2026-11-05T19:53:50.6155379-05:00",
+            "last_observed_at": "2026-11-05T19:53:59.3414392-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11212151281072386,
+              "median": 0.11212151281072386,
+              "min": 0.0,
+              "max": 0.2242430256214477,
+              "sample_stddev": 0.1585637640507144
+            },
+            "max_memory_bytes": 14770176.0,
+            "first_observed_at": "2026-11-05T19:53:50.8834798-05:00",
+            "last_observed_at": "2026-11-05T19:53:59.5970026-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 23.216666666666665,
+              "median": 3.99,
+              "min": 3.94,
+              "max": 61.72,
+              "sample_stddev": 33.344874168803415
+            },
+            "max_memory_bytes": 53162803.0,
+            "first_observed_at": "2026-11-05T19:53:50.3299957-05:00",
+            "last_observed_at": "2026-11-05T19:53:59.0890777-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.3233333333333335,
+              "median": 0.08,
+              "min": 0.08,
+              "max": 3.81,
+              "sample_stddev": 2.153516504077304
+            },
+            "max_memory_bytes": 7413432.0,
+            "first_observed_at": "2026-11-05T19:53:50.3299957-05:00",
+            "last_observed_at": "2026-11-05T19:53:59.0890777-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 16.383333333333336,
+              "median": 1.12,
+              "min": 0.76,
+              "max": 47.27,
+              "sample_stddev": 26.74924360301303
+            },
+            "max_memory_bytes": 379060224.0,
+            "first_observed_at": "2026-11-05T19:53:50.3299957-05:00",
+            "last_observed_at": "2026-11-05T19:53:59.0890777-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 6.29,
+              "median": 3.68,
+              "min": 0.8,
+              "max": 14.39,
+              "sample_stddev": 7.161082320431738
+            },
+            "max_memory_bytes": 9359589.0,
+            "first_observed_at": "2026-11-05T19:53:50.3299957-05:00",
+            "last_observed_at": "2026-11-05T19:53:59.0890777-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 8.470315454753496,
+              "median": 8.470315454753496,
+              "min": 8.470315454753496,
+              "max": 8.470315454753496,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 76283904.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 47.21333333333334,
+              "median": 8.82,
+              "min": 5.63,
+              "max": 127.19000000000001,
+              "sample_stddev": 69.28018788465671
+            },
+            "max_memory_bytes": 447528042.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c1-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 9.316179390114462,
+              "median": 9.316179390114462,
+              "min": 0.0,
+              "max": 18.632358780228923,
+              "sample_stddev": 13.175067243000582
+            },
+            "max_memory_bytes": 61808640.0,
+            "first_observed_at": "2026-11-05T19:54:12.5226612-05:00",
+            "last_observed_at": "2026-11-05T19:54:20.9418138-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": 0.0
+            },
+            "max_memory_bytes": 14770176.0,
+            "first_observed_at": "2026-11-05T19:54:12.7902211-05:00",
+            "last_observed_at": "2026-11-05T19:54:21.2066367-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.67,
+              "median": 2.31,
+              "min": 0.0,
+              "max": 5.7,
+              "sample_stddev": 2.867001918380942
+            },
+            "max_memory_bytes": 52659487.0,
+            "first_observed_at": "2026-11-05T19:54:12.2400022-05:00",
+            "last_observed_at": "2026-11-05T19:54:20.6903852-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2066666666666668,
+              "median": 0.06,
+              "min": 0.06,
+              "max": 3.5,
+              "sample_stddev": 1.9860849260123126
+            },
+            "max_memory_bytes": 7315915.0,
+            "first_observed_at": "2026-11-05T19:54:12.2400022-05:00",
+            "last_observed_at": "2026-11-05T19:54:20.6903852-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 43.45333333333333,
+              "median": 56.38,
+              "min": 0.82,
+              "max": 73.16,
+              "sample_stddev": 37.86281729260692
+            },
+            "max_memory_bytes": 524917146.0,
+            "first_observed_at": "2026-11-05T19:54:12.2400022-05:00",
+            "last_observed_at": "2026-11-05T19:54:20.6903852-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.74,
+              "median": 3.7,
+              "min": 0.71,
+              "max": 3.81,
+              "sample_stddev": 1.7588916964952674
+            },
+            "max_memory_bytes": 6336545.0,
+            "first_observed_at": "2026-11-05T19:54:12.2400022-05:00",
+            "last_observed_at": "2026-11-05T19:54:20.6903852-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 0,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": null,
+            "max_memory_bytes": null
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 50.07000000000001,
+              "median": 60.59,
+              "min": 6.890000000000001,
+              "max": 82.73,
+              "sample_stddev": 38.999092297129174
+            },
+            "max_memory_bytes": 589135086.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c10-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.480222273010249,
+              "median": 8.480222273010247,
+              "min": 0.24072652806824527,
+              "max": 16.71971801795225,
+              "sample_stddev": 11.652406629612388
+            },
+            "max_memory_bytes": 62246912.0,
+            "first_observed_at": "2026-11-05T19:54:34.1485642-05:00",
+            "last_observed_at": "2026-11-05T19:54:42.5491387-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11827775477406877,
+              "median": 0.11827775477406877,
+              "min": 0.0,
+              "max": 0.23655550954813753,
+              "sample_stddev": 0.16727000492852714
+            },
+            "max_memory_bytes": 14774272.0,
+            "first_observed_at": "2026-11-05T19:54:34.4218602-05:00",
+            "last_observed_at": "2026-11-05T19:54:42.7957605-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2166666666666666,
+              "median": 0.23,
+              "min": 0.0,
+              "max": 3.42,
+              "sample_stddev": 1.9116049103654584
+            },
+            "max_memory_bytes": 54263808.0,
+            "first_observed_at": "2026-11-05T19:54:33.8310865-05:00",
+            "last_observed_at": "2026-11-05T19:54:42.278983-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.25,
+              "median": 0.13,
+              "min": 0.05,
+              "max": 3.57,
+              "sample_stddev": 2.009577069932875
+            },
+            "max_memory_bytes": 7012876.0,
+            "first_observed_at": "2026-11-05T19:54:33.8310865-05:00",
+            "last_observed_at": "2026-11-05T19:54:42.278983-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 22.936666666666664,
+              "median": 1.6,
+              "min": 0.98,
+              "max": 66.23,
+              "sample_stddev": 37.49440802750903
+            },
+            "max_memory_bytes": 378850509.0,
+            "first_observed_at": "2026-11-05T19:54:33.8310865-05:00",
+            "last_observed_at": "2026-11-05T19:54:42.278983-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.8433333333333333,
+              "median": 0.79,
+              "min": 0.76,
+              "max": 3.98,
+              "sample_stddev": 1.8504684091692387
+            },
+            "max_memory_bytes": 5902434.0,
+            "first_observed_at": "2026-11-05T19:54:33.8310865-05:00",
+            "last_observed_at": "2026-11-05T19:54:42.278983-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.598500027784317,
+              "median": 8.598500027784315,
+              "min": 0.24072652806824527,
+              "max": 16.956273527500386,
+              "sample_stddev": 11.819676634540913
+            },
+            "max_memory_bytes": 77021184.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 27.246666666666666,
+              "median": 5.91,
+              "min": 5.24,
+              "max": 70.59,
+              "sample_stddev": 37.53792260279374
+            },
+            "max_memory_bytes": 444992586.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c25-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 6.379231586273607,
+              "median": 6.379231586273607,
+              "min": 0.24263685112683614,
+              "max": 12.515826321420379,
+              "sample_stddev": 8.678455501231896
+            },
+            "max_memory_bytes": 62312448.0,
+            "first_observed_at": "2026-11-05T19:54:56.2871811-05:00",
+            "last_observed_at": "2026-11-05T19:55:04.6432051-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.12140728526268539,
+              "median": 0.12140728526268539,
+              "min": 0.0,
+              "max": 0.24281457052537078,
+              "sample_stddev": 0.17169582938938888
+            },
+            "max_memory_bytes": 14831616.0,
+            "first_observed_at": "2026-11-05T19:54:56.5746529-05:00",
+            "last_observed_at": "2026-11-05T19:55:04.8910947-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 7.443333333333333,
+              "median": 0.14,
+              "min": 0.03,
+              "max": 22.16,
+              "sample_stddev": 12.745125865731312
+            },
+            "max_memory_bytes": 53477376.0,
+            "first_observed_at": "2026-11-05T19:54:56.0060899-05:00",
+            "last_observed_at": "2026-11-05T19:55:04.3984197-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2933333333333334,
+              "median": 0.12,
+              "min": 0.04,
+              "max": 3.72,
+              "sample_stddev": 2.101935615886779
+            },
+            "max_memory_bytes": 7168066.0,
+            "first_observed_at": "2026-11-05T19:54:56.0060899-05:00",
+            "last_observed_at": "2026-11-05T19:55:04.3984197-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 38.3,
+              "median": 29.87,
+              "min": 0.81,
+              "max": 84.22,
+              "sample_stddev": 42.33917453139586
+            },
+            "max_memory_bytes": 520513126.0,
+            "first_observed_at": "2026-11-05T19:54:56.0060899-05:00",
+            "last_observed_at": "2026-11-05T19:55:04.3984197-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 6.500638871536292,
+              "median": 6.500638871536293,
+              "min": 0.4854514216522069,
+              "max": 12.515826321420379,
+              "sample_stddev": 8.506759671842506
+            },
+            "max_memory_bytes": 77144064.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 47.03666666666666,
+              "median": 33.620000000000005,
+              "min": 0.9900000000000001,
+              "max": 106.5,
+              "sample_stddev": 54.01939682496773
+            },
+            "max_memory_bytes": 580948853.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c1-r2"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 2.9297031145773147,
+              "median": 2.9297031145773147,
+              "min": 0.48271060929373294,
+              "max": 5.376695619860897,
+              "sample_stddev": 3.460569987997359
+            },
+            "max_memory_bytes": 62316544.0,
+            "first_observed_at": "2026-11-05T19:55:22.7797205-05:00",
+            "last_observed_at": "2026-11-05T19:55:31.20071-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.12072104847292954,
+              "median": 0.12072104847292954,
+              "min": 0.0,
+              "max": 0.24144209694585908,
+              "sample_stddev": 0.17072534401431677
+            },
+            "max_memory_bytes": 14831616.0,
+            "first_observed_at": "2026-11-05T19:55:23.0502084-05:00",
+            "last_observed_at": "2026-11-05T19:55:31.4572932-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.6433333333333335,
+              "median": 0.49,
+              "min": 0.1,
+              "max": 4.34,
+              "sample_stddev": 2.3435087653630258
+            },
+            "max_memory_bytes": 54054093.0,
+            "first_observed_at": "2026-11-05T19:55:22.4671055-05:00",
+            "last_observed_at": "2026-11-05T19:55:30.9469984-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.07,
+              "median": 0.07,
+              "min": 0.04,
+              "max": 0.1,
+              "sample_stddev": 0.03
+            },
+            "max_memory_bytes": 6729761.0,
+            "first_observed_at": "2026-11-05T19:55:22.4671055-05:00",
+            "last_observed_at": "2026-11-05T19:55:30.9469984-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 3.753333333333333,
+              "median": 1.74,
+              "min": 0.91,
+              "max": 8.61,
+              "sample_stddev": 4.226420865618252
+            },
+            "max_memory_bytes": 379269939.0,
+            "first_observed_at": "2026-11-05T19:55:22.4671055-05:00",
+            "last_observed_at": "2026-11-05T19:55:30.9469984-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 3.050424163050244,
+              "median": 3.0504241630502444,
+              "min": 0.724152706239592,
+              "max": 5.376695619860897,
+              "sample_stddev": 3.2898446439830424
+            },
+            "max_memory_bytes": 77148160.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 5.466666666666666,
+              "median": 5.35,
+              "min": 1.91,
+              "max": 9.139999999999999,
+              "sample_stddev": 3.616411665357434
+            },
+            "max_memory_bytes": 438680158.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c25-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 11.3494322113538,
+              "median": 11.3494322113538,
+              "min": 0.23961445076409477,
+              "max": 22.459249971943507,
+              "sample_stddev": 15.71165495251945
+            },
+            "max_memory_bytes": 62636032.0,
+            "first_observed_at": "2026-11-05T19:55:48.3510346-05:00",
+            "last_observed_at": "2026-11-05T19:55:56.7988137-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.12103384496034082,
+              "median": 0.12103384496034082,
+              "min": 0.0,
+              "max": 0.24206768992068164,
+              "sample_stddev": 0.17116770504907647
+            },
+            "max_memory_bytes": 14831616.0,
+            "first_observed_at": "2026-11-05T19:55:48.623075-05:00",
+            "last_observed_at": "2026-11-05T19:55:57.0444341-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 15.086666666666668,
+              "median": 0.27,
+              "min": 0.03,
+              "max": 44.96,
+              "sample_stddev": 25.871343864077364
+            },
+            "max_memory_bytes": 53666120.0,
+            "first_observed_at": "2026-11-05T19:55:48.0697583-05:00",
+            "last_observed_at": "2026-11-05T19:55:56.5566627-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.11333333333333334,
+              "median": 0.09,
+              "min": 0.03,
+              "max": 0.22,
+              "sample_stddev": 0.0971253485622231
+            },
+            "max_memory_bytes": 6561989.0,
+            "first_observed_at": "2026-11-05T19:55:48.0697583-05:00",
+            "last_observed_at": "2026-11-05T19:55:56.5566627-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 23.253333333333334,
+              "median": 1.61,
+              "min": 1.39,
+              "max": 66.76,
+              "sample_stddev": 37.678039138645914
+            },
+            "max_memory_bytes": 378850509.0,
+            "first_observed_at": "2026-11-05T19:55:48.0697583-05:00",
+            "last_observed_at": "2026-11-05T19:55:56.5566627-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.69,
+              "median": 0.8,
+              "min": 0.68,
+              "max": 3.59,
+              "sample_stddev": 1.6465418306256296
+            },
+            "max_memory_bytes": 5440012.0,
+            "first_observed_at": "2026-11-05T19:55:48.0697583-05:00",
+            "last_observed_at": "2026-11-05T19:55:56.5566627-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 22.459249971943507,
+              "median": 22.459249971943507,
+              "min": 22.459249971943507,
+              "max": 22.459249971943507,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 77467648.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 40.14333333333334,
+              "median": 47.34,
+              "min": 2.44,
+              "max": 70.65,
+              "sample_stddev": 34.66980001865216
+            },
+            "max_memory_bytes": 444003779.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c1-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.540939971634811,
+              "median": 4.540939971634811,
+              "min": 0.23912006113060275,
+              "max": 8.842759882139019,
+              "sample_stddev": 6.083692060321665
+            },
+            "max_memory_bytes": 62636032.0,
+            "first_observed_at": "2026-11-05T19:56:09.7096925-05:00",
+            "last_observed_at": "2026-11-05T19:56:18.188993-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11973900919226671,
+              "median": 0.11973900919226671,
+              "min": 0.0,
+              "max": 0.23947801838453342,
+              "sample_stddev": 0.16933653074482027
+            },
+            "max_memory_bytes": 14831616.0,
+            "first_observed_at": "2026-11-05T19:56:09.9905431-05:00",
+            "last_observed_at": "2026-11-05T19:56:18.4386719-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2600000000000002,
+              "median": 0.42,
+              "min": 0.01,
+              "max": 3.35,
+              "sample_stddev": 1.8215652609774924
+            },
+            "max_memory_bytes": 54221865.0,
+            "first_observed_at": "2026-11-05T19:56:09.4278477-05:00",
+            "last_observed_at": "2026-11-05T19:56:17.9381983-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.08333333333333333,
+              "median": 0.09,
+              "min": 0.06,
+              "max": 0.1,
+              "sample_stddev": 0.020816659994661334
+            },
+            "max_memory_bytes": 7688159.0,
+            "first_observed_at": "2026-11-05T19:56:09.4278477-05:00",
+            "last_observed_at": "2026-11-05T19:56:17.9381983-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 17.466666666666665,
+              "median": 12.26,
+              "min": 0.98,
+              "max": 39.16,
+              "sample_stddev": 19.615303549354856
+            },
+            "max_memory_bytes": 520932557.0,
+            "first_observed_at": "2026-11-05T19:56:09.4278477-05:00",
+            "last_observed_at": "2026-11-05T19:56:17.9381983-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.78,
+              "median": 3.7,
+              "min": 0.74,
+              "max": 3.9,
+              "sample_stddev": 1.7695197088475734
+            },
+            "max_memory_bytes": 5398069.0,
+            "first_observed_at": "2026-11-05T19:56:09.4278477-05:00",
+            "last_observed_at": "2026-11-05T19:56:17.9381983-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.660678980827078,
+              "median": 4.660678980827077,
+              "min": 0.47859807951513617,
+              "max": 8.842759882139019,
+              "sample_stddev": 5.914355529576844
+            },
+            "max_memory_bytes": 77467648.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 21.59,
+              "median": 13.11,
+              "min": 8.32,
+              "max": 43.339999999999996,
+              "sample_stddev": 18.987703915955713
+            },
+            "max_memory_bytes": 587703779.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c10-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.871212675637641,
+              "median": 4.871212675637641,
+              "min": 0.0,
+              "max": 9.742425351275282,
+              "sample_stddev": 6.888935031090484
+            },
+            "max_memory_bytes": 62636032.0,
+            "first_observed_at": "2026-11-05T19:56:31.1662405-05:00",
+            "last_observed_at": "2026-11-05T19:56:39.5733264-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11619362421880423,
+              "median": 0.11619362421880423,
+              "min": 0.0,
+              "max": 0.23238724843760847,
+              "sample_stddev": 0.16432259923151588
+            },
+            "max_memory_bytes": 14831616.0,
+            "first_observed_at": "2026-11-05T19:56:31.4354353-05:00",
+            "last_observed_at": "2026-11-05T19:56:39.8189983-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.38,
+              "median": 0.24,
+              "min": 0.0,
+              "max": 0.9,
+              "sample_stddev": 0.46604720790924176
+            },
+            "max_memory_bytes": 54117007.0,
+            "first_observed_at": "2026-11-05T19:56:30.8791022-05:00",
+            "last_observed_at": "2026-11-05T19:56:39.3270958-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2400000000000002,
+              "median": 0.15,
+              "min": 0.07,
+              "max": 3.5,
+              "sample_stddev": 1.9576261134343298
+            },
+            "max_memory_bytes": 7475298.0,
+            "first_observed_at": "2026-11-05T19:56:30.8791022-05:00",
+            "last_observed_at": "2026-11-05T19:56:39.3270958-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 19.866666666666667,
+              "median": 1.09,
+              "min": 0.83,
+              "max": 57.68,
+              "sample_stddev": 32.74756530390211
+            },
+            "max_memory_bytes": 378745651.0,
+            "first_observed_at": "2026-11-05T19:56:30.8791022-05:00",
+            "last_observed_at": "2026-11-05T19:56:39.3270958-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 2.7266666666666666,
+              "median": 3.55,
+              "min": 0.69,
+              "max": 3.94,
+              "sample_stddev": 1.7745515865517498
+            },
+            "max_memory_bytes": 5943329.0,
+            "first_observed_at": "2026-11-05T19:56:30.8791022-05:00",
+            "last_observed_at": "2026-11-05T19:56:39.3270958-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.9874062998564455,
+              "median": 4.9874062998564455,
+              "min": 0.0,
+              "max": 9.974812599712891,
+              "sample_stddev": 7.053257630322
+            },
+            "max_memory_bytes": 77467648.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 24.21333333333333,
+              "median": 5.42,
+              "min": 5.35,
+              "max": 61.87,
+              "sample_stddev": 32.61164873681386
+            },
+            "max_memory_bytes": 445635362.0
+          }
+        ]
+      },
+      "sample_id": "API-cold-c25-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 26.30057222221553,
+              "median": 26.300572222215525,
+              "min": 6.364893719459333,
+              "max": 46.23625072497172,
+              "sample_stddev": 28.193306913707563
+            },
+            "max_memory_bytes": 62636032.0,
+            "first_observed_at": "2026-11-05T19:56:52.4845064-05:00",
+            "last_observed_at": "2026-11-05T19:57:01.2308755-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": 0.0
+            },
+            "max_memory_bytes": 14831616.0,
+            "first_observed_at": "2026-11-05T19:56:52.7556541-05:00",
+            "last_observed_at": "2026-11-05T19:57:01.488758-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 23.203333333333333,
+              "median": 0.28,
+              "min": 0.0,
+              "max": 69.33,
+              "sample_stddev": 39.9471104503609
+            },
+            "max_memory_bytes": 55113155.0,
+            "first_observed_at": "2026-11-05T19:56:52.1847286-05:00",
+            "last_observed_at": "2026-11-05T19:57:00.9723576-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.04666666666666667,
+              "median": 0.05,
+              "min": 0.04,
+              "max": 0.05,
+              "sample_stddev": 0.005773502691896261
+            },
+            "max_memory_bytes": 6500123.0,
+            "first_observed_at": "2026-11-05T19:56:52.1847286-05:00",
+            "last_observed_at": "2026-11-05T19:57:00.9723576-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 38.00333333333334,
+              "median": 39.36,
+              "min": 7.92,
+              "max": 66.73,
+              "sample_stddev": 29.428462979458057
+            },
+            "max_memory_bytes": 521247130.0,
+            "first_observed_at": "2026-11-05T19:56:52.1847286-05:00",
+            "last_observed_at": "2026-11-05T19:57:00.9723576-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 6.37,
+              "median": 3.87,
+              "min": 0.74,
+              "max": 14.5,
+              "sample_stddev": 7.212620882869139
+            },
+            "max_memory_bytes": 9883877.0,
+            "first_observed_at": "2026-11-05T19:56:52.1847286-05:00",
+            "last_observed_at": "2026-11-05T19:57:00.9723576-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 1,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 1,
+              "mean": 6.364893719459333,
+              "median": 6.364893719459333,
+              "min": 6.364893719459333,
+              "max": 6.364893719459333,
+              "sample_stddev": null
+            },
+            "max_memory_bytes": 77393920.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 67.62333333333333,
+              "median": 70.93,
+              "min": 40.15,
+              "max": 91.79,
+              "sample_stddev": 25.978316599297454
+            },
+            "max_memory_bytes": 585288910.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c1-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.791445466772092,
+              "median": 8.791445466772094,
+              "min": 0.48450925789387495,
+              "max": 17.098381675650312,
+              "sample_stddev": 11.747781848363719
+            },
+            "max_memory_bytes": 62955520.0,
+            "first_observed_at": "2026-11-05T19:57:14.2943787-05:00",
+            "last_observed_at": "2026-11-05T19:57:22.6916767-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.0,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "sample_stddev": 0.0
+            },
+            "max_memory_bytes": 14757888.0,
+            "first_observed_at": "2026-11-05T19:57:14.5744596-05:00",
+            "last_observed_at": "2026-11-05T19:57:22.9446893-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2133333333333334,
+              "median": 0.0,
+              "min": 0.0,
+              "max": 3.64,
+              "sample_stddev": 2.101554979850238
+            },
+            "max_memory_bytes": 53854863.0,
+            "first_observed_at": "2026-11-05T19:57:14.0023932-05:00",
+            "last_observed_at": "2026-11-05T19:57:22.4462924-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.1933333333333334,
+              "median": 0.07,
+              "min": 0.04,
+              "max": 3.47,
+              "sample_stddev": 1.9717082272317408
+            },
+            "max_memory_bytes": 6910116.0,
+            "first_observed_at": "2026-11-05T19:57:14.0023932-05:00",
+            "last_observed_at": "2026-11-05T19:57:22.4462924-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 38.17333333333333,
+              "median": 36.14,
+              "min": 11.24,
+              "max": 67.14,
+              "sample_stddev": 28.00541614283447
+            },
+            "max_memory_bytes": 453299405.0,
+            "first_observed_at": "2026-11-05T19:57:14.0023932-05:00",
+            "last_observed_at": "2026-11-05T19:57:22.4462924-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 0.6033333333333334,
+              "median": 0.6,
+              "min": 0.54,
+              "max": 0.67,
+              "sample_stddev": 0.06506407098647708
+            },
+            "max_memory_bytes": 5820645.0,
+            "first_observed_at": "2026-11-05T19:57:14.0023932-05:00",
+            "last_observed_at": "2026-11-05T19:57:22.4462924-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.791445466772092,
+              "median": 8.791445466772094,
+              "min": 0.48450925789387495,
+              "max": 17.098381675650312,
+              "sample_stddev": 11.747781848363719
+            },
+            "max_memory_bytes": 77713408.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 41.18333333333333,
+              "median": 36.88,
+              "min": 15.46,
+              "max": 71.21,
+              "sample_stddev": 28.12302674559289
+            },
+            "max_memory_bytes": 517479595.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c10-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.151255098083173,
+              "median": 8.151255098083173,
+              "min": 0.4831527417094088,
+              "max": 15.819357454456936,
+              "sample_stddev": 10.844334350048864
+            },
+            "max_memory_bytes": 63348736.0,
+            "first_observed_at": "2026-11-05T19:57:35.815219-05:00",
+            "last_observed_at": "2026-11-05T19:57:44.2532278-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.23774161413134504,
+              "median": 0.23774161413134504,
+              "min": 0.2335503646807204,
+              "max": 0.24193286358196966,
+              "sample_stddev": 0.005927321816362134
+            },
+            "max_memory_bytes": 14757888.0,
+            "first_observed_at": "2026-11-05T19:57:36.0924145-05:00",
+            "last_observed_at": "2026-11-05T19:57:44.5075243-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.4000000000000001,
+              "median": 0.32,
+              "min": 0.03,
+              "max": 3.85,
+              "sample_stddev": 2.126711075816365
+            },
+            "max_memory_bytes": 54976840.0,
+            "first_observed_at": "2026-11-05T19:57:35.5252429-05:00",
+            "last_observed_at": "2026-11-05T19:57:44.0067303-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.1533333333333333,
+              "median": 0.04,
+              "min": 0.04,
+              "max": 3.38,
+              "sample_stddev": 1.9283498990933499
+            },
+            "max_memory_bytes": 7258243.0,
+            "first_observed_at": "2026-11-05T19:57:35.5252429-05:00",
+            "last_observed_at": "2026-11-05T19:57:44.0067303-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.1866666666666668,
+              "median": 1.03,
+              "min": 1.03,
+              "max": 1.5,
+              "sample_stddev": 0.27135462651912406
+            },
+            "max_memory_bytes": 377906790.0,
+            "first_observed_at": "2026-11-05T19:57:35.5252429-05:00",
+            "last_observed_at": "2026-11-05T19:57:44.0067303-05:00"
+          },
+          {
+            "service": "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.6500000000000001,
+              "median": 0.66,
+              "min": 0.65,
+              "max": 3.64,
+              "sample_stddev": 1.7233978066598554
+            },
+            "max_memory_bytes": 6066012.0,
+            "first_observed_at": "2026-11-05T19:57:35.5252429-05:00",
+            "last_observed_at": "2026-11-05T19:57:44.0067303-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 8.388996712214517,
+              "median": 8.388996712214517,
+              "min": 0.7250856052913784,
+              "max": 16.052907819137655,
+              "sample_stddev": 10.838407028232501
+            },
+            "max_memory_bytes": 78106624.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+              "redis/c22fa0668ecfd8780655c7dc0141089ee3306a8fdcbf1cc141fecf966c5bbfc7"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 5.39,
+              "median": 5.5,
+              "min": 5.09,
+              "max": 5.58,
+              "sample_stddev": 0.2628687885618985
+            },
+            "max_memory_bytes": 444709470.0
+          }
+        ]
+      },
+      "sample_id": "API-warm-c25-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 6.025956371345878,
+              "median": 6.0259563713458775,
+              "min": 0.23901133439545216,
+              "max": 11.812901408296304,
+              "sample_stddev": 8.183976155962963
+            },
+            "max_memory_bytes": 63348736.0,
+            "first_observed_at": "2026-11-05T19:57:58.1647435-05:00",
+            "last_observed_at": "2026-11-05T19:58:06.5813059-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.11988756272996844,
+              "median": 0.11988756272996844,
+              "min": 0.0,
+              "max": 0.23977512545993687,
+              "sample_stddev": 0.16954661717257657
+            },
+            "max_memory_bytes": 14757888.0,
+            "first_observed_at": "2026-11-05T19:57:58.4533697-05:00",
+            "last_observed_at": "2026-11-05T19:58:06.8272346-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 4.513333333333334,
+              "median": 3.58,
+              "min": 0.08,
+              "max": 9.88,
+              "sample_stddev": 4.966219219218312
+            },
+            "max_memory_bytes": 54735667.0,
+            "first_observed_at": "2026-11-05T19:57:57.8674528-05:00",
+            "last_observed_at": "2026-11-05T19:58:06.3321812-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.9366666666666668,
+              "median": 2.26,
+              "min": 0.09,
+              "max": 3.46,
+              "sample_stddev": 1.7081081152354884
+            },
+            "max_memory_bytes": 11460936.0,
+            "first_observed_at": "2026-11-05T19:57:57.8674528-05:00",
+            "last_observed_at": "2026-11-05T19:58:06.3321812-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 32.0,
+              "median": 18.24,
+              "min": 0.96,
+              "max": 76.8,
+              "sample_stddev": 39.74832826673343
+            },
+            "max_memory_bytes": 514955674.0,
+            "first_observed_at": "2026-11-05T19:57:57.8674528-05:00",
+            "last_observed_at": "2026-11-05T19:58:06.3321812-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 6.145843934075846,
+              "median": 6.145843934075846,
+              "min": 0.47878645985538903,
+              "max": 11.812901408296304,
+              "sample_stddev": 8.014429538790388
+            },
+            "max_memory_bytes": 78106624.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 38.449999999999996,
+              "median": 21.909999999999997,
+              "min": 3.3,
+              "max": 90.14,
+              "sample_stddev": 45.72171365992312
+            },
+            "max_memory_bytes": 575958680.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c1-r3"
+    },
+    {
+      "warmup": false,
+      "summary": {
+        "services": [
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.384169714161569,
+              "median": 4.384169714161569,
+              "min": 0.2431815953943537,
+              "max": 8.525157832928784,
+              "sample_stddev": 5.856241559186444
+            },
+            "max_memory_bytes": 63356928.0,
+            "first_observed_at": "2026-11-05T19:58:24.7349046-05:00",
+            "last_observed_at": "2026-11-05T19:58:33.1871535-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "process",
+            "valid_samples": 2,
+            "missing_samples": 1,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 0.12171212642988329,
+              "median": 0.12171212642988329,
+              "min": 0.0,
+              "max": 0.24342425285976657,
+              "sample_stddev": 0.17212693990240976
+            },
+            "max_memory_bytes": 14761984.0,
+            "first_observed_at": "2026-11-05T19:58:24.9976727-05:00",
+            "last_observed_at": "2026-11-05T19:58:33.4356433-05:00"
+          },
+          {
+            "service": "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.5933333333333333,
+              "median": 0.45,
+              "min": 0.41,
+              "max": 3.92,
+              "sample_stddev": 2.015051694953093
+            },
+            "max_memory_bytes": 55700357.0,
+            "first_observed_at": "2026-11-05T19:58:24.4486873-05:00",
+            "last_observed_at": "2026-11-05T19:58:32.9417278-05:00"
+          },
+          {
+            "service": "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 1.2533333333333334,
+              "median": 0.07,
+              "min": 0.07,
+              "max": 3.62,
+              "sample_stddev": 2.0495934556231714
+            },
+            "max_memory_bytes": 7036994.0,
+            "first_observed_at": "2026-11-05T19:58:24.4486873-05:00",
+            "last_observed_at": "2026-11-05T19:58:32.9417278-05:00"
+          },
+          {
+            "service": "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41",
+            "scope": "container",
+            "valid_samples": 3,
+            "missing_samples": 0,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 13.723333333333333,
+              "median": 7.81,
+              "min": 1.25,
+              "max": 32.11,
+              "sample_stddev": 16.257630003580882
+            },
+            "max_memory_bytes": 439667917.0,
+            "first_observed_at": "2026-11-05T19:58:24.4486873-05:00",
+            "last_observed_at": "2026-11-05T19:58:32.9417278-05:00"
+          }
+        ],
+        "totals": [
+          {
+            "scope": "process",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3"
+            ],
+            "aligned_samples": 2,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 2,
+              "mean": 4.505881840591452,
+              "median": 4.505881840591452,
+              "min": 0.48660584825412023,
+              "max": 8.525157832928784,
+              "sample_stddev": 5.684114619284035
+            },
+            "max_memory_bytes": 78118912.0
+          },
+          {
+            "scope": "container",
+            "services": [
+              "api/cea679d583d01392c295bcec2f78afe32f66bb95442d46ec13c964f6f1e9d6f5",
+              "master/f2735f8f5a2f47661b829974c20878570769ee0aeea415f96f1b5108ae1bd3d3",
+              "mongo/692ff57003ec1bbf546b403d9f53ad51f83ab8e347ed5d63d0f29aab47000b41"
+            ],
+            "aligned_samples": 3,
+            "max_skew_seconds": 0.25,
+            "cpu_percent": {
+              "count": 3,
+              "mean": 16.57,
+              "median": 11.799999999999999,
+              "min": 1.77,
+              "max": 36.14,
+              "sample_stddev": 17.674526867783477
+            },
+            "max_memory_bytes": 501860008.0
+          }
+        ]
+      },
+      "sample_id": "API-unavailable-c10-r3"
+    }
+  ],
+  "limitations": [
+    "Arithmetic observation means; sample standard deviation uses n-1 (null for n=1).",
+    "Warmups are identified in sample_ids and resource evidence but excluded from timing/statistical comparisons.",
+    "API percentiles are per-pass summaries; their medians are not pooled request percentiles.",
+    "Resources cover the collector lifetime; totals include only observations aligned within 250 ms and never mix process/container scopes.",
+    "Observed RAM maxima depend on sampling coverage; no aligned observations means a null total.",
+    "One host with containers does not establish scalability between physical servers."
+  ],
+  "api_target_not_met_sample_ids": []
+}
