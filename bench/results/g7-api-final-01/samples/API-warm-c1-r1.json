@@ -1,0 +1,70 @@
+{
+  "completed_at": "2026-11-06T00:50:56.6149717Z",
+  "dataset": {
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510"
+  },
+  "scope": "real",
+  "repetition": 1,
+  "started_at": "2026-11-06T00:50:39.4443130Z",
+  "kind": "api",
+  "case_id": "API-warm-c1",
+  "status": "passed",
+  "metrics": {
+    "cache_hits": 1000,
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "succeeded": 1000,
+    "throughput_success": 811.2427287178485,
+    "throughput_total": 811.2427287178485,
+    "p95_ms": 1.667417,
+    "objective_met": true,
+    "p50_ms": 1.104618,
+    "max_ms": 14.681032,
+    "concurrency": 1,
+    "measurement_complete": true,
+    "elapsed_seconds": 1.232676688,
+    "proportion_under_100_ms": 1,
+    "requests_sha256": "287770ef2901c6b77695695ce9039b7e0fa149abe383c1981f1ab169999bb3ca",
+    "timeouts": 0,
+    "p99_ms": 2.008297,
+    "route": "direct isolated REST; in-container client",
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "error_counts": {},
+    "attempted": 1000,
+    "error_latencies_ms": [],
+    "completed": 1000,
+    "requests_path": "bench/raw/g7-api-final-01/api/API-warm-c1-r1.json",
+    "cache_scenario": "warm",
+    "operational_outcome": "target_met",
+    "errors": 0
+  },
+  "schema_version": "benchmark-v1",
+  "warmup": false,
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-warm-c1-r1.ndjson",
+    "sha256": "bf17e726cbb621c90cc5a8e9e3623618d26b6dd0e9017f4d9b4e252aa7370636",
+    "valid_samples": 16,
+    "missing_samples": 2
+  },
+  "sample_id": "API-warm-c1-r1",
+  "checks": {
+    "redis_restored": true,
+    "resources_valid": true,
+    "result_valid": true,
+    "cache_preparation_verified": true,
+    "dataset_verified": true
+  },
+  "timings": {
+    "compute_seconds": 1.232676688,
+    "preparation_seconds": null,
+    "evaluation_seconds": null,
+    "total_seconds": 1.232676688,
+    "publication_seconds": null
+  },
+  "campaign_id": "g7-api-final-01",
+  "errors": []
+}

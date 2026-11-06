@@ -1,0 +1,19 @@
+{
+  "objective_evaluated": false,
+  "project": "transporte-g7-bench-g7-integrated-smoke-01",
+  "errors": [],
+  "scope": "real",
+  "schema_version": "benchmark-v1",
+  "campaign_id": "g7-integrated-smoke-01",
+  "created_at": "2026-11-05T23:17:56.6806764Z",
+  "state": "smoke_passed",
+  "pending_issues": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "samples": [],
+  "missing_components": [],
+  "prepared_at": "2026-11-05T23:18:37.1180441Z"
+}

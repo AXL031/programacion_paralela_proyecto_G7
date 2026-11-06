@@ -1,0 +1,91 @@
+{
+  "schema_version": "benchmark-v1",
+  "campaign_id": "g7-complete-v2",
+  "sample_id": "L1-w1",
+  "case_id": "L1",
+  "scope": "real",
+  "kind": "load",
+  "repetition": 1,
+  "warmup": true,
+  "started_at": "2026-11-06T00:00:26.7718616Z",
+  "completed_at": "2026-11-06T00:01:37.3086564Z",
+  "status": "passed",
+  "errors": [],
+  "dataset": {
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "c9a6658446a248896443ca02",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+  },
+  "timings": {
+    "preparation_seconds": 1.877428887,
+    "compute_seconds": 38.420453536,
+    "evaluation_seconds": null,
+    "publication_seconds": 14.60338937,
+    "total_seconds": 54.901271793
+  },
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-complete-v2/resources/L1-w1.ndjson",
+    "sha256": "dc01961690b1f91e2303c6a9b60c7f3951ee089ffda5fc4c580d754e3e19eb26",
+    "valid_samples": 115,
+    "missing_samples": 5
+  },
+  "checks": {
+    "dataset_verified": true,
+    "result_valid": true,
+    "resources_valid": true,
+    "snapshot_equivalent": true,
+    "fresh_load": true,
+    "counts_consistent": true,
+    "mongo_counts_match": true,
+    "snapshot_checksum": true,
+    "reference_verified": true,
+    "dataset_identity": true,
+    "source_hash": true,
+    "catalog_hash": true,
+    "snapshot_hash_format": true,
+    "manifest_status": true,
+    "throughput_consistent": true,
+    "timings_valid": true,
+    "configuration_verified": true,
+    "manifest_identity": true,
+    "zone_catalog": true,
+    "snapshot_metadata": true,
+    "mongo_manifest": true,
+    "reference_established": true
+  },
+  "metrics": {
+    "reused": false,
+    "read": 2964624,
+    "accepted": 1348665,
+    "rejected": 14905,
+    "outside_period": 1601054,
+    "persisted": 1348665,
+    "workers": 1,
+    "rejection_reasons": {
+      "duration_over_24h": 8,
+      "nonpositive_duration": 43,
+      "unknown_zone": 14854
+    },
+    "rows_per_second": 54031.48191976096,
+    "accepted_per_second": 24579.96985901565,
+    "snapshot_windows": 378720,
+    "snapshot_examples": 378457,
+    "snapshot_splits": {
+      "test": 56808,
+      "train": 264841,
+      "validation": 56808
+    },
+    "snapshot_path": "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/c9a6658446a248896443ca02/features.ndjson",
+    "snapshot_bytes": 89139828,
+    "mongo_trips": 1348665,
+    "mongo_windows": 378720,
+    "window_sum": 1348665,
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "c9a6658446a248896443ca02",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+  }
+}

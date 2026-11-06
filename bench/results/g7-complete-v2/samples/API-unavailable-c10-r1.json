@@ -1,0 +1,68 @@
+{
+  "repetition": 1,
+  "started_at": "2026-11-06T00:37:37.1724097Z",
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "load_id": "fd79cf2d1c07f5cd3c82705c"
+  },
+  "scope": "real",
+  "checks": {
+    "cache_scenario_verified": true,
+    "redis_restored": true,
+    "result_valid": true,
+    "resources_valid": true,
+    "dataset_verified": true
+  },
+  "sample_id": "API-unavailable-c10-r1",
+  "case_id": "API-unavailable-c10",
+  "status": "passed",
+  "schema_version": "benchmark-v1",
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-complete-v2/resources/API-unavailable-c10-r1.ndjson",
+    "sha256": "6908a216b73600a3189d35ad0df40da0ab3600b02b434c76be5858de58921814",
+    "valid_samples": 14,
+    "missing_samples": 4
+  },
+  "timings": {
+    "publication_seconds": null,
+    "compute_seconds": 0.187351518,
+    "total_seconds": 0.187351518,
+    "preparation_seconds": null,
+    "evaluation_seconds": null
+  },
+  "kind": "api",
+  "errors": [],
+  "metrics": {
+    "cache_hits": 0,
+    "completed": 1000,
+    "succeeded": 1000,
+    "error_latencies_ms": [],
+    "p99_ms": 34.163249,
+    "concurrency": 10,
+    "model_version": "run-95a71da50250797d0c574e54",
+    "elapsed_seconds": 0.187351518,
+    "throughput_success": 5337.560168581073,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "route": "direct isolated REST; in-container client",
+    "proportion_under_100_ms": 1,
+    "max_ms": 36.015315,
+    "objective_met": true,
+    "p50_ms": 1.039592,
+    "attempted": 1000,
+    "throughput_total": 5337.560168581073,
+    "requests_path": "bench/raw/g7-complete-v2/api/API-unavailable-c10-r1.json",
+    "requests_sha256": "c946158162e0a034eeaf21d8fc913151215ac003394a26adccdcc549e8404486",
+    "error_counts": {},
+    "timeouts": 0,
+    "p95_ms": 3.269221,
+    "errors": 0,
+    "cache_scenario": "unavailable"
+  },
+  "campaign_id": "g7-complete-v2",
+  "completed_at": "2026-11-06T00:37:56.4558838Z",
+  "warmup": false
+}

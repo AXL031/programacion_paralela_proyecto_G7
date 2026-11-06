@@ -1,5 +1,8 @@
 # Instrumentación del entrenamiento y candidatos SGD previos a selección
 
+**Actualización posterior al cierre técnico:** código de issues1–5 integrado en main mediante PR #14/#15, con autorización expresa del usuario y CI verde; 63 muestras originales y bruto verificable en el [cierre de desarrollo](CIERRE_DESARROLLO_11_13.md). Las campañas se identifican por fase y conservan los fallos anteriores. La auditoría independiente y los documentos/checker de Vera siguen en #8. El estado previo de este documento se conserva como historia; no representa pendientes de código actuales.
+
+
 Documento de la entrega de **Taco** para el issue [#3](https://github.com/AXL031/programacion_paralela_proyecto_G7/issues/3). Complementa el contrato [`CONTRATO_BENCHMARK.md`](CONTRATO_BENCHMARK.md) de Cueva y no declara campañas reales ni resultados de rendimiento nuevos.
 
 ## 1. Objetivo y alcance

@@ -1,0 +1,5 @@
+{
+  "action": "Run",
+  "error": "Adapter api/API-warm-c10-r1 failed (1): Exception: HTTP measured pass failed (1):  Container transporte-g7-bench-g7-complete-v2-benchmark-api-run-16f04f95a2a5 Creating  \r\nContainer transporte-g7-bench-g7-complete-v2-benchmark-api-run-16f04f95a2a5 Created  benchmark-api: 1 unexpected\r\nrequest errors; see raw report\r\n",
+  "at": "2026-11-06T00:40:07.9804100Z"
+}

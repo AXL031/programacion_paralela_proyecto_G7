@@ -1,0 +1,132 @@
+{
+  "free_disk_bytes": 290178424832,
+  "cpus": 16,
+  "compose": "5.6.1",
+  "go": "go version go1.27.2 linux/amd64",
+  "inputs": {
+    "input": {
+      "path": "data/raw/yellow_tripdata_2024-01.parquet",
+      "bytes": 49961641,
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510"
+    },
+    "zone_catalog": {
+      "path": "data/raw/taxi_zone_lookup.csv",
+      "bytes": 12331,
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+    }
+  },
+  "docker": "29.9.2",
+  "architecture": "x86_64",
+  "memory_bytes": 7197331456,
+  "images": [
+    {
+      "ID": "sha256:6386000e993944a1b85b3d7dc65009f9675b9739a2f050706aff714f39ce5277",
+      "ContainerName": "transporte-g7-bench-g7-integrated-smoke-01-worker-2",
+      "Repository": "transporte-g7-bench-g7-integrated-smoke-01-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914898,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:18:17.720478457Z"
+    },
+    {
+      "ID": "sha256:3a21b6cec0c82ffe3f81c198425ab2b01941def4ccd6bff6c6a5ea8b2fb21ae0",
+      "ContainerName": "transporte-g7-bench-g7-integrated-smoke-01-api-1",
+      "Repository": "transporte-g7-bench-g7-integrated-smoke-01-api",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 140541033,
+      "Created": "2026-11-05T23:18:17.561496881Z",
+      "LastTagTime": "2026-11-05T23:18:19.827827585Z"
+    },
+    {
+      "ID": "sha256:e7c0b451525cea08fe024daf2025baeecfedc32ab409f4124e2475ed3190ff1d",
+      "ContainerName": "transporte-g7-bench-g7-integrated-smoke-01-master-1",
+      "Repository": "transporte-g7-bench-g7-integrated-smoke-01-master",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 138429149,
+      "Created": "2026-11-05T23:18:16.710544483Z",
+      "LastTagTime": "2026-11-05T23:18:18.892086753Z"
+    },
+    {
+      "ID": "sha256:6386000e993944a1b85b3d7dc65009f9675b9739a2f050706aff714f39ce5277",
+      "ContainerName": "transporte-g7-bench-g7-integrated-smoke-01-worker-1",
+      "Repository": "transporte-g7-bench-g7-integrated-smoke-01-worker",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 130914898,
+      "Created": "2026-11-05T23:18:15.773882067Z",
+      "LastTagTime": "2026-11-05T23:18:17.720478457Z"
+    },
+    {
+      "ID": "sha256:4b58ebcb1dc7a7b4e84cd8ce9098d48764ae4478876898ff9551acf2ac4a6a6d",
+      "ContainerName": "transporte-g7-bench-g7-integrated-smoke-01-mongo-1",
+      "Repository": "mongo",
+      "Tag": "8.0.16",
+      "Platform": "linux/amd64",
+      "Size": 1222044170,
+      "Created": "2025-11-19T23:52:45.713575377Z",
+      "LastTagTime": "2026-10-13T15:13:12.968344073Z"
+    },
+    {
+      "ID": "sha256:02f2cc4882f8bf87c79a220ac958f58c700bdec0dfb9b9ea61b62fb0e8f1bfcf",
+      "ContainerName": "transporte-g7-bench-g7-integrated-smoke-01-redis-1",
+      "Repository": "redis",
+      "Tag": "7.4.7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 60665875,
+      "Created": "2026-01-28T02:35:11.872689865Z",
+      "LastTagTime": "2026-10-13T15:05:21.199849102Z"
+    }
+  ],
+  "other_running_container_count": 0,
+  "os": "linux",
+  "limits": {
+    "mongo": {
+      "memory_bytes": "1610612736",
+      "gomaxprocs": null,
+      "cpus": 2
+    },
+    "redis": {
+      "memory_bytes": "134217728",
+      "gomaxprocs": null,
+      "cpus": 1
+    },
+    "master": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "worker": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "api": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "loader": {
+      "memory_bytes": "1610612736",
+      "gomaxprocs": "4",
+      "cpus": 4
+    },
+    "trainer": {
+      "memory_bytes": "1073741824",
+      "gomaxprocs": "1",
+      "cpus": 1
+    },
+    "dev": {
+      "memory_bytes": "2147483648",
+      "gomaxprocs": null,
+      "cpus": 4
+    },
+    "benchmark-api": {
+      "memory_bytes": "268435456",
+      "gomaxprocs": "2",
+      "cpus": 2
+    }
+  }
+}

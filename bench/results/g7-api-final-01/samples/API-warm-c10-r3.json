@@ -1,0 +1,70 @@
+{
+  "repetition": 3,
+  "kind": "api",
+  "status": "passed",
+  "warmup": false,
+  "metrics": {
+    "error_counts": {},
+    "max_ms": 7.371487,
+    "p99_ms": 5.031279,
+    "completed": 1000,
+    "elapsed_seconds": 0.199694235,
+    "p50_ms": 1.669326,
+    "errors": 0,
+    "requests_path": "bench/raw/g7-api-final-01/api/API-warm-c10-r3.json",
+    "objective_met": true,
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "measurement_complete": true,
+    "cache_hits": 1000,
+    "throughput_total": 5007.655829423418,
+    "error_latencies_ms": [],
+    "requests_sha256": "5aa3e826ceb42c0e0a9870684095a435258ef08ca1c46d3b22b6978388e336ba",
+    "cache_scenario": "warm",
+    "proportion_under_100_ms": 1,
+    "timeouts": 0,
+    "concurrency": 10,
+    "attempted": 1000,
+    "succeeded": 1000,
+    "route": "direct isolated REST; in-container client",
+    "p95_ms": 3.7906,
+    "operational_outcome": "target_met",
+    "throughput_success": 5007.655829423418
+  },
+  "checks": {
+    "resources_valid": true,
+    "redis_restored": true,
+    "dataset_verified": true,
+    "cache_preparation_verified": true,
+    "result_valid": true
+  },
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-warm-c10-r3.ndjson",
+    "sha256": "de735158a597462f9e73fdbc987835f164de650b01cadbcd2da9bb7199bad860",
+    "valid_samples": 16,
+    "missing_samples": 2
+  },
+  "scope": "real",
+  "case_id": "API-warm-c10",
+  "dataset": {
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "load_id": "a92a6f26e86c742b87227aa1"
+  },
+  "timings": {
+    "total_seconds": 0.199694235,
+    "evaluation_seconds": null,
+    "compute_seconds": 0.199694235,
+    "preparation_seconds": null,
+    "publication_seconds": null
+  },
+  "schema_version": "benchmark-v1",
+  "started_at": "2026-11-06T00:57:06.3799332Z",
+  "campaign_id": "g7-api-final-01",
+  "errors": [],
+  "sample_id": "API-warm-c10-r3",
+  "completed_at": "2026-11-06T00:57:23.3540865Z"
+}

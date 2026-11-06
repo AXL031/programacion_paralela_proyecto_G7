@@ -1,5 +1,8 @@
 # Escalabilidad y recursos — Gerardo, issue #4
 
+**Actualización posterior al cierre técnico:** código de issues1–5 integrado en main mediante PR #14/#15, con autorización expresa del usuario y CI verde; 63 muestras originales y bruto verificable en el [cierre de desarrollo](CIERRE_DESARROLLO_11_13.md). Las campañas se identifican por fase y conservan los fallos anteriores. La auditoría independiente y los documentos/checker de Vera siguen en #8. El estado previo de este documento se conserva como historia; no representa pendientes de código actuales.
+
+
 Avance de implementación para revisión, rama `gerardo`, 5 de noviembre de 2026 (Lima).
 **La issue sigue pendiente: no se han ejecutado campañas reales S/D1/D2/D4 ni demostrado una mejora de rendimiento.**
 

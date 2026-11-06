@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "resources_valid": true,
+    "cache_preparation_verified": true,
+    "result_valid": true,
+    "redis_restored": true,
+    "dataset_verified": true
+  },
+  "errors": [],
+  "schema_version": "benchmark-v1",
+  "completed_at": "2026-11-06T00:58:38.2728113Z",
+  "warmup": false,
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8"
+  },
+  "metrics": {
+    "attempted": 1000,
+    "proportion_under_100_ms": 1,
+    "succeeded": 1000,
+    "throughput_total": 3116.2389668157075,
+    "requests_path": "bench/raw/g7-api-final-01/api/API-unavailable-c10-r3.json",
+    "operational_outcome": "target_met",
+    "max_ms": 50.265395,
+    "concurrency": 10,
+    "objective_met": true,
+    "completed": 1000,
+    "p99_ms": 34.490264,
+    "throughput_success": 3116.2389668157075,
+    "cache_hits": 0,
+    "requests_sha256": "dce0af427aa0e21dea3afe06b64359e5edc183e4c51e9e1645e13f8a795f7de3",
+    "p95_ms": 5.294016,
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "elapsed_seconds": 0.320899652,
+    "cache_scenario": "unavailable",
+    "error_counts": {},
+    "route": "direct isolated REST; in-container client",
+    "timeouts": 0,
+    "measurement_complete": true,
+    "errors": 0,
+    "p50_ms": 2.39523,
+    "error_latencies_ms": [],
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded"
+  },
+  "started_at": "2026-11-06T00:58:16.1272557Z",
+  "kind": "api",
+  "campaign_id": "g7-api-final-01",
+  "sample_id": "API-unavailable-c10-r3",
+  "repetition": 3,
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-unavailable-c10-r3.ndjson",
+    "sha256": "78cd1afcdbdab94fc14c0b863dd259eb9e8ee474fd0784bf5d1fcc5e77ce08cd",
+    "valid_samples": 13,
+    "missing_samples": 2
+  },
+  "scope": "real",
+  "status": "passed",
+  "case_id": "API-unavailable-c10",
+  "timings": {
+    "publication_seconds": null,
+    "preparation_seconds": null,
+    "evaluation_seconds": null,
+    "total_seconds": 0.320899652,
+    "compute_seconds": 0.320899652
+  }
+}

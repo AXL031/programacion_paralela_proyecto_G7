@@ -1,5 +1,8 @@
 # Avance de Cueva: entorno y orquestación de benchmarks
 
+**Actualización posterior al cierre técnico:** código de issues1–5 integrado en main mediante PR #14/#15, con autorización expresa del usuario y CI verde; 63 muestras originales y bruto verificable en el [cierre de desarrollo](CIERRE_DESARROLLO_11_13.md). Las campañas se identifican por fase y conservan los fallos anteriores. La auditoría independiente y los documentos/checker de Vera siguen en #8. El estado previo de este documento se conserva como historia; no representa pendientes de código actuales.
+
+
 **Actualización de auditoría del 5 de noviembre de 2026:** la primera entrega #7 ya se fusionó; #9 (colector/resumen) y #10 (instrumentación SGD) también están en `main`. #11 de carga sigue en revisión y #12 de Dragon se abrió en borrador. Vera ya tiene acceso e issue #8. El runner necesita reforzar la validación de la referencia secuencial antes de certificar entrenamiento. Consulta [estado actual, hallazgos y pendientes por integrante](AUDITORIA_ISSUES_PR_2026_11_05.md). Las secciones siguientes conservan el estado histórico de la primera entrega y sus evidencias.
 
 Fecha: **5 de noviembre de 2026, Lima**. Rama: `cueva`. Issue: [#1](https://github.com/AXL031/programacion_paralela_proyecto_G7/issues/1).

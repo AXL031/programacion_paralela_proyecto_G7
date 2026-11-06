@@ -1,0 +1,899 @@
+[
+  {
+    "repetition": 1,
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": true,
+    "kind": "load",
+    "sample_id": "L1-w1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": true,
+    "kind": "load",
+    "sample_id": "L4-w1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L4-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L1-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L1-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L4-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L4-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L1-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 4,
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L1-r4",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 4,
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L4-r4",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 5,
+    "case_id": "L4",
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L4-r5",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 5,
+    "case_id": "L1",
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "load",
+    "sample_id": "L1-r5",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "D2",
+    "parameters": {
+      "workers": 2,
+      "id": "D2",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": true,
+    "kind": "training",
+    "sample_id": "D2-w1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "D4",
+    "parameters": {
+      "workers": 4,
+      "id": "D4",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": true,
+    "kind": "training",
+    "sample_id": "D4-w1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "S",
+    "parameters": {
+      "workers": 1,
+      "id": "S",
+      "mode": "sequential"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": true,
+    "kind": "training",
+    "sample_id": "S-w1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "D1",
+    "parameters": {
+      "workers": 1,
+      "id": "D1",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": true,
+    "kind": "training",
+    "sample_id": "D1-w1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "D4",
+    "parameters": {
+      "workers": 4,
+      "id": "D4",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D4-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "S",
+    "parameters": {
+      "workers": 1,
+      "id": "S",
+      "mode": "sequential"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "S-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "D1",
+    "parameters": {
+      "workers": 1,
+      "id": "D1",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D1-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "D2",
+    "parameters": {
+      "workers": 2,
+      "id": "D2",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D2-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "S",
+    "parameters": {
+      "workers": 1,
+      "id": "S",
+      "mode": "sequential"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "S-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "D1",
+    "parameters": {
+      "workers": 1,
+      "id": "D1",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D1-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "D2",
+    "parameters": {
+      "workers": 2,
+      "id": "D2",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D2-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "D4",
+    "parameters": {
+      "workers": 4,
+      "id": "D4",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D4-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "D1",
+    "parameters": {
+      "workers": 1,
+      "id": "D1",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D1-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "D2",
+    "parameters": {
+      "workers": 2,
+      "id": "D2",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D2-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "D4",
+    "parameters": {
+      "workers": 4,
+      "id": "D4",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D4-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "S",
+    "parameters": {
+      "workers": 1,
+      "id": "S",
+      "mode": "sequential"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "S-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 4,
+    "case_id": "D2",
+    "parameters": {
+      "workers": 2,
+      "id": "D2",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D2-r4",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 4,
+    "case_id": "D4",
+    "parameters": {
+      "workers": 4,
+      "id": "D4",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D4-r4",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 4,
+    "case_id": "S",
+    "parameters": {
+      "workers": 1,
+      "id": "S",
+      "mode": "sequential"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "S-r4",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 4,
+    "case_id": "D1",
+    "parameters": {
+      "workers": 1,
+      "id": "D1",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D1-r4",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 5,
+    "case_id": "D4",
+    "parameters": {
+      "workers": 4,
+      "id": "D4",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D4-r5",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 5,
+    "case_id": "S",
+    "parameters": {
+      "workers": 1,
+      "id": "S",
+      "mode": "sequential"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "S-r5",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 5,
+    "case_id": "D1",
+    "parameters": {
+      "workers": 1,
+      "id": "D1",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D1-r5",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 5,
+    "case_id": "D2",
+    "parameters": {
+      "workers": 2,
+      "id": "D2",
+      "mode": "distributed"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "training",
+    "sample_id": "D2-r5",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-unavailable-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c1",
+      "concurrency": 1,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c1-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-unavailable-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c10",
+      "concurrency": 10,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c10-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-unavailable-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c25",
+      "concurrency": 25,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c25-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-cold-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c1",
+      "concurrency": 1,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c1-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-cold-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c10",
+      "concurrency": 10,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c10-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-cold-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c25",
+      "concurrency": 25,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c25-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-warm-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c1",
+      "concurrency": 1,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c1-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-warm-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c10",
+      "concurrency": 10,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c10-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 1,
+    "case_id": "API-warm-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c25",
+      "concurrency": 25,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c25-r1",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-unavailable-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c10",
+      "concurrency": 10,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c10-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-unavailable-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c25",
+      "concurrency": 25,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c25-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-cold-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c1",
+      "concurrency": 1,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c1-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-cold-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c10",
+      "concurrency": 10,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c10-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-cold-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c25",
+      "concurrency": 25,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c25-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-warm-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c1",
+      "concurrency": 1,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c1-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-warm-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c10",
+      "concurrency": 10,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c10-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-warm-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c25",
+      "concurrency": 25,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c25-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 2,
+    "case_id": "API-unavailable-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c1",
+      "concurrency": 1,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c1-r2",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-unavailable-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c25",
+      "concurrency": 25,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c25-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-cold-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c1",
+      "concurrency": 1,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c1-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-cold-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c10",
+      "concurrency": 10,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c10-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-cold-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-cold-c25",
+      "concurrency": 25,
+      "cache": "cold"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-cold-c25-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-warm-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c1",
+      "concurrency": 1,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c1-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-warm-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c10",
+      "concurrency": 10,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c10-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-warm-c25",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-warm-c25",
+      "concurrency": 25,
+      "cache": "warm"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-warm-c25-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-unavailable-c1",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c1",
+      "concurrency": 1,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c1-r3",
+    "schema_version": "benchmark-v1"
+  },
+  {
+    "repetition": 3,
+    "case_id": "API-unavailable-c10",
+    "parameters": {
+      "requests": 1000,
+      "id": "API-unavailable-c10",
+      "concurrency": 10,
+      "cache": "unavailable"
+    },
+    "campaign_id": "g7-integrated-smoke-01",
+    "warmup": false,
+    "kind": "api",
+    "sample_id": "API-unavailable-c10-r3",
+    "schema_version": "benchmark-v1"
+  }
+]

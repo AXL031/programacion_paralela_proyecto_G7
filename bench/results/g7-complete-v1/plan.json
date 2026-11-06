@@ -1,0 +1,899 @@
+[
+  {
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "case_id": "L1",
+    "sample_id": "L1-w1",
+    "warmup": true,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "case_id": "L4",
+    "sample_id": "L4-w1",
+    "warmup": true,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "case_id": "L4",
+    "sample_id": "L4-r1",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "case_id": "L1",
+    "sample_id": "L1-r1",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "case_id": "L1",
+    "sample_id": "L1-r2",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "case_id": "L4",
+    "sample_id": "L4-r2",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "case_id": "L4",
+    "sample_id": "L4-r3",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "case_id": "L1",
+    "sample_id": "L1-r3",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "case_id": "L1",
+    "sample_id": "L1-r4",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 4
+  },
+  {
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "case_id": "L4",
+    "sample_id": "L4-r4",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 4
+  },
+  {
+    "parameters": {
+      "id": "L4",
+      "workers": 4
+    },
+    "case_id": "L4",
+    "sample_id": "L4-r5",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 5
+  },
+  {
+    "parameters": {
+      "id": "L1",
+      "workers": 1
+    },
+    "case_id": "L1",
+    "sample_id": "L1-r5",
+    "warmup": false,
+    "kind": "load",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 5
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "case_id": "D2",
+    "sample_id": "D2-w1",
+    "warmup": true,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "case_id": "D4",
+    "sample_id": "D4-w1",
+    "warmup": true,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "case_id": "S",
+    "sample_id": "S-w1",
+    "warmup": true,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "case_id": "D1",
+    "sample_id": "D1-w1",
+    "warmup": true,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "case_id": "D4",
+    "sample_id": "D4-r1",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "case_id": "S",
+    "sample_id": "S-r1",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "case_id": "D1",
+    "sample_id": "D1-r1",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "case_id": "D2",
+    "sample_id": "D2-r1",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "case_id": "S",
+    "sample_id": "S-r2",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "case_id": "D1",
+    "sample_id": "D1-r2",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "case_id": "D2",
+    "sample_id": "D2-r2",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "case_id": "D4",
+    "sample_id": "D4-r2",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "case_id": "D1",
+    "sample_id": "D1-r3",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "case_id": "D2",
+    "sample_id": "D2-r3",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "case_id": "D4",
+    "sample_id": "D4-r3",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "case_id": "S",
+    "sample_id": "S-r3",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "case_id": "D2",
+    "sample_id": "D2-r4",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 4
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "case_id": "D4",
+    "sample_id": "D4-r4",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 4
+  },
+  {
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "case_id": "S",
+    "sample_id": "S-r4",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 4
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "case_id": "D1",
+    "sample_id": "D1-r4",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 4
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 4,
+      "id": "D4"
+    },
+    "case_id": "D4",
+    "sample_id": "D4-r5",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 5
+  },
+  {
+    "parameters": {
+      "mode": "sequential",
+      "workers": 1,
+      "id": "S"
+    },
+    "case_id": "S",
+    "sample_id": "S-r5",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 5
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 1,
+      "id": "D1"
+    },
+    "case_id": "D1",
+    "sample_id": "D1-r5",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 5
+  },
+  {
+    "parameters": {
+      "mode": "distributed",
+      "workers": 2,
+      "id": "D2"
+    },
+    "case_id": "D2",
+    "sample_id": "D2-r5",
+    "warmup": false,
+    "kind": "training",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 5
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-unavailable-c1"
+    },
+    "case_id": "API-unavailable-c1",
+    "sample_id": "API-unavailable-c1-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-unavailable-c10"
+    },
+    "case_id": "API-unavailable-c10",
+    "sample_id": "API-unavailable-c10-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-unavailable-c25"
+    },
+    "case_id": "API-unavailable-c25",
+    "sample_id": "API-unavailable-c25-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-cold-c1"
+    },
+    "case_id": "API-cold-c1",
+    "sample_id": "API-cold-c1-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-cold-c10"
+    },
+    "case_id": "API-cold-c10",
+    "sample_id": "API-cold-c10-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-cold-c25"
+    },
+    "case_id": "API-cold-c25",
+    "sample_id": "API-cold-c25-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-warm-c1"
+    },
+    "case_id": "API-warm-c1",
+    "sample_id": "API-warm-c1-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-warm-c10"
+    },
+    "case_id": "API-warm-c10",
+    "sample_id": "API-warm-c10-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-warm-c25"
+    },
+    "case_id": "API-warm-c25",
+    "sample_id": "API-warm-c25-r1",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 1
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-unavailable-c10"
+    },
+    "case_id": "API-unavailable-c10",
+    "sample_id": "API-unavailable-c10-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-unavailable-c25"
+    },
+    "case_id": "API-unavailable-c25",
+    "sample_id": "API-unavailable-c25-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-cold-c1"
+    },
+    "case_id": "API-cold-c1",
+    "sample_id": "API-cold-c1-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-cold-c10"
+    },
+    "case_id": "API-cold-c10",
+    "sample_id": "API-cold-c10-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-cold-c25"
+    },
+    "case_id": "API-cold-c25",
+    "sample_id": "API-cold-c25-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-warm-c1"
+    },
+    "case_id": "API-warm-c1",
+    "sample_id": "API-warm-c1-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-warm-c10"
+    },
+    "case_id": "API-warm-c10",
+    "sample_id": "API-warm-c10-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-warm-c25"
+    },
+    "case_id": "API-warm-c25",
+    "sample_id": "API-warm-c25-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-unavailable-c1"
+    },
+    "case_id": "API-unavailable-c1",
+    "sample_id": "API-unavailable-c1-r2",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 2
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-unavailable-c25"
+    },
+    "case_id": "API-unavailable-c25",
+    "sample_id": "API-unavailable-c25-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-cold-c1"
+    },
+    "case_id": "API-cold-c1",
+    "sample_id": "API-cold-c1-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-cold-c10"
+    },
+    "case_id": "API-cold-c10",
+    "sample_id": "API-cold-c10-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "cold",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-cold-c25"
+    },
+    "case_id": "API-cold-c25",
+    "sample_id": "API-cold-c25-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-warm-c1"
+    },
+    "case_id": "API-warm-c1",
+    "sample_id": "API-warm-c1-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-warm-c10"
+    },
+    "case_id": "API-warm-c10",
+    "sample_id": "API-warm-c10-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "warm",
+      "concurrency": 25,
+      "requests": 1000,
+      "id": "API-warm-c25"
+    },
+    "case_id": "API-warm-c25",
+    "sample_id": "API-warm-c25-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 1,
+      "requests": 1000,
+      "id": "API-unavailable-c1"
+    },
+    "case_id": "API-unavailable-c1",
+    "sample_id": "API-unavailable-c1-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  },
+  {
+    "parameters": {
+      "cache": "unavailable",
+      "concurrency": 10,
+      "requests": 1000,
+      "id": "API-unavailable-c10"
+    },
+    "case_id": "API-unavailable-c10",
+    "sample_id": "API-unavailable-c10-r3",
+    "warmup": false,
+    "kind": "api",
+    "campaign_id": "g7-complete-v1",
+    "schema_version": "benchmark-v1",
+    "repetition": 3
+  }
+]

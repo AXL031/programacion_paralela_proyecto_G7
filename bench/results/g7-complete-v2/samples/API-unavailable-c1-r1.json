@@ -1,0 +1,68 @@
+{
+  "case_id": "API-unavailable-c1",
+  "completed_at": "2026-11-06T00:37:32.7662839Z",
+  "dataset": {
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "load_id": "fd79cf2d1c07f5cd3c82705c",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8"
+  },
+  "scope": "real",
+  "checks": {
+    "cache_scenario_verified": true,
+    "redis_restored": true,
+    "resources_valid": true,
+    "dataset_verified": true,
+    "result_valid": true
+  },
+  "warmup": false,
+  "errors": [],
+  "started_at": "2026-11-06T00:37:13.6689007Z",
+  "repetition": 1,
+  "schema_version": "benchmark-v1",
+  "status": "passed",
+  "timings": {
+    "publication_seconds": null,
+    "preparation_seconds": null,
+    "evaluation_seconds": null,
+    "total_seconds": 0.837284556,
+    "compute_seconds": 0.837284556
+  },
+  "metrics": {
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "max_ms": 31.678536,
+    "requests_sha256": "fc6d932a58e176a433cf3c0f9884d0f61ab77ec3c95df8184caa1e5750c34c15",
+    "throughput_success": 1194.3370898626727,
+    "cache_scenario": "unavailable",
+    "timeouts": 0,
+    "attempted": 1000,
+    "requests_path": "bench/raw/g7-complete-v2/api/API-unavailable-c1-r1.json",
+    "error_latencies_ms": [],
+    "errors": 0,
+    "concurrency": 1,
+    "error_counts": {},
+    "p50_ms": 0.609662,
+    "p95_ms": 0.931595,
+    "cache_hits": 0,
+    "elapsed_seconds": 0.837284556,
+    "proportion_under_100_ms": 1,
+    "completed": 1000,
+    "model_version": "run-95a71da50250797d0c574e54",
+    "objective_met": true,
+    "throughput_total": 1194.3370898626727,
+    "succeeded": 1000,
+    "p99_ms": 1.245117,
+    "route": "direct isolated REST; in-container client"
+  },
+  "sample_id": "API-unavailable-c1-r1",
+  "kind": "api",
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-complete-v2/resources/API-unavailable-c1-r1.ndjson",
+    "sha256": "b38fd6225dfa686e30009ecccfb01238872f9d59f88ffc4ca11ad4a5a95718cb",
+    "valid_samples": 14,
+    "missing_samples": 4
+  },
+  "campaign_id": "g7-complete-v2"
+}

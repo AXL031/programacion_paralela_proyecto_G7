@@ -1,0 +1,208 @@
+{
+  "state": "completed",
+  "pending_issues": [
+    8
+  ],
+  "objective_evaluated": true,
+  "campaign_id": "g7-api-final-01",
+  "scope": "real",
+  "missing_components": [],
+  "samples": [
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c1-r1",
+      "adapter_elapsed_seconds": 27.3852318,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c1-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c10-r1",
+      "adapter_elapsed_seconds": 27.0063672,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c10-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c25-r1",
+      "adapter_elapsed_seconds": 26.3766379,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c25-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c1-r1",
+      "adapter_elapsed_seconds": 21.5057543,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c1-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c10-r1",
+      "adapter_elapsed_seconds": 21.493931,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c10-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c25-r1",
+      "adapter_elapsed_seconds": 21.6266016,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c25-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c1-r1",
+      "adapter_elapsed_seconds": 21.4566045,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c1-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c10-r1",
+      "adapter_elapsed_seconds": 21.3363626,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c10-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c25-r1",
+      "adapter_elapsed_seconds": 21.2050956,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c25-r1.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c10-r2",
+      "adapter_elapsed_seconds": 26.565538,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c10-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c25-r2",
+      "adapter_elapsed_seconds": 26.5956449,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c25-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c1-r2",
+      "adapter_elapsed_seconds": 21.4667972,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c1-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c10-r2",
+      "adapter_elapsed_seconds": 20.616659,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c10-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c25-r2",
+      "adapter_elapsed_seconds": 21.8939876,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c25-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c1-r2",
+      "adapter_elapsed_seconds": 21.7187758,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c1-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c10-r2",
+      "adapter_elapsed_seconds": 21.2563813,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c10-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c25-r2",
+      "adapter_elapsed_seconds": 21.2899561,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c25-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c1-r2",
+      "adapter_elapsed_seconds": 26.2687859,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c1-r2.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c25-r3",
+      "adapter_elapsed_seconds": 26.3824032,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c25-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c1-r3",
+      "adapter_elapsed_seconds": 21.1073035,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c1-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c10-r3",
+      "adapter_elapsed_seconds": 21.1232654,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c10-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-cold-c25-r3",
+      "adapter_elapsed_seconds": 21.1438977,
+      "result": "bench/results/g7-api-final-01/samples/API-cold-c25-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c1-r3",
+      "adapter_elapsed_seconds": 21.4290011,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c1-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c10-r3",
+      "adapter_elapsed_seconds": 21.2677757,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c10-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-warm-c25-r3",
+      "adapter_elapsed_seconds": 21.3506262,
+      "result": "bench/results/g7-api-final-01/samples/API-warm-c25-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c1-r3",
+      "adapter_elapsed_seconds": 26.4700233,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c1-r3.json",
+      "warmup": false
+    },
+    {
+      "state": "passed",
+      "sample_id": "API-unavailable-c10-r3",
+      "adapter_elapsed_seconds": 26.4610335,
+      "result": "bench/results/g7-api-final-01/samples/API-unavailable-c10-r3.json",
+      "warmup": false
+    }
+  ],
+  "project": "transporte-g7-bench-g7-api-final-01",
+  "errors": [],
+  "schema_version": "benchmark-v1",
+  "created_at": "2026-11-06T00:45:57.0117060Z",
+  "prepared_at": "2026-11-06T00:46:33.2567219Z",
+  "run_started_at": "2026-11-06T00:48:08.5131022Z",
+  "completed_at": "2026-11-06T00:58:49.2727097Z"
+}

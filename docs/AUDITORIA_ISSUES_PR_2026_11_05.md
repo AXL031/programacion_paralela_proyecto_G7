@@ -1,5 +1,8 @@
 # Auditoría de issues y PR — 5 de noviembre de 2026
 
+**Actualización posterior al cierre técnico:** código de issues1–5 integrado en main mediante PR #14/#15, con autorización expresa del usuario y CI verde; 63 muestras originales y bruto verificable en el [cierre de desarrollo](CIERRE_DESARROLLO_11_13.md). Las campañas se identifican por fase y conservan los fallos anteriores. La auditoría independiente y los documentos/checker de Vera siguen en #8. El estado previo de este documento se conserva como historia; no representa pendientes de código actuales.
+
+
 Revisión de GitHub, código, checks y evidencia publicada. Referencias auditadas: `main` **c464ebf794d370256ffa362192e1ee8d9ad42df3**, PR #11 **8244c1d77be363dc4690e1356a9e4055e3a970ae** y PR #12 **c0487fce37587b05419a5cb22a6adace03639bca**. Los dictámenes corresponden a esas revisiones, no a commits posteriores.
 
 **Dictamen:** #11 requiere corregir la retención de evidencia por muestra y resolver la revisión antes de merge. #12 se abrió en borrador y requiere cambios de aislamiento, contrato y protocolo. #7, #9 y #10 ya están fusionadas como entregas parciales; eso no cierra sus issues ni certifica las semanas 12–13. Se detectó además un defecto compartido de validación de candidatos que debe corregirse antes de certificar entrenamiento.

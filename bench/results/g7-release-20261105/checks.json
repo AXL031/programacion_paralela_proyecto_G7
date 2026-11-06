@@ -1,0 +1,13 @@
+{
+  "resources_summary_checks": 46,
+  "go_vet_and_race_with_mongo": "passed; full logs in g7-integrated-smoke-01 evidence ZIP",
+  "api_evidence_checks": 7,
+  "controlled_http_race_tests": "passed",
+  "additional_inventory_regression_checks": 1,
+  "demo_final": "passed",
+  "weeks_7_10_final": "passed",
+  "runner_checks": 44,
+  "product_source_identity_across_campaigns": "verified",
+  "main_code_merge": "af07ecc069a382fb8432abae28af6af2083f6c3e",
+  "verification_scope": "implementer regression, independent Vera audit pending"
+}

@@ -1,0 +1,89 @@
+{
+  "manifest": {
+    "dataset_id": "ds-b9b2c86160a6f0a25dbc2ffc82b192d2",
+    "name": "synthetic-loader-contract-fixture",
+    "load_id": "321885e3d5fc95c16f114d52",
+    "status": "complete",
+    "source": "Synthetic test fixture (not real TLC data)",
+    "source_url": "",
+    "source_sha256": "8b374bcba642f3461ae46f63991701a2ca28ea7d552cbbf1299dc61c01c37200",
+    "catalog_sha256": "034793d9f5db15e061515926cf358fbacf94ca7ba32b9bf6dd907bbf59821d9b",
+    "format": "csv",
+    "timezone": "America/New_York",
+    "period_start": "2024-01-01T05:00:00Z",
+    "period_end_exclusive": "2024-01-02T05:00:00Z",
+    "window_minutes": 15,
+    "processing_version": "yellow-clean-v1",
+    "created_at": "2026-11-05T23:18:38.310702783Z",
+    "completed_at": "2026-11-05T23:18:38.587850656Z",
+    "stats": {
+      "read": 8,
+      "accepted": 3,
+      "rejected": 4,
+      "outside_period": 1,
+      "persisted": 3,
+      "rejection_reasons": {
+        "invalid_distance": 1,
+        "nonpositive_duration": 1,
+        "pickup_datetime": 1,
+        "unknown_zone": 1
+      },
+      "elapsed_seconds": 0.290541503,
+      "rows_per_second": 27.534792507767815,
+      "accepted_per_second": 10.325547190412932
+    },
+    "snapshot": {
+      "version": "raw-counts-v1",
+      "path": "data/processed/ds-b9b2c86160a6f0a25dbc2ffc82b192d2/321885e3d5fc95c16f114d52/features.ndjson",
+      "sha256": "54cc01353dd9cf1b901b4a65353919493eabed9692ae52009bdc38ae1413f942",
+      "windows": 192,
+      "examples": 190,
+      "splits": {
+        "test": 30,
+        "train": 132,
+        "validation": 28
+      },
+      "feature_names": [
+        "zone_id:categorical",
+        "hour_sin",
+        "hour_cos",
+        "day_of_week:categorical",
+        "weekend",
+        "lag1_count"
+      ],
+      "train_end": "2024-01-01T21:45:00Z",
+      "validation_end": "2024-01-02T01:15:00Z",
+      "normalization": "raw; fit normalizer on train only in step 4"
+    },
+    "zones": [
+      {
+        "id": 161,
+        "name": "Midtown Center",
+        "borough": "Manhattan"
+      },
+      {
+        "id": 162,
+        "name": "Midtown East",
+        "borough": "Manhattan"
+      }
+    ]
+  },
+  "reused": false,
+  "timings": {
+    "preparation_seconds": 0.123900341,
+    "compute_seconds": 0.00673175,
+    "evaluation_seconds": null,
+    "publication_seconds": 0.18968459,
+    "total_seconds": 0.320316681
+  },
+  "configuration": {
+    "workers": 4,
+    "block_rows": 2,
+    "batch_rows": 2,
+    "gomaxprocs": 4,
+    "storage": "mongo",
+    "format": "csv",
+    "window_minutes": 15,
+    "processing_version": "yellow-clean-v1"
+  }
+}

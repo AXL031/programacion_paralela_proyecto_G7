@@ -1,0 +1,331 @@
+{
+  "pending_issues": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "scope": "real",
+  "schema_version": "benchmark-v1",
+  "project": "transporte-g7-bench-g7-complete-v2",
+  "state": "failed",
+  "objective_evaluated": false,
+  "created_at": "2026-11-05T23:59:31.4827857Z",
+  "missing_components": [],
+  "campaign_id": "g7-complete-v2",
+  "errors": [
+    "Adapter api/API-warm-c10-r1 failed (1): Exception: HTTP measured pass failed (1):  Container transporte-g7-bench-g7-complete-v2-benchmark-api-run-16f04f95a2a5 Creating  \r\nContainer transporte-g7-bench-g7-complete-v2-benchmark-api-run-16f04f95a2a5 Created  benchmark-api: 1 unexpected\r\nrequest errors; see raw report\r\n"
+  ],
+  "samples": [
+    {
+      "warmup": true,
+      "adapter_elapsed_seconds": 71.28072,
+      "state": "passed",
+      "sample_id": "L1-w1",
+      "result": "bench/results/g7-complete-v2/samples/L1-w1.json"
+    },
+    {
+      "warmup": true,
+      "adapter_elapsed_seconds": 73.1631256,
+      "state": "passed",
+      "sample_id": "L4-w1",
+      "result": "bench/results/g7-complete-v2/samples/L4-w1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 73.3523002,
+      "state": "passed",
+      "sample_id": "L4-r1",
+      "result": "bench/results/g7-complete-v2/samples/L4-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 71.9837679,
+      "state": "passed",
+      "sample_id": "L1-r1",
+      "result": "bench/results/g7-complete-v2/samples/L1-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 70.6709459,
+      "state": "passed",
+      "sample_id": "L1-r2",
+      "result": "bench/results/g7-complete-v2/samples/L1-r2.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 71.7281099,
+      "state": "passed",
+      "sample_id": "L4-r2",
+      "result": "bench/results/g7-complete-v2/samples/L4-r2.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 70.8041918,
+      "state": "passed",
+      "sample_id": "L4-r3",
+      "result": "bench/results/g7-complete-v2/samples/L4-r3.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 70.8525081,
+      "state": "passed",
+      "sample_id": "L1-r3",
+      "result": "bench/results/g7-complete-v2/samples/L1-r3.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 70.8834595,
+      "state": "passed",
+      "sample_id": "L1-r4",
+      "result": "bench/results/g7-complete-v2/samples/L1-r4.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 72.4948394,
+      "state": "passed",
+      "sample_id": "L4-r4",
+      "result": "bench/results/g7-complete-v2/samples/L4-r4.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 71.0699891,
+      "state": "passed",
+      "sample_id": "L4-r5",
+      "result": "bench/results/g7-complete-v2/samples/L4-r5.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 70.2440587,
+      "state": "passed",
+      "sample_id": "L1-r5",
+      "result": "bench/results/g7-complete-v2/samples/L1-r5.json"
+    },
+    {
+      "warmup": true,
+      "adapter_elapsed_seconds": 103.7608273,
+      "state": "passed",
+      "sample_id": "D2-w1",
+      "result": "bench/results/g7-complete-v2/samples/D2-w1.json"
+    },
+    {
+      "warmup": true,
+      "adapter_elapsed_seconds": 53.3826214,
+      "state": "passed",
+      "sample_id": "D4-w1",
+      "result": "bench/results/g7-complete-v2/samples/D4-w1.json"
+    },
+    {
+      "warmup": true,
+      "adapter_elapsed_seconds": 49.0741848,
+      "state": "passed",
+      "sample_id": "S-w1",
+      "result": "bench/results/g7-complete-v2/samples/S-w1.json"
+    },
+    {
+      "warmup": true,
+      "adapter_elapsed_seconds": 68.5988746,
+      "state": "passed",
+      "sample_id": "D1-w1",
+      "result": "bench/results/g7-complete-v2/samples/D1-w1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 53.9223589,
+      "state": "passed",
+      "sample_id": "D4-r1",
+      "result": "bench/results/g7-complete-v2/samples/D4-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 49.2511078,
+      "state": "passed",
+      "sample_id": "S-r1",
+      "result": "bench/results/g7-complete-v2/samples/S-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 62.3026935,
+      "state": "passed",
+      "sample_id": "D1-r1",
+      "result": "bench/results/g7-complete-v2/samples/D1-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 55.8152577,
+      "state": "passed",
+      "sample_id": "D2-r1",
+      "result": "bench/results/g7-complete-v2/samples/D2-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 44.5520017,
+      "state": "passed",
+      "sample_id": "S-r2",
+      "result": "bench/results/g7-complete-v2/samples/S-r2.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 60.356742,
+      "state": "passed",
+      "sample_id": "D1-r2",
+      "result": "bench/results/g7-complete-v2/samples/D1-r2.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 55.8691173,
+      "state": "passed",
+      "sample_id": "D2-r2",
+      "result": "bench/results/g7-complete-v2/samples/D2-r2.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 52.6623783,
+      "state": "passed",
+      "sample_id": "D4-r2",
+      "result": "bench/results/g7-complete-v2/samples/D4-r2.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 52.3803309,
+      "state": "passed",
+      "sample_id": "D1-r3",
+      "result": "bench/results/g7-complete-v2/samples/D1-r3.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 56.1671946,
+      "state": "passed",
+      "sample_id": "D2-r3",
+      "result": "bench/results/g7-complete-v2/samples/D2-r3.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 51.3212569,
+      "state": "passed",
+      "sample_id": "D4-r3",
+      "result": "bench/results/g7-complete-v2/samples/D4-r3.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 44.8343408,
+      "state": "passed",
+      "sample_id": "S-r3",
+      "result": "bench/results/g7-complete-v2/samples/S-r3.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 46.6284455,
+      "state": "passed",
+      "sample_id": "D2-r4",
+      "result": "bench/results/g7-complete-v2/samples/D2-r4.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 48.4736477,
+      "state": "passed",
+      "sample_id": "D4-r4",
+      "result": "bench/results/g7-complete-v2/samples/D4-r4.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 44.5119673,
+      "state": "passed",
+      "sample_id": "S-r4",
+      "result": "bench/results/g7-complete-v2/samples/S-r4.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 56.6950836,
+      "state": "passed",
+      "sample_id": "D1-r4",
+      "result": "bench/results/g7-complete-v2/samples/D1-r4.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 50.2698032,
+      "state": "passed",
+      "sample_id": "D4-r5",
+      "result": "bench/results/g7-complete-v2/samples/D4-r5.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 44.1789768,
+      "state": "passed",
+      "sample_id": "S-r5",
+      "result": "bench/results/g7-complete-v2/samples/S-r5.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 56.7741493,
+      "state": "passed",
+      "sample_id": "D1-r5",
+      "result": "bench/results/g7-complete-v2/samples/D1-r5.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 51.4239836,
+      "state": "passed",
+      "sample_id": "D2-r5",
+      "result": "bench/results/g7-complete-v2/samples/D2-r5.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 23.2106406,
+      "state": "passed",
+      "sample_id": "API-unavailable-c1-r1",
+      "result": "bench/results/g7-complete-v2/samples/API-unavailable-c1-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 23.4785643,
+      "state": "passed",
+      "sample_id": "API-unavailable-c10-r1",
+      "result": "bench/results/g7-complete-v2/samples/API-unavailable-c10-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 23.6071893,
+      "state": "passed",
+      "sample_id": "API-unavailable-c25-r1",
+      "result": "bench/results/g7-complete-v2/samples/API-unavailable-c25-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 19.6207442,
+      "state": "passed",
+      "sample_id": "API-cold-c1-r1",
+      "result": "bench/results/g7-complete-v2/samples/API-cold-c1-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 18.5021554,
+      "state": "passed",
+      "sample_id": "API-cold-c10-r1",
+      "result": "bench/results/g7-complete-v2/samples/API-cold-c10-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 19.9427028,
+      "state": "passed",
+      "sample_id": "API-cold-c25-r1",
+      "result": "bench/results/g7-complete-v2/samples/API-cold-c25-r1.json"
+    },
+    {
+      "warmup": false,
+      "adapter_elapsed_seconds": 25.1300483,
+      "state": "passed",
+      "sample_id": "API-warm-c1-r1",
+      "result": "bench/results/g7-complete-v2/samples/API-warm-c1-r1.json"
+    },
+    {
+      "warmup": false,
+      "state": "failed",
+      "sample_id": "API-warm-c10-r1",
+      "error": "Adapter api/API-warm-c10-r1 failed (1): Exception: HTTP measured pass failed (1):  Container transporte-g7-bench-g7-complete-v2-benchmark-api-run-16f04f95a2a5 Creating  \r\nContainer transporte-g7-bench-g7-complete-v2-benchmark-api-run-16f04f95a2a5 Created  benchmark-api: 1 unexpected\r\nrequest errors; see raw report\r\n"
+    }
+  ],
+  "prepared_at": "2026-11-06T00:00:08.6821855Z",
+  "run_started_at": "2026-11-06T00:00:26.0259374Z",
+  "completed_at": "2026-11-06T00:40:07.9608267Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "benchmark-v1",
+  "timings": {
+    "evaluation_seconds": null,
+    "publication_seconds": null,
+    "total_seconds": 0.313539012,
+    "preparation_seconds": null,
+    "compute_seconds": 0.313539012
+  },
+  "errors": [],
+  "status": "passed",
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-cold-c25-r1.ndjson",
+    "sha256": "cf3ced7ad5ddfa13666ebad33e572dd0af16aa3eaa31148c79fec066cea9baea",
+    "valid_samples": 16,
+    "missing_samples": 2
+  },
+  "dataset": {
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+  },
+  "scope": "real",
+  "warmup": false,
+  "started_at": "2026-11-06T00:50:17.5824371Z",
+  "repetition": 1,
+  "kind": "api",
+  "metrics": {
+    "succeeded": 1000,
+    "throughput_total": 3189.39577445629,
+    "max_ms": 16.050446,
+    "error_latencies_ms": [],
+    "elapsed_seconds": 0.313539012,
+    "timeouts": 0,
+    "route": "direct isolated REST; in-container client",
+    "error_counts": {},
+    "errors": 0,
+    "requests_sha256": "e319d2c79bff2107d9b4e88de66b7a94ab08f1cbaa498c041f48f3a95834f209",
+    "p99_ms": 14.451032,
+    "completed": 1000,
+    "objective_met": true,
+    "operational_outcome": "target_met",
+    "cache_scenario": "cold",
+    "requests_path": "bench/raw/g7-api-final-01/api/API-cold-c25-r1.json",
+    "p50_ms": 7.320946,
+    "attempted": 1000,
+    "concurrency": 25,
+    "p95_ms": 12.367735,
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "throughput_success": 3189.39577445629,
+    "cache_hits": 0,
+    "measurement_complete": true,
+    "proportion_under_100_ms": 1
+  },
+  "case_id": "API-cold-c25",
+  "campaign_id": "g7-api-final-01",
+  "completed_at": "2026-11-06T00:50:34.8727149Z",
+  "checks": {
+    "resources_valid": true,
+    "dataset_verified": true,
+    "result_valid": true,
+    "redis_restored": true,
+    "cache_preparation_verified": true
+  },
+  "sample_id": "API-cold-c25-r1"
+}

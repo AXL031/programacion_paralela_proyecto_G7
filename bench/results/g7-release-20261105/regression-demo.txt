@@ -1,0 +1,19 @@
+{
+  "cache_hits": 100,
+  "invalid_origin_status": 400,
+  "requests": 200,
+  "scope": "HTTP local por proxy web; secuencial; no benchmark de producción",
+  "model_version": "run-cb5462c7863ee313c7b5e327",
+  "passes": [
+    {
+      "pass": 1,
+      "max_ms": 18.5092,
+      "p95_ms": 9.6643
+    },
+    {
+      "pass": 2,
+      "max_ms": 10.9645,
+      "p95_ms": 8.8558
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 # Plan de avance hasta la semana 13 y comparación con la versión actual
 
+**Actualización posterior al cierre técnico:** código de issues1–5 integrado en main mediante PR #14/#15, con autorización expresa del usuario y CI verde; 63 muestras originales y bruto verificable en el [cierre de desarrollo](CIERRE_DESARROLLO_11_13.md). Las campañas se identifican por fase y conservan los fallos anteriores. La auditoría independiente y los documentos/checker de Vera siguen en #8. El estado previo de este documento se conserva como historia; no representa pendientes de código actuales.
+
+
 Fecha: **5 de noviembre de 2026, Lima**.
 
 Reparto entre integrantes, ramas, dependencias, issues y revisión de PR: [DISTRIBUCION_SEMANAS_11_13.md](DISTRIBUCION_SEMANAS_11_13.md).

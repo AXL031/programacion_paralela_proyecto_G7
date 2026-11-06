@@ -1,0 +1,70 @@
+{
+  "timings": {
+    "evaluation_seconds": null,
+    "preparation_seconds": null,
+    "publication_seconds": null,
+    "total_seconds": 0.400150768,
+    "compute_seconds": 0.400150768
+  },
+  "checks": {
+    "result_valid": true,
+    "resources_valid": true,
+    "redis_restored": true,
+    "dataset_verified": true,
+    "cache_preparation_verified": true
+  },
+  "errors": [],
+  "status": "passed",
+  "kind": "api",
+  "case_id": "API-cold-c10",
+  "scope": "real",
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-api-final-01/resources/API-cold-c10-r1.ndjson",
+    "sha256": "1ea013a9a16d4d615f862757aadd5eda5c20b60fcc07f463e67e8d08be478211",
+    "valid_samples": 16,
+    "missing_samples": 2
+  },
+  "sample_id": "API-cold-c10-r1",
+  "repetition": 1,
+  "started_at": "2026-11-06T00:49:55.9777826Z",
+  "campaign_id": "g7-api-final-01",
+  "metrics": {
+    "load_model": "closed loop, bounded workers, persistent connections; login/smoke/prewarm excluded",
+    "elapsed_seconds": 0.400150768,
+    "max_ms": 22.395767,
+    "requests_path": "bench/raw/g7-api-final-01/api/API-cold-c10-r1.json",
+    "throughput_total": 2499.058055037895,
+    "operational_outcome": "target_met",
+    "completed": 1000,
+    "p50_ms": 3.518053,
+    "requests_sha256": "7533e2b909457dd17fcf058b5f0915be8ea4ca30e5a6397b8f6c70f9e8d11167",
+    "cache_hits": 0,
+    "route": "direct isolated REST; in-container client",
+    "concurrency": 10,
+    "cache_scenario": "cold",
+    "proportion_under_100_ms": 1,
+    "p95_ms": 7.006892,
+    "errors": 0,
+    "attempted": 1000,
+    "timeouts": 0,
+    "succeeded": 1000,
+    "model_version": "run-6e58c7475ecc8f85a17c3c04",
+    "error_latencies_ms": [],
+    "measurement_complete": true,
+    "objective_met": true,
+    "p99_ms": 11.011343,
+    "error_counts": {},
+    "throughput_success": 2499.058055037895
+  },
+  "schema_version": "benchmark-v1",
+  "warmup": false,
+  "dataset": {
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "a92a6f26e86c742b87227aa1",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b"
+  },
+  "completed_at": "2026-11-06T00:50:13.0711999Z"
+}

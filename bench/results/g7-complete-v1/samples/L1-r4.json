@@ -1,0 +1,90 @@
+{
+  "schema_version": "benchmark-v1",
+  "campaign_id": "g7-complete-v1",
+  "sample_id": "L1-r4",
+  "case_id": "L1",
+  "scope": "real",
+  "kind": "load",
+  "repetition": 4,
+  "warmup": false,
+  "started_at": "2026-11-05T23:35:17.9170388Z",
+  "completed_at": "2026-11-05T23:36:34.0714462Z",
+  "status": "passed",
+  "errors": [],
+  "dataset": {
+    "id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "c10c2d5afb38352f0b1244e0",
+    "snapshot_sha256": "d968869fbb389169a9671661a2e77b42f793bc0b5d44573353ef754b124e1e7b",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+  },
+  "timings": {
+    "preparation_seconds": 1.876044173,
+    "compute_seconds": 39.727709374,
+    "evaluation_seconds": null,
+    "publication_seconds": 14.604956925,
+    "total_seconds": 56.208710472
+  },
+  "resources": {
+    "status": "available",
+    "path": "bench/raw/g7-complete-v1/resources/L1-r4.ndjson",
+    "sha256": "ad8c94a40cc94a3f511079b20bacb5bf10caa2c73dbdefff9b9034e1a139ae17",
+    "valid_samples": 125,
+    "missing_samples": 7
+  },
+  "checks": {
+    "dataset_verified": true,
+    "result_valid": true,
+    "resources_valid": true,
+    "snapshot_equivalent": true,
+    "fresh_load": true,
+    "counts_consistent": true,
+    "mongo_counts_match": true,
+    "snapshot_checksum": true,
+    "reference_verified": true,
+    "dataset_identity": true,
+    "source_hash": true,
+    "catalog_hash": true,
+    "snapshot_hash_format": true,
+    "manifest_status": true,
+    "throughput_consistent": true,
+    "timings_valid": true,
+    "configuration_verified": true,
+    "manifest_identity": true,
+    "zone_catalog": true,
+    "snapshot_metadata": true,
+    "mongo_manifest": true
+  },
+  "metrics": {
+    "reused": false,
+    "read": 2964624,
+    "accepted": 1348665,
+    "rejected": 14905,
+    "outside_period": 1601054,
+    "persisted": 1348665,
+    "workers": 1,
+    "rejection_reasons": {
+      "duration_over_24h": 8,
+      "nonpositive_duration": 43,
+      "unknown_zone": 14854
+    },
+    "rows_per_second": 52769.76817776766,
+    "accepted_per_second": 24005.99178832426,
+    "snapshot_windows": 378720,
+    "snapshot_examples": 378457,
+    "snapshot_splits": {
+      "test": 56808,
+      "train": 264841,
+      "validation": 56808
+    },
+    "snapshot_path": "data/processed/ds-f16643c248cc24d26b992f45598dd3e8/c10c2d5afb38352f0b1244e0/features.ndjson",
+    "snapshot_bytes": 89139828,
+    "mongo_trips": 1348665,
+    "mongo_windows": 378720,
+    "window_sum": 1348665,
+    "dataset_id": "ds-f16643c248cc24d26b992f45598dd3e8",
+    "load_id": "c10c2d5afb38352f0b1244e0",
+    "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+    "catalog_sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+  }
+}

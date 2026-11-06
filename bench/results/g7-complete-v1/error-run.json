@@ -1,0 +1,5 @@
+{
+  "action": "Run",
+  "error": "Adapter training/D2-w1 failed (1): InvalidOperation: Cannot compare \"System.Management.Automation.OrderedHashtable\" because it is not IComparable.\r\n",
+  "at": "2026-11-05T23:40:25.4691906Z"
+}
